@@ -115,13 +115,15 @@ Your D1 database is now initialized with:
 ---
 
 ### Step 4: Deploy on Cloudflare Pages
-1. In Cloudflare Dashboard, go to **Workers & Pages** > **Create application** > **Pages** > **Connect to Git**.
-2. Select your GitHub repository.
-3. Configure build settings:
+1. In Cloudflare Dashboard, go to **Workers & Pages** > **vivek-dhoundiyal-portfolio**.
+2. Navigate to **Settings** > **Builds & deployments**.
+3. Under **Build configuration**, set:
    - **Framework preset:** `None` (or `Next.js (Static Export)`)
    - **Build command:** `npm run build`
    - **Build output directory:** `out`
-4. Click **Save and Deploy**.
+   - **Deploy command:** `npx wrangler pages deploy out --project-name=vivek-dhoundiyal-portfolio`
+     *(IMPORTANT: Do NOT use `npx wrangler deploy` — that is the Workers command and will fail on a Pages project)*
+4. Save settings and click **Retry deployment** on the latest build (or trigger a new build by pushing to `main`).
 
 ---
 
