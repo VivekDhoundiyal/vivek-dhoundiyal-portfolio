@@ -1,0 +1,16 @@
+name = "vivek-portfolio"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "out"
+
+[vars]
+ADMIN_EMAIL = "vivekdhoundiyal2901@gmail.com"
+
+# Cloudflare D1 Database Binding
+# When deploying to Cloudflare, run:
+#   wrangler d1 create portfolio-db
+# And paste the returned database_id below (or bind in Cloudflare Pages dashboard):
+[[d1_databases]]
+binding = "DB"
+database_name = "portfolio-db"
+database_id = "portfolio-db-id"
+migrations_dir = "migrations"
