@@ -34,43 +34,6 @@ export default function AdminDashboard({ isAuthenticated, initialContent, csrfTo
   const [showPublishModal, setShowPublishModal] = useState(false)
   const [showRevisionModal, setShowRevisionModal] = useState(false)
 
-  // On client mount, check if an existing authenticated session is active
-  React.useEffect(() => {
-    setAuthed(false)
-
-    fetch('/api/auth', { credentials: 'include' })
-      .then(res => {
-        if (!res.ok) throw new Error('Unauthenticated')
-        return res.json()
-      })
-      .then(authData => {
-        if (authData && authData.authenticated === true) {
-          if (authData.csrfToken) setCsrfToken(authData.csrfToken)
-          if (authData.user) setCurrentUser(authData.user)
-
-          return fetch('/api/content?mode=draft', { credentials: 'include' })
-            .then(res => {
-              if (!res.ok) throw new Error('Unauthenticated')
-              return res.json()
-            })
-            .then(draftData => {
-              if (draftData && !draftData.error) {
-                setContent(draftData)
-                setAuthed(true)
-              } else {
-                setAuthed(false)
-              }
-            })
-        } else {
-          setAuthed(false)
-        }
-      })
-      .catch(() => {
-        // Fail closed: remain on login security guard
-        setAuthed(false)
-      })
-  }, [])
-
   // Handle Login via Server-side Auth API
   const handleLogin = async (e) => {
     e.preventDefault()
@@ -2280,11 +2243,10 @@ AdminDashboard.getLayout = function getLayout(page) {
 }
 
 export async function getStaticProps() {
-  const content = getSiteContent()
   return {
     props: {
       isAuthenticated: false,
-      initialContent: content,
+      initialContent: null,
       csrfToken: null,
       adminEmail: ADMIN_EMAIL,
     }

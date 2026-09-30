@@ -49,22 +49,20 @@ async function sha256Hex(str) {
 }
 
 async function isSessionActive(db, token, targetEmail, secret) {
-  if (!token) return false
+  if (!token || !db) return false
   const verified = await verifyToken(token, secret)
   if (!verified || verified.email !== targetEmail) return false
 
-  if (db) {
-    try {
-      const tokenHash = await sha256Hex(token)
-      const sessionRow = await db.prepare('SELECT email, expires_at FROM admin_sessions WHERE token_hash = ?').bind(tokenHash).first()
-      if (!sessionRow || sessionRow.expires_at < Date.now()) {
-        return false
-      }
-    } catch {
-      // In case admin_sessions is missing/uninitialized, rely on verified token
+  try {
+    const tokenHash = await sha256Hex(token)
+    const sessionRow = await db.prepare('SELECT email, expires_at FROM admin_sessions WHERE token_hash = ?').bind(tokenHash).first()
+    if (sessionRow && sessionRow.expires_at >= Date.now()) {
+      return true
     }
+  } catch {
+    return false
   }
-  return true
+  return false
 }
 
 export async function onRequestPost(context) {

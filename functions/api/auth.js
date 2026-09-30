@@ -89,31 +89,24 @@ export async function onRequestGet(context) {
   const targetEmail = (env?.ADMIN_EMAIL || DEFAULT_ADMIN_EMAIL).toLowerCase().trim()
   const db = env?.DB
 
-  if (sessionToken) {
+  if (sessionToken && db) {
     const verified = await verifyToken(sessionToken, secret)
     if (verified && verified.email === targetEmail) {
-      // If D1 is available, verify session is still active in admin_sessions table
-      if (db) {
-        try {
-          const tokenHash = await sha256Hex(sessionToken)
-          const sessionRow = await db.prepare('SELECT email, expires_at FROM admin_sessions WHERE token_hash = ?').bind(tokenHash).first()
-          if (!sessionRow || sessionRow.expires_at < Date.now()) {
-            return new Response(JSON.stringify({ authenticated: false }), {
-              headers: { 'Content-Type': 'application/json' }
-            })
-          }
-        } catch {
-          // Silent in production
+      try {
+        const tokenHash = await sha256Hex(sessionToken)
+        const sessionRow = await db.prepare('SELECT email, expires_at FROM admin_sessions WHERE token_hash = ?').bind(tokenHash).first()
+        if (sessionRow && sessionRow.expires_at >= Date.now()) {
+          return new Response(JSON.stringify({
+            authenticated: true,
+            user: targetEmail,
+            csrfToken: 'cf_edge_valid'
+          }), {
+            headers: { 'Content-Type': 'application/json' }
+          })
         }
+      } catch {
+        // Fail closed
       }
-
-      return new Response(JSON.stringify({
-        authenticated: true,
-        user: targetEmail,
-        csrfToken: 'cf_edge_valid'
-      }), {
-        headers: { 'Content-Type': 'application/json' }
-      })
     }
   }
 
