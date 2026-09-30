@@ -1,10 +1,31 @@
-/**
- * Cloudflare Pages Function: /api/content
- * Edge Runtime - Content API with D1 database binding
- */
+import defaultSiteContent from '../../data/siteContent.json'
 
 const ADMIN_EMAIL = 'vivekdhoundiyal2901@gmail.com'
 const COOKIE_NAME = 'vd_admin_session'
+
+async function ensureTableAndSeed(db, contentJsonStr, adminEmail) {
+  try {
+    await db.prepare(`
+      CREATE TABLE IF NOT EXISTS site_content (
+        id TEXT PRIMARY KEY DEFAULT 'active',
+        published_content TEXT NOT NULL,
+        draft_content TEXT NOT NULL,
+        published_at INTEGER,
+        updated_at INTEGER NOT NULL,
+        published_by TEXT
+      )
+    `).run()
+
+    const now = Date.now()
+    await db.prepare(`
+      INSERT INTO site_content (id, published_content, draft_content, updated_at, published_by)
+      VALUES ('active', ?1, ?1, ?2, ?3)
+      ON CONFLICT(id) DO NOTHING
+    `).bind(contentJsonStr, now, adminEmail).run()
+  } catch (err) {
+    console.error('[D1 Auto-seed error]:', err)
+  }
+}
 
 function parseCookies(cookieHeader) {
   const list = {}
@@ -88,16 +109,24 @@ export async function onRequestGet(context) {
             'X-Content-Mode': 'published'
           }
         })
+      } else {
+        // Table exists or is empty, seed baseline content
+        await ensureTableAndSeed(db, JSON.stringify(defaultSiteContent, null, 2), (env?.ADMIN_EMAIL || ADMIN_EMAIL).toLowerCase().trim())
       }
     } catch (err) {
       console.error('[Cloudflare D1 Error]:', err)
+      await ensureTableAndSeed(db, JSON.stringify(defaultSiteContent, null, 2), (env?.ADMIN_EMAIL || ADMIN_EMAIL).toLowerCase().trim())
     }
   }
 
-  // Fallback to static site data if D1 is not initialized
-  return new Response(JSON.stringify({ error: 'Database uninitialized' }), {
-    status: 503,
-    headers: { 'Content-Type': 'application/json' }
+  // Graceful fallback to default site content
+  return new Response(JSON.stringify(defaultSiteContent), {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'public, max-age=3600, s-maxage=86400',
+      'X-Content-Mode': 'fallback-seeded'
+    }
   })
 }
 
