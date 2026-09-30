@@ -85,7 +85,7 @@ export default function Footer({ profile }) {
           </div>
 
           <div className="flex items-center gap-6">
-            <Link href="/admin" className="hover:text-[#111318] transition-colors font-mono text-[11px]">
+            <Link href="/admin" prefetch={false} className="hover:text-[#111318] transition-colors font-mono text-[11px]">
               System Guard (Admin)
             </Link>
             <span>© 2026</span>
