@@ -10,7 +10,7 @@ import PublishModal from '../components/admin/PublishModal'
 import RevisionHistoryModal from '../components/admin/RevisionHistoryModal'
 
 export default function AdminDashboard({ isAuthenticated, initialContent, csrfToken: initialCsrf, adminEmail }) {
-  const [authed, setAuthed] = useState(isAuthenticated)
+  const [authed, setAuthed] = useState(false)
   const [csrfToken, setCsrfToken] = useState(initialCsrf)
   const [currentUser, setCurrentUser] = useState(adminEmail || ADMIN_EMAIL)
   
@@ -36,19 +36,38 @@ export default function AdminDashboard({ isAuthenticated, initialContent, csrfTo
 
   // On client mount, check if an existing authenticated session is active
   React.useEffect(() => {
-    fetch('/api/content?mode=draft', { credentials: 'include' })
+    setAuthed(false)
+
+    fetch('/api/auth', { credentials: 'include' })
       .then(res => {
-        if (res.ok) return res.json()
-        throw new Error('Not authenticated')
+        if (!res.ok) throw new Error('Unauthenticated')
+        return res.json()
       })
-      .then(draftData => {
-        if (draftData && !draftData.error) {
-          setContent(draftData)
-          setAuthed(true)
+      .then(authData => {
+        if (authData && authData.authenticated === true) {
+          if (authData.csrfToken) setCsrfToken(authData.csrfToken)
+          if (authData.user) setCurrentUser(authData.user)
+
+          return fetch('/api/content?mode=draft', { credentials: 'include' })
+            .then(res => {
+              if (!res.ok) throw new Error('Unauthenticated')
+              return res.json()
+            })
+            .then(draftData => {
+              if (draftData && !draftData.error) {
+                setContent(draftData)
+                setAuthed(true)
+              } else {
+                setAuthed(false)
+              }
+            })
+        } else {
+          setAuthed(false)
         }
       })
       .catch(() => {
-        // Not authenticated, remain on login security guard
+        // Fail closed: remain on login security guard
+        setAuthed(false)
       })
   }, [])
 
@@ -73,16 +92,19 @@ export default function AdminDashboard({ isAuthenticated, initialContent, csrfTo
       if (res.ok && data.success) {
         // Fetch fresh draft content
         const contentRes = await fetch('/api/content?mode=draft', { credentials: 'include' })
+        if (!contentRes.ok) {
+          throw new Error('Failed to load draft content')
+        }
         const contentData = await contentRes.json()
         setContent(contentData)
-        setCsrfToken(data.csrfToken)
-        setCurrentUser(data.user)
+        if (data.csrfToken) setCsrfToken(data.csrfToken)
+        if (data.user) setCurrentUser(data.user)
         setAuthed(true)
       } else {
-        setAuthError(data.error || 'Authentication rejected')
+        setAuthError(data.error || 'Invalid email or administrator passphrase.')
       }
-    } catch {
-      setAuthError('Network error connecting to security server')
+    } catch (err) {
+      setAuthError(err.message || 'Network error connecting to security server')
     } finally {
       setAuthLoading(false)
     }

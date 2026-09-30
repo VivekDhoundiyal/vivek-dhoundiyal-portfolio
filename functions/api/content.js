@@ -22,8 +22,8 @@ async function ensureTableAndSeed(db, contentJsonStr, adminEmail) {
       VALUES ('active', ?1, ?1, ?2, ?3)
       ON CONFLICT(id) DO NOTHING
     `).bind(contentJsonStr, now, adminEmail).run()
-  } catch (err) {
-    console.error('[D1 Auto-seed error]:', err)
+  } catch {
+    // Silent in production
   }
 }
 
@@ -38,6 +38,11 @@ function parseCookies(cookieHeader) {
     list[name] = decodeURIComponent(value)
   })
   return list
+}
+
+async function sha256Hex(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str))
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('')
 }
 
 async function verifyToken(token, secret) {
@@ -64,45 +69,89 @@ async function verifyToken(token, secret) {
   }
 }
 
+async function isSessionActive(db, token, targetEmail, secret) {
+  if (!token) return false
+  const verified = await verifyToken(token, secret)
+  if (!verified || verified.email !== targetEmail) return false
+
+  if (db) {
+    try {
+      const tokenHash = await sha256Hex(token)
+      const sessionRow = await db.prepare('SELECT email, expires_at FROM admin_sessions WHERE token_hash = ?').bind(tokenHash).first()
+      if (!sessionRow || sessionRow.expires_at < Date.now()) {
+        return false
+      }
+    } catch {
+      // In case admin_sessions is missing/uninitialized, rely on verified token
+    }
+  }
+  return true
+}
+
 export async function onRequestGet(context) {
   const { request, env } = context
   const url = new URL(request.url)
   const isPreview = url.searchParams.get('preview') === 'true'
   const isDraftRequest = url.searchParams.get('mode') === 'draft'
+  const db = env?.DB
 
-  const db = env.DB
+  // 1. If draft or preview mode is requested, FAIL CLOSED: require valid admin authentication
+  if (isPreview || isDraftRequest) {
+    const cookies = parseCookies(request.headers.get('Cookie'))
+    const sessionToken = cookies[COOKIE_NAME]
+    const secret = (env?.SESSION_SECRET || env?.ADMIN_SECRET || 'cf_pages_edge_session_signing_key').replace(/^["']|["']$/g, '').trim()
+    const targetEmail = (env?.ADMIN_EMAIL || ADMIN_EMAIL).toLowerCase().trim()
+    const active = await isSessionActive(db, sessionToken, targetEmail, secret)
 
-  // 1. Query Cloudflare D1
+    if (!active) {
+      return new Response(JSON.stringify({ error: 'Unauthorized: Admin authentication required' }), {
+        status: 401,
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'no-store, no-cache, must-revalidate'
+        }
+      })
+    }
+
+    // Authenticated admin: serve draft content
+    if (db) {
+      try {
+        const stmt = db.prepare('SELECT published_content, draft_content FROM site_content WHERE id = ?').bind('active')
+        const row = await stmt.first()
+        if (row && (row.draft_content || row.published_content)) {
+          return new Response(row.draft_content || row.published_content, {
+            status: 200,
+            headers: {
+              'Content-Type': 'application/json',
+              'Cache-Control': 'no-store, must-revalidate',
+              'X-Content-Mode': 'draft'
+            }
+          })
+        }
+      } catch {
+        // Fall back to default content for draft
+      }
+    }
+
+    return new Response(JSON.stringify(defaultSiteContent), {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'no-store, must-revalidate',
+        'X-Content-Mode': 'draft'
+      }
+    })
+  }
+
+  // 2. Public Published Content: Standard visitor (no draft/preview query)
   if (db) {
     try {
-      const stmt = db.prepare('SELECT published_content, draft_content FROM site_content WHERE id = ?').bind('active')
+      const stmt = db.prepare('SELECT published_content FROM site_content WHERE id = ?').bind('active')
       const row = await stmt.first()
 
-      if (row) {
-        let contentJson = row.published_content
-
-        // If preview or draft requested, check admin authentication
-        if (isPreview || isDraftRequest) {
-          const cookies = parseCookies(request.headers.get('Cookie'))
-          const sessionToken = cookies[COOKIE_NAME]
-          const secret = (env?.SESSION_SECRET || env?.ADMIN_SECRET || 'cf_pages_edge_session_signing_key').replace(/^["']|["']$/g, '').trim()
-          const targetEmail = (env?.ADMIN_EMAIL || ADMIN_EMAIL).toLowerCase().trim()
-          const verified = sessionToken ? await verifyToken(sessionToken, secret) : null
-
-          if (verified && verified.email === targetEmail) {
-            contentJson = row.draft_content || row.published_content
-            return new Response(contentJson, {
-              headers: {
-                'Content-Type': 'application/json',
-                'Cache-Control': 'no-store, must-revalidate',
-                'X-Content-Mode': 'draft'
-              }
-            })
-          }
-        }
-
-        // Public Published Content: High-performance edge cache
-        return new Response(contentJson, {
+      if (row && row.published_content) {
+        return new Response(row.published_content, {
+          status: 200,
           headers: {
             'Content-Type': 'application/json',
             'Cache-Control': 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800',
@@ -110,16 +159,14 @@ export async function onRequestGet(context) {
           }
         })
       } else {
-        // Table exists or is empty, seed baseline content
         await ensureTableAndSeed(db, JSON.stringify(defaultSiteContent, null, 2), (env?.ADMIN_EMAIL || ADMIN_EMAIL).toLowerCase().trim())
       }
-    } catch (err) {
-      console.error('[Cloudflare D1 Error]:', err)
+    } catch {
       await ensureTableAndSeed(db, JSON.stringify(defaultSiteContent, null, 2), (env?.ADMIN_EMAIL || ADMIN_EMAIL).toLowerCase().trim())
     }
   }
 
-  // Graceful fallback to default site content
+  // Graceful fallback to default site content for public requests
   return new Response(JSON.stringify(defaultSiteContent), {
     status: 200,
     headers: {
@@ -132,16 +179,16 @@ export async function onRequestGet(context) {
 
 export async function onRequestPost(context) {
   const { request, env } = context
-  const db = env.DB
+  const db = env?.DB
 
   // Authenticate Admin
   const cookies = parseCookies(request.headers.get('Cookie'))
   const sessionToken = cookies[COOKIE_NAME]
   const secret = (env?.SESSION_SECRET || env?.ADMIN_SECRET || 'cf_pages_edge_session_signing_key').replace(/^["']|["']$/g, '').trim()
   const targetEmail = (env?.ADMIN_EMAIL || ADMIN_EMAIL).toLowerCase().trim()
-  const verified = sessionToken ? await verifyToken(sessionToken, secret) : null
+  const active = await isSessionActive(db, sessionToken, targetEmail, secret)
 
-  if (!verified || verified.email !== targetEmail) {
+  if (!active) {
     return new Response(JSON.stringify({ error: 'Unauthorized: Admin login required' }), {
       status: 401,
       headers: { 'Content-Type': 'application/json' }
@@ -169,7 +216,7 @@ export async function onRequestPost(context) {
         ON CONFLICT(id) DO UPDATE SET
           draft_content = ?1,
           updated_at = ?2
-      `).bind(contentStr, now, ADMIN_EMAIL).run()
+      `).bind(contentStr, now, targetEmail).run()
 
       return new Response(JSON.stringify({
         success: true,
@@ -178,8 +225,8 @@ export async function onRequestPost(context) {
       }), {
         headers: { 'Content-Type': 'application/json' }
       })
-    } catch (err) {
-      return new Response(JSON.stringify({ error: err.message }), {
+    } catch {
+      return new Response(JSON.stringify({ error: 'Failed to save draft' }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' }
       })

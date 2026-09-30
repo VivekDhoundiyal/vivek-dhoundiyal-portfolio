@@ -43,18 +43,42 @@ async function verifyToken(token, secret) {
   }
 }
 
+async function sha256Hex(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str))
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('')
+}
+
+async function isSessionActive(db, token, targetEmail, secret) {
+  if (!token) return false
+  const verified = await verifyToken(token, secret)
+  if (!verified || verified.email !== targetEmail) return false
+
+  if (db) {
+    try {
+      const tokenHash = await sha256Hex(token)
+      const sessionRow = await db.prepare('SELECT email, expires_at FROM admin_sessions WHERE token_hash = ?').bind(tokenHash).first()
+      if (!sessionRow || sessionRow.expires_at < Date.now()) {
+        return false
+      }
+    } catch {
+      // In case admin_sessions is missing/uninitialized, rely on verified token
+    }
+  }
+  return true
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context
-  const db = env.DB
+  const db = env?.DB
 
   // Authenticate Admin
   const cookies = parseCookies(request.headers.get('Cookie'))
   const sessionToken = cookies[COOKIE_NAME]
   const secret = (env?.SESSION_SECRET || env?.ADMIN_SECRET || 'cf_pages_edge_session_signing_key').replace(/^["']|["']$/g, '').trim()
   const targetEmail = (env?.ADMIN_EMAIL || ADMIN_EMAIL).toLowerCase().trim()
-  const verified = sessionToken ? await verifyToken(sessionToken, secret) : null
+  const active = await isSessionActive(db, sessionToken, targetEmail, secret)
 
-  if (!verified || verified.email !== targetEmail) {
+  if (!active) {
     return new Response(JSON.stringify({ error: 'Unauthorized: Admin authentication required to publish' }), {
       status: 401,
       headers: { 'Content-Type': 'application/json' }
