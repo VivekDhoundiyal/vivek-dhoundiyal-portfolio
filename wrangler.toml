@@ -12,5 +12,5 @@ ADMIN_EMAIL = "vivekdhoundiyal2901@gmail.com"
 [[d1_databases]]
 binding = "DB"
 database_name = "portfolio-db"
-database_id = "portfolio-db-id"
+database_id = "4220f988-94fe-4706-b931-ae92d8ef0655"
 migrations_dir = "migrations"
