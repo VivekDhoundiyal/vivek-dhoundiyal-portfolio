@@ -50,10 +50,11 @@ export async function onRequestPost(context) {
   // Authenticate Admin
   const cookies = parseCookies(request.headers.get('Cookie'))
   const sessionToken = cookies[COOKIE_NAME]
-  const secret = env?.SESSION_SECRET || env?.ADMIN_SECRET || 'cf_pages_edge_session_signing_key'
+  const secret = (env?.SESSION_SECRET || env?.ADMIN_SECRET || 'cf_pages_edge_session_signing_key').replace(/^["']|["']$/g, '').trim()
+  const targetEmail = (env?.ADMIN_EMAIL || ADMIN_EMAIL).toLowerCase().trim()
   const verified = sessionToken ? await verifyToken(sessionToken, secret) : null
 
-  if (!verified || verified.email !== ADMIN_EMAIL) {
+  if (!verified || verified.email !== targetEmail) {
     return new Response(JSON.stringify({ error: 'Unauthorized: Admin authentication required to publish' }), {
       status: 401,
       headers: { 'Content-Type': 'application/json' }
