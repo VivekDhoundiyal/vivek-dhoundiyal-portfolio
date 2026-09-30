@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
-import { ADMIN_EMAIL } from '../lib/auth'
 import { ArrowRight } from '../components/Icons'
 
 const CMSPanel = dynamic(() => import('../components/admin/CMSPanel'), {
@@ -21,8 +20,7 @@ function LoginSecurityGuard({
   setPasswordInput,
   authError,
   authLoading,
-  handleLogin,
-  adminEmail
+  handleLogin
 }) {
   return (
     <div className="min-h-screen bg-[#FAFAF8] flex items-center justify-center p-4 selection:bg-blue-600/15 selection:text-[#111318]">
@@ -40,11 +38,11 @@ function LoginSecurityGuard({
             Administrator Security Guard
           </h1>
           <p className="text-xs text-[#555B66]">
-            Authorized Operator: <span className="font-mono text-[#2563EB] font-semibold">{adminEmail || ADMIN_EMAIL}</span>
+            Restricted Access · Authorized Personnel Only
           </p>
         </div>
 
-        <form onSubmit={handleLogin} className="space-y-4">
+        <form onSubmit={handleLogin} autoComplete="off" className="space-y-4">
           <div>
             <label className="text-[11px] font-mono uppercase tracking-wider text-[#737984] block mb-1 font-semibold">
               Authorized Identity (Email)
@@ -52,6 +50,7 @@ function LoginSecurityGuard({
             <input
               type="email"
               required
+              autoComplete="off"
               value={emailInput}
               onChange={e => setEmailInput(e.target.value)}
               placeholder="administrator@domain.com"
@@ -66,6 +65,7 @@ function LoginSecurityGuard({
             <input
               type="password"
               required
+              autoComplete="off"
               value={passwordInput}
               onChange={e => setPasswordInput(e.target.value)}
               placeholder="••••••••••••"
@@ -99,16 +99,30 @@ function LoginSecurityGuard({
   )
 }
 
-export default function AdminDashboard({ adminEmail }) {
+export default function AdminDashboard() {
   // Explicit 3-state auth machine: 'UNAUTHENTICATED' | 'AUTHENTICATING' | 'AUTHENTICATED'
+  // Initial state is ALWAYS strictly 'UNAUTHENTICATED'.
   const [authState, setAuthState] = useState('UNAUTHENTICATED')
-  const [emailInput, setEmailInput] = useState(adminEmail || ADMIN_EMAIL)
+  const [emailInput, setEmailInput] = useState('')
   const [passwordInput, setPasswordInput] = useState('')
   const [authError, setAuthError] = useState('')
-  const [currentUser, setCurrentUser] = useState(adminEmail || ADMIN_EMAIL)
+  const [currentUser, setCurrentUser] = useState('')
   const [csrfToken, setCsrfToken] = useState(null)
   const [cmsContent, setCmsContent] = useState(null)
 
+  // Defend against browser back-forward cache (bfcache)
+  useEffect(() => {
+    const handlePageShow = (event) => {
+      if (event.persisted && authState !== 'AUTHENTICATED') {
+        setAuthState('UNAUTHENTICATED')
+        setCmsContent(null)
+      }
+    }
+    window.addEventListener('pageshow', handlePageShow)
+    return () => window.removeEventListener('pageshow', handlePageShow)
+  }, [authState])
+
+  // Explicit manual login handler ONLY
   const handleLogin = async (e) => {
     e.preventDefault()
     setAuthError('')
@@ -135,7 +149,7 @@ export default function AdminDashboard({ adminEmail }) {
         const contentData = await contentRes.json()
         setCmsContent(contentData)
         if (data.csrfToken) setCsrfToken(data.csrfToken)
-        if (data.user) setCurrentUser(data.user)
+        setCurrentUser(data.user || emailInput)
         setAuthState('AUTHENTICATED')
       } else {
         setAuthState('UNAUTHENTICATED')
@@ -147,6 +161,7 @@ export default function AdminDashboard({ adminEmail }) {
     }
   }
 
+  // Explicit logout handler
   const handleLogout = async () => {
     try {
       await fetch('/api/auth?action=logout', {
@@ -172,7 +187,6 @@ export default function AdminDashboard({ adminEmail }) {
         authError={authError}
         authLoading={authState === 'AUTHENTICATING'}
         handleLogin={handleLogin}
-        adminEmail={adminEmail || ADMIN_EMAIL}
       />
     )
   }
@@ -197,8 +211,7 @@ export async function getStaticProps() {
     props: {
       isAuthenticated: false,
       initialContent: null,
-      csrfToken: null,
-      adminEmail: ADMIN_EMAIL,
+      csrfToken: null
     }
   }
 }

@@ -17,17 +17,8 @@ export default function handler(req, res) {
     ? forwarded.split(',')[0].trim()
     : req.socket.remoteAddress || '127.0.0.1'
 
-  // GET: Check current authentication status
+  // GET: Check current authentication status (fails closed unconditionally)
   if (req.method === 'GET') {
-    const auth = authenticateRequest(req)
-    if (auth.authenticated) {
-      const csrfToken = auth.sessionToken ? generateCsrfToken(auth.sessionToken) : 'cf_active'
-      return res.status(200).json({
-        authenticated: true,
-        user: auth.user,
-        csrfToken
-      })
-    }
     return res.status(200).json({ authenticated: false })
   }
 

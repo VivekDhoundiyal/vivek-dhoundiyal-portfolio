@@ -82,36 +82,14 @@ async function signToken(payload, secret) {
 }
 
 export async function onRequestGet(context) {
-  const { request, env } = context
-  const cookies = parseCookies(request.headers.get('Cookie'))
-  const sessionToken = cookies[COOKIE_NAME]
-  const secret = (env?.SESSION_SECRET || env?.ADMIN_SECRET || DEFAULT_SESSION_SECRET).replace(/^["']|["']$/g, '').trim()
-  const targetEmail = (env?.ADMIN_EMAIL || DEFAULT_ADMIN_EMAIL).toLowerCase().trim()
-  const db = env?.DB
-
-  if (sessionToken && db) {
-    const verified = await verifyToken(sessionToken, secret)
-    if (verified && verified.email === targetEmail) {
-      try {
-        const tokenHash = await sha256Hex(sessionToken)
-        const sessionRow = await db.prepare('SELECT email, expires_at FROM admin_sessions WHERE token_hash = ?').bind(tokenHash).first()
-        if (sessionRow && sessionRow.expires_at >= Date.now()) {
-          return new Response(JSON.stringify({
-            authenticated: true,
-            user: targetEmail,
-            csrfToken: 'cf_edge_valid'
-          }), {
-            headers: { 'Content-Type': 'application/json' }
-          })
-        }
-      } catch {
-        // Fail closed
-      }
-    }
-  }
-
+  // Fail closed unconditionally: GET /api/auth must NEVER auto-authenticate
+  // Opening /admin with no explicit login action must ALWAYS display the login screen.
+  // There is NO automatic session restoration.
   return new Response(JSON.stringify({ authenticated: false }), {
-    headers: { 'Content-Type': 'application/json' }
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-store, no-cache, must-revalidate'
+    }
   })
 }
 
