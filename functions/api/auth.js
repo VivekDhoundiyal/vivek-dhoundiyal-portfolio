@@ -102,8 +102,8 @@ export async function onRequestGet(context) {
               headers: { 'Content-Type': 'application/json' }
             })
           }
-        } catch (err) {
-          console.error('[D1 Session Verify]:', err.message)
+        } catch {
+          // Silent in production
         }
       }
 
@@ -144,8 +144,8 @@ export async function onRequestPost(context) {
       try {
         const tokenHash = await sha256Hex(sessionToken)
         await db.prepare('DELETE FROM admin_sessions WHERE token_hash = ?').bind(tokenHash).run()
-      } catch (err) {
-        console.error('[D1 Logout Error]:', err.message)
+      } catch {
+        // Silent in production
       }
     }
     return new Response(JSON.stringify({ success: true, message: 'Logged out successfully' }), {
@@ -176,8 +176,8 @@ export async function onRequestPost(context) {
           }
         })
       }
-    } catch (err) {
-      console.error('[D1 RateLimit Read]:', err.message)
+    } catch {
+      // Silent in production
     }
   }
 
@@ -200,17 +200,6 @@ export async function onRequestPost(context) {
     await timingSafeEqualStr(receivedPassword, cleanExpectedPassword)
   )
 
-  // Safe server-side diagnostic logging (NEVER logs passwords or secrets)
-  console.log('[Auth Login Attempt]', JSON.stringify({
-    hasAdminEmailEnv: Boolean(env?.ADMIN_EMAIL),
-    hasAdminPasswordEnv: Boolean(env?.ADMIN_PASSWORD),
-    hasSessionSecretEnv: Boolean(env?.SESSION_SECRET),
-    hasDbBinding: Boolean(env?.DB),
-    receivedEmail,
-    emailMatch: isEmailValid,
-    passwordMatch: isPasswordValid
-  }))
-
   if (!isEmailValid || !isPasswordValid) {
     // Record failed attempt in D1 rate_limits
     if (db) {
@@ -225,19 +214,13 @@ export async function onRequestPost(context) {
             last_attempt_at = ?2,
             locked_until = CASE WHEN attempts >= ?3 THEN ?4 ELSE 0 END
         `).bind(clientIp, now, MAX_ATTEMPTS, lockoutTime).run()
-      } catch (err) {
-        console.error('[D1 RateLimit Record]:', err.message)
+      } catch {
+        // Silent in production
       }
     }
 
     return new Response(JSON.stringify({
-      error: 'Invalid email or administrator passphrase.',
-      _diag: {
-        hasAdminPasswordEnv: Boolean(env?.ADMIN_PASSWORD),
-        hasDbBinding: Boolean(env?.DB),
-        emailMatch: isEmailValid,
-        passwordMatch: isPasswordValid
-      }
+      error: 'Invalid email or administrator passphrase.'
     }), {
       status: 401,
       headers: { 'Content-Type': 'application/json' }
@@ -248,8 +231,8 @@ export async function onRequestPost(context) {
   if (db) {
     try {
       await db.prepare('DELETE FROM rate_limits WHERE ip_key = ?').bind(clientIp).run()
-    } catch (err) {
-      console.error('[D1 RateLimit Clear]:', err.message)
+    } catch {
+      // Silent in production
     }
   }
 
@@ -263,7 +246,6 @@ export async function onRequestPost(context) {
   const sessionToken = await signToken(payload, secret)
 
   // Store session in D1 admin_sessions table
-  let sessionStoredInD1 = false
   if (db) {
     try {
       const tokenHash = await sha256Hex(sessionToken)
@@ -271,21 +253,13 @@ export async function onRequestPost(context) {
         INSERT INTO admin_sessions (token_hash, email, created_at, expires_at)
         VALUES (?1, ?2, ?3, ?4)
       `).bind(tokenHash, targetEmail, now, exp).run()
-      sessionStoredInD1 = true
-    } catch (err) {
-      console.error('[D1 Session Insert]:', err.message)
+    } catch {
+      // Silent in production
     }
   }
 
   return new Response(JSON.stringify({
-    success: true,
-    user: targetEmail,
-    csrfToken: 'cf_edge_valid',
-    message: 'Authenticated successfully',
-    _diag: {
-      hasDbBinding: Boolean(env?.DB),
-      sessionStored: sessionStoredInD1
-    }
+    success: true
   }), {
     status: 200,
     headers: {
