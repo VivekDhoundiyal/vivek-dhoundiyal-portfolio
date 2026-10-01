@@ -68,6 +68,7 @@ async function runBrowserTests() {
     consoleErrors: [],
     networkErrors: [],
     elementsFound: {},
+    forbiddenStringsCheck: {},
     viewportsTested: [],
     overflowCheck: {}
   };
@@ -108,6 +109,31 @@ async function runBrowserTests() {
     const pageTitle = await page.title();
     console.log('Page Title:', pageTitle);
 
+    // Verify Forbidden Strings Check
+    console.log('\n--- Checking for Forbidden Internal Metadata Strings ---');
+    const forbiddenStrings = [
+      '15 Slides',
+      '15 Architectural Slides',
+      '15 Architectural Chapters Directory',
+      '[ ARTIFACT',
+      'Inspect Slide',
+      'Local Build Lab',
+      '2752 × 1536',
+      '1376 × 768'
+    ];
+
+    const bodyText = await page.evaluate(() => document.body.innerText);
+    const forbiddenFound = forbiddenStrings.filter(s => bodyText.includes(s));
+    console.log('Forbidden strings found on /work/careeros/:', forbiddenFound);
+    results.forbiddenStringsCheck.workCareerOS = {
+      forbiddenFound,
+      pass: forbiddenFound.length === 0
+    };
+
+    if (forbiddenFound.length > 0) {
+      throw new Error('Forbidden internal metadata strings found: ' + forbiddenFound.join(', '));
+    }
+
     // Verify Infographic is present and rendered
     const infographicBox = await page.evaluate(() => {
       const img = document.querySelector('#operating-system-infographic img');
@@ -134,18 +160,18 @@ async function runBrowserTests() {
         if (el) {
           const title = el.querySelector('h3')?.innerText;
           const img = el.querySelector('img');
-          const represents = el.innerText.includes('What This Layer Represents');
-          const matters = el.innerText.includes('Why It Matters');
-          const thinking = el.innerText.includes('Product Thinking');
+          const hasDesc = (el.querySelector('p')?.innerText.length || 0) > 20;
+          const hasRationale = el.innerText.includes('Architectural Rationale');
+          const hasImplication = el.innerText.includes('Product Implication');
           list.push({
             pageNumber: i,
             id: 'architecture-' + pad,
             title,
             imgSrc: img ? img.src : null,
             imgNaturalWidth: img ? img.naturalWidth : 0,
-            hasRepresents: represents,
-            hasMatters: matters,
-            hasThinking: thinking
+            hasDesc,
+            hasRationale,
+            hasImplication
           });
         }
       }
@@ -170,7 +196,7 @@ async function runBrowserTests() {
     // Test Lightbox interaction
     console.log('\n--- Testing Lightbox interaction ---');
     await page.click('#operating-system-infographic img');
-      await new Promise(r => setTimeout(r, 500));
+    await new Promise(r => setTimeout(r, 500));
 
     const lightboxOpen = await page.evaluate(() => {
       const modal = document.querySelector('.animate-fadeIn');
@@ -180,7 +206,7 @@ async function runBrowserTests() {
 
     // Press Escape
     await page.keyboard.press('Escape');
-      await new Promise(r => setTimeout(r, 500));
+    await new Promise(r => setTimeout(r, 500));
 
     const lightboxClosed = await page.evaluate(() => {
       const modal = document.querySelector('.animate-fadeIn');
@@ -223,6 +249,13 @@ async function runBrowserTests() {
     });
     results.urlsTested.push({ url: '/careeros/', status: directResponse.status() });
     console.log('/careeros/ HTTP Status:', directResponse.status());
+
+    const directBodyText = await page.evaluate(() => document.body.innerText);
+    const directForbiddenFound = forbiddenStrings.filter(s => directBodyText.includes(s));
+    results.forbiddenStringsCheck.directCareerOS = {
+      forbiddenFound: directForbiddenFound,
+      pass: directForbiddenFound.length === 0
+    };
 
     // Save test report
     fs.writeFileSync('careeros_browser_test_report.json', JSON.stringify(results, null, 2));

@@ -59,7 +59,7 @@ export default function CareerOSCaseStudy({ siteData }) {
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span className="text-xs font-mono text-[#737984]">
-                [ SYSTEM CASE RECORD · ACTIVE BUILD ]
+                [ PRODUCT CASE STUDY · SYSTEMS ARCHITECTURE ]
               </span>
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function CareerOSCaseStudy({ siteData }) {
                 {hero.category || 'Independent Software Product'}
               </span>
               <span className="px-3 py-1 rounded-full text-xs font-mono bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold">
-                {hero.status || 'Active Architecture & Lab Build'}
+                {hero.status || 'Product Concept & Systems Architecture'}
               </span>
             </div>
 
@@ -96,10 +96,6 @@ export default function CareerOSCaseStudy({ siteData }) {
                 <span className="text-[#737984] uppercase mr-1.5">Discipline:</span>
                 <span className="text-[#111318] font-semibold">{hero.role || 'Product Management & Systems Architecture'}</span>
               </div>
-              <div>
-                <span className="text-[#737984] uppercase mr-1.5">Artifacts:</span>
-                <span className="text-[#111318] font-semibold">15 Architectural Slides + System Infographic</span>
-              </div>
             </div>
 
             {/* Foundational Thesis Box */}
@@ -114,25 +110,6 @@ export default function CareerOSCaseStudy({ siteData }) {
                 </blockquote>
               </div>
             </div>
-
-            {/* Architectural Stats Grid */}
-            {hero.stats && (
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
-                {hero.stats.map((st, sIdx) => (
-                  <div key={sIdx} className="p-5 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs space-y-1">
-                    <span className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111318] block">
-                      {st.value}
-                    </span>
-                    <span className="text-xs font-semibold text-[#2563EB] block">
-                      {st.label}
-                    </span>
-                    <span className="text-[11px] text-[#737984] font-mono block">
-                      {st.sub}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
         </section>
 
@@ -175,27 +152,27 @@ export default function CareerOSCaseStudy({ siteData }) {
                 />
               </picture>
 
-              {/* Hover inspect banner */}
+              {/* Hover expand banner */}
               <div className="absolute inset-0 bg-[#111318]/0 group-hover:bg-[#111318]/20 transition-all flex items-end justify-center p-4">
                 <span className="px-4 py-2 rounded-xl bg-white/95 text-[#111318] text-xs font-semibold font-mono shadow-lg opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2">
-                  <span>Click to Inspect Full-Size Infographic</span>
+                  <span>Click to Expand Diagram</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </span>
               </div>
             </div>
 
             <div className="mt-4 flex items-center justify-between text-xs font-mono text-[#737984] px-1">
-              <span>Primary Architectural Anchor · High-Resolution (2752 × 1536)</span>
+              <span>System Workflow Architecture</span>
               <button
                 onClick={() => setActiveLightbox({
                   url: infographic.imagePng || '/images/careeros/careeros-operating-system-infographic.png',
                   webp: infographic.imageWebp || '/images/careeros/careeros-operating-system-infographic.webp',
                   title: infographic.heading || 'CareerOS: Your All-in-One Career Operating System',
-                  subtitle: 'System Workflow Overview Infographic'
+                  subtitle: 'System Workflow Architecture'
                 })}
                 className="text-[#2563EB] hover:underline flex items-center gap-1 font-semibold"
               >
-                <span>View Full Size</span>
+                <span>Expand Diagram</span>
                 <ArrowUpRight className="w-3 h-3" />
               </button>
             </div>
@@ -250,10 +227,11 @@ export default function CareerOSCaseStudy({ siteData }) {
         {/* ==============================================================================
             SECTION 03: TRANSITION / EXPLANATION ("Inside CareerOS")
             ============================================================================== */}
-        <section id="inside-careeros" className="space-y-8 pt-8 border-t border-[#E5E7EB] ">
+        <section id="inside-careeros" className="space-y-8 pt-8 border-t border-[#E5E7EB]">
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#2563EB] font-semibold">
-              <span>SECTION 03 · THE ARCHITECTURAL ARTIFACTS</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+              <span>SYSTEM ARCHITECTURE & PRODUCT LOGIC</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-[#111318]">
@@ -265,87 +243,80 @@ export default function CareerOSCaseStudy({ siteData }) {
             </p>
 
             <p className="text-base text-[#555B66] leading-relaxed">
-              {transition.body || 'The following 15 chapters present the primary architectural artifacts, forensic failure-mode analyses, domain normalization schemas, query engines, and engineering standards formulated during system discovery. Every slide is preserved in its original sequence as an inspectable product document.'}
+              {transition.body || 'The following architecture sections present the core system models, forensic failure-mode analyses, domain normalization schemas, query engines, and engineering standards formulated during system discovery. Each chapter illustrates a foundational layer of the end-to-end product architecture.'}
             </p>
-          </div>
-
-          {/* Quick-Jump Chapter Index */}
-          <div className="p-5 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs space-y-3">
-            <span className="text-[11px] font-mono uppercase tracking-wider text-[#737984] font-semibold block">
-              15 Architectural Chapters Directory
-            </span>
-            <div className="flex flex-wrap gap-2 text-xs font-mono">
-              {architecturePages.map((pg, idx) => (
-                <a
-                  key={idx}
-                  href={`#architecture-${String(pg.pageNumber).padStart(2, '0')}`}
-                  className="px-2.5 py-1 rounded-lg bg-[#FAFAF8] border border-[#E5E7EB] text-[#555B66] hover:text-[#2563EB] hover:border-[#2563EB]/40 transition-colors"
-                >
-                  {String(pg.pageNumber).padStart(2, '0')} · {pg.title.length > 24 ? pg.title.slice(0, 24) + '…' : pg.title}
-                </a>
-              ))}
-            </div>
           </div>
         </section>
 
 
         {/* ==============================================================================
-            SECTIONS 04–09+: ALL 15 PDF ARCHITECTURE PAGES IN EXACT ORIGINAL SEQUENCE
+            SECTIONS 04–09+: ARCHITECTURE CHAPTERS & SYSTEM DESIGN MODELS
             ============================================================================== */}
         <div className="space-y-24 sm:space-y-32">
-          {architecturePages.map((page, index) => {
+          {architecturePages.map((page) => {
             const pageId = `architecture-${String(page.pageNumber).padStart(2, '0')}`
 
             return (
               <article
                 key={page.pageNumber}
                 id={pageId}
-                className="scroll-mt-24 space-y-8 pt-12 border-t border-[#E5E7EB] "
+                className="scroll-mt-24 space-y-8 pt-12 border-t border-[#E5E7EB]"
               >
-                {/* Narrative Transition Banner */}
+                {/* Context Transition (if present) */}
                 {page.transition && (
-                  <div className="p-4 rounded-xl bg-blue-50/60 border border-blue-100 text-xs sm:text-sm text-[#2563EB] font-medium flex items-center gap-3">
-                    <span className="font-mono font-bold uppercase tracking-wider text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800">
-                      Context Transition
+                  <div className="p-3.5 sm:p-4 rounded-xl bg-blue-50/60 border border-blue-100 text-xs sm:text-sm text-[#2563EB] font-medium flex items-center gap-3">
+                    <span className="font-mono font-bold uppercase tracking-wider text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 flex-shrink-0">
+                      Context
                     </span>
                     <span>{page.transition}</span>
                   </div>
                 )}
 
-                {/* Chapter Heading & Badge */}
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3">
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-[#2563EB]">
-                      <span>{page.chapter || `SYSTEM ARCHITECTURE / ${String(page.pageNumber).padStart(2, '0')}`}</span>
-                      {page.badge && (
-                        <>
-                          <span className="text-slate-300">·</span>
-                          <span className="px-2 py-0.5 rounded text-[10px] bg-white border border-[#E5E7EB] text-slate-700">
-                            {page.badge}
-                          </span>
-                        </>
-                      )}
-                    </div>
-
-                    <h3 className="text-2xl sm:text-4xl font-semibold tracking-tight text-[#111318]">
-                      {page.title}
-                    </h3>
+                {/* Eyebrow & Title */}
+                <div className="space-y-2">
+                  <div className="text-xs font-mono font-semibold tracking-wider text-[#2563EB] uppercase">
+                    {page.chapter || `SYSTEM DESIGN · ${page.badge || String(page.pageNumber).padStart(2, '0')}`}
                   </div>
 
-                  <span className="text-xs font-mono text-[#737984]">
-                    [ ARTIFACT {String(page.pageNumber).padStart(2, '0')} / 15 ]
-                  </span>
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-[#111318] leading-snug">
+                    {page.title}
+                  </h3>
                 </div>
 
-                {/* Architecture Visual Slide Asset (16:9 High-Resolution Preservation) */}
-                <div className="rounded-3xl bg-white border border-[#E5E7EB] p-3 sm:p-6 shadow-xs hover:border-[#2563EB]/30 transition-all group">
+                {/* Concise Description (2–4 sentences) */}
+                <div className="text-base sm:text-lg text-[#555B66] leading-relaxed max-w-4xl font-normal">
+                  <p>{page.whatThisLayerRepresents}</p>
+                </div>
+
+                {/* Product Implication / What This Solves */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-1 pb-2">
+                  <div className="border-l-2 border-[#2563EB]/40 pl-4 py-1 space-y-1">
+                    <span className="text-xs font-mono uppercase tracking-wider text-[#2563EB] font-bold block">
+                      Architectural Rationale
+                    </span>
+                    <p className="text-sm text-[#555B66] leading-relaxed">
+                      {page.whyItMatters}
+                    </p>
+                  </div>
+                  <div className="border-l-2 border-emerald-500/40 pl-4 py-1 space-y-1">
+                    <span className="text-xs font-mono uppercase tracking-wider text-emerald-700 font-bold block">
+                      Product Implication
+                    </span>
+                    <p className="text-sm text-[#555B66] leading-relaxed">
+                      {page.productThinking}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Architecture Visual Asset */}
+                <div className="rounded-2xl sm:rounded-3xl bg-white border border-[#E5E7EB] p-3 sm:p-5 shadow-xs hover:border-[#2563EB]/30 transition-all group">
                   <div
-                    className="relative w-full aspect-[1376/768] overflow-hidden rounded-2xl bg-slate-50 cursor-pointer"
+                    className="relative w-full aspect-[1376/768] overflow-hidden rounded-xl sm:rounded-2xl bg-slate-50 cursor-pointer"
                     onClick={() => setActiveLightbox({
                       url: page.imagePng,
                       webp: page.imageWebp,
                       title: page.title,
-                      subtitle: `${page.chapter} · High-Resolution Architecture Artifact`
+                      subtitle: `${page.chapter} · System Diagram`
                     })}
                   >
                     <picture>
@@ -360,71 +331,27 @@ export default function CareerOSCaseStudy({ siteData }) {
 
                     <div className="absolute inset-0 bg-[#111318]/0 group-hover:bg-[#111318]/15 transition-all flex items-end justify-center p-4">
                       <span className="px-3.5 py-1.5 rounded-lg bg-white/95 text-[#111318] text-xs font-mono font-semibold shadow-md opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
-                        <span>Inspect Full-Size Slide</span>
+                        <span>Click to Expand Diagram</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
                       </span>
                     </div>
                   </div>
 
                   <div className="mt-3 flex items-center justify-between text-xs font-mono text-[#737984] px-1">
-                    <span>Original Source Artifact · 1376 × 768 Resolution</span>
+                    <span className="truncate max-w-[70%]">{page.alt || page.title}</span>
                     <button
                       onClick={() => setActiveLightbox({
                         url: page.imagePng,
                         webp: page.imageWebp,
                         title: page.title,
-                        subtitle: `${page.chapter} · High-Resolution Architecture Artifact`
+                        subtitle: `${page.chapter} · System Diagram`
                       })}
-                      className="text-[#2563EB] hover:underline flex items-center gap-1 font-semibold"
+                      className="text-[#2563EB] hover:underline flex items-center gap-1 font-semibold flex-shrink-0"
                     >
-                      <span>Inspect Slide</span>
+                      <span>Expand Diagram</span>
                       <ArrowUpRight className="w-3 h-3" />
                     </button>
                   </div>
-                </div>
-
-                {/* Editorial Case Study Module (Consistent 3-Part Deep Breakdown) */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
-                  
-                  {/* Block 1: What this layer represents */}
-                  <div className="p-6 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs space-y-2.5">
-                    <div className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-                      <h4 className="text-xs font-mono uppercase tracking-wider text-[#2563EB] font-bold">
-                        What This Layer Represents
-                      </h4>
-                    </div>
-                    <p className="text-sm text-[#555B66] leading-relaxed">
-                      {page.whatThisLayerRepresents}
-                    </p>
-                  </div>
-
-                  {/* Block 2: Why it matters */}
-                  <div className="p-6 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs space-y-2.5">
-                    <div className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
-                      <h4 className="text-xs font-mono uppercase tracking-wider text-emerald-700 font-bold">
-                        Why It Matters
-                      </h4>
-                    </div>
-                    <p className="text-sm text-[#555B66] leading-relaxed">
-                      {page.whyItMatters}
-                    </p>
-                  </div>
-
-                  {/* Block 3: Product thinking */}
-                  <div className="p-6 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs space-y-2.5">
-                    <div className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-purple-600" />
-                      <h4 className="text-xs font-mono uppercase tracking-wider text-purple-700 font-bold">
-                        Product Thinking
-                      </h4>
-                    </div>
-                    <p className="text-sm text-[#555B66] leading-relaxed">
-                      {page.productThinking}
-                    </p>
-                  </div>
-
                 </div>
               </article>
             )
@@ -610,7 +537,7 @@ export default function CareerOSCaseStudy({ siteData }) {
             <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-[#E5E7EB]">
               {(whyIBuilt.actions || [
                 { label: 'Explore Lab Build on Homepage', href: '/#building', primary: true },
-                { label: 'Inspect Architecture Slides', href: '#architecture-01', secondary: true },
+                { label: 'Explore Architecture', href: '#architecture-01', secondary: true },
                 { label: 'Connect with Vivek', href: 'mailto:vivekdhoundiyal2901@gmail.com', external: true }
               ]).map((act, aIdx) => {
                 if (act.external) {
@@ -657,7 +584,7 @@ export default function CareerOSCaseStudy({ siteData }) {
       </div>
 
       {/* ==============================================================================
-          LIGHTBOX MODAL FOR HIGH-RESOLUTION SLIDE & INFOGRAPHIC INSPECTION
+          LIGHTBOX MODAL FOR SYSTEM DIAGRAM INSPECTION
           ============================================================================== */}
       {activeLightbox && (
         <div

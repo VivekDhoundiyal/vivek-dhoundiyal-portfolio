@@ -34,7 +34,7 @@ export default function CareerOSTab({ careeros = {}, onChange }) {
     { id: 'hero', label: '01 · Hero & Thesis' },
     { id: 'infographic', label: '02 · Infographic' },
     { id: 'transition', label: '03 · Transition' },
-    { id: 'architecture', label: `04–09 · Architecture Slides (${architecturePages.length})` },
+    { id: 'architecture', label: `04–09 · Architecture Chapters (${architecturePages.length})` },
     { id: 'summary', label: '10 · System Summary' },
     { id: 'thinking', label: '11 · Product Thinking' },
     { id: 'state', label: '12 · Current State' },
@@ -50,11 +50,11 @@ export default function CareerOSTab({ careeros = {}, onChange }) {
           <div className="flex items-center gap-2">
             <h2 className="text-lg font-black text-white">CareerOS Product Case Study Editor</h2>
             <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-signal-blue/20 text-signal-cyan border border-signal-blue/30 font-bold">
-              15 SLIDES + INFOGRAPHIC
+              SYSTEM ARCHITECTURE + INFOGRAPHIC
             </span>
           </div>
           <p className="text-xs text-slate-400 mt-0.5">
-            Manage the complete content, architectural slides, editorial breakdowns, and system principles for /work/careeros and /careeros.
+            Manage the complete content, architecture models, editorial breakdowns, and system principles for /work/careeros and /careeros.
           </p>
         </div>
 
@@ -271,14 +271,14 @@ export default function CareerOSTab({ careeros = {}, onChange }) {
           <div className="flex items-center justify-between pb-2 border-b border-white/10">
             <div>
               <h3 className="text-sm font-bold text-white uppercase tracking-wider font-mono">
-                15 Architecture Chapters (Inspectable Artifacts)
+                15 Architecture Chapters (System Models)
               </h3>
               <p className="text-xs text-slate-400">
-                Click any chapter to expand and edit its slide titles, narrative transitions, and 3-part case-study breakdown.
+                Click any chapter to expand and edit its design models, narrative transitions, and case-study breakdown.
               </p>
             </div>
             <span className="text-xs font-mono text-signal-cyan">
-              {architecturePages.length} Slides Loaded
+              {architecturePages.length} Chapters Loaded
             </span>
           </div>
 
@@ -341,7 +341,7 @@ export default function CareerOSTab({ careeros = {}, onChange }) {
                           />
                         </div>
                         <div>
-                          <label className="text-xs font-mono text-slate-400 block mb-1">Slide Title</label>
+                          <label className="text-xs font-mono text-slate-400 block mb-1">Model Title</label>
                           <input
                             type="text"
                             value={pg.title || ''}
@@ -353,7 +353,7 @@ export default function CareerOSTab({ careeros = {}, onChange }) {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <label className="text-xs font-mono text-slate-400 block mb-1">Image WebP Path</label>
+                          <label className="text-xs font-mono text-slate-400 block mb-1">Diagram WebP Path</label>
                           <input
                             type="text"
                             value={pg.imageWebp || ''}
@@ -362,7 +362,7 @@ export default function CareerOSTab({ careeros = {}, onChange }) {
                           />
                         </div>
                         <div>
-                          <label className="text-xs font-mono text-slate-400 block mb-1">Image PNG Fallback Path</label>
+                          <label className="text-xs font-mono text-slate-400 block mb-1">Diagram PNG Fallback Path</label>
                           <input
                             type="text"
                             value={pg.imagePng || ''}

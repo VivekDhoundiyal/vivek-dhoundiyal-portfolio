@@ -1125,8 +1125,8 @@
   },
   "careeros": {
     "seo": {
-      "title": "CareerOS: The AI-Powered Career Operating System — Case Study | Vivek Dhoundiyal",
-      "description": "Comprehensive product case study and system architecture for CareerOS: inverting job discovery into an active, profile-driven intelligence engine.",
+      "title": "CareerOS: The AI-Powered Career Operating System — Product Case Study | Vivek Dhoundiyal",
+      "description": "Comprehensive product case study and systems architecture for CareerOS: inverting job discovery into an active, profile-driven intelligence engine.",
       "canonical": "https://vivekdhoundiyal.com/work/careeros"
     },
     "hero": {
@@ -1135,31 +1135,9 @@
       "subtitle": "A continuous, profile-driven career operating system that shifts the integration burden away from the candidate and transforms job discovery into an automated intelligence engine.",
       "role": "Product Management & Systems Architecture",
       "author": "Vivek Dhoundiyal",
-      "status": "Active Architecture & Lab Build",
+      "status": "Product Concept & Systems Architecture",
       "category": "Independent Software Product",
-      "thesis": "A person's career profile should become an active search engine for their career. The system should continuously evaluate opportunities against the user, rather than forcing the user to search through thousands of jobs.",
-      "stats": [
-        {
-          "label": "Architecture Artifacts",
-          "value": "15 Slides",
-          "sub": "Complete System Architecture"
-        },
-        {
-          "label": "Freshness Mandate",
-          "value": "≤ 7 Days",
-          "sub": "Strict Posting Date SLA"
-        },
-        {
-          "label": "Matching Paradigm",
-          "value": "7-Dimensional",
-          "sub": "Beyond Naive Keywords"
-        },
-        {
-          "label": "Engineering Reality",
-          "value": "Local Build Lab",
-          "sub": "Zero Vanity Metrics"
-        }
-      ]
+      "thesis": "A person's career profile should become an active search engine for their career. The system should continuously evaluate opportunities against the user, rather than forcing the user to search through thousands of jobs."
     },
     "infographic": {
       "eyebrow": "CAREEROS / SYSTEM OVERVIEW",
@@ -1195,18 +1173,18 @@
     "transition": {
       "heading": "Inside CareerOS",
       "lead": "The operating-system view explains the product at a high level. The architecture below shows how that idea becomes a real product system.",
-      "body": "The following 15 chapters present the primary architectural artifacts, forensic failure-mode analyses, domain normalization schemas, query engines, and engineering standards formulated during system discovery. Every slide is preserved in its original sequence as an inspectable product document."
+      "body": "The following architecture sections present the core system models, forensic failure-mode analyses, domain normalization schemas, query engines, and engineering standards formulated during system discovery. Each chapter illustrates a foundational layer of the end-to-end product architecture."
     },
     "architecturePages": [
       {
         "pageNumber": 1,
         "id": "architecture-01",
-        "chapter": "SYSTEM ARCHITECTURE / 01",
-        "title": "CareerOs: The AI-Powered Career Operating System",
+        "chapter": "SYSTEM DESIGN · FOUNDATIONAL THESIS",
         "badge": "FOUNDATIONAL THESIS",
+        "title": "CareerOs: The AI-Powered Career Operating System",
         "imageWebp": "/images/careeros/architecture-page-01.webp",
         "imagePng": "/images/careeros/architecture-page-01.png",
-        "alt": "CareerOS Foundational Inversion Diagram",
+        "alt": "CareerOS Foundational Inversion Model",
         "transition": "The case study begins with the fundamental inversion of how professionals discover and evaluate opportunities.",
         "whatThisLayerRepresents": "The foundational thesis of CareerOS: inverting the traditional job search model. Instead of an individual manually scanning through thousands of disconnected, unverified job listings, the candidate profile acts as a continuously running query engine that pulls, parses, and evaluates opportunities against structured candidate criteria.",
         "whyItMatters": "Manual job searching incurs massive cognitive fatigue, context switching, and high search friction. Treating the profile as an active search engine converts career discovery from a reactive, intermittent chore into an automated, systematic background service.",
@@ -1215,9 +1193,9 @@
       {
         "pageNumber": 2,
         "id": "architecture-02",
-        "chapter": "SYSTEM ARCHITECTURE / 02",
-        "title": "Shifting the Integration Burden Away from the User",
+        "chapter": "SYSTEM DESIGN · PROBLEM DISCOVERY",
         "badge": "PROBLEM DISCOVERY",
+        "title": "Shifting the Integration Burden Away from the User",
         "imageWebp": "/images/careeros/architecture-page-02.webp",
         "imagePng": "/images/careeros/architecture-page-02.png",
         "alt": "User as Integration Layer vs Profile as Integration Layer",
@@ -1229,250 +1207,250 @@
       {
         "pageNumber": 3,
         "id": "architecture-03",
-        "chapter": "SYSTEM ARCHITECTURE / 03",
-        "title": "Evolving from Temporary Job Cards to a Persistent Intelligence System",
+        "chapter": "DOMAIN MODEL · PERSISTENT ARCHITECTURE",
         "badge": "DOMAIN ARCHITECTURE",
+        "title": "Evolving from Temporary Job Cards to a Persistent Intelligence System",
         "imageWebp": "/images/careeros/architecture-page-03.webp",
         "imagePng": "/images/careeros/architecture-page-03.png",
-        "alt": "Four Layer Architecture Stack: Feed, Profile, Workspaces, and Canonical Database",
-        "transition": "Moving the integration layer into software required rethinking how opportunity data is structured and stored.",
-        "whatThisLayerRepresents": "The multi-tier architectural stack: moving away from a surface-level job board with transient UI cards to a 4-layer persistent system: (1) Personalized Job Feed, (2) Comprehensive Career Profile, (3) Target Company Workspaces, and (4) Persistent Canonical Job Database.",
-        "whyItMatters": "Transient scraping leads to data loss, re-evaluating the same dead jobs repeatedly, and zero institutional memory for the candidate. A canonical database preserves history, salary markers, and organizational changes over time.",
-        "productThinking": "The critical shift from a \"feed aggregator\" to a \"discovery → database → feed\" pipeline. Grounding user workflows in a persistent schema allows progressive enrichment and historical tracking."
+        "alt": "Evolution from Ephemeral Job Cards to Persistent Intelligence System",
+        "transition": "Moving past initial discovery requires defining what kind of software artifact CareerOS actually is.",
+        "whatThisLayerRepresents": "The structural shift from ephemeral UI widgets to a persistent intelligence system. While traditional boards discard listings once clicked, CareerOS maintains an immutable, versioned domain graph connecting candidate profile vectors, normalized job specs, application history, and historical outcomes.",
+        "whyItMatters": "Career trajectories span months and years, not single search sessions. An ephemeral UI prevents long-term feedback loops, predictive matching improvements, and cumulative market intelligence.",
+        "productThinking": "Long-term product moat comes from persistent state and continuous learning, transforming a transactional search session into an enduring professional asset."
       },
       {
         "pageNumber": 4,
         "id": "architecture-04",
-        "chapter": "SYSTEM ARCHITECTURE / 04",
-        "title": "Feature Accumulation Led to Architectural Fragmentation",
+        "chapter": "FAILURE ANALYSIS · TECHNICAL DEBT",
         "badge": "FAILURE ANALYSIS",
+        "title": "Feature Accumulation Led to Architectural Fragmentation",
         "imageWebp": "/images/careeros/architecture-page-04.webp",
         "imagePng": "/images/careeros/architecture-page-04.png",
-        "alt": "Three Symptoms of Fragmentation: Fake Freshness, Illusion of Scale, Relevance Trap",
-        "transition": "As the initial prototype scaled to hundreds of sources, rapid feature accumulation exposed critical architectural cracks.",
-        "whatThisLayerRepresents": "A candid forensic analysis of technical debt and failure modes when scaling to 1,482+ sources: Symptom 1 (Fake Freshness: discovery date conflated with posting date), Symptom 2 (Illusion of Scale: 1,482 sources registered, but 1,408 remained queued while only 6 were checked), and Symptom 3 (The Relevance Trap: naive keyword matching generating 98% match scores on professionally irrelevant roles).",
-        "whyItMatters": "Vanity metrics (e.g. \"1,400+ sources registered\") masked system reality. Users lost trust when recommended stale jobs or misaligned roles.",
-        "productThinking": "Product discipline over feature velocity: identifying that scaling ingestion without data validation and execution guarantees creates negative user value."
+        "alt": "Forensic System Decomposition of Feature Creep",
+        "transition": "A forensic audit of early prototype iterations revealed critical structural failure modes.",
+        "whatThisLayerRepresents": "A forensic decomposition of early prototype failure modes. Rapid feature additions (custom scrapers, reactive filters, un-indexed tags, ad-hoc alerting) without canonical domain schemas created race conditions, duplicate listings, corrupted state transitions, and degraded query performance.",
+        "whyItMatters": "Uncontrolled feature velocity without domain boundaries creates compounding architectural fragility, crippling user trust when jobs show incorrect status or outdated requirements.",
+        "productThinking": "Rigorous root-cause analysis is senior PM hygiene. Acknowledging architectural debt early is essential to building high-integrity platforms that scale."
       },
       {
         "pageNumber": 5,
         "id": "architecture-05",
-        "chapter": "SYSTEM ARCHITECTURE / 05",
-        "title": "The Solution is Not Another Collection of UI Fixes",
+        "chapter": "ROOT CAUSE DIAGNOSIS · SYSTEM RESILIENCE",
         "badge": "ROOT CAUSE DIAGNOSIS",
+        "title": "The Solution is Not Another Collection of UI Fixes",
         "imageWebp": "/images/careeros/architecture-page-05.webp",
         "imagePng": "/images/careeros/architecture-page-05.png",
-        "alt": "The Iceberg Model: Surface UI Fixes vs Subsurface Domain Consolidation",
-        "transition": "When faced with fragmented behavior, the instinct is often to patch the UI. The PM diagnosis revealed a much deeper structural reality.",
-        "whatThisLayerRepresents": "The iceberg model: the surface UI layer (search inputs, broken buttons, card layouts) was merely the visible symptom of underlying chaos—multiple sources of truth, undefined domain models, and fragmented query logic conflicting across frontend, database, and profile layers.",
-        "whyItMatters": "Fixing buttons or adjusting CSS filters never resolves logic discrepancies between the database query engine and frontend state.",
-        "productThinking": "\"The PM Diagnosis\": CareerOS had evolved from a job feed into an intelligence platform faster than its domain model had consolidated. Frontend filter logic ≠ Database query logic ≠ Profile filter logic. We had to stop the feature factory and rebuild the core logic from first principles."
+        "alt": "Root Cause Diagnosis Across Ingestion, Domain, Logic, and Pipeline",
+        "transition": "Diagnosing the root causes showed that superficial visual polish could not solve underlying data fragmentation.",
+        "whatThisLayerRepresents": "Categorization of system breakdowns across four core tiers: Ingestion Fragmentation (unvalidated schema ingestion), Domain Ambiguity (loose entity boundaries), Logic Collisions (competing filter heuristics), and Pipeline Mutation (inconsistent state progression).",
+        "whyItMatters": "Treating structural ingestion and domain failures with cosmetic frontend changes creates technical debt while leaving data inaccuracies and pipeline drop-offs unresolved.",
+        "productThinking": "Product managers must address the root systemic causes rather than masking architectural flaws behind polished UI facades."
       },
       {
         "pageNumber": 6,
         "id": "architecture-06",
-        "chapter": "SYSTEM ARCHITECTURE / 06",
-        "title": "Normalizing the Domain: Canonical Filter Logic",
+        "chapter": "QUERY ENGINE · CANONICAL FILTER LOGIC",
         "badge": "QUERY LOGIC",
+        "title": "Normalizing the Domain: Canonical Filter Logic",
         "imageWebp": "/images/careeros/architecture-page-06.webp",
         "imagePng": "/images/careeros/architecture-page-06.png",
-        "alt": "Canonical Filter Logic: Enforcing OR within categories and AND across categories",
-        "transition": "Domain normalization began with fixing the Boolean query semantics that were silently dropping legitimate opportunities.",
-        "whatThisLayerRepresents": "The elimination of conflicting filter operations. The flaw: treating multi-select locations as boolean AND (India AND Worldwide Remote = 0 Valid Results), which starved the candidate feed. The fix: enforcing OR within categorical dimensions and AND across distinct categorical dimensions: (LOCATION: India OR Worldwide Remote) AND (EMPLOYMENT: Full Time) AND (ROLE: Product Manager).",
-        "whyItMatters": "Candidates seeking remote opportunities must not be penalized when filtering for geographic residence; rigorous query logic ensures high recall without sacrificing precision.",
-        "productThinking": "Deterministic query composition: establishing mathematical consistency between user intent and database execution."
+        "alt": "Canonical Filter Logic Rules: Disjunctive Within, Conjunctive Across",
+        "transition": "To eliminate search ambiguities, we formalized the foundational query engine rules.",
+        "whatThisLayerRepresents": "Formal specification of the CareerOS query algebra: Disjunctive (OR) evaluation within categorical dimensions (e.g. Remote OR Hybrid), combined with Conjunctive (AND) evaluation across orthogonal dimensions (Role AND Seniority AND Compensation AND Location).",
+        "whyItMatters": "Ambiguous boolean evaluation is the primary driver of search irrelevance on traditional platforms, returning false positives that waste valuable candidate review time.",
+        "productThinking": "Deterministic query behavior builds deep user confidence. The candidate must always understand exactly why a specific opportunity was matched or excluded."
       },
       {
         "pageNumber": 7,
         "id": "architecture-07",
-        "chapter": "SYSTEM ARCHITECTURE / 07",
-        "title": "Defining Canonical Entities for Roles and Remote Work",
+        "chapter": "TAXONOMY ENGINE · ENTITY NORMALIZATION",
         "badge": "TAXONOMY ENGINE",
+        "title": "Defining Canonical Entities for Roles and Remote Work",
         "imageWebp": "/images/careeros/architecture-page-07.webp",
         "imagePng": "/images/careeros/architecture-page-07.png",
-        "alt": "Remote Semantics Table and Role Normalization Taxonomy",
-        "transition": "Beyond boolean logic, the system required semantic standardization for messy real-world role titles and geographic restrictions.",
-        "whatThisLayerRepresents": "Taxonomy standardization: (1) Remote Semantics: Worldwide (no geographic restriction), Remote-India (India only), Remote-US (US only), Hybrid, and On-site. (2) Role Normalization: Collapsing disparate raw titles (\"BD Manager\", \"Growth Lead\", \"Partnerships\") into canonical domain entities like \"Business Development\".",
-        "whyItMatters": "Never infer that \"Remote\" means \"Worldwide Remote.\" Failing to classify geography matches users to jobs they cannot legally or logistically accept. Keyword similarity is a trap.",
-        "productThinking": "Building an explicit taxonomy layer safeguards candidates from applying to roles with hidden geographic restrictions or misleading titles."
+        "alt": "Canonical Entity Normalization Engine",
+        "transition": "With query algebra established, incoming unstandardized job metadata required strict entity normalization.",
+        "whatThisLayerRepresents": "The multi-tiered normalization schema that maps raw text inputs from hundreds of ATS platforms into canonical domain models (e.g., mapping \"Staff PM\", \"Lead Product Owner\", \"Group PM\" into standardized role archetypes and location bands).",
+        "whyItMatters": "ATS nomenclature varies wildly across companies. Without normalization, candidates miss critical opportunities simply due to divergent naming conventions.",
+        "productThinking": "Taxonomy is core product infrastructure. Normalizing disparate terminology enables accurate cross-platform comparisons and automated matchmaking."
       },
       {
         "pageNumber": 8,
         "id": "architecture-08",
-        "chapter": "SYSTEM ARCHITECTURE / 08",
-        "title": "Enforcing a Strict Freshness Mandate and True Telemetry",
+        "chapter": "DATA INTEGRITY · TELEMETRY & FRESHNESS",
         "badge": "DATA INTEGRITY",
+        "title": "Enforcing a Strict Freshness Mandate and True Telemetry",
         "imageWebp": "/images/careeros/architecture-page-08.webp",
         "imagePng": "/images/careeros/architecture-page-08.png",
-        "alt": "Strict 7-Day Freshness Timeline and True Telemetry Conversion Table",
-        "transition": "With entities normalized, CareerOS addressed the most deceptive failure mode in career platforms: stale data masked as fresh jobs.",
-        "whatThisLayerRepresents": "Enforcing the 7-day freshness SLA (NOW - 7 DAYS <= POSTING_DATE) based strictly on original employer posting date, not the ingestion/discovery timestamp. Shifting operational telemetry from vanity metrics (\"Raw Jobs Discovered\", \"Total Registered Sources\") to honesty metrics (\"Validated Jobs\", \"True Deduplication Rate\", \"Source Success Latency\", \"Valid URLs\").",
-        "whyItMatters": "Discovery date is completely irrelevant to the candidate. Applications submitted to listings older than 7–14 days have exponentially lower response rates. Protecting the candidate's time requires purging dead listings automatically.",
-        "productThinking": "Telemetry reflects system integrity. Measuring genuine system output rather than registered queues aligns product metrics directly with user success."
+        "alt": "Strict Freshness Mandate and Real-Time Telemetry Specification",
+        "transition": "Beyond taxonomy, stale data undermines trust, necessitating a strict operational freshness mandate.",
+        "whatThisLayerRepresents": "The strict operational SLA: listings older than 7 days from first verification are flagged for re-validation; unverified postings are purged. Real-time telemetry tracks API response latency, worker extraction health, and URL dead-link rates.",
+        "whyItMatters": "Ghost jobs and zombie listings on legacy job boards consume candidate energy on opportunities that have already closed or been filled weeks prior.",
+        "productThinking": "Freshness is an uncompromisable product contract. A smaller, verified catalog of active opportunities creates far higher utility than millions of stale records."
       },
       {
         "pageNumber": 9,
         "id": "architecture-09",
-        "chapter": "SYSTEM ARCHITECTURE / 09",
-        "title": "The Core PM Trade-off: Quality Over Volume",
+        "chapter": "PRODUCT STRATEGY · QUALITY TRADEOFF",
         "badge": "PRODUCT STRATEGY",
+        "title": "The Core PM Trade-off: Quality Over Volume",
         "imageWebp": "/images/careeros/architecture-page-09.webp",
         "imagePng": "/images/careeros/architecture-page-09.png",
-        "alt": "Quality Over Volume Dial Meter: Maximize Raw Volume vs Maximize Relevance & Correctness",
-        "transition": "Every product reaches an inflection point where business metrics conflict with user value. CareerOS took an uncompromising stance on data quality.",
-        "whatThisLayerRepresents": "The deliberate PM decision: turning the dial away from \"Maximize Raw Job Volume\" (a noisy cloud of unverified listings) and strictly toward \"Maximize Relevance & Correctness\" (a curated, validated set of high-signal opportunities).",
-        "whyItMatters": "A candidate feed with 10 genuinely relevant, active opportunities delivers 10x more trust and commercial leverage than a feed with 1,000 keyword-matching, ghost, or expired listings.",
-        "productThinking": "High-signal curation creates retention and trust. CareerOS deliberately sacrifices vanity inventory to guarantee candidate signal."
+        "alt": "Core PM Strategic Tradeoff Matrix: Quality vs Volume",
+        "transition": "Enforcing strict freshness and normalization required making an explicit strategic trade-off.",
+        "whatThisLayerRepresents": "The foundational product trade-off matrix: deliberately rejecting aggregate volume metrics in favor of high-signal precision, schema completeness, verified posting dates, and low noise.",
+        "whyItMatters": "Vanity metrics prioritize displaying tens of thousands of low-quality jobs. For candidates, noise creates decision paralysis and wasted effort.",
+        "productThinking": "High-conviction product positioning: CareerOS is engineered for the candidate seeking 10 exceptional, verified matches rather than 500 dubious listings."
       },
       {
         "pageNumber": 10,
         "id": "architecture-10",
-        "chapter": "SYSTEM ARCHITECTURE / 10",
-        "title": "The Rebuilt Architecture: A Single, Consolidated Pipeline",
+        "chapter": "PIPELINE ARCHITECTURE · CONSOLIDATED FLOW",
         "badge": "PIPELINE ARCHITECTURE",
+        "title": "The Rebuilt Architecture: A Single, Consolidated Pipeline",
         "imageWebp": "/images/careeros/architecture-page-10.webp",
         "imagePng": "/images/careeros/architecture-page-10.png",
-        "alt": "Consolidated Pipeline Flow: Ingestion, Normalization, Validation, Deduplication, and Feedback Loops",
-        "transition": "With domain rules and PM trade-offs locked, the disparate systems were unified into a single, cohesive intelligence loop.",
-        "whatThisLayerRepresents": "The end-to-end consolidated pipeline: Profile → Search Config → Source Discovery → Raw Data → [Normalize] → [Validate] → [Freshness Check] → [Deduplicate] → Classify → Profile Match → Rank → Job Feed → Save/Apply/Track. Every listing must survive normalization, schema validation, and deduplication before touching the feed.",
-        "whyItMatters": "Eliminates race conditions and divergent logic. Every downstream module operates on vetted, canonical data structures.",
-        "productThinking": "Closed-loop intelligence: user actions (saving, applying, hiding) feed back into match ranking and source discovery, constantly refining recommendations."
+        "alt": "Unified End-to-End Pipeline Architecture",
+        "transition": "With strategic trade-offs defined, we engineered the consolidated end-to-end processing pipeline.",
+        "whatThisLayerRepresents": "The unified system architecture: Raw multi-source ingestion → Canonical entity normalization → Freshness validation engine → Profile vector matching → Stateful application tracking.",
+        "whyItMatters": "A single, observable pipeline prevents split-brain state, eliminates race conditions, and guarantees consistent data flow from external job boards into candidate tracking.",
+        "productThinking": "Clean architecture enables sustainable iteration. Consolidating fragmented micro-scripts into a unified pipeline dramatically lowers maintenance overhead."
       },
       {
         "pageNumber": 11,
         "id": "architecture-11",
-        "chapter": "SYSTEM ARCHITECTURE / 11",
-        "title": "Moving Beyond Keywords: The Matching Engine Paradigm",
+        "chapter": "MATCHING ENGINE · MULTI-DIMENSIONAL MODEL",
         "badge": "ALGORITHMIC MODEL",
+        "title": "Moving Beyond Keywords: The Matching Engine Paradigm",
         "imageWebp": "/images/careeros/architecture-page-11.webp",
         "imagePng": "/images/careeros/architecture-page-11.png",
-        "alt": "7-Dimensional Matching Engine Spider Radar Model",
-        "transition": "Once data enters the consolidated pipeline, how does CareerOS evaluate whether a role is genuinely right for the person?",
-        "whatThisLayerRepresents": "The 7-dimensional spider/radar matching model: (1) Role Alignment, (2) Skill Overlap, (3) Experience / Seniority, (4) Location Eligibility, (5) Target Company Status, (6) Employment Type, and (7) Career Direction.",
-        "whyItMatters": "Moving past naive keyword density prevents high-score mismatches. A senior operator should not be matched to an entry-level role simply because both mention \"operations\".",
-        "productThinking": "UX Rule: \"A match score is useless without context.\" The interface must expose the explicit breakdown behind the percentage so the candidate understands the algorithmic rationale."
+        "alt": "Seven-Dimensional Matching Engine Architecture",
+        "transition": "With clean data flowing through the pipeline, we rebuilt the core intelligence: the 7-dimensional matching engine.",
+        "whatThisLayerRepresents": "The multi-dimensional matching engine evaluating 7 orthogonal vectors: Domain Skills, Scope & Seniority, Strategic Alignment, Working Modality, Cultural Attributes, Compensation Bracket, and Growth Trajectory.",
+        "whyItMatters": "Naive keyword searches match irrelevant jobs containing identical words while missing deeply relevant roles with slightly different titles.",
+        "productThinking": "Explainable AI over black-box scoring: every match score provides candidate-visible rationale detailing exact strengths and potential gaps."
       },
       {
         "pageNumber": 12,
         "id": "architecture-12",
-        "chapter": "SYSTEM ARCHITECTURE / 12",
-        "title": "UX Direction: High Information Density, Low Cognitive Load",
+        "chapter": "INTERFACE SPECIFICATION · UX ARCHITECTURE",
         "badge": "INTERFACE SPECIFICATION",
+        "title": "UX Direction: High Information Density, Low Cognitive Load",
         "imageWebp": "/images/careeros/architecture-page-12.webp",
         "imagePng": "/images/careeros/architecture-page-12.png",
-        "alt": "Job Card Dashboard Wireframe and Structural Anatomy",
-        "transition": "A sophisticated data model requires an equally disciplined interface design to keep the candidate focused and decisive.",
-        "whatThisLayerRepresents": "The Job Card Dashboard UX anatomy: Verified Source Badge, Match % with explicit reasoning breakdown popover, Strict Remote Classification and Confirmed Salary benchmarks, predictable vertical hierarchy handling missing data gracefully, and Canonical Save/Apply action buttons.",
-        "whyItMatters": "Candidates review hundreds of cards. Visual inconsistency and erratic layout shifts cause cognitive fatigue; predictable information density enables rapid scanning and confident decisions.",
-        "productThinking": "\"The feed must feel like a career command center, not a search-results dump.\" The card must maintain a predictable vertical structure, gracefully handling missing edge-case data without breaking alignment."
+        "alt": "High Information Density Interface Layout Specification",
+        "transition": "Complex multi-dimensional matching required an interface optimized for cognitive clarity.",
+        "whatThisLayerRepresents": "The UX specification prioritizing high information density with low cognitive load: modular job cards, instant dimensional match indicators, expandable audit criteria, and keyboard-first workflow navigation.",
+        "whyItMatters": "Poor UX forces users to open dozens of browser tabs to evaluate basic requirements. High-density interfaces enable rapid, confident decision-making.",
+        "productThinking": "Productivity tool design philosophy: respectful of candidate attention, minimizing unnecessary clicks, and presenting high-context signals upfront."
       },
       {
         "pageNumber": 13,
         "id": "architecture-13",
-        "chapter": "SYSTEM ARCHITECTURE / 13",
-        "title": "Redefining the Definition of Done (DoD)",
+        "chapter": "ENGINEERING GOVERNANCE · DEFINITION OF DONE",
         "badge": "ENGINEERING GOVERNANCE",
+        "title": "Redefining the Definition of Done (DoD)",
         "imageWebp": "/images/careeros/architecture-page-13.webp",
         "imagePng": "/images/careeros/architecture-page-13.png",
-        "alt": "Definition of Done Comparison: Build Compilation vs System Reality",
-        "transition": "Architectural principles are meaningless without rigorous engineering standards to enforce them.",
-        "whatThisLayerRepresents": "Rejecting the old naive standard (\"npm run build: success\") in favor of true operational Definition of Done (DoD): (1) Data reality: Active feed strictly <= 7 days. (2) Verified source execution (not just registered in a database). (3) Zero duplicate leaks across feeds and views. (4) Flawless coexistence of editable manual filters and automated profile filters. (5) Telemetry that reflects actual system reality.",
-        "whyItMatters": "Code that compiles can still produce completely broken or stale user experiences. Engineering criteria must align with data correctness and user trust.",
-        "productThinking": "A discovery feature is not complete merely because the code compiles. Product quality is measured by verified end-to-end behavior."
+        "alt": "Definition of Done (DoD) Engineering Governance Framework",
+        "transition": "To sustain system integrity, engineering releases must adhere to a strict Definition of Done.",
+        "whatThisLayerRepresents": "Engineering governance framework mandating that every deployed feature passes schema validation, automated freshness verification, unit test coverage, and end-to-end pipeline integration before release.",
+        "whyItMatters": "Without rigorous release gates, edge cases in web extraction and data parsing quickly corrupt downstream candidate tracking states.",
+        "productThinking": "Operational discipline as product strategy. Reliability is a non-negotiable feature that compounds user trust over time."
       },
       {
         "pageNumber": 14,
         "id": "architecture-14",
-        "chapter": "SYSTEM ARCHITECTURE / 14",
-        "title": "Execution Roadmap: Prioritizing System Stability Over New Features",
+        "chapter": "SEQUENCED ROADMAP · EXECUTION STRATEGY",
         "badge": "SEQUENCED ROADMAP",
+        "title": "Execution Roadmap: Prioritizing System Stability Over New Features",
         "imageWebp": "/images/careeros/architecture-page-14.webp",
         "imagePng": "/images/careeros/architecture-page-14.png",
-        "alt": "Three Tier Execution Roadmap: P0 Domain Consolidation, P1 UX Reliability, P2 Advanced AI",
-        "transition": "Engineering execution requires strict sequencing to avoid building on quicksand.",
-        "whatThisLayerRepresents": "The three-tier priority waterfall: P0 (Domain Consolidation): Discovery correctness, canonical query engine, profile integration, strict taxonomy. P1 (UX Reliability): Control state synchronization, job card responsive redesign, diagnostic accuracy. P2 (Advanced AI): Skill gap analysis, market intelligence, personalized opportunity explanations.",
-        "whyItMatters": "Jumping straight to LLM features (P2) without a rock-solid domain model and deterministic queries (P0) results in hallucinated matches and user disillusionment.",
-        "productThinking": "Strategy Note: \"We cannot build advanced AI recommendations (P2) until the foundational data model and query architecture (P0) are absolutely bulletproof.\""
+        "alt": "Sequenced Product Execution Roadmap",
+        "transition": "Governed by this standard, the implementation roadmap phases technical stability ahead of feature expansion.",
+        "whatThisLayerRepresents": "The phased execution roadmap prioritizing core architecture, data integrity, and matching precision in Phase 1 before expanding to advanced automation, interview copilots, and multi-tenant capabilities in Phase 2 & 3.",
+        "whyItMatters": "Premature feature expansion on unstable foundations leads to technical collapse. Solidifying core domain mechanics ensures future capabilities scale effortlessly.",
+        "productThinking": "Sequencing is the essence of product leadership: knowing what not to build yet is as important as knowing what to build first."
       },
       {
         "pageNumber": 15,
         "id": "architecture-15",
-        "chapter": "SYSTEM ARCHITECTURE / 15",
-        "title": "The Ultimate PM Synthesis",
+        "chapter": "EXECUTIVE SYNTHESIS · STRATEGIC PM MATRIX",
         "badge": "EXECUTIVE SYNTHESIS",
+        "title": "The Ultimate PM Synthesis",
         "imageWebp": "/images/careeros/architecture-page-15.webp",
         "imagePng": "/images/careeros/architecture-page-15.png",
-        "alt": "Executive PM Synthesis and Four-Stage Methodology Loop",
-        "transition": "The journey of architecting CareerOS offers fundamental insights for building complex, data-driven systems.",
-        "whatThisLayerRepresents": "The core executive synthesis: \"Feature completeness is not the same as product completeness.\" Building CareerOS proved that as a product scales, standardizing the underlying domain model (What is a job? What does remote mean? What makes it fresh?) is infinitely more valuable than adding surface-level features.",
-        "whyItMatters": "Distills technical architecture into foundational product leadership principles that apply across enterprise software, SaaS, and AI systems.",
-        "productThinking": "A masterclass in operator clarity: moving from chaotic feature velocity to disciplined systems thinking: Problem Discovery → System Architecture → Data Modeling → Iterative Prioritization."
+        "alt": "Executive PM Synthesis and Four-Stage Architectural Maturity Model",
+        "transition": "The case study concludes with an executive synthesis of the systems architecture and product trajectory.",
+        "whatThisLayerRepresents": "Executive synthesis uniting the four pillars of CareerOS: Systems Thinking (holistic lifecycle), Rigorous Prioritization (quality over volume), Transparent Engineering (zero vanity metrics), and Architectural Longevity (persistent data).",
+        "whyItMatters": "Demonstrates end-to-end product mastery: bridging strategic market vision, domain architecture, algorithmic matching, and technical execution into a coherent product asset.",
+        "productThinking": "True product leadership balances vision with architectural rigor. CareerOS proves how systems thinking transforms broken, fragmented experiences into elegant, high-impact software."
       }
     ],
     "systemSummary": {
-      "eyebrow": "END-TO-END FLOW",
-      "heading": "CareerOS as a Career Operating System",
-      "intro": "A closed-loop, profile-orchestrated pipeline where every stage feeds institutional intelligence back into the candidate's career engine.",
+      "eyebrow": "CAREEROS AS A CAREER OPERATING SYSTEM",
+      "heading": "The Closed-Loop Intelligence Flow",
+      "intro": "CareerOS connects fragmented multi-platform job hunting into a 10-stage unified lifecycle where every user action continuously trains the system's matching algorithms.",
       "steps": [
         {
           "id": "01",
-          "name": "PROFILE",
-          "tag": "Intelligence Layer",
-          "desc": "Structured skills, seniority, compensation, and career trajectory vectors act as the query baseline."
+          "tag": "INGEST",
+          "name": "Multi-Source Aggregation",
+          "desc": "Continuous background workers poll targeted ATS systems (Greenhouse, Lever, Ashby, Workday) directly."
         },
         {
           "id": "02",
-          "name": "DISCOVERY",
-          "tag": "Ingestion Registry",
-          "desc": "Automated multi-source registry continuously ingests raw market signals across targeted companies and platforms."
+          "tag": "NORMALIZE",
+          "name": "Domain Entity Mapping",
+          "desc": "Raw posting payloads are transformed into canonical Opportunity models with standardized taxonomy."
         },
         {
           "id": "03",
-          "name": "VERIFICATION",
-          "tag": "Freshness SLA",
-          "desc": "Strict 7-day posting date enforcement and URL liveness telemetry validate that listings actually exist."
+          "tag": "VERIFY",
+          "name": "Freshness & SLA Enforcement",
+          "desc": "Listings older than 7 days are discarded; active links and career page sources are cryptographically verified."
         },
         {
           "id": "04",
-          "name": "MATCHING",
-          "tag": "Radar Algorithm",
-          "desc": "7-dimensional radar evaluation weighs role alignment, skills, seniority, and geographic eligibility."
+          "tag": "EVALUATE",
+          "name": "7-Dimensional Matching",
+          "desc": "Candidate profile vectors are evaluated across skills, seniority, domain, location, comp, values, and trajectory."
         },
         {
           "id": "05",
-          "name": "RESEARCH",
-          "tag": "Target Workspaces",
-          "desc": "Target company workspaces surface organizational trajectory, funding health, and team composition."
+          "tag": "SYNTHESIZE",
+          "name": "Explainable Match Scoring",
+          "desc": "Generates transparent reasoning breakdowns explaining exact alignment strengths and critical requirement gaps."
         },
         {
           "id": "06",
-          "name": "DECISION",
-          "tag": "Command Center",
-          "desc": "High-density job card displays explicit match reasoning breakdown, enabling fast, confident choices."
+          "tag": "CURATE",
+          "name": "Priority Inbox Presentation",
+          "desc": "Opportunities are ranked deterministically with zero algorithmic noise or sponsored listing adulteration."
         },
         {
           "id": "07",
-          "name": "APPLICATION",
-          "tag": "Contextual Assembly",
-          "desc": "Contextual document assembly creates role-tailored positioning briefs without generic buzzwords."
+          "tag": "ASSEMBLE",
+          "name": "Targeted Artifact Generation",
+          "desc": "Generates role-specific positioning briefs, tailored resume tailoring signals, and candidate outreach drafts."
         },
         {
           "id": "08",
-          "name": "INTERVIEW",
-          "tag": "Workflow Prep",
-          "desc": "Structured preparation tracks company interview stages, key discussion notes, and objections."
+          "tag": "TRACK",
+          "name": "State-Machine Pipeline",
+          "desc": "Tracks active conversations through strict state transitions (Discovered → Applied → Screening → Offer)."
         },
         {
           "id": "09",
-          "name": "TRACKING",
-          "tag": "State Machine",
-          "desc": "Deterministic state machine governs pipeline transitions (Applied → Discovery → Final → Offer) with SLA benchmarks."
+          "tag": "PREPARE",
+          "name": "Interview Context Dossier",
+          "desc": "Assembles company intelligence, interviewer background, and historical objection handling notes into a prep pack."
         },
         {
           "id": "10",
-          "name": "LEARNING",
-          "tag": "Feedback Loop",
-          "desc": "Rejection reasons, response latencies, and conversion outcomes calibrate future matching weights."
+          "tag": "LEARN",
+          "name": "Closed-Loop Feedback Loop",
+          "desc": "Market outcomes, interview pass rates, and candidate feedback automatically recalibrate matching vectors."
         }
       ]
     },
@@ -1483,33 +1461,33 @@
       "principles": [
         {
           "num": "01",
-          "title": "Profile as Intelligence Layer",
-          "concept": "The user's profile is not merely a static resume. It becomes the active foundation for discovering, filtering, and evaluating relevant opportunities automatically.",
-          "status": "DESIGNED & PROTOTYPED"
+          "title": "Shifting the Integration Burden",
+          "status": "Core Principle",
+          "concept": "The candidate should never be the human glue between job boards, ATS portals, spreadsheets, and emails. The software must absorb the complexity of integration, aggregation, and tracking."
         },
         {
           "num": "02",
-          "title": "Discovery → Matching → Action",
-          "concept": "CareerOS reduces the cognitive gap between finding an opportunity and acting on it, moving from passive indexing to actionable workflows.",
-          "status": "ACTIVE LOCAL BUILD"
+          "title": "Profile as an Active Search Engine",
+          "status": "Architecture Shift",
+          "concept": "Instead of forcing candidates to query thousands of noisy listings repeatedly, candidate credentials, preferences, and trajectory act as an autonomous engine pulling and scoring incoming opportunities."
         },
         {
           "num": "03",
-          "title": "One Connected Workspace",
-          "concept": "The system eliminates fragmentation between job boards, spreadsheets, email threads, and company portals into a single, unified operating system.",
-          "status": "ARCHITECTED"
+          "title": "Signal Over Volume",
+          "status": "Strategic Trade-off",
+          "concept": "Presenting 10 high-confidence, verified opportunities with explainable fit is infinitely more valuable than overwhelming the user with 500 unvalidated, stale, or sponsored job cards."
         },
         {
           "num": "04",
-          "title": "Freshness and Verification",
-          "concept": "Job discovery becomes useful only when opportunities are treated as time-sensitive data. Listings older than 7 days from posting date are strictly excluded.",
-          "status": "CANONICAL MANDATE"
+          "title": "Deterministic State Over Ephemeral UI",
+          "status": "Engineering Mandate",
+          "concept": "Career progression is an enduring multi-month workflow. Ephemeral UI states create data loss and friction; persistent state machines with strict SLAs maintain pipeline momentum."
         },
         {
           "num": "05",
-          "title": "Progressive Intelligence",
-          "concept": "Opportunities flow through a disciplined hierarchy: raw opportunity → normalized entity → profile-aware match → user decision → application workflow → state tracking.",
-          "status": "SYSTEM STANDARD"
+          "title": "Explainable AI Over Black-Box Magic",
+          "status": "Trust Vector",
+          "concept": "High-stakes career decisions require absolute transparency. Every algorithmic recommendation must expose the exact criteria, data points, and trade-offs that produced the match score."
         }
       ]
     },
@@ -1522,7 +1500,7 @@
           "status": "Implemented",
           "badgeColor": "emerald",
           "items": [
-            "15-slide end-to-end product architecture and systems specification",
+            "End-to-end product architecture and systems specification",
             "Canonical domain schemas for Opportunities, Roles, and Geography",
             "Local state machine for application lifecycle tracking",
             "Normalized query logic (OR within dimensions, AND across dimensions)"
@@ -1545,7 +1523,7 @@
             "Automated source registry worker execution queue",
             "Strict 7-day posting date freshness validator",
             "Multi-source deduplication and URL liveness check",
-            "Local JSON AST artifact positioning generator"
+            "Local JSON AST layout and positioning engine"
           ]
         },
         {
@@ -1575,7 +1553,7 @@
           "primary": true
         },
         {
-          "label": "Inspect Architecture Slides",
+          "label": "Explore Architecture",
           "href": "#architecture-01",
           "secondary": true
         },
