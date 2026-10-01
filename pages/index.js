@@ -35,7 +35,7 @@ export default function Home({ siteData: initialData }) {
   // Support live preview in draft mode (?preview=true) or fresh published content
   useEffect(() => {
     if (router.query.preview === 'true') {
-      fetch('/api/content?mode=draft', { credentials: 'include' })
+      fetch('/api/content?mode=draft', { credentials: 'include', cache: 'no-store' })
         .then(res => res.json())
         .then(draft => {
           if (draft && !draft.error) {
@@ -44,7 +44,7 @@ export default function Home({ siteData: initialData }) {
         })
         .catch(() => {})
     } else {
-      fetch('/api/content')
+      fetch('/api/content', { cache: 'no-store' })
         .then(res => res.json())
         .then(fresh => {
           if (fresh && !fresh.error && Object.keys(fresh).length > 0) {

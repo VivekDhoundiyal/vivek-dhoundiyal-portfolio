@@ -142,7 +142,7 @@ export default function AdminDashboard() {
       const data = await res.json()
       if (res.ok && data.success) {
         // Fetch fresh draft content strictly upon authenticated session
-        const contentRes = await fetch('/api/content?mode=draft', { credentials: 'include' })
+        const contentRes = await fetch('/api/content?mode=draft', { credentials: 'include', cache: 'no-store' })
         if (!contentRes.ok) {
           throw new Error('Failed to load draft content')
         }

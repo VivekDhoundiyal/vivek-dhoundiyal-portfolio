@@ -152,7 +152,7 @@ export async function onRequestGet(context) {
           status: 200,
           headers: {
             'Content-Type': 'application/json',
-            'Cache-Control': 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800',
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
             'X-Content-Mode': 'published'
           }
         })
@@ -169,7 +169,7 @@ export async function onRequestGet(context) {
     status: 200,
     headers: {
       'Content-Type': 'application/json',
-      'Cache-Control': 'public, max-age=3600, s-maxage=86400',
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
       'X-Content-Mode': 'fallback-seeded'
     }
   })

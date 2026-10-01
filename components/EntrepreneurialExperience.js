@@ -3,9 +3,8 @@ import Link from 'next/link'
 import { ArrowUpRight, ArrowRight } from './Icons'
 
 export default function EntrepreneurialExperience({ projects = [] }) {
-  // Filter only legitimate, verified entrepreneurial ventures
-  const legitimateSlugs = ['settlemycar', 'dark-kitchen', 'fixins']
-  const ventures = projects.filter(p => legitimateSlugs.includes(p.slug))
+  // Exclude non-entrepreneurial projects (e.g., corporate partnerships / consulting)
+  const ventures = projects.filter(p => p.slug !== 'commercial-partnerships' && p.slug !== 'supersurge')
   const displayVentures = ventures.length > 0 ? ventures : []
 
   return (

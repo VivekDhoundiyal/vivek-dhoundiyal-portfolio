@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { CheckIcon, ArrowRight, ArrowUpRight, SearchIcon } from '../Icons'
@@ -15,6 +15,12 @@ export default function CMSPanel({ initialContent, currentUser, csrfToken, onLog
   const [isSaving, setIsSaving] = useState(false)
   const [isPublishing, setIsPublishing] = useState(false)
   const [lastSavedDraftTime, setLastSavedDraftTime] = useState(null)
+
+  useEffect(() => {
+    if (initialContent && Object.keys(initialContent).length > 0) {
+      setContent(initialContent)
+    }
+  }, [initialContent])
 
   // Modal states
   const [showPreviewModal, setShowPreviewModal] = useState(false)
@@ -81,13 +87,12 @@ export default function CMSPanel({ initialContent, currentUser, csrfToken, onLog
       if (res.ok && data.success) {
         setShowPublishModal(false)
         setSaveStatus(`Published Live (v${data.version})!`)
-        alert(`Success! Version ${data.version} is now live on the public website and recorded in D1 revision history.`)
-        setTimeout(() => setSaveStatus(''), 5000)
+        setTimeout(() => setSaveStatus(''), 6000)
       } else {
-        alert(`Publish failed: ${data.error || 'Unknown error'}`)
+        setSaveStatus(`Publish failed: ${data.error || 'Unknown error'}`)
       }
     } catch (err) {
-      alert(`Publish error: ${err.message}`)
+      setSaveStatus(`Publish error: ${err.message}`)
     } finally {
       setIsPublishing(false)
     }
@@ -97,7 +102,7 @@ export default function CMSPanel({ initialContent, currentUser, csrfToken, onLog
   const handleRestoreSuccess = (restoredContent, restoredVersion) => {
     setContent(restoredContent)
     setSaveStatus(`Restored v${restoredVersion} into Draft!`)
-    alert(`Version ${restoredVersion} restored into your working draft! You can preview it or click Publish Live to make it active on the public site.`)
+    setTimeout(() => setSaveStatus(''), 6000)
   }
 
   // Quick Action: Add New Project

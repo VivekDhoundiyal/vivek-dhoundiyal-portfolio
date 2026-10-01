@@ -119,11 +119,11 @@ export async function onRequestPost(context) {
             published_at = ?1,
             published_by = ?2
         WHERE id = 'active'
-      `).bind(now, ADMIN_EMAIL),
+      `).bind(now, targetEmail),
       db.prepare(`
         INSERT INTO revisions (id, version_number, content, note, created_at, created_by)
         VALUES (?1, ?2, ?3, ?4, ?5, ?6)
-      `).bind(revisionId, nextVersion, draftStr, note, now, ADMIN_EMAIL)
+      `).bind(revisionId, nextVersion, draftStr, note, now, targetEmail)
     ])
 
     return new Response(JSON.stringify({

@@ -8,6 +8,27 @@ export default function Hero({ profile, hero }) {
   const title = hero?.title || profile?.heroHeadline || 'I build revenue, relationships and scalable business systems.'
   const description = hero?.description || profile?.heroDescription || "Commercial operator and business builder with 8+ years across enterprise B2B sales, revenue architecture, and 0→1 ventures. Applying that commercial foundation to software systems, automated workflows and product architecture — including CareerOS."
   const portrait = profile?.portraitImage || '/images/vivek-canonical.png'
+  const primaryButtonText = hero?.primaryButtonText || 'Explore My Work'
+  const primaryButtonUrl = hero?.primaryButtonUrl || '#work'
+  const secondaryButtonText = hero?.secondaryButtonText || 'View Public Resume'
+  const secondaryButtonUrl = hero?.secondaryButtonUrl || '/resume'
+
+  const renderTitle = (text) => {
+    if (!text) return null
+    if (text.includes('relationships')) {
+      const parts = text.split('relationships')
+      return (
+        <>
+          {parts[0]}
+          <span className="bg-gradient-to-r from-[#2563EB] via-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            relationships
+          </span>
+          {parts.slice(1).join('relationships')}
+        </>
+      )
+    }
+    return text
+  }
 
   return (
     <section
@@ -39,11 +60,7 @@ export default function Hero({ profile, hero }) {
 
             {/* Confident Editorial Headline */}
             <h1 className="mt-3 sm:mt-3.5 text-2xl sm:text-4xl lg:text-[3.25rem] xl:text-[3.75rem] font-semibold tracking-tight text-[#111318] leading-[1.12] sm:leading-[1.09] lg:leading-[1.07] break-words">
-              I build revenue,{' '}
-              <span className="bg-gradient-to-r from-[#2563EB] via-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                relationships
-              </span>{' '}
-              and scalable business systems.
+              {renderTitle(title)}
             </h1>
 
             {/* Value Proposition & Supporting Paragraph */}
@@ -80,19 +97,19 @@ export default function Hero({ profile, hero }) {
             {/* Action Buttons Cluster */}
             <div className="mt-4 sm:mt-5 flex flex-wrap items-center gap-3">
               <a
-                href="#work"
+                href={primaryButtonUrl}
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-semibold tracking-normal bg-[#111318] text-white hover:bg-[#2563EB] transition-all duration-200 shadow-sm group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
               >
-                <span>Explore My Work</span>
+                <span>{primaryButtonText}</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
 
               <Link
-                href="/resume"
+                href={secondaryButtonUrl}
                 className="inline-flex items-center justify-center gap-2 px-4.5 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-medium tracking-normal bg-white hover:bg-slate-50 text-[#111318] border border-[#E5E7EB] shadow-xs transition-colors duration-200"
               >
                 <DocumentIcon className="w-4 h-4 text-[#555B66]" />
-                <span>View Public Resume</span>
+                <span>{secondaryButtonText}</span>
               </Link>
             </div>
 

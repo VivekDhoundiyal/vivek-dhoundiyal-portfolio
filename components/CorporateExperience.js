@@ -34,7 +34,7 @@ export default function CorporateExperience({ corporateExperience = [] }) {
   ]
 
   const sourceList = corporateExperience.length > 0 ? corporateExperience : fallbackExperiences
-  const experiences = sourceList.filter(e => targetSlugs.includes(e.slug))
+  const experiences = sourceList.filter(e => e.slug !== 'supersurge')
 
   return (
     <section id="corporate" className="py-20 sm:py-28 border-t border-[#E5E7EB] bg-[#FAFAF8] text-[#111318] relative">
