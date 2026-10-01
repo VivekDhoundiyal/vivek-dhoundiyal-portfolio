@@ -6,6 +6,7 @@ import SectionManager from './SectionManager'
 import LivePreviewModal from './LivePreviewModal'
 import PublishModal from './PublishModal'
 import RevisionHistoryModal from './RevisionHistoryModal'
+import CareerOSTab from './CareerOSTab'
 
 export default function CMSPanel({ initialContent, currentUser, csrfToken, onLogout }) {
   const [activeTab, setActiveTab] = useState('sections')
@@ -237,6 +238,7 @@ export default function CMSPanel({ initialContent, currentUser, csrfToken, onLog
     { id: 'experience', label: `Executive Timeline (${(experience.nodes || []).length})` },
     { id: 'certifications', label: 'Education & Certifications' },
     { id: 'where-i-am-building', label: 'Where I Am Building' },
+    { id: 'careeros', label: 'CareerOS Case Study (15 Slides)' },
     { id: 'thinking', label: `Thinking & Writing (${thinking.length})` },
     { id: 'tools', label: `Tools Stack (${tools.length})` },
     { id: 'profile', label: 'Profile & Identity' },
@@ -2092,6 +2094,16 @@ export default function CMSPanel({ initialContent, currentUser, csrfToken, onLog
               </div>
             </div>
           </div>
+        )}
+
+        {/* ==================================================== */}
+        {/* TAB: CAREEROS CASE STUDY ARCHITECTURE (15 SLIDES)   */}
+        {/* ==================================================== */}
+        {activeTab === 'careeros' && (
+          <CareerOSTab
+            careeros={content.careeros || {}}
+            onChange={(updated) => setContent({ ...content, careeros: updated })}
+          />
         )}
 
         {/* ==================================================== */}
