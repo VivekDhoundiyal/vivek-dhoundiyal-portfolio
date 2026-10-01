@@ -16,12 +16,6 @@ export default function CMSPanel({ initialContent, currentUser, csrfToken, onLog
   const [isPublishing, setIsPublishing] = useState(false)
   const [lastSavedDraftTime, setLastSavedDraftTime] = useState(null)
 
-  useEffect(() => {
-    if (initialContent && Object.keys(initialContent).length > 0) {
-      setContent(initialContent)
-    }
-  }, [initialContent])
-
   // Modal states
   const [showPreviewModal, setShowPreviewModal] = useState(false)
   const [showPublishModal, setShowPublishModal] = useState(false)
@@ -610,6 +604,57 @@ export default function CMSPanel({ initialContent, currentUser, csrfToken, onLog
                   })}
                   className="w-full px-3 py-2 text-xs rounded-xl bg-black/40 border border-white/15 text-white"
                 />
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-white/10">
+                <div>
+                  <label className="text-xs font-mono text-slate-400 block mb-1">Primary CTA Button Text</label>
+                  <input
+                    type="text"
+                    value={hero.primaryButtonText || 'Explore My Work'}
+                    onChange={e => setContent({
+                      ...content,
+                      hero: { ...hero, primaryButtonText: e.target.value }
+                    })}
+                    className="w-full px-3 py-2 text-xs rounded-xl bg-black/40 border border-white/15 text-white font-mono"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs font-mono text-slate-400 block mb-1">Primary CTA Button URL</label>
+                  <input
+                    type="text"
+                    value={hero.primaryButtonUrl || '#work'}
+                    onChange={e => setContent({
+                      ...content,
+                      hero: { ...hero, primaryButtonUrl: e.target.value }
+                    })}
+                    className="w-full px-3 py-2 text-xs rounded-xl bg-black/40 border border-white/15 text-white font-mono"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs font-mono text-slate-400 block mb-1">Secondary CTA Button Text</label>
+                  <input
+                    type="text"
+                    value={hero.secondaryButtonText || 'View Public Resume'}
+                    onChange={e => setContent({
+                      ...content,
+                      hero: { ...hero, secondaryButtonText: e.target.value }
+                    })}
+                    className="w-full px-3 py-2 text-xs rounded-xl bg-black/40 border border-white/15 text-white font-mono"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs font-mono text-slate-400 block mb-1">Secondary CTA Button URL</label>
+                  <input
+                    type="text"
+                    value={hero.secondaryButtonUrl || '/resume'}
+                    onChange={e => setContent({
+                      ...content,
+                      hero: { ...hero, secondaryButtonUrl: e.target.value }
+                    })}
+                    className="w-full px-3 py-2 text-xs rounded-xl bg-black/40 border border-white/15 text-white font-mono"
+                  />
+                </div>
               </div>
             </div>
           </div>
