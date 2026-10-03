@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 function WindowTerminalIcon({ className = "w-5 h-5", ...props }) {
   return (
@@ -178,7 +179,18 @@ export default function WhereIAmBuilding({ data = {} }) {
                     <span className="font-semibold block text-[10px] uppercase font-mono tracking-wider text-[#2563EB] mb-1">
                       Practical Application
                     </span>
-                    {card.spotlight}
+                    <p>{card.spotlight}</p>
+                    {card.category.includes('01') && (
+                      <div className="pt-2">
+                        <Link
+                          href="/work/careeros"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#2563EB] hover:underline"
+                        >
+                          <span>Explore CareerOS Case Study</span>
+                          <span aria-hidden="true">→</span>
+                        </Link>
+                      </div>
+                    )}
                   </div>
 
                   {/* Structured Core Capabilities */}

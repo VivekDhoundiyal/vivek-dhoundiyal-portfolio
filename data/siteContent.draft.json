@@ -202,6 +202,42 @@
   ],
   "projects": [
     {
+      "id": "careeros",
+      "slug": "careeros",
+      "title": "CareerOS",
+      "subtitle": "The AI-Powered Career Operating System",
+      "projectType": "PRODUCT / SYSTEMS ARCHITECTURE",
+      "category": "Product / Systems Architecture",
+      "role": "Product & Systems Architect",
+      "year": "2024–2026",
+      "status": "Featured Architecture",
+      "statusType": "active",
+      "featured": true,
+      "tagline": "The AI-Powered Career Operating System",
+      "description": "An AI-powered career operating system that turns a candidate's profile into an active search engine for relevant opportunities.",
+      "summary": "An AI-powered career operating system that turns a candidate's profile into an active search engine for relevant opportunities.",
+      "image": "/images/careeros/careeros-operating-system-infographic.webp",
+      "imagePng": "/images/careeros/careeros-operating-system-infographic.png",
+      "alt": "CareerOS AI-powered career operating system architecture",
+      "tags": [
+        "AI Product",
+        "Product Management",
+        "Systems Architecture"
+      ],
+      "evidence": [
+        {
+          "label": "Architecture",
+          "value": "10-Stage Pipeline",
+          "sub": "closed-loop flow"
+        },
+        {
+          "label": "Matching Model",
+          "value": "7-Dimensional",
+          "sub": "profile-aware AI"
+        }
+      ]
+    },
+    {
       "id": "settlemycar",
       "slug": "settlemycar",
       "title": "SettleMyCar",
