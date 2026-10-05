@@ -15,6 +15,7 @@ export default function Hero({ profile = {}, hero = {} }) {
   const title = hero?.title || profile?.heroHeadlineAlt || profile?.heroHeadline || 'I build revenue, relationships and scalable businesses.'
   const description = hero?.description || profile?.heroDescription || "I'm Vivek Dhoundiyal — an entrepreneurial sales, business development and growth professional with 8+ years of experience across enterprise sales, strategic partnerships, revenue operations and scaling businesses from 0→1. I focus on building high-trust commercial relationships, driving repeatable revenue, and executing scalable operations."
   const portrait = profile?.portraitImage || '/images/vivek-canonical.png'
+  const videoMatteSrc = hero?.videoMatteUrl || profile?.heroVideoMatte || '/videos/vivek-hero-matte.mp4'
   const videoWebmSrc = hero?.videoWebmUrl || profile?.heroVideoWebm || '/videos/vivek-hero-transparent.webm'
   const videoWebpSrc = hero?.videoWebpUrl || profile?.heroVideoWebp || '/videos/vivek-hero-transparent.webp'
   const fallbackImageSrc = hero?.fallbackImage || profile?.heroFallbackImage || '/images/vivek-transparent-wave.png'
@@ -23,37 +24,152 @@ export default function Hero({ profile = {}, hero = {} }) {
   const secondaryButtonText = hero?.secondaryButtonText || 'View Resume'
   const secondaryButtonUrl = hero?.secondaryButtonUrl || '/resume'
 
+  const canvasRef = React.useRef(null)
   const videoRef = React.useRef(null)
+  const [hasRenderedFrame, setHasRenderedFrame] = React.useState(false)
   const [useFallbackAnim, setUseFallbackAnim] = React.useState(false)
 
   React.useEffect(() => {
-    // Detect Safari / WebKit (which does not support WebM VP9 alpha channel)
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent) ||
-                     (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream)
-    if (isSafari) {
+    const canvas = canvasRef.current
+    const video = videoRef.current
+    if (!canvas || !video) return
+
+    let gl = null
+    try {
+      gl = canvas.getContext('webgl', { alpha: true, premultipliedAlpha: false }) ||
+           canvas.getContext('experimental-webgl', { alpha: true, premultipliedAlpha: false })
+    } catch (e) {
+      console.warn('WebGL initialization failed:', e)
+    }
+
+    if (!gl) {
       setUseFallbackAnim(true)
       return
     }
 
-    if (videoRef.current) {
-      videoRef.current.defaultMuted = true
-      videoRef.current.muted = true
-      const playPromise = videoRef.current.play()
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          const startPlayback = () => {
-            if (videoRef.current) {
-              videoRef.current.play().catch(() => {})
-            }
-            window.removeEventListener('click', startPlayback)
-            window.removeEventListener('touchstart', startPlayback)
-          }
-          window.addEventListener('click', startPlayback, { once: true })
-          window.addEventListener('touchstart', startPlayback, { once: true })
-        })
+    const vsSource = `
+      attribute vec2 a_position;
+      attribute vec2 a_texCoord;
+      varying vec2 v_texCoord;
+      void main() {
+        gl_Position = vec4(a_position, 0.0, 1.0);
+        v_texCoord = a_texCoord;
       }
+    `
+
+    const fsSource = `
+      precision mediump float;
+      uniform sampler2D u_image;
+      varying vec2 v_texCoord;
+
+      void main() {
+        vec2 rgbCoord = vec2(v_texCoord.x * 0.5, v_texCoord.y);
+        vec2 alphaCoord = vec2(0.5 + v_texCoord.x * 0.5, v_texCoord.y);
+
+        vec4 rgbColor = texture2D(u_image, rgbCoord);
+        float alpha = texture2D(u_image, alphaCoord).r;
+
+        // Soft bottom dissolve for seamless merge into background
+        float bottomDissolve = smoothstep(0.98, 0.72, v_texCoord.y);
+        alpha *= bottomDissolve;
+
+        gl_FragColor = vec4(rgbColor.rgb, alpha);
+      }
+    `
+
+    function createShader(glCtx, type, source) {
+      const shader = glCtx.createShader(type)
+      glCtx.shaderSource(shader, source)
+      glCtx.compileShader(shader)
+      return shader
     }
-  }, [])
+
+    const vs = createShader(gl, gl.VERTEX_SHADER, vsSource)
+    const fs = createShader(gl, gl.FRAGMENT_SHADER, fsSource)
+    const program = gl.createProgram()
+    gl.attachShader(program, vs)
+    gl.attachShader(program, fs)
+    gl.linkProgram(program)
+    gl.useProgram(program)
+
+    const posBuffer = gl.createBuffer()
+    gl.bindBuffer(gl.ARRAY_BUFFER, posBuffer)
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
+      -1, -1,  1, -1, -1,  1,
+      -1,  1,  1, -1,  1,  1
+    ]), gl.STATIC_DRAW)
+
+    const posLoc = gl.getAttribLocation(program, 'a_position')
+    gl.enableVertexAttribArray(posLoc)
+    gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0)
+
+    const texCoordBuffer = gl.createBuffer()
+    gl.bindBuffer(gl.ARRAY_BUFFER, texCoordBuffer)
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
+      0, 1,  1, 1,  0, 0,
+      0, 0,  1, 1,  1, 0
+    ]), gl.STATIC_DRAW)
+
+    const texLoc = gl.getAttribLocation(program, 'a_texCoord')
+    gl.enableVertexAttribArray(texLoc)
+    gl.vertexAttribPointer(texLoc, 2, gl.FLOAT, false, 0, 0)
+
+    const texture = gl.createTexture()
+    gl.bindTexture(gl.TEXTURE_2D, texture)
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE)
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE)
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR)
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR)
+
+    let animId
+    let isDisposed = false
+
+    const render = () => {
+      if (isDisposed) return
+      if (video.readyState >= 2) {
+        gl.bindTexture(gl.TEXTURE_2D, texture)
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, video)
+        gl.viewport(0, 0, gl.canvas.width, gl.canvas.height)
+        gl.clearColor(0, 0, 0, 0)
+        gl.clear(gl.COLOR_BUFFER_BIT)
+        gl.drawArrays(gl.TRIANGLES, 0, 6)
+        setHasRenderedFrame(true)
+      }
+      animId = requestAnimationFrame(render)
+    }
+
+    video.defaultMuted = true
+    video.muted = true
+    const playPromise = video.play()
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        const startPlayback = () => {
+          if (!isDisposed && video) {
+            video.play().catch(() => {})
+          }
+          window.removeEventListener('click', startPlayback)
+          window.removeEventListener('touchstart', startPlayback)
+        }
+        window.addEventListener('click', startPlayback, { once: true })
+        window.addEventListener('touchstart', startPlayback, { once: true })
+      })
+    }
+
+    animId = requestAnimationFrame(render)
+
+    return () => {
+      isDisposed = true
+      if (animId) cancelAnimationFrame(animId)
+      try {
+        gl.deleteTexture(texture)
+        gl.deleteProgram(program)
+        gl.deleteShader(vs)
+        gl.deleteShader(fs)
+        gl.deleteBuffer(posBuffer)
+        gl.deleteBuffer(texCoordBuffer)
+      } catch (e) {}
+    }
+  }, [videoMatteSrc])
 
   const renderTitle = (text) => {
     if (!text) return null
@@ -452,8 +568,7 @@ export default function Hero({ profile = {}, hero = {} }) {
 
               {/* ----------------------------------------------------------------- */}
               {/* HERO PROFILE VIDEO (AUTOPLAY, CONTINUOUS LOOP, MUTED, INLINE)     */}
-              {/* Native browser playback, zero UI controls, seamless performance  */}
-              {/* Organic mask dissolve at bottom + subtle ambient gradient overlay */}
+              {/* WebGL Packed Alpha Matte Renderer: zero black flashes, 60fps GPU  */}
               {/* ----------------------------------------------------------------- */}
               <div className="relative w-full aspect-[4/5] max-h-[480px] sm:max-h-[530px] lg:max-h-[520px] xl:max-h-[580px] 2xl:max-h-[610px] flex items-end justify-center z-10 animate-portrait-emerge hero-portrait-dissolve">
                 {useFallbackAnim ? (
@@ -466,28 +581,39 @@ export default function Hero({ profile = {}, hero = {} }) {
                     className="w-full h-full object-contain object-bottom filter contrast-[1.02] brightness-[1.01] pointer-events-none select-none"
                   />
                 ) : (
-                  <video
-                    ref={videoRef}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    poster={fallbackImageSrc}
-                    controls={false}
-                    disablePictureInPicture
-                    aria-label="Vivek Dhoundiyal — Commercial Operator & Builder"
-                    onError={() => setUseFallbackAnim(true)}
-                    className="w-full h-full object-contain object-bottom filter contrast-[1.02] brightness-[1.01] pointer-events-none select-none"
-                  >
-                    <source src={videoWebmSrc} type='video/webm; codecs="vp9"' />
-                    {/* Fallback image with zero black background */}
+                  <>
+                    {/* Instant transparent poster fallback to eliminate any initial frame blink */}
                     <img
                       src={fallbackImageSrc}
                       alt="Vivek Dhoundiyal — Commercial Operator & Builder"
-                      className="w-full h-full object-contain object-bottom filter contrast-[1.02] brightness-[1.01] pointer-events-none select-none"
+                      className={`absolute inset-0 w-full h-full object-contain object-bottom filter contrast-[1.02] brightness-[1.01] pointer-events-none select-none transition-opacity duration-300 ${
+                        hasRenderedFrame ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                      }`}
                     />
-                  </video>
+
+                    {/* Hidden master video source: packed RGB + Alpha matte H.264 stream */}
+                    <video
+                      ref={videoRef}
+                      src={videoMatteSrc}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      crossOrigin="anonymous"
+                      className="hidden"
+                      aria-hidden="true"
+                    />
+
+                    {/* Hardware-accelerated WebGL compositing canvas */}
+                    <canvas
+                      ref={canvasRef}
+                      width={480}
+                      height={854}
+                      className="relative w-full h-full object-contain object-bottom filter contrast-[1.02] brightness-[1.01] pointer-events-none select-none z-10"
+                      aria-label="Vivek Dhoundiyal — Commercial Operator & Builder"
+                    />
+                  </>
                 )}
                 {/* Subtle gradient feather at the bottom for seamless merge into background */}
                 <div className="absolute inset-x-0 bottom-0 h-16 sm:h-24 bg-gradient-to-t from-white via-white/50 to-transparent pointer-events-none z-20" />
