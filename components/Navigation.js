@@ -227,11 +227,11 @@ export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
               {/* "LET'S TALK" BUTTON (Vibrant Electric Blue Pill) */}
               <button
                 onClick={onOpenContact}
-                className="hidden sm:inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold tracking-normal bg-[#2563EB] hover:bg-[#1D4ED8] text-white shadow-xs hover:shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] whitespace-nowrap flex-shrink-0 min-w-fit cursor-pointer"
+                className="hidden sm:inline-flex items-center justify-center gap-2 px-5 sm:px-6 h-9.5 sm:h-10 rounded-full text-xs sm:text-sm font-semibold tracking-normal bg-[#2563EB] hover:bg-[#1D4ED8] text-white shadow-xs hover:shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] whitespace-nowrap flex-shrink-0 min-w-[124px] cursor-pointer"
                 aria-label="Let's Talk — Open contact dialog"
               >
                 <span className="whitespace-nowrap">Let's Talk</span>
-                <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" />
+                <ArrowRight className="w-4 h-4 flex-shrink-0" />
               </button>
 
               {/* Mobile Menu Trigger */}

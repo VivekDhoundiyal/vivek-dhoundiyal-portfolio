@@ -549,10 +549,47 @@ body {
 
 @keyframes heroDoodleNudge {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px) rotate(-2deg);
   }
   50% {
-    transform: translateY(-4px) rotate(-1.5deg);
+    transform: translateY(-3px) rotate(-3.5deg);
+  }
+}
+
+/* Floating Business Ecosystem Animations (Pure CSS, GPU-Accelerated) */
+@keyframes bizFloat1 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-5px) translateX(2px);
+  }
+}
+
+@keyframes bizFloat2 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(5px) translateX(-3px);
+  }
+}
+
+@keyframes bizFloat3 {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.02);
+  }
+}
+
+@keyframes bizFloat4 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(4px) translateX(2px);
   }
 }
 
@@ -628,6 +665,26 @@ body {
 
 .animate-hero-doodle {
   animation: heroDoodleNudge 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-biz-float-1 {
+  animation: bizFloat1 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-biz-float-2 {
+  animation: bizFloat2 8.5s ease-in-out infinite 1s;
+  will-change: transform;
+}
+
+.animate-biz-float-3 {
+  animation: bizFloat3 6s ease-in-out infinite 0.5s;
+  will-change: transform;
+}
+
+.animate-biz-float-4 {
+  animation: bizFloat4 9s ease-in-out infinite 2s;
   will-change: transform;
 }
 
