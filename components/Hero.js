@@ -15,161 +15,10 @@ export default function Hero({ profile = {}, hero = {} }) {
   const title = hero?.title || profile?.heroHeadlineAlt || profile?.heroHeadline || 'I build revenue, relationships and scalable businesses.'
   const description = hero?.description || profile?.heroDescription || "I'm Vivek Dhoundiyal — an entrepreneurial sales, business development and growth professional with 8+ years of experience across enterprise sales, strategic partnerships, revenue operations and scaling businesses from 0→1. I focus on building high-trust commercial relationships, driving repeatable revenue, and executing scalable operations."
   const portrait = profile?.portraitImage || '/images/vivek-canonical.png'
-  const videoMatteSrc = hero?.videoMatteUrl || profile?.heroVideoMatte || '/videos/vivek-hero-matte.mp4'
-  const videoWebmSrc = hero?.videoWebmUrl || profile?.heroVideoWebm || '/videos/vivek-hero-transparent.webm'
-  const videoWebpSrc = hero?.videoWebpUrl || profile?.heroVideoWebp || '/videos/vivek-hero-transparent.webp'
-  const fallbackImageSrc = hero?.fallbackImage || profile?.heroFallbackImage || '/images/vivek-transparent-wave.png'
   const primaryButtonText = hero?.primaryButtonText || 'Explore My Work'
   const primaryButtonUrl = hero?.primaryButtonUrl || '#work'
   const secondaryButtonText = hero?.secondaryButtonText || 'View Resume'
   const secondaryButtonUrl = hero?.secondaryButtonUrl || '/resume'
-
-  const canvasRef = React.useRef(null)
-  const videoRef = React.useRef(null)
-  const [hasRenderedFrame, setHasRenderedFrame] = React.useState(false)
-  const [useFallbackAnim, setUseFallbackAnim] = React.useState(false)
-
-  React.useEffect(() => {
-    const canvas = canvasRef.current
-    const video = videoRef.current
-    if (!canvas || !video) return
-
-    let gl = null
-    try {
-      gl = canvas.getContext('webgl', { alpha: true, premultipliedAlpha: false }) ||
-           canvas.getContext('experimental-webgl', { alpha: true, premultipliedAlpha: false })
-    } catch (e) {
-      console.warn('WebGL initialization failed:', e)
-    }
-
-    if (!gl) {
-      setUseFallbackAnim(true)
-      return
-    }
-
-    const vsSource = `
-      attribute vec2 a_position;
-      attribute vec2 a_texCoord;
-      varying vec2 v_texCoord;
-      void main() {
-        gl_Position = vec4(a_position, 0.0, 1.0);
-        v_texCoord = a_texCoord;
-      }
-    `
-
-    const fsSource = `
-      precision mediump float;
-      uniform sampler2D u_image;
-      varying vec2 v_texCoord;
-
-      void main() {
-        vec2 rgbCoord = vec2(v_texCoord.x * 0.5, v_texCoord.y);
-        vec2 alphaCoord = vec2(0.5 + v_texCoord.x * 0.5, v_texCoord.y);
-
-        vec4 rgbColor = texture2D(u_image, rgbCoord);
-        float alpha = texture2D(u_image, alphaCoord).r;
-
-        // Soft bottom dissolve for seamless merge into background
-        float bottomDissolve = smoothstep(0.98, 0.72, v_texCoord.y);
-        alpha *= bottomDissolve;
-
-        gl_FragColor = vec4(rgbColor.rgb, alpha);
-      }
-    `
-
-    function createShader(glCtx, type, source) {
-      const shader = glCtx.createShader(type)
-      glCtx.shaderSource(shader, source)
-      glCtx.compileShader(shader)
-      return shader
-    }
-
-    const vs = createShader(gl, gl.VERTEX_SHADER, vsSource)
-    const fs = createShader(gl, gl.FRAGMENT_SHADER, fsSource)
-    const program = gl.createProgram()
-    gl.attachShader(program, vs)
-    gl.attachShader(program, fs)
-    gl.linkProgram(program)
-    gl.useProgram(program)
-
-    const posBuffer = gl.createBuffer()
-    gl.bindBuffer(gl.ARRAY_BUFFER, posBuffer)
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-      -1, -1,  1, -1, -1,  1,
-      -1,  1,  1, -1,  1,  1
-    ]), gl.STATIC_DRAW)
-
-    const posLoc = gl.getAttribLocation(program, 'a_position')
-    gl.enableVertexAttribArray(posLoc)
-    gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0)
-
-    const texCoordBuffer = gl.createBuffer()
-    gl.bindBuffer(gl.ARRAY_BUFFER, texCoordBuffer)
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-      0, 1,  1, 1,  0, 0,
-      0, 0,  1, 1,  1, 0
-    ]), gl.STATIC_DRAW)
-
-    const texLoc = gl.getAttribLocation(program, 'a_texCoord')
-    gl.enableVertexAttribArray(texLoc)
-    gl.vertexAttribPointer(texLoc, 2, gl.FLOAT, false, 0, 0)
-
-    const texture = gl.createTexture()
-    gl.bindTexture(gl.TEXTURE_2D, texture)
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE)
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE)
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR)
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR)
-
-    let animId
-    let isDisposed = false
-
-    const render = () => {
-      if (isDisposed) return
-      if (video.readyState >= 2) {
-        gl.bindTexture(gl.TEXTURE_2D, texture)
-        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, video)
-        gl.viewport(0, 0, gl.canvas.width, gl.canvas.height)
-        gl.clearColor(0, 0, 0, 0)
-        gl.clear(gl.COLOR_BUFFER_BIT)
-        gl.drawArrays(gl.TRIANGLES, 0, 6)
-        setHasRenderedFrame(true)
-      }
-      animId = requestAnimationFrame(render)
-    }
-
-    video.defaultMuted = true
-    video.muted = true
-    const playPromise = video.play()
-    if (playPromise !== undefined) {
-      playPromise.catch(() => {
-        const startPlayback = () => {
-          if (!isDisposed && video) {
-            video.play().catch(() => {})
-          }
-          window.removeEventListener('click', startPlayback)
-          window.removeEventListener('touchstart', startPlayback)
-        }
-        window.addEventListener('click', startPlayback, { once: true })
-        window.addEventListener('touchstart', startPlayback, { once: true })
-      })
-    }
-
-    animId = requestAnimationFrame(render)
-
-    return () => {
-      isDisposed = true
-      if (animId) cancelAnimationFrame(animId)
-      try {
-        gl.deleteTexture(texture)
-        gl.deleteProgram(program)
-        gl.deleteShader(vs)
-        gl.deleteShader(fs)
-        gl.deleteBuffer(posBuffer)
-        gl.deleteBuffer(texCoordBuffer)
-      } catch (e) {}
-    }
-  }, [videoMatteSrc])
 
   const renderTitle = (text) => {
     if (!text) return null
@@ -567,54 +416,18 @@ export default function Hero({ profile = {}, hero = {} }) {
               <div className="absolute top-[58%] -right-3 sm:-right-1 w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_6px_rgba(251,191,36,0.9)] animate-eco-pulse-particle pointer-events-none z-10 [animation-delay:0.5s]" />
 
               {/* ----------------------------------------------------------------- */}
-              {/* HERO PROFILE VIDEO (AUTOPLAY, CONTINUOUS LOOP, MUTED, INLINE)     */}
-              {/* WebGL Packed Alpha Matte Renderer: zero black flashes, 60fps GPU  */}
+              {/* HERO PROFILE PORTRAIT (TRANSPARENT CANONICAL PNG)                 */}
+              {/* Pure CSS dissolve at bottom + subtle ambient gradient overlay     */}
               {/* ----------------------------------------------------------------- */}
-              <div className="relative w-full aspect-[4/5] max-h-[480px] sm:max-h-[530px] lg:max-h-[520px] xl:max-h-[580px] 2xl:max-h-[610px] flex items-end justify-center z-10 animate-portrait-emerge hero-portrait-dissolve">
-                {useFallbackAnim ? (
-                  <img
-                    src={videoWebpSrc}
-                    onError={(e) => {
-                      e.currentTarget.src = fallbackImageSrc
-                    }}
-                    alt="Vivek Dhoundiyal — Commercial Operator & Builder"
-                    className="w-full h-full object-contain object-bottom filter contrast-[1.02] brightness-[1.01] pointer-events-none select-none"
-                  />
-                ) : (
-                  <>
-                    {/* Instant transparent poster fallback to eliminate any initial frame blink */}
-                    <img
-                      src={fallbackImageSrc}
-                      alt="Vivek Dhoundiyal — Commercial Operator & Builder"
-                      className={`absolute inset-0 w-full h-full object-contain object-bottom filter contrast-[1.02] brightness-[1.01] pointer-events-none select-none transition-opacity duration-300 ${
-                        hasRenderedFrame ? 'opacity-0 pointer-events-none' : 'opacity-100'
-                      }`}
-                    />
-
-                    {/* Hidden master video source: packed RGB + Alpha matte H.264 stream */}
-                    <video
-                      ref={videoRef}
-                      src={videoMatteSrc}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="auto"
-                      crossOrigin="anonymous"
-                      className="hidden"
-                      aria-hidden="true"
-                    />
-
-                    {/* Hardware-accelerated WebGL compositing canvas */}
-                    <canvas
-                      ref={canvasRef}
-                      width={480}
-                      height={854}
-                      className="relative w-full h-full object-contain object-bottom filter contrast-[1.02] brightness-[1.01] pointer-events-none select-none z-10"
-                      aria-label="Vivek Dhoundiyal — Commercial Operator & Builder"
-                    />
-                  </>
-                )}
+              <div className="relative w-full aspect-[3/4] max-h-[480px] sm:max-h-[530px] lg:max-h-[520px] xl:max-h-[580px] 2xl:max-h-[610px] flex items-end justify-center z-10 animate-portrait-emerge hero-portrait-dissolve">
+                <Image
+                  src={portrait}
+                  alt="Vivek Dhoundiyal — Commercial Operator & Builder"
+                  width={1086}
+                  height={1448}
+                  priority
+                  className="w-full h-full object-contain object-bottom filter contrast-[1.02] brightness-[1.01] pointer-events-none select-none"
+                />
                 {/* Subtle gradient feather at the bottom for seamless merge into background */}
                 <div className="absolute inset-x-0 bottom-0 h-16 sm:h-24 bg-gradient-to-t from-white via-white/50 to-transparent pointer-events-none z-20" />
               </div>
@@ -626,7 +439,7 @@ export default function Hero({ profile = {}, hero = {} }) {
             {/* Desktop: Dedicated vertical column to the right of portrait (No overlap)*/}
             {/* Tablet: 3 columns beneath portrait                                   */}
             {/* Mobile: 1 column stacked beneath portrait                             */}
-            {/* Extended with floating business symbols around the cards to fill right*/}
+            {/* Extended with floating business symbols across the entire right flank */}
             {/* ===================================================================== */}
             <div id="hero-cards-zone" className="relative w-full sm:max-w-[560px] lg:w-[205px] xl:w-[225px] flex-shrink-0 flex flex-col gap-3 sm:gap-3.5 z-20 pb-4 lg:pb-8">
 
@@ -636,10 +449,10 @@ export default function Hero({ profile = {}, hero = {} }) {
 
               {/* Symbol 15: Conversion Funnel (Sales Conversion Velocity) */}
               <div
-                className="absolute -top-7 right-2 sm:right-6 lg:-right-3 z-10 hidden sm:flex items-center justify-center w-8 h-8 rounded-xl bg-white/90 backdrop-blur-md border border-violet-200/90 shadow-card animate-eco-float-diag2 select-none pointer-events-none"
+                className="absolute -top-7 right-2 sm:right-6 lg:-right-3 z-10 flex items-center justify-center w-7.5 h-7.5 sm:w-8 sm:h-8 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-violet-200/90 shadow-card animate-eco-float-diag2 select-none pointer-events-none"
                 aria-hidden="true"
               >
-                <div className="w-5.5 h-5.5 rounded-lg bg-violet-50 border border-violet-200/80 flex items-center justify-center text-violet-600">
+                <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg sm:rounded-xl bg-violet-50 border border-violet-200/80 flex items-center justify-center text-violet-600">
                   <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
                   </svg>
@@ -648,10 +461,10 @@ export default function Hero({ profile = {}, hero = {} }) {
 
               {/* Symbol 16: High-Trust Network Nodes */}
               <div
-                className="absolute top-2 -right-5 sm:-right-7 lg:-right-8 z-10 hidden sm:flex items-center justify-center w-8 h-8 rounded-xl bg-white/90 backdrop-blur-md border border-cyan-200/90 shadow-card animate-eco-float-h1 select-none pointer-events-none"
+                className="absolute top-2 right-1 sm:right-2 lg:-right-8 z-10 flex items-center justify-center w-7.5 h-7.5 sm:w-8 sm:h-8 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-cyan-200/90 shadow-card animate-eco-float-h1 select-none pointer-events-none"
                 aria-hidden="true"
               >
-                <div className="w-5.5 h-5.5 rounded-lg bg-cyan-50 border border-cyan-200/80 flex items-center justify-center text-cyan-600">
+                <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg sm:rounded-xl bg-cyan-50 border border-cyan-200/80 flex items-center justify-center text-cyan-600">
                   <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="18" cy="5" r="3" />
                     <circle cx="6" cy="12" r="3" />
@@ -662,22 +475,63 @@ export default function Hero({ profile = {}, hero = {} }) {
                 </div>
               </div>
 
-              {/* Symbol 17: Revenue Currency Coin ($) */}
+              {/* Symbol 19: Analytics Donut / Pie (Data-Driven BD) */}
               <div
-                className="absolute top-1/2 -translate-y-1/2 -right-5 sm:-right-7 lg:-right-8 z-10 hidden sm:flex items-center justify-center w-8 h-8 rounded-xl bg-white/90 backdrop-blur-md border border-emerald-200/90 shadow-card animate-eco-float-v1 select-none pointer-events-none"
+                className="absolute top-[22%] right-0 sm:right-1 lg:-right-10 z-10 flex items-center justify-center w-7.5 h-7.5 sm:w-8 sm:h-8 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-purple-200/90 shadow-card animate-eco-float-diag1 select-none pointer-events-none"
                 aria-hidden="true"
               >
-                <div className="w-5.5 h-5.5 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600 font-bold text-xs">
+                <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg sm:rounded-xl bg-purple-50 border border-purple-200/80 flex items-center justify-center text-purple-600">
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+                    <path d="M22 12A10 10 0 0 0 12 2v10z" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Symbol 17: Revenue Currency Coin ($) */}
+              <div
+                className="absolute top-1/2 -translate-y-1/2 right-1 sm:right-2 lg:-right-8 z-10 flex items-center justify-center w-7.5 h-7.5 sm:w-8 sm:h-8 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-emerald-200/90 shadow-card animate-eco-float-v1 select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg sm:rounded-xl bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600 font-bold text-xs">
                   <span>$</span>
+                </div>
+              </div>
+
+              {/* Symbol 20: Globe / Global Expansion (Market Scale) */}
+              <div
+                className="absolute top-[68%] right-0 sm:right-1 lg:-right-9 z-10 flex items-center justify-center w-7.5 h-7.5 sm:w-8 sm:h-8 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-sky-200/90 shadow-card animate-eco-float-diag2 select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg sm:rounded-xl bg-sky-50 border border-sky-200/80 flex items-center justify-center text-sky-600">
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Symbol 21: Key / Opportunity Unlock */}
+              <div
+                className="absolute top-[86%] right-1 sm:right-2 lg:-right-7 z-10 flex items-center justify-center w-7.5 h-7.5 sm:w-8 sm:h-8 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-amber-200/90 shadow-card animate-eco-float-v2 select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg sm:rounded-xl bg-amber-50 border border-amber-200/80 flex items-center justify-center text-amber-600">
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="7.5" cy="15.5" r="5.5" />
+                    <path d="m21 2-9.6 9.6" />
+                    <path d="m15.5 7.5 3 3L22 7l-3-3" />
+                  </svg>
                 </div>
               </div>
 
               {/* Symbol 18: Strategic Partnership Link */}
               <div
-                className="absolute -bottom-6 right-8 sm:right-12 lg:right-6 z-10 hidden sm:flex items-center justify-center w-8 h-8 rounded-xl bg-white/90 backdrop-blur-md border border-indigo-200/90 shadow-card animate-eco-float-h2 select-none pointer-events-none"
+                className="absolute -bottom-6 right-6 sm:right-10 lg:right-4 z-10 flex items-center justify-center w-7.5 h-7.5 sm:w-8 sm:h-8 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-indigo-200/90 shadow-card animate-eco-float-h2 select-none pointer-events-none"
                 aria-hidden="true"
               >
-                <div className="w-5.5 h-5.5 rounded-lg bg-indigo-50 border border-indigo-200/80 flex items-center justify-center text-indigo-600">
+                <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg sm:rounded-xl bg-indigo-50 border border-indigo-200/80 flex items-center justify-center text-indigo-600">
                   <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
                     <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
@@ -685,8 +539,23 @@ export default function Hero({ profile = {}, hero = {} }) {
                 </div>
               </div>
 
+              {/* Symbol 22: Shield / High-Trust Governance */}
+              <div
+                className="absolute -bottom-6 left-4 sm:left-8 lg:left-2 z-10 flex items-center justify-center w-7.5 h-7.5 sm:w-8 sm:h-8 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-emerald-200/90 shadow-card animate-eco-float-h1 select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg sm:rounded-xl bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600">
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                </div>
+              </div>
+
               {/* Ambient Glowing Particle 7: Right Side Accent */}
               <div className="absolute top-3 right-1/2 w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.9)] animate-eco-pulse-particle pointer-events-none z-10 [animation-delay:0.9s]" />
+
+              {/* Ambient Glowing Particle 8: Far Right Accent */}
+              <div className="absolute bottom-2 right-2 sm:right-4 lg:-right-6 w-2 h-2 rounded-full bg-sky-400 shadow-[0_0_8px_rgba(56,189,248,0.9)] animate-eco-pulse-particle pointer-events-none z-10 [animation-delay:1.4s]" />
 
               {/* Card 1: 8+ Years */}
               <div className="relative z-20 p-3 sm:p-3.5 rounded-2xl bg-white/95 backdrop-blur-md border border-[#E5E7EB] shadow-card hover:border-[#2563EB]/40 hover:-translate-y-0.5 transition-all duration-200 animate-hero-card-1">
