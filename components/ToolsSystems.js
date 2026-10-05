@@ -28,11 +28,12 @@ export default function ToolsSystems({ tools = [] }) {
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 reveal-on-scroll">
-          <div className="space-y-2">
-            <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[#2563EB] font-semibold">
-              <span>09 · TOOLS & CAPABILITIES</span>
+          <div className="space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+              <span className="uppercase tracking-wider">09 · Tools & Capabilities</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight text-[#111318]">
+            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318]">
               Tools & Capabilities
             </h2>
           </div>
@@ -49,9 +50,9 @@ export default function ToolsSystems({ tools = [] }) {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-3.5 py-1.5 rounded-full text-xs tracking-normal whitespace-nowrap transition-colors ${
+                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-normal whitespace-nowrap transition-all duration-200 cursor-pointer ${
                   isActive
-                    ? 'bg-[#111318] text-white font-medium shadow-xs'
+                    ? 'bg-[#111318] text-white shadow-sm ring-1 ring-[#111318]'
                     : 'bg-white text-[#555B66] hover:text-[#111318] hover:bg-slate-50 border border-[#E5E7EB] shadow-xs'
                 }`}
               >
@@ -62,7 +63,7 @@ export default function ToolsSystems({ tools = [] }) {
         </div>
 
         {/* Interactive Tool Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
           {filteredTools.map((tool, idx) => {
             const isHovered = activeHoverId === tool.id
             return (
@@ -70,17 +71,17 @@ export default function ToolsSystems({ tools = [] }) {
                 key={tool.id}
                 onMouseEnter={() => setActiveHoverId(tool.id)}
                 onMouseLeave={() => setActiveHoverId(null)}
-                className={`p-4 rounded-xl bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 shadow-xs hover-card-elevate transition-all duration-200 flex flex-col justify-between group cursor-default relative reveal-on-scroll delay-${(idx % 4) * 100}`}
+                className={`p-5 rounded-2xl bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 shadow-xs hover-card-elevate transition-all duration-200 flex flex-col justify-between group cursor-default relative reveal-on-scroll delay-${(idx % 4) * 100}`}
               >
                 <div className="flex items-center gap-3.5">
                   {/* Brand SVG with subtle scale on hover */}
-                  <div className="w-10 h-10 rounded-lg bg-[#FAFAF8] border border-[#E5E7EB] flex items-center justify-center text-slate-800 flex-shrink-0 transition-transform duration-200 group-hover:scale-110">
-                    {getToolBrandLogo(tool.id, "w-5 h-5")}
+                  <div className="w-12 h-12 rounded-xl bg-[#FAFAF8] border border-[#E5E7EB] flex items-center justify-center text-slate-800 flex-shrink-0 transition-transform duration-200 group-hover:scale-110 shadow-2xs">
+                    {getToolBrandLogo(tool.id, "w-6 h-6")}
                   </div>
 
                   {/* Tool Identity */}
                   <div className="min-w-0 flex-1">
-                    <div className="text-sm font-semibold text-[#111318] tracking-tight truncate group-hover:text-[#2563EB] transition-colors">
+                    <div className="text-sm font-bold text-[#111318] tracking-tight truncate group-hover:text-[#2563EB] transition-colors">
                       {tool.name}
                     </div>
                     <div className="text-[10px] font-mono text-[#2563EB] font-semibold uppercase tracking-wider">

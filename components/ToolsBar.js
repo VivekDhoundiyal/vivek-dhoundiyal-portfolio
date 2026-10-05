@@ -29,25 +29,25 @@ export default function ToolsBar() {
   ]
 
   return (
-    <div className="relative z-20 -mt-6 sm:-mt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="rounded-2xl sm:rounded-3xl p-4 sm:p-5 bg-white/80 dark:bg-ink-900/90 border border-slate-200/80 dark:border-white/10 shadow-elevated backdrop-blur-xl transition-all">
+    <div className="relative z-20 -mt-4 sm:-mt-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="rounded-2xl sm:rounded-full px-5 py-3.5 sm:py-4 bg-white/95 border border-[#E5E7EB] shadow-xs backdrop-blur-md transition-all">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 sm:gap-6">
           
           {/* Label Title */}
-          <div className="flex items-center gap-3 pr-4 lg:border-r border-slate-200 dark:border-white/10 flex-shrink-0">
-            <span className="w-2 h-2 rounded-full bg-signal-blue animate-pulse" />
+          <div className="flex items-center gap-3 pr-4 lg:border-r border-[#E5E7EB] flex-shrink-0">
+            <span className="w-2 h-2 rounded-full bg-[#2563EB] animate-pulse flex-shrink-0" />
             <div>
-              <div className="text-xs font-mono font-bold tracking-wider uppercase text-slate-900 dark:text-white">
+              <div className="text-[11px] font-mono font-bold tracking-wider uppercase text-[#111318]">
                 Tools I Use
               </div>
-              <div className="text-[11px] font-sans text-slate-500 dark:text-slate-400">
+              <div className="text-[11px] font-sans text-[#737984]">
                 To build, grow and operate efficiently
               </div>
             </div>
           </div>
 
           {/* Tools Horizontal Strip */}
-          <div className="flex items-center gap-6 sm:gap-8 overflow-x-auto scrollbar-none py-1 flex-1">
+          <div className="flex items-center gap-5 sm:gap-7 overflow-x-auto scrollbar-none py-1 flex-1">
             {primaryTools.map((tool) => {
               const IconComponent = tool.icon
               return (
@@ -59,7 +59,7 @@ export default function ToolsBar() {
                   <div className={`w-5 h-5 flex items-center justify-center transition-transform group-hover:scale-110 ${tool.color}`}>
                     <IconComponent className="w-5 h-5" />
                   </div>
-                  <span className="text-xs font-semibold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
+                  <span className="text-xs font-semibold text-[#555B66] group-hover:text-[#111318] transition-colors">
                     {tool.name}
                   </span>
                 </div>
@@ -67,13 +67,14 @@ export default function ToolsBar() {
             })}
           </div>
 
-          {/* Action to full tools directory */}
-          <div className="flex-shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-slate-100 dark:border-white/5">
+          {/* Action to full tools directory / Next indicator */}
+          <div className="flex-shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-[#E5E7EB]">
             <a
               href="#tools"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono font-semibold text-signal-blue hover:text-signal-cyan transition-colors"
+              className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-50 hover:bg-blue-50 border border-[#E5E7EB] hover:border-blue-200 text-[#737984] hover:text-[#2563EB] transition-colors"
+              title="Explore all tools"
+              aria-label="Explore all tools"
             >
-              <span>Explore All</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>

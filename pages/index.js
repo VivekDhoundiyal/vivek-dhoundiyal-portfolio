@@ -12,6 +12,7 @@ import ThinkingNotes from '../components/ThinkingNotes'
 import ToolsSystems from '../components/ToolsSystems'
 import AboutBackground from '../components/AboutBackground'
 import ContactSection from '../components/ContactSection'
+import ToolsBar from '../components/ToolsBar'
 import { useScrollReveal } from '../lib/useScrollReveal'
 
 const DEFAULT_SECTIONS = [
@@ -80,7 +81,12 @@ export default function Home({ siteData: initialData }) {
   const renderSection = (sec) => {
     switch (sec.type) {
       case 'hero':
-        return <Hero key={sec.id} profile={profile} hero={hero} />
+        return (
+          <React.Fragment key={sec.id}>
+            <Hero profile={profile} hero={hero} contact={contact} social={social} />
+            <ToolsBar />
+          </React.Fragment>
+        )
       case 'capabilities':
         return <WhatIDo key={sec.id} capabilities={capabilities} />
       case 'entrepreneurial':

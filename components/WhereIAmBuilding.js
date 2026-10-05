@@ -121,12 +121,12 @@ export default function WhereIAmBuilding({ data = {} }) {
         {/* SECTION HEADER                                       */}
         {/* ==================================================== */}
         <div className="max-w-3xl space-y-4 reveal-on-scroll">
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#2563EB] font-semibold">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
             <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-            <span>{eyebrow}</span>
+            <span className="uppercase tracking-wider">{eyebrow}</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight text-[#111318] leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318] leading-tight">
             {title}
           </h2>
 
@@ -144,7 +144,7 @@ export default function WhereIAmBuilding({ data = {} }) {
             return (
               <div
                 key={card.category}
-                className={`p-7 sm:p-8 rounded-2xl bg-[#FAFAF8] border border-[#E5E7EB] hover:border-slate-300 hover:shadow-card hover-card-elevate transition-all duration-300 flex flex-col justify-between space-y-6 reveal-on-scroll delay-${(idx + 1) * 100} group`}
+                className={`p-8 sm:p-10 rounded-3xl bg-[#FAFAF8] border border-[#E5E7EB] hover:border-[#2563EB]/40 hover-card-elevate shadow-xs transition-all duration-300 flex flex-col justify-between space-y-6 reveal-on-scroll delay-${(idx + 1) * 100} group`}
               >
                 <div className="space-y-5">
                   {/* Card Header: Category & Visual Marker */}
@@ -153,18 +153,18 @@ export default function WhereIAmBuilding({ data = {} }) {
                       {card.category}
                     </span>
 
-                    <div className={`w-9 h-9 rounded-xl flex items-center justify-center border ${card.iconContainerStyle} transition-transform group-hover:scale-105 duration-200`}>
-                      <Icon className="w-4 h-4" />
+                    <div className={`w-11 h-11 rounded-2xl flex items-center justify-center border ${card.iconContainerStyle} transition-transform group-hover:scale-105 duration-200 shadow-2xs`}>
+                      <Icon className="w-5 h-5" />
                     </div>
                   </div>
 
                   {/* Title & Badge */}
                   <div className="space-y-2">
-                    <div className="inline-flex items-center px-2.5 py-0.5 rounded-md text-[10.5px] font-mono font-semibold uppercase tracking-wider border shadow-2xs ${card.badgeStyle}">
+                    <div className={`inline-flex items-center px-3 py-1 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wider border shadow-2xs ${card.badgeStyle}`}>
                       {card.badge}
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#111318] leading-snug">
+                    <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#111318] leading-snug">
                       {card.title}
                     </h3>
                   </div>
@@ -175,13 +175,13 @@ export default function WhereIAmBuilding({ data = {} }) {
                   </p>
 
                   {/* Context / Spotlight Card */}
-                  <div className="p-3.5 rounded-xl bg-white border border-[#E5E7EB] text-xs text-[#111318] font-normal leading-relaxed">
-                    <span className="font-semibold block text-[10px] uppercase font-mono tracking-wider text-[#2563EB] mb-1">
+                  <div className="p-5 rounded-2xl bg-white border border-[#E5E7EB] text-xs text-[#111318] font-normal leading-relaxed shadow-2xs">
+                    <span className="font-semibold block text-[10.5px] uppercase font-mono tracking-wider text-[#2563EB] mb-1.5">
                       Practical Application
                     </span>
-                    <p>{card.spotlight}</p>
+                    <p className="text-sm text-[#555B66] leading-relaxed">{card.spotlight}</p>
                     {card.category.includes('01') && (
-                      <div className="pt-2">
+                      <div className="pt-3">
                         <Link
                           href="/work/careeros"
                           className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#2563EB] hover:underline"
@@ -194,15 +194,15 @@ export default function WhereIAmBuilding({ data = {} }) {
                   </div>
 
                   {/* Structured Core Capabilities */}
-                  <div className="space-y-2 pt-1">
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#737984] font-semibold block">
+                  <div className="space-y-2.5 pt-1">
+                    <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#737984] font-semibold block">
                       Core Principles
                     </span>
-                    <ul className="space-y-1.5 text-xs text-[#555B66]">
+                    <ul className="space-y-2 text-xs text-[#555B66]">
                       {card.capabilities.map((item, cIdx) => (
                         <li key={cIdx} className="flex items-start gap-2">
                           <CheckBulletIcon className="w-3.5 h-3.5 text-[#2563EB] mt-0.5 flex-shrink-0" />
-                          <span>{item}</span>
+                          <span className="text-xs leading-relaxed">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -212,7 +212,7 @@ export default function WhereIAmBuilding({ data = {} }) {
                 {/* Footer Note */}
                 <div className="pt-4 border-t border-slate-200/80 flex items-center justify-between text-[11px] font-mono text-[#737984]">
                   <span>{card.footerNote}</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-[#2563EB] transition-colors" />
+                  <span className="w-2 h-2 rounded-full bg-slate-300 group-hover:bg-[#2563EB] transition-colors" />
                 </div>
               </div>
             )

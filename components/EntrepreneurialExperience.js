@@ -54,11 +54,11 @@ export default function EntrepreneurialExperience({ projects = [] }) {
         </div>
 
         {/* ==================================================== */}
-        {/* 1. CAREEROS FEATURED PROJECT CARD                    */}
+        {/* 1. CAREEROS FEATURED PROJECT CASE STUDY              */}
         {/* ==================================================== */}
         <Link
           href="/work/careeros"
-          className="mb-8 sm:mb-12 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 hover-card-elevate shadow-xs p-6 sm:p-9 lg:p-10 transition-all duration-300 block group reveal-on-scroll"
+          className="mb-10 sm:mb-14 rounded-3xl bg-gradient-to-br from-white via-white to-blue-50/30 border border-[#E5E7EB] hover:border-[#2563EB]/50 hover-card-elevate shadow-xs p-6 sm:p-9 lg:p-10 transition-all duration-300 block group reveal-on-scroll"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
@@ -83,7 +83,7 @@ export default function EntrepreneurialExperience({ projects = [] }) {
 
               {/* Title & Subtitle */}
               <div className="space-y-1.5">
-                <h3 className="text-2xl sm:text-4xl font-semibold tracking-tight text-[#111318] group-hover:text-[#2563EB] transition-colors flex items-center justify-between">
+                <h3 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#111318] group-hover:text-[#2563EB] transition-colors flex items-center justify-between">
                   <span>{careerosProject.title || 'CareerOS'}</span>
                   <ArrowUpRight className="w-5 h-5 text-slate-400 group-hover:text-[#2563EB] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all flex-shrink-0" />
                 </h3>
@@ -97,12 +97,28 @@ export default function EntrepreneurialExperience({ projects = [] }) {
                 {careerosProject.description || careerosProject.summary || "An AI-powered career operating system that turns a candidate's profile into an active search engine for relevant opportunities."}
               </p>
 
+              {/* Key Principles Strip */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
+                <div className="p-2.5 rounded-xl bg-white border border-[#E5E7EB] space-y-0.5">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#2563EB] font-bold block">Sourcing</span>
+                  <span className="text-xs font-medium text-[#111318] block leading-snug">Multi-Source Continuous Registry</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-white border border-[#E5E7EB] space-y-0.5">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#2563EB] font-bold block">Matching</span>
+                  <span className="text-xs font-medium text-[#111318] block leading-snug">7-Dimensional AI Profile Model</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-white border border-[#E5E7EB] space-y-0.5">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#2563EB] font-bold block">Freshness</span>
+                  <span className="text-xs font-medium text-[#111318] block leading-snug">Strict 7-Day Posting Date SLA</span>
+                </div>
+              </div>
+
               {/* Tags */}
               <div className="flex flex-wrap gap-2 pt-1">
                 {(careerosProject.tags || ['AI Product', 'Product Management', 'Systems Architecture']).map((tag, tIdx) => (
                   <span
                     key={tIdx}
-                    className="px-3 py-1 rounded-lg text-xs font-mono bg-[#FAFAF8] border border-[#E5E7EB] text-[#555B66] group-hover:border-slate-300 transition-colors"
+                    className="px-3 py-1 rounded-lg text-xs font-mono bg-white border border-[#E5E7EB] text-[#555B66] group-hover:border-slate-300 transition-colors"
                   >
                     {tag}
                   </span>
@@ -124,7 +140,7 @@ export default function EntrepreneurialExperience({ projects = [] }) {
 
             {/* Right Column: Visual Preview of Infographic (5 cols) */}
             <div className="lg:col-span-5">
-              <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] rounded-2xl overflow-hidden bg-slate-50 border border-[#E5E7EB] shadow-xs group-hover:border-[#2563EB]/30 transition-all">
+              <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] rounded-2xl overflow-hidden bg-slate-50 border border-[#E5E7EB] shadow-xs group-hover:border-[#2563EB]/40 transition-all">
                 <picture>
                   <source srcSet={careerosProject.image || careerosProject.imageWebp || '/images/careeros/careeros-operating-system-infographic.webp'} type="image/webp" />
                   <img
@@ -144,18 +160,18 @@ export default function EntrepreneurialExperience({ projects = [] }) {
         {/* ==================================================== */}
         {/* 2. OTHER MAJOR VENTURES (3-Column Balanced Grid)     */}
         {/* ==================================================== */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {displayVentures.map((proj, idx) => (
             <Link
               key={proj.id || idx}
               href={`/work/${proj.slug}`}
-              className={`p-8 sm:p-9 rounded-2xl bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 hover-card-elevate shadow-xs transition-all duration-300 flex flex-col justify-between group space-y-7 reveal-on-scroll delay-${(idx + 1) * 100}`}
+              className={`p-7 sm:p-8 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 hover-card-elevate shadow-xs transition-all duration-300 flex flex-col justify-between group space-y-6 reveal-on-scroll delay-${(idx + 1) * 100}`}
             >
-              <div className="space-y-5">
+              <div className="space-y-4">
                 
                 {/* Meta Header */}
-                <div className="flex items-center justify-between pb-4 border-b border-[#E5E7EB]">
-                  <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#2563EB]">
+                <div className="flex items-center justify-between pb-3.5 border-b border-[#E5E7EB]">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2563EB]">
                     {proj.projectType || proj.category}
                   </span>
                   <span className="text-xs font-mono text-[#737984]">
@@ -165,7 +181,7 @@ export default function EntrepreneurialExperience({ projects = [] }) {
 
                 {/* Title & Tagline */}
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-semibold tracking-tight text-[#111318] group-hover:text-[#2563EB] transition-colors flex items-center justify-between">
+                  <h3 className="text-2xl font-bold tracking-tight text-[#111318] group-hover:text-[#2563EB] transition-colors flex items-center justify-between">
                     <span>{proj.title}</span>
                     <ArrowUpRight className="w-5 h-5 text-slate-400 group-hover:text-[#2563EB] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                   </h3>
@@ -176,11 +192,11 @@ export default function EntrepreneurialExperience({ projects = [] }) {
 
                 {/* Evidence Metrics Tiles */}
                 {proj.evidence && proj.evidence.length > 0 && (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
                     {proj.evidence.slice(0, 2).map((ev, eIdx) => (
-                      <div key={eIdx} className="p-3 rounded-xl bg-white border border-[#E5E7EB] space-y-0.5">
-                        <div className="text-base font-semibold text-[#111318]">{ev.value}</div>
-                        <div className="text-[10px] font-mono uppercase text-[#2563EB] font-semibold truncate">{ev.label}</div>
+                      <div key={eIdx} className="p-3 rounded-xl bg-slate-50/80 border border-[#E5E7EB] space-y-0.5">
+                        <div className="text-base font-bold text-[#111318]">{ev.value}</div>
+                        <div className="text-[10px] font-mono uppercase text-[#2563EB] font-bold truncate">{ev.label}</div>
                       </div>
                     ))}
                   </div>

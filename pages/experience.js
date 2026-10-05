@@ -21,28 +21,28 @@ export default function ExperiencePage({ siteData }) {
         <div className="flex items-center justify-between pb-6 border-b border-[#E5E7EB]">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs font-mono text-[#555B66] hover:text-[#111318] transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-mono text-[#555B66] hover:text-[#2563EB] transition-colors"
           >
             <span>← Return to Home</span>
           </Link>
 
           <Link
             href="/resume"
-            className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-blue-600 hover:underline"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 hover:bg-[#FAFAF8] text-[#111318] shadow-xs transition-all"
           >
             <span>Inspect Resumes</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
+            <ArrowUpRight className="w-3.5 h-3.5 text-[#2563EB]" />
           </Link>
         </div>
 
         {/* Section Header */}
         <div className="space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-xs uppercase tracking-widest text-blue-600 font-semibold">
-            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-            <span>8+ Years Track Record</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] animate-pulse" />
+            <span className="uppercase tracking-wider">8+ Years Track Record</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-semibold tracking-tight text-[#111318]">
+          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318]">
             Professional Experience
           </h1>
 
@@ -57,41 +57,41 @@ export default function ExperiencePage({ siteData }) {
             <div key={item.id || idx} className="relative group">
               
               {/* Timeline Indicator Dot */}
-              <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-blue-600 transition-colors shadow-xs" />
+              <div className="absolute -left-[31px] sm:-left-[47px] top-2 w-4 h-4 rounded-full bg-white border-2 border-[#2563EB] transition-colors shadow-xs" />
 
               {/* Experience Card */}
-              <div className="p-6 sm:p-8 rounded-2xl bg-white border border-[#E5E7EB] hover:border-slate-300 transition-all shadow-xs space-y-4">
+              <div className="p-8 sm:p-10 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 hover-card-elevate transition-all duration-300 shadow-xs space-y-5">
                 
                 {/* Role Header */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                  <div className="space-y-0.5">
-                    <span className="text-[11px] font-mono uppercase tracking-wider text-blue-600 font-semibold">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div className="space-y-1">
+                    <span className="px-3 py-0.5 rounded-full text-xs font-mono uppercase tracking-wider text-[#2563EB] bg-blue-50 border border-blue-100 font-semibold inline-block">
                       {item.badge}
                     </span>
-                    <h2 className="text-2xl font-semibold text-[#111318]">
+                    <h2 className="text-2xl font-bold text-[#111318]">
                       {item.role}
                     </h2>
-                    <div className="text-sm font-semibold text-slate-700">
+                    <div className="text-sm font-semibold text-[#555B66]">
                       {item.company}
                     </div>
                   </div>
 
-                  <div className="text-xs font-mono text-[#555B66] bg-[#F4F5F7] px-3 py-1.5 rounded-lg border border-[#E5E7EB] self-start sm:self-auto">
+                  <div className="text-xs font-mono text-[#737984] bg-[#FAFAF8] px-3.5 py-1.5 rounded-full border border-[#E5E7EB] self-start sm:self-auto shadow-2xs">
                     {item.period} · {item.location}
                   </div>
                 </div>
 
                 {/* Narrative Summary */}
-                <p className="text-xs sm:text-sm text-[#555B66] leading-relaxed font-normal">
+                <p className="text-sm text-[#555B66] leading-relaxed font-normal">
                   {item.summary}
                 </p>
 
                 {/* Operational Takeaway */}
-                <div className="p-4 rounded-xl bg-[#F4F5F7] border border-[#E5E7EB] text-xs text-[#555B66] space-y-1">
-                  <span className="font-mono text-[10px] text-[#737984] uppercase font-semibold block">
+                <div className="p-5 rounded-2xl bg-[#FAFAF8] border border-[#E5E7EB] text-xs text-[#555B66] space-y-1.5 shadow-2xs">
+                  <span className="font-mono text-[10px] text-[#2563EB] uppercase font-bold tracking-wider block">
                     Core Operational Takeaway
                   </span>
-                  <p className="italic">
+                  <p className="italic text-sm leading-relaxed text-[#111318]">
                     "{item.takeaway}"
                   </p>
                 </div>
@@ -121,7 +121,7 @@ export default function ExperiencePage({ siteData }) {
           </div>
           <Link
             href="/resume"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-semibold uppercase tracking-wider bg-[#111318] text-white hover:bg-blue-600 transition-colors shadow-xs"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#111318] text-white hover:bg-[#2563EB] transition-colors shadow-xs"
           >
             <span>View Verified Resumes</span>
             <ArrowUpRight className="w-3.5 h-3.5" />

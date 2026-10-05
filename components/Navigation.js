@@ -88,14 +88,13 @@ export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
   }, [onOpenSearch, mobileDrawerOpen])
 
   const navLinks = [
+    { label: 'Home', href: '/#hero', sectionId: 'hero' },
     { label: 'Work', href: '/#work', sectionId: 'work' },
-    { label: 'Corporate', href: '/#corporate', sectionId: 'corporate' },
-    { label: 'Experience', href: '/#experience', sectionId: 'experience' },
-    { label: 'Education', href: '/#education-certifications', sectionId: 'education-certifications' },
-    { label: 'Building', href: '/#building', sectionId: 'building' },
     { label: 'Thinking', href: '/#thinking', sectionId: 'thinking' },
-    { label: 'Tools', href: '/#tools', sectionId: 'tools' },
-    { label: 'About', href: '/#about', sectionId: 'about' },
+    { label: 'Building', href: '/#building', sectionId: 'building' },
+    { label: 'About', href: '/#about-contact', sectionId: 'about' },
+    { label: 'Experience', href: '/#experience', sectionId: 'experience' },
+    { label: 'Resume', href: '/resume', sectionId: 'resume' },
   ]
 
   const email = profile?.email || 'vivekdhoundiyal2901@gmail.com'
@@ -108,10 +107,10 @@ export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 h-16 lg:h-[70px] flex items-center ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 h-16 lg:h-[72px] flex items-center ${
           scrolled
-            ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200/80 shadow-xs'
-            : 'bg-transparent'
+            ? 'bg-white/92 backdrop-blur-xl border-b border-[#E5E7EB]/80 shadow-xs'
+            : 'bg-white/70 backdrop-blur-md border-b border-[#E5E7EB]/40'
         }`}
         aria-label="Main Navigation"
       >
@@ -123,36 +122,39 @@ export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
             {/* ========================================= */}
             <Link
               href="/"
-              className="flex items-center gap-3 text-[#111318] hover:text-blue-600 transition-colors group flex-shrink-0"
+              className="flex items-center gap-2.5 text-[#111318] hover:text-[#2563EB] transition-colors group flex-shrink-0"
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#2563EB] shadow-xs flex-shrink-0" />
               <div className="flex flex-col">
-                <span className="text-base sm:text-lg font-semibold tracking-tight text-[#111318] group-hover:text-blue-600 transition-colors">
+                <span className="text-base sm:text-lg font-bold tracking-tight text-[#111318] group-hover:text-[#2563EB] transition-colors">
                   Vivek Dhoundiyal
                 </span>
-                <span className="text-[11px] text-[#555B66] hidden sm:inline font-normal">
-                  Revenue • Growth • Business Development
+                <span className="text-[11px] text-[#737984] font-medium hidden sm:inline -mt-0.5">
+                  Business · Growth · Systems
                 </span>
               </div>
             </Link>
 
             {/* ========================================= */}
-            {/* CENTER: Primary Navigation Links (Desktop)*/}
+            {/* CENTER: Segmented Pill Navigation (Desktop)*/}
             {/* ========================================= */}
-            <div className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#F4F5F7] border border-[#E5E7EB] backdrop-blur-md">
+            <div className="hidden lg:flex items-center gap-0.5 sm:gap-1 px-3 py-1.5 rounded-full bg-white/90 border border-[#E5E7EB] shadow-xs backdrop-blur-md">
               {navLinks.map((link) => {
                 const isActive = isHome ? activeSection === link.sectionId : router.pathname === link.href
                 return (
                   <Link
                     key={link.label}
                     href={link.href}
-                    className={`px-3 py-1.5 rounded-full text-xs font-medium tracking-normal transition-all duration-200 ${
+                    className={`relative px-3.5 py-1.5 rounded-full text-xs font-medium tracking-normal transition-all duration-200 flex flex-col items-center ${
                       isActive
-                        ? 'bg-white text-[#111318] shadow-xs font-semibold'
-                        : 'text-[#555B66] hover:text-[#111318] hover:bg-white/70'
+                        ? 'text-[#111318] font-semibold'
+                        : 'text-[#555B66] hover:text-[#111318] hover:bg-slate-50'
                     }`}
                   >
-                    {link.label}
+                    <span>{link.label}</span>
+                    {isActive && (
+                      <span className="w-1 h-1 rounded-full bg-[#2563EB] mt-0.5" />
+                    )}
                   </Link>
                 )
               })}
@@ -168,7 +170,7 @@ export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
                 href={linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden xl:inline-flex p-2 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 border border-transparent hover:border-slate-200 transition-colors"
+                className="hidden xl:inline-flex p-2 rounded-xl text-slate-500 hover:text-[#2563EB] hover:bg-blue-50/60 transition-colors"
                 title="LinkedIn Profile"
                 aria-label="LinkedIn Profile"
               >
@@ -180,7 +182,7 @@ export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
                 href={xUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden xl:inline-flex p-2 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 border border-transparent hover:border-slate-200 transition-colors"
+                className="hidden xl:inline-flex p-2 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors"
                 title="X (Twitter)"
                 aria-label="X (Twitter)"
               >
@@ -192,40 +194,39 @@ export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
                 href={github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden xl:inline-flex p-2 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 border border-transparent hover:border-slate-200 transition-colors"
+                className="hidden xl:inline-flex p-2 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors"
                 title="GitHub"
                 aria-label="GitHub"
               >
                 <GitHubIcon className="w-4 h-4" />
               </a>
 
-              {/* Email */}
+              {/* WhatsApp (Green icon matching reference) */}
               <a
-                href={`mailto:${email}?subject=Connecting%20via%20your%20website`}
-                className="hidden lg:inline-flex p-2 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 border border-transparent hover:border-slate-200 transition-colors"
-                title="Email Me"
-                aria-label="Email Me"
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden xl:inline-flex p-2 rounded-xl text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 transition-colors"
+                title="WhatsApp Direct"
+                aria-label="WhatsApp Direct"
               >
-                <MailIcon className="w-4 h-4" />
+                <WhatsAppIcon className="w-4 h-4" />
               </a>
 
               {/* SEARCH TRIGGER BUTTON */}
               <button
                 onClick={onOpenSearch}
-                className="inline-flex items-center gap-1.5 p-2 sm:px-2.5 sm:py-1.5 rounded-xl text-xs font-mono text-slate-600 hover:text-slate-900 bg-white hover:bg-slate-50 border border-slate-200 shadow-xs transition-colors"
+                className="inline-flex items-center justify-center p-2 rounded-xl text-slate-600 hover:text-slate-900 bg-white hover:bg-slate-50 border border-slate-200 shadow-xs transition-colors"
                 title="Search (Hotkey: /)"
                 aria-label="Search"
               >
                 <SearchIcon className="w-4 h-4" />
-                <kbd className="hidden sm:inline px-1.5 py-0.5 text-[10px] font-mono rounded bg-slate-100 text-slate-600 border border-slate-200">
-                  /
-                </kbd>
               </button>
 
-              {/* "LET'S TALK" BUTTON (Opens Contact Modal) */}
+              {/* "LET'S TALK" BUTTON (Vibrant Electric Blue Pill) */}
               <button
                 onClick={onOpenContact}
-                className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-normal bg-[#111318] text-white hover:bg-blue-600 transition-all duration-200 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                className="hidden sm:inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full text-xs font-semibold tracking-normal bg-[#2563EB] hover:bg-[#1D4ED8] text-white shadow-xs hover:shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]"
                 aria-label="Let's Talk — Open contact dialog"
               >
                 <span>Let's Talk</span>

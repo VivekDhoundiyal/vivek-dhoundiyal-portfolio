@@ -55,12 +55,12 @@ export default function EducationCertificationsSection({ education = {}, certifi
         {/* ==================================================== */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-on-scroll">
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#2563EB] font-semibold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-              <span>06 · ACADEMIC FOUNDATION & CONTINUOUS LEARNING</span>
+              <span className="uppercase tracking-wider">06 · Academic Foundation & Continuous Learning</span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight text-[#111318] leading-tight">
+            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318] leading-tight">
               Education & Certifications
             </h2>
 
@@ -69,7 +69,7 @@ export default function EducationCertificationsSection({ education = {}, certifi
             </p>
           </div>
 
-          <div className="text-xs font-mono text-[#737984] bg-white px-3.5 py-2 rounded-xl border border-[#E5E7EB] self-start md:self-auto shadow-xs">
+          <div className="text-xs font-mono text-[#737984] bg-white px-4 py-2 rounded-full border border-[#E5E7EB] self-start md:self-auto shadow-xs">
             [ Verified Academic & Professional Records ]
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function EducationCertificationsSection({ education = {}, certifi
         {/* ==================================================== */}
         <div className="space-y-6">
           <div className="flex items-center gap-3 pb-2 border-b border-[#E5E7EB]">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2563EB]">
+            <span className="px-3 py-0.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider text-[#2563EB] bg-blue-50 border border-blue-100">
               01 — EDUCATION
             </span>
             <span className="text-xs font-mono text-[#737984]">
@@ -87,17 +87,17 @@ export default function EducationCertificationsSection({ education = {}, certifi
             </span>
           </div>
 
-          <div className="p-8 sm:p-10 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs flex flex-col lg:flex-row lg:items-center justify-between gap-8 reveal-on-scroll">
-            <div className="space-y-3 max-w-2xl">
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] flex-shrink-0">
-                  <AcademicCapIcon className="w-5 h-5" />
+          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#E5E7EB] shadow-xs flex flex-col lg:flex-row lg:items-center justify-between gap-8 reveal-on-scroll">
+            <div className="space-y-4 max-w-2xl">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] flex-shrink-0 shadow-2xs">
+                  <AcademicCapIcon className="w-6 h-6" />
                 </div>
                 <div>
                   <span className="text-[11px] font-mono uppercase tracking-wider text-[#737984] font-semibold block">
                     Undergraduate Degree · Education Only
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[#111318]">
+                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111318]">
                     {institution}
                   </h3>
                 </div>
@@ -107,12 +107,12 @@ export default function EducationCertificationsSection({ education = {}, certifi
                 {degree}
               </div>
 
-              <p className="text-xs sm:text-sm text-[#555B66] leading-relaxed pt-1">
+              <p className="text-sm text-[#555B66] leading-relaxed pt-1">
                 {summary}
               </p>
             </div>
 
-            <div className="lg:border-l lg:border-[#E5E7EB] lg:pl-8 space-y-3 max-w-md flex-shrink-0">
+            <div className="lg:border-l lg:border-[#E5E7EB] lg:pl-10 space-y-3.5 max-w-md flex-shrink-0">
               <div className="flex items-center justify-between text-xs font-mono">
                 <span className="text-[#737984] uppercase">Tenure:</span>
                 <span className="font-semibold text-[#111318]">{period}</span>
@@ -121,7 +121,7 @@ export default function EducationCertificationsSection({ education = {}, certifi
                 <span className="text-[#737984] uppercase">Location:</span>
                 <span className="font-semibold text-[#111318]">{location}</span>
               </div>
-              <div className="pt-2 border-t border-slate-100">
+              <div className="pt-3 border-t border-slate-100">
                 <span className="text-[11px] font-mono uppercase text-[#737984] font-semibold block mb-1">
                   Core Takeaway
                 </span>
@@ -139,7 +139,7 @@ export default function EducationCertificationsSection({ education = {}, certifi
         <div className="space-y-6">
           <div className="flex items-center justify-between pb-2 border-b border-[#E5E7EB]">
             <div className="flex items-center gap-3">
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2563EB]">
+              <span className="px-3 py-0.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider text-[#2563EB] bg-blue-50 border border-blue-100">
                 02 — CERTIFICATIONS
               </span>
               <span className="text-xs font-mono text-[#737984]">
@@ -158,14 +158,14 @@ export default function EducationCertificationsSection({ education = {}, certifi
                 return (
                   <div
                     key={cert.id || idx}
-                    className={`p-6 sm:p-8 rounded-2xl bg-white border border-[#E5E7EB] hover:border-slate-300 shadow-xs flex flex-col justify-between space-y-6 transition-all duration-200 reveal-on-scroll delay-${(idx + 1) * 100}`}
+                    className={`p-8 sm:p-10 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 hover-card-elevate shadow-xs flex flex-col justify-between space-y-6 transition-all duration-300 reveal-on-scroll delay-${(idx + 1) * 100}`}
                   >
                     <div className="space-y-4">
                       {/* Top Badge Strip */}
                       <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                         <div className="flex items-center gap-2">
                           <CertificateBadgeIcon className="w-4 h-4 text-emerald-600" />
-                          <span className="text-[11px] font-mono font-semibold uppercase text-emerald-700">
+                          <span className="px-2.5 py-0.5 rounded-full text-[10.5px] font-mono font-semibold uppercase text-emerald-700 bg-emerald-50 border border-emerald-100">
                             {cert.status || 'Verified Credential'}
                           </span>
                         </div>
@@ -176,7 +176,7 @@ export default function EducationCertificationsSection({ education = {}, certifi
 
                       {/* Header & Issuer */}
                       <div className="space-y-1.5">
-                        <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#111318] leading-snug">
+                        <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#111318] leading-snug">
                           {cert.name}
                         </h3>
                         <div className="text-xs sm:text-sm font-semibold text-[#2563EB]">
@@ -199,7 +199,7 @@ export default function EducationCertificationsSection({ education = {}, certifi
                             {cert.skills.map((skill, sIdx) => (
                               <span
                                 key={sIdx}
-                                className="px-2.5 py-1 rounded-md text-xs font-mono bg-[#FAFAF8] border border-[#E5E7EB] text-[#111318]"
+                                className="px-3 py-1 rounded-full text-xs font-mono bg-[#FAFAF8] border border-[#E5E7EB] text-[#111318]"
                               >
                                 {skill}
                               </span>
@@ -220,7 +220,7 @@ export default function EducationCertificationsSection({ education = {}, certifi
                           </button>
 
                           {isExpanded && (
-                            <div className="mt-3 p-3.5 rounded-xl bg-[#FAFAF8] border border-[#E5E7EB] space-y-2 text-xs font-mono">
+                            <div className="mt-3 p-4 rounded-2xl bg-[#FAFAF8] border border-[#E5E7EB] space-y-2 text-xs font-mono">
                               {cert.credentialId && (
                                 <div className="flex items-center justify-between text-[#555B66]">
                                   <span>Credential ID:</span>
@@ -277,7 +277,7 @@ export default function EducationCertificationsSection({ education = {}, certifi
             </div>
           ) : (
             /* Empty State */
-            <div className="p-10 rounded-2xl bg-white border border-dashed border-[#E5E7EB] text-center space-y-2">
+            <div className="p-10 rounded-3xl bg-white border border-dashed border-[#E5E7EB] text-center space-y-2">
               <CertificateBadgeIcon className="w-8 h-8 text-slate-400 mx-auto" />
               <p className="text-sm font-mono text-[#737984]">
                 Professional certifications will be added here.

@@ -36,7 +36,7 @@ export default function ResumePage({ siteData }) {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E5E7EB]">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs font-mono text-[#555B66] hover:text-[#111318] transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-mono text-[#555B66] hover:text-[#2563EB] transition-colors"
           >
             <span>← Return to Home</span>
           </Link>
@@ -46,16 +46,16 @@ export default function ResumePage({ siteData }) {
               href={currentResume.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono border border-[#E5E7EB] bg-white hover:bg-slate-50 text-[#111318] shadow-xs transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold border border-[#E5E7EB] bg-white hover:bg-slate-50 text-[#111318] shadow-xs transition-colors"
             >
               <span>View Original PDF</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-[#2563EB]" />
             </a>
 
             <a
               href={currentResume.url}
               download
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-[#111318] text-white hover:bg-[#2563EB] transition-colors shadow-xs"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-[#111318] text-white hover:bg-[#2563EB] transition-colors shadow-xs"
             >
               <DownloadIcon className="w-3.5 h-3.5" />
               <span>Download PDF</span>
@@ -65,12 +65,12 @@ export default function ResumePage({ siteData }) {
 
         {/* Section Heading */}
         <div className="space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-xs uppercase tracking-widest text-[#2563EB] font-semibold">
-            <span className="w-2 h-2 rounded-full bg-[#2563EB] animate-pulse" />
-            <span>Verified Positioning Document</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] animate-pulse" />
+            <span className="uppercase tracking-wider">Verified Positioning Document</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-semibold tracking-tight text-[#111318]">
+          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318]">
             {currentResume.title}
           </h1>
 
@@ -80,13 +80,13 @@ export default function ResumePage({ siteData }) {
         </div>
 
         {/* EMBEDDED RESUME INSPECTION SHEET */}
-        <div className="rounded-2xl bg-white border border-[#E5E7EB] p-8 sm:p-12 shadow-xs space-y-12">
+        <div className="rounded-3xl bg-white border border-[#E5E7EB] p-8 sm:p-12 shadow-xs space-y-12">
           
           {/* Header of Active Resume */}
           <div className="pb-8 border-b border-slate-100 space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4">
               <div>
-                <h2 className="text-2xl sm:text-3xl font-semibold text-[#111318]">
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#111318]">
                   Vivek Dhoundiyal
                 </h2>
                 <div className="text-sm font-semibold text-[#2563EB] pt-1">

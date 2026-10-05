@@ -53,12 +53,13 @@ export default function AboutBackground({ experience = {}, about = {} }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#2563EB] font-semibold">
-            <span>10 · PERSONAL TRAJECTORY & BACKGROUND</span>
+        <div className="max-w-3xl space-y-4 mb-16 reveal-on-scroll">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+            <span className="uppercase tracking-wider">10 · Personal Trajectory & Background</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight text-[#111318] leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318] leading-tight">
             About Vivek Dhoundiyal
           </h2>
 
@@ -68,15 +69,15 @@ export default function AboutBackground({ experience = {}, about = {} }) {
         </div>
 
         {/* Narrative Flow Grid (3 columns on desktop, 6 chapters) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {narrativeChapters.map((ch) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {narrativeChapters.map((ch, idx) => (
             <div
               key={ch.stage}
-              className="p-8 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs hover:border-[#2563EB]/40 hover:shadow-card space-y-4 flex flex-col justify-between transition-all duration-200"
+              className={`p-8 sm:p-10 rounded-3xl bg-white border border-[#E5E7EB] shadow-xs hover:border-[#2563EB]/40 hover-card-elevate space-y-5 flex flex-col justify-between transition-all duration-300 reveal-on-scroll delay-${(idx % 3) * 100}`}
             >
-              <div className="space-y-3">
-                <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                  <span className="text-xs font-mono font-semibold text-[#2563EB] tracking-wider">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between pb-3.5 border-b border-slate-100">
+                  <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold text-[#2563EB] bg-blue-50 border border-blue-100">
                     {ch.stage} · {ch.tag}
                   </span>
                   <span className="text-[11px] font-mono text-[#737984]">
@@ -84,7 +85,7 @@ export default function AboutBackground({ experience = {}, about = {} }) {
                   </span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-semibold text-[#111318] tracking-tight">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#111318] tracking-tight">
                   {ch.title}
                 </h3>
 
@@ -93,7 +94,7 @@ export default function AboutBackground({ experience = {}, about = {} }) {
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-slate-100 text-[11px] font-mono text-[#737984] flex items-center justify-between">
+              <div className="pt-4 border-t border-slate-100 text-[11px] font-mono text-[#737984] flex items-center justify-between">
                 <span>Domain Focus</span>
                 <span className="text-[#2563EB] font-medium">Verified Trajectory</span>
               </div>
