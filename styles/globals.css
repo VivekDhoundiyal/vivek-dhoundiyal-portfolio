@@ -424,33 +424,55 @@ body {
 @keyframes heroGlowPulse {
   0%, 100% {
     transform: scale(1);
-    opacity: 0.45;
+    opacity: 0.55;
   }
   50% {
     transform: scale(1.08);
-    opacity: 0.7;
+    opacity: 0.85;
+  }
+}
+
+@keyframes heroGlowPulsePrimary {
+  0%, 100% {
+    transform: scale(1) translate3d(0, 0, 0);
+    opacity: 0.65;
+  }
+  50% {
+    transform: scale(1.1) translate3d(12px, -8px, 0);
+    opacity: 0.92;
+  }
+}
+
+@keyframes heroGlowPulseAmbient {
+  0%, 100% {
+    transform: scale(1) translate3d(0, 0, 0);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.08) translate3d(-10px, 8px, 0);
+    opacity: 0.75;
   }
 }
 
 @keyframes heroParticleFloat1 {
   0%, 100% {
     transform: translateY(0px) translateX(0px);
-    opacity: 0.4;
+    opacity: 0.45;
   }
   50% {
     transform: translateY(-14px) translateX(6px);
-    opacity: 0.85;
+    opacity: 0.9;
   }
 }
 
 @keyframes heroParticleFloat2 {
   0%, 100% {
     transform: translateY(0px) translateX(0px);
-    opacity: 0.35;
+    opacity: 0.4;
   }
   50% {
     transform: translateY(12px) translateX(-8px);
-    opacity: 0.75;
+    opacity: 0.85;
   }
 }
 
@@ -461,7 +483,40 @@ body {
   }
   50% {
     transform: translateY(-10px) translateX(-6px);
-    opacity: 0.9;
+    opacity: 0.95;
+  }
+}
+
+@keyframes heroParticleFloat4 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateY(-15px) translateX(-8px);
+    opacity: 0.88;
+  }
+}
+
+@keyframes heroParticleFloat5 {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.38;
+  }
+  50% {
+    transform: translateY(14px) translateX(10px);
+    opacity: 0.82;
+  }
+}
+
+@keyframes heroConstellationPulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.015);
   }
 }
 
@@ -470,7 +525,7 @@ body {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
   }
 }
 
@@ -488,7 +543,7 @@ body {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
   }
 }
 
@@ -497,22 +552,32 @@ body {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-3px) rotate(-1deg);
+    transform: translateY(-4px) rotate(-1.5deg);
   }
 }
 
 .animate-hero-orbital {
-  animation: heroOrbitalSlow 18s linear infinite;
+  animation: heroOrbitalSlow 20s linear infinite;
   will-change: transform;
 }
 
 .animate-hero-orbital-reverse {
-  animation: heroOrbitalReverse 24s linear infinite;
+  animation: heroOrbitalReverse 26s linear infinite;
   will-change: transform;
 }
 
 .animate-hero-glow {
   animation: heroGlowPulse 6s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-hero-glow-primary {
+  animation: heroGlowPulsePrimary 7s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-hero-glow-ambient {
+  animation: heroGlowPulseAmbient 9s ease-in-out infinite 1s;
   will-change: transform, opacity;
 }
 
@@ -528,6 +593,21 @@ body {
 
 .animate-hero-particle-3 {
   animation: heroParticleFloat3 11s ease-in-out infinite 3s;
+  will-change: transform, opacity;
+}
+
+.animate-hero-particle-4 {
+  animation: heroParticleFloat4 8.5s ease-in-out infinite 2s;
+  will-change: transform, opacity;
+}
+
+.animate-hero-particle-5 {
+  animation: heroParticleFloat5 10.5s ease-in-out infinite 4s;
+  will-change: transform, opacity;
+}
+
+.animate-hero-constellation {
+  animation: heroConstellationPulse 8s ease-in-out infinite;
   will-change: transform, opacity;
 }
 
