@@ -60,7 +60,7 @@ export default function Hero({ profile = {}, hero = {} }) {
       className="relative w-full overflow-hidden bg-white text-[#111318] pt-8 sm:pt-12 lg:pt-16 pb-14 sm:pb-18 lg:pb-20"
     >
       {/* Ambient Radial Atmospheric Glow behind Portrait on right */}
-      <div className="absolute top-10 right-4 sm:right-12 lg:right-20 w-[380px] sm:w-[520px] lg:w-[620px] h-[380px] sm:h-[520px] lg:h-[620px] bg-gradient-to-tr from-[#2563EB]/20 via-sky-400/15 to-purple-400/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-10 right-4 sm:right-12 lg:right-44 xl:right-52 w-[380px] sm:w-[520px] lg:w-[620px] h-[380px] sm:h-[520px] lg:h-[620px] bg-gradient-to-tr from-[#2563EB]/20 via-sky-400/15 to-purple-400/10 rounded-full blur-3xl pointer-events-none -z-10" />
 
       {/* Main Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -115,14 +115,14 @@ export default function Hero({ profile = {}, hero = {} }) {
           {/* ==================================================== */}
           <div className="lg:col-span-5 xl:col-span-5 relative flex flex-col items-center justify-center">
             
-            {/* Composition Wrapper */}
-            <div className="relative w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[440px] xl:max-w-[480px] flex items-center justify-center">
+            {/* Composition Wrapper - Shifted left noticeably on desktop for optimal balance with headline */}
+            <div className="relative w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[440px] xl:max-w-[480px] flex items-center justify-center lg:-translate-x-28 xl:-translate-x-32">
               
-              {/* Playful Hand-drawn Purple Callout Arrow + Text (Reference Image Element) */}
-              <div className="absolute top-0 right-2 sm:right-6 lg:-right-2 z-20 hidden sm:flex items-start gap-2 pointer-events-none select-none">
-                <svg className="w-12 h-12 text-purple-400 transform -rotate-12 -scale-x-100" viewBox="0 0 50 50" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                  <path d="M 10,40 Q 30,30 35,12" />
-                  <polyline points="28,14 36,12 37,20" />
+              {/* Playful Hand-drawn Purple Callout Arrow + Text pointing TOWARD Vivek's head/upper body */}
+              <div className="absolute top-6 sm:top-8 lg:top-10 right-2 sm:right-6 lg:-right-2 z-20 hidden sm:flex items-center gap-1.5 pointer-events-none select-none">
+                <svg className="w-12 h-12 text-purple-500 flex-shrink-0" viewBox="0 0 50 50" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M 44,12 C 32,15 20,24 8,36" />
+                  <polyline points="7,25 8,36 19,34" />
                 </svg>
                 <div className="text-[11px] font-mono leading-tight text-purple-700 tracking-tight pt-1 italic font-medium bg-purple-50/90 px-2.5 py-1.5 rounded-lg border border-purple-200/60 backdrop-blur-xs shadow-xs">
                   Business<br />
@@ -146,8 +146,8 @@ export default function Hero({ profile = {}, hero = {} }) {
                 />
               </div>
 
-              {/* Stack of 3 Floating Stat/Focus Glass Cards on Right (Reference Image Element) */}
-              <div className="absolute right-0 sm:-right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-2.5 sm:gap-3 w-[180px] sm:w-[205px] hidden sm:flex">
+              {/* Stack of 3 Floating Stat/Focus Glass Cards on Right (Anchored beside portrait) */}
+              <div className="absolute right-0 sm:-right-4 lg:-right-4 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-2.5 sm:gap-3 w-[180px] sm:w-[205px] hidden sm:flex">
                 
                 {/* Card 1: 8+ Years */}
                 <div className="p-3 rounded-2xl bg-white/95 backdrop-blur-md border border-[#E5E7EB] shadow-card hover:border-[#2563EB]/40 hover:-translate-y-0.5 transition-all duration-200">
