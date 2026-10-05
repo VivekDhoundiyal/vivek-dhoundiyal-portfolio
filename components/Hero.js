@@ -15,15 +15,26 @@ export default function Hero({ profile = {}, hero = {} }) {
   const title = hero?.title || profile?.heroHeadlineAlt || profile?.heroHeadline || 'I build revenue, relationships and scalable businesses.'
   const description = hero?.description || profile?.heroDescription || "I'm Vivek Dhoundiyal — an entrepreneurial sales, business development and growth professional with 8+ years of experience across enterprise sales, strategic partnerships, revenue operations and scaling businesses from 0→1. I focus on building high-trust commercial relationships, driving repeatable revenue, and executing scalable operations."
   const portrait = profile?.portraitImage || '/images/vivek-canonical.png'
-  const videoSrc = hero?.videoUrl || profile?.heroVideo || '/videos/vivek-hero.mp4'
+  const videoWebmSrc = hero?.videoWebmUrl || profile?.heroVideoWebm || '/videos/vivek-hero-transparent.webm'
+  const videoWebpSrc = hero?.videoWebpUrl || profile?.heroVideoWebp || '/videos/vivek-hero-transparent.webp'
+  const fallbackImageSrc = hero?.fallbackImage || profile?.heroFallbackImage || '/images/vivek-transparent-wave.png'
   const primaryButtonText = hero?.primaryButtonText || 'Explore My Work'
   const primaryButtonUrl = hero?.primaryButtonUrl || '#work'
   const secondaryButtonText = hero?.secondaryButtonText || 'View Resume'
   const secondaryButtonUrl = hero?.secondaryButtonUrl || '/resume'
 
   const videoRef = React.useRef(null)
+  const [useFallbackAnim, setUseFallbackAnim] = React.useState(false)
 
   React.useEffect(() => {
+    // Detect Safari / WebKit (which does not support WebM VP9 alpha channel)
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent) ||
+                     (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream)
+    if (isSafari) {
+      setUseFallbackAnim(true)
+      return
+    }
+
     if (videoRef.current) {
       videoRef.current.defaultMuted = true
       videoRef.current.muted = true
@@ -445,19 +456,39 @@ export default function Hero({ profile = {}, hero = {} }) {
               {/* Organic mask dissolve at bottom + subtle ambient gradient overlay */}
               {/* ----------------------------------------------------------------- */}
               <div className="relative w-full aspect-[4/5] max-h-[480px] sm:max-h-[530px] lg:max-h-[520px] xl:max-h-[580px] 2xl:max-h-[610px] flex items-end justify-center z-10 animate-portrait-emerge hero-portrait-dissolve">
-                <video
-                  ref={videoRef}
-                  src={videoSrc}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
-                  controls={false}
-                  disablePictureInPicture
-                  aria-label="Vivek Dhoundiyal — Commercial Operator & Builder"
-                  className="w-auto h-full object-contain object-bottom rounded-t-3xl sm:rounded-t-[2.5rem] filter contrast-[1.02] brightness-[1.01] pointer-events-none select-none"
-                />
+                {useFallbackAnim ? (
+                  <img
+                    src={videoWebpSrc}
+                    onError={(e) => {
+                      e.currentTarget.src = fallbackImageSrc
+                    }}
+                    alt="Vivek Dhoundiyal — Commercial Operator & Builder"
+                    className="w-full h-full object-contain object-bottom filter contrast-[1.02] brightness-[1.01] pointer-events-none select-none"
+                  />
+                ) : (
+                  <video
+                    ref={videoRef}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    poster={fallbackImageSrc}
+                    controls={false}
+                    disablePictureInPicture
+                    aria-label="Vivek Dhoundiyal — Commercial Operator & Builder"
+                    onError={() => setUseFallbackAnim(true)}
+                    className="w-full h-full object-contain object-bottom filter contrast-[1.02] brightness-[1.01] pointer-events-none select-none"
+                  >
+                    <source src={videoWebmSrc} type='video/webm; codecs="vp9"' />
+                    {/* Fallback image with zero black background */}
+                    <img
+                      src={fallbackImageSrc}
+                      alt="Vivek Dhoundiyal — Commercial Operator & Builder"
+                      className="w-full h-full object-contain object-bottom filter contrast-[1.02] brightness-[1.01] pointer-events-none select-none"
+                    />
+                  </video>
+                )}
                 {/* Subtle gradient feather at the bottom for seamless merge into background */}
                 <div className="absolute inset-x-0 bottom-0 h-16 sm:h-24 bg-gradient-to-t from-white via-white/50 to-transparent pointer-events-none z-20" />
               </div>
