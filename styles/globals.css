@@ -522,28 +522,28 @@ body {
 
 @keyframes heroCardFloat1 {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translateY(-4px);
+    transform: translate3d(0, -6px, 0);
   }
 }
 
 @keyframes heroCardFloat2 {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translateY(4px);
+    transform: translate3d(0, 6px, 0);
   }
 }
 
 @keyframes heroCardFloat3 {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translateY(-3px);
+    transform: translate3d(0, -5px, 0);
   }
 }
 
@@ -699,57 +699,57 @@ body {
 
 /* Ecosystem Utility Classes (GPU-Accelerated & Fast/Continuous) */
 .animate-eco-float-v1 {
-  animation: ecoFloatV1 2.8s ease-in-out infinite;
+  animation: ecoFloatV1 2.2s ease-in-out infinite;
   will-change: transform;
 }
 
 .animate-eco-float-v2 {
-  animation: ecoFloatV2 3.4s ease-in-out infinite 0.4s;
+  animation: ecoFloatV2 2.6s ease-in-out infinite 0.3s;
   will-change: transform;
 }
 
 .animate-eco-float-diag1 {
-  animation: ecoFloatDiag1 3.1s ease-in-out infinite 0.2s;
+  animation: ecoFloatDiag1 2.4s ease-in-out infinite 0.15s;
   will-change: transform;
 }
 
 .animate-eco-float-diag2 {
-  animation: ecoFloatDiag2 3.6s ease-in-out infinite 0.5s;
+  animation: ecoFloatDiag2 2.7s ease-in-out infinite 0.4s;
   will-change: transform;
 }
 
 .animate-eco-float-h1 {
-  animation: ecoFloatH1 2.9s ease-in-out infinite 0.3s;
+  animation: ecoFloatH1 2.3s ease-in-out infinite 0.25s;
   will-change: transform;
 }
 
 .animate-eco-float-h2 {
-  animation: ecoFloatH2 3.3s ease-in-out infinite 0.6s;
+  animation: ecoFloatH2 2.5s ease-in-out infinite 0.5s;
   will-change: transform;
 }
 
 .animate-eco-float-orbit1 {
-  animation: ecoFloatOrbit1 3.9s ease-in-out infinite;
+  animation: ecoFloatOrbit1 2.9s ease-in-out infinite 0.1s;
   will-change: transform;
 }
 
 .animate-eco-float-orbit2 {
-  animation: ecoFloatOrbit2 4.3s ease-in-out infinite 0.7s;
+  animation: ecoFloatOrbit2 3.1s ease-in-out infinite 0.6s;
   will-change: transform;
 }
 
 .animate-eco-pulse-brisk {
-  animation: ecoPulseBrisk 2.3s ease-in-out infinite 0.3s;
+  animation: ecoPulseBrisk 1.8s ease-in-out infinite 0.2s;
   will-change: transform, opacity;
 }
 
 .animate-eco-pulse-particle {
-  animation: ecoPulseParticle 2.5s ease-in-out infinite;
+  animation: ecoPulseParticle 2.0s ease-in-out infinite;
   will-change: transform, opacity;
 }
 
 .animate-eco-spin-gentle {
-  animation: ecoSpinGentle 11s linear infinite;
+  animation: ecoSpinGentle 8s linear infinite;
   will-change: transform;
 }
 
@@ -889,17 +889,17 @@ body {
 }
 
 .animate-hero-card-1 {
-  animation: heroCardFloat1 6.5s ease-in-out infinite;
+  animation: heroCardFloat1 4.6s ease-in-out infinite;
   will-change: transform;
 }
 
 .animate-hero-card-2 {
-  animation: heroCardFloat2 7.8s ease-in-out infinite 1s;
+  animation: heroCardFloat2 5.4s ease-in-out infinite 0.8s;
   will-change: transform;
 }
 
 .animate-hero-card-3 {
-  animation: heroCardFloat3 5.8s ease-in-out infinite 2s;
+  animation: heroCardFloat3 4.9s ease-in-out infinite 1.6s;
   will-change: transform;
 }
 

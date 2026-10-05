@@ -164,7 +164,7 @@ export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
             {/* ========================================= */}
             {/* RIGHT: Socials + Search + LET'S TALK CTA  */}
             {/* ========================================= */}
-            <div className="flex items-center gap-2 sm:gap-3">
+            <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
               
               {/* LinkedIn */}
               <a
@@ -227,7 +227,7 @@ export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
               {/* "LET'S TALK" BUTTON (Vibrant Electric Blue Pill) */}
               <button
                 onClick={onOpenContact}
-                className="hidden sm:inline-flex items-center justify-center gap-2 px-5 sm:px-6 h-9.5 sm:h-10 rounded-full text-xs sm:text-sm font-semibold tracking-normal bg-[#2563EB] hover:bg-[#1D4ED8] text-white shadow-xs hover:shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] whitespace-nowrap flex-shrink-0 min-w-[124px] cursor-pointer"
+                className="hidden sm:inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-normal bg-[#2563EB] hover:bg-[#1D4ED8] text-white shadow-xs hover:shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] whitespace-nowrap flex-shrink-0 cursor-pointer"
                 aria-label="Let's Talk — Open contact dialog"
               >
                 <span className="whitespace-nowrap">Let's Talk</span>
