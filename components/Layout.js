@@ -4,6 +4,7 @@ import Footer from './Footer'
 import SearchModal from './SearchModal'
 import ContactModal from './ContactModal'
 import SeoHead from './SeoHead'
+import AnimatedAvatarCompanion from './AnimatedAvatarCompanion'
 import { useRouter } from 'next/router'
 import { useScrollReveal } from '../lib/useScrollReveal'
 
@@ -44,6 +45,8 @@ export default function Layout({ children, siteData, seoProps }) {
         onClose={() => setContactOpen(false)}
         modalData={modalContact}
       />
+
+      <AnimatedAvatarCompanion />
     </div>
   )
 }

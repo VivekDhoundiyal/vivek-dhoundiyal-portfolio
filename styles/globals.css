@@ -940,6 +940,230 @@ body {
 }
 
 /* ==============================================================================
+   ANIMATED AVATAR COMPANION SYSTEM KEYFRAMES & TRANSITIONS
+   ============================================================================== */
+
+/* Transitions between avatar poses (380-420ms smooth morph) */
+.avatar-transition-exit {
+  opacity: 0 !important;
+  transform: scale(0.96) translate3d(0, 6px, 0) !important;
+  transition: opacity 0.38s cubic-bezier(0.4, 0, 0.2, 1), transform 0.38s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.avatar-transition-enter {
+  opacity: 1 !important;
+  transform: scale(1) translate3d(0, 0, 0) !important;
+  transition: opacity 0.42s cubic-bezier(0.16, 1, 0.3, 1), transform 0.42s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* 1. Home / Hero: Welcoming wave float */
+@keyframes avatarFloatHome {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate3d(1px, -6px, 0) rotate(1.2deg) scale(1.008);
+  }
+  50% {
+    transform: translate3d(0, -3px, 0) rotate(-0.5deg) scale(1.004);
+  }
+  75% {
+    transform: translate3d(-1px, 4px, 0) rotate(1deg) scale(0.996);
+  }
+}
+
+/* 2. Work: Presenting & pointing gesture */
+@keyframes avatarFloatWork {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  30% {
+    transform: translate3d(2.5px, -5px, 0) rotate(0.8deg) scale(1.01);
+  }
+  70% {
+    transform: translate3d(-1px, 4px, 0) rotate(-0.4deg) scale(0.995);
+  }
+}
+
+/* 3. Blog / Thinking: Laptop typing & researching rhythm */
+@keyframes avatarFloatBlog {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate3d(0, -3px, 0) rotate(0.4deg) scale(1.006);
+  }
+  55% {
+    transform: translate3d(0.5px, -5px, 0) rotate(-0.3deg) scale(1.009);
+  }
+  80% {
+    transform: translate3d(0, 3px, 0) rotate(0.2deg) scale(0.996);
+  }
+}
+
+/* 4. Building: Upward growth energy */
+@keyframes avatarFloatBuilding {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  35% {
+    transform: translate3d(1.5px, -8px, 0) rotate(0.8deg) scale(1.016);
+  }
+  70% {
+    transform: translate3d(-1px, 3.5px, 0) rotate(-0.4deg) scale(0.994);
+  }
+}
+
+/* 5. Experience: Thoughtful strategy reflection */
+@keyframes avatarFloatExperience {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  35% {
+    transform: translate3d(-1px, -5px, 0) rotate(-0.8deg) scale(1.008);
+  }
+  70% {
+    transform: translate3d(1px, 4px, 0) rotate(0.5deg) scale(0.994);
+  }
+}
+
+/* 6. Education: Celebratory academic float */
+@keyframes avatarFloatEducation {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  30% {
+    transform: translate3d(1px, -7px, 0) rotate(0.8deg) scale(1.012);
+  }
+  70% {
+    transform: translate3d(-1px, 3px, 0) rotate(-0.5deg) scale(0.996);
+  }
+}
+
+/* 7. About: Confident professional identity */
+@keyframes avatarFloatAbout {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0) rotate(0.4deg) scale(1.014);
+  }
+}
+
+/* 8. Resume: Calm, minimal professional stability */
+@keyframes avatarFloatResume {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -4px, 0) rotate(0deg) scale(1.006);
+  }
+}
+
+/* 9. Contact: Warm conversational coffee greeting */
+@keyframes avatarFloatContact {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  40% {
+    transform: translate3d(1px, -6px, 0) rotate(0.7deg) scale(1.01);
+  }
+  80% {
+    transform: translate3d(-1px, 3px, 0) rotate(-0.5deg) scale(0.996);
+  }
+}
+
+.animate-avatar-home {
+  animation: avatarFloatHome 4.6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-avatar-work {
+  animation: avatarFloatWork 5.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-avatar-blog {
+  animation: avatarFloatBlog 4.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-avatar-building {
+  animation: avatarFloatBuilding 4.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-avatar-experience {
+  animation: avatarFloatExperience 6.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-avatar-education {
+  animation: avatarFloatEducation 5.0s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-avatar-about {
+  animation: avatarFloatAbout 5.6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-avatar-resume {
+  animation: avatarFloatResume 6.6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-avatar-contact {
+  animation: avatarFloatContact 5.0s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Mobile amplitude refinement: subtle and battery friendly */
+@media (max-width: 640px) {
+  @keyframes avatarFloatHome {
+    0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+    30% { transform: translate3d(0, -3px, 0) rotate(0.7deg); }
+    70% { transform: translate3d(0, 2px, 0) rotate(-0.4deg); }
+  }
+  @keyframes avatarFloatWork {
+    0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+    30% { transform: translate3d(1px, -3px, 0) rotate(0.5deg); }
+    70% { transform: translate3d(0, 2px, 0) rotate(-0.3deg); }
+  }
+  @keyframes avatarFloatBlog {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    30% { transform: translate3d(0, -2.5px, 0); }
+    70% { transform: translate3d(0, 1.5px, 0); }
+  }
+  @keyframes avatarFloatBuilding {
+    0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+    35% { transform: translate3d(0, -4px, 0) rotate(0.5deg); }
+    70% { transform: translate3d(0, 2px, 0) rotate(-0.3deg); }
+  }
+  @keyframes avatarFloatExperience {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(0, -3px, 0); }
+  }
+  @keyframes avatarFloatEducation {
+    0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+    35% { transform: translate3d(0, -3.5px, 0) rotate(0.5deg); }
+    70% { transform: translate3d(0, 2px, 0) rotate(-0.3deg); }
+  }
+  @keyframes avatarFloatAbout {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(0, -3px, 0); }
+  }
+  @keyframes avatarFloatResume {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(0, -2px, 0); }
+  }
+  @keyframes avatarFloatContact {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(0, -3px, 0); }
+  }
+}
+
+/* ==============================================================================
    ACCESSIBILITY & REDUCED MOTION PREFERENCE
    ============================================================================== */
 @media (prefers-reduced-motion: reduce) {
