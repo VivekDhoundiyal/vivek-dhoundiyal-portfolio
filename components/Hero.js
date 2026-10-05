@@ -141,65 +141,194 @@ export default function Hero({ profile = {}, hero = {} }) {
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col lg:flex-row items-end justify-center lg:justify-start gap-8 sm:gap-10 lg:gap-6 xl:gap-10 relative lg:-ml-4 xl:-ml-6">
             
             {/* ===================================================================== */}
-            {/* ZONE 2: CENTER ZONE — TALL PROFILE PHOTO + BUSINESS ECOSYSTEM          */}
+            {/* ZONE 2: CENTER ZONE — HEROIC PROFILE PHOTO + LIVING BUSINESS ECOSYSTEM */}
             {/* ===================================================================== */}
             <div id="hero-portrait-zone" className="relative w-full max-w-[320px] sm:max-w-[370px] lg:max-w-[360px] xl:max-w-[410px] 2xl:max-w-[440px] flex items-end justify-center flex-shrink-0 z-10">
               
-              {/* Floating Element 1: Revenue / B2B Pipeline Badge (Upper-Left above shoulder in open air) */}
-              <div className="absolute top-6 lg:top-8 -left-4 z-20 hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-card animate-biz-float-1 select-none pointer-events-none">
-                <div className="w-5 h-5 rounded-full bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600 flex-shrink-0">
-                  <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                    <polyline points="17 6 23 6 23 12" />
+              {/* ----------------------------------------------------------------- */}
+              {/* LIVING BUSINESS & TECH ECOSYSTEM: 12 PURE VISUAL SYMBOLS          */}
+              {/* No Text. Continuous Multi-Speed Pure CSS Motion. Visible on Mobile*/}
+              {/* Strictly orbiting with 25-45px clearance around Vivek's silhouette */}
+              {/* ----------------------------------------------------------------- */}
+
+              {/* Symbol 1: Upward Growth Arrow (Sales / Scaling) */}
+              <div
+                className="absolute top-[12%] left-1 sm:left-2 lg:left-1 xl:left-2 z-20 flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200/90 shadow-card animate-eco-float-v1 select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg sm:rounded-xl bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600">
+                  <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
                   </svg>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[11px] font-bold text-[#111318] leading-tight">+140% GTM Growth</span>
-                  <span className="text-[9px] text-[#737984] leading-none font-medium">B2B Pipeline · 0→1</span>
                 </div>
               </div>
 
-              {/* Floating Element 2: Strategic Deals Badge (Tucked safely into the open space beside chest) */}
-              <div className="absolute top-36 lg:top-38 -left-6 lg:-left-8 xl:-left-12 z-20 hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-card animate-biz-float-2 select-none pointer-events-none">
-                <div className="w-5 h-5 rounded-full bg-blue-50 border border-blue-200/80 flex items-center justify-center text-[#2563EB] flex-shrink-0">
-                  <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* Symbol 2: Scaling Bar Chart (Revenue & Analytics) */}
+              <div
+                className="absolute top-[26%] left-0 sm:left-1 lg:left-0 xl:left-1 z-20 hidden sm:flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200/90 shadow-card animate-eco-float-diag1 select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg sm:rounded-xl bg-blue-50 border border-blue-200/80 flex items-center justify-center text-[#2563EB]">
+                  <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="4" />
+                    <line x1="12" y1="20" x2="12" y2="10" />
+                    <line x1="6" y1="20" x2="6" y2="16" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Symbol 3: AI Sparkle (Technology & AI) */}
+              <div
+                className="absolute -top-7 sm:-top-9 left-[22%] sm:left-[25%] z-20 flex items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-purple-200/90 shadow-card animate-eco-pulse-brisk select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg sm:rounded-xl bg-purple-50 border border-purple-200/80 flex items-center justify-center text-purple-600">
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Symbol 4: Target / Crosshair (Strategy & Focus) */}
+              <div
+                className="absolute -top-6 sm:-top-8 right-[22%] sm:right-[25%] z-20 flex items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-cyan-200/90 shadow-card animate-eco-float-h1 select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg sm:rounded-xl bg-cyan-50 border border-cyan-200/80 flex items-center justify-center text-cyan-600">
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="9" />
+                    <circle cx="12" cy="12" r="3.5" />
+                    <line x1="12" y1="2" x2="12" y2="5" />
+                    <line x1="12" y1="19" x2="12" y2="22" />
+                    <line x1="2" y1="12" x2="5" y2="12" />
+                    <line x1="19" y1="12" x2="22" y2="12" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Symbol 5: Handshake (Partnerships & Strategic Deals) */}
+              <div
+                className="absolute top-[10%] right-0 sm:right-1 lg:-right-4 xl:-right-2 z-20 flex items-center justify-center w-8.5 h-8.5 sm:w-9.5 sm:h-9.5 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-indigo-200/90 shadow-card animate-eco-float-v2 select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                <div className="w-5.5 h-5.5 sm:w-6 sm:h-6 rounded-lg sm:rounded-xl bg-indigo-50 border border-indigo-200/80 flex items-center justify-center text-indigo-600">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M16 16l3-3a2.8 2.8 0 0 0-4-4l-3 3" />
                     <path d="M8 8L5 11a2.8 2.8 0 0 0 4 4l3-3" />
                     <path d="M14.5 9.5L9.5 14.5" />
                   </svg>
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[11px] font-bold text-[#111318] leading-tight">Strategic Deals</span>
-                  <span className="text-[9px] text-[#737984] leading-none font-medium">Enterprise Partnerships</span>
+              </div>
+
+              {/* Symbol 6: Trend Sparkline (Scaling & Analytics) */}
+              <div
+                className="absolute top-[24%] right-1 sm:right-2 lg:-right-2 xl:right-0 z-20 hidden sm:flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200/90 shadow-card animate-eco-float-diag2 select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg sm:rounded-xl bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600">
+                  <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                    <polyline points="17 6 23 6 23 12" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Symbol 7: Rocket (Entrepreneurship / 0→1 Launch) */}
+              <div
+                className="absolute top-[46%] left-1 sm:left-2 lg:left-1 xl:left-2 z-20 flex items-center justify-center w-8.5 h-8.5 sm:w-9.5 sm:h-9.5 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-blue-200/90 shadow-card animate-eco-float-diag1 select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                <div className="w-5.5 h-5.5 sm:w-6 sm:h-6 rounded-lg sm:rounded-xl bg-blue-50 border border-blue-200/80 flex items-center justify-center text-[#2563EB]">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+                    <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-2.05 9-1 1.2-2.7 2.1-3.95 2z" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Symbol 8: Workflow Nodes (Systems & Automation) */}
+              <div
+                className="absolute top-[46%] right-0 sm:right-1 lg:-right-4 xl:-right-2 z-20 flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-cyan-200/90 shadow-card animate-eco-float-h2 select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg sm:rounded-xl bg-cyan-50 border border-cyan-200/80 flex items-center justify-center text-cyan-600">
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="6" y1="3" x2="6" y2="15" />
+                    <circle cx="18" cy="6" r="3" />
+                    <circle cx="6" cy="18" r="3" />
+                    <path d="M18 9a9 9 0 0 1-9 9" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Symbol 9: Lightning Bolt (Execution Speed & Velocity) */}
+              <div
+                className="absolute top-[68%] left-1 sm:left-2 lg:left-1 xl:left-2 z-20 flex items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-amber-200/90 shadow-card animate-eco-pulse-brisk select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg sm:rounded-xl bg-amber-50 border border-amber-200/80 flex items-center justify-center text-amber-500">
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Symbol 10: Precision Cog (Operations & Systems Engine) */}
+              <div
+                className="absolute top-[68%] right-0 sm:right-1 lg:-right-3 xl:-right-1 z-20 flex items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200/90 shadow-card select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg sm:rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-center text-slate-600 animate-eco-spin-gentle">
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Symbol 11: Briefcase / Commercial Deal (Enterprise BD) */}
+              <div
+                className="absolute top-[16%] left-10 sm:left-14 lg:left-8 z-20 hidden sm:flex items-center justify-center w-7.5 h-7.5 rounded-xl bg-white/90 backdrop-blur-md border border-slate-200/90 shadow-card animate-eco-float-v1 select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                <div className="w-5 h-5 rounded-lg bg-blue-50 border border-blue-200/80 flex items-center justify-center text-blue-700">
+                  <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Symbol 12: Percentage Delta (Measurable Commercial Growth) */}
+              <div
+                className="absolute top-[16%] right-10 sm:right-14 lg:right-8 z-20 hidden sm:flex items-center justify-center w-7.5 h-7.5 rounded-xl bg-white/90 backdrop-blur-md border border-emerald-200/90 shadow-card animate-eco-float-v2 select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                <div className="w-5 h-5 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-700">
+                  <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="19" y1="5" x2="5" y2="19" />
+                    <circle cx="6.5" cy="6.5" r="2.5" />
+                    <circle cx="17.5" cy="17.5" r="2.5" />
+                  </svg>
                 </div>
               </div>
 
               {/* ----------------------------------------------------------------- */}
-              {/* EDITORIAL ANNOTATION: LABEL + HAND-DRAWN CURVED ARROW             */}
-              {/* Positioned upper-right of Vivek's head. Arrow points down-left    */}
-              {/* toward Vivek with a strict 25-35px separation buffer (NO TOUCHING)*/}
+              {/* 6 LUMINOUS AMBIENT PARTICLES (ORGANIC DRIFT & PULSE)              */}
               {/* ----------------------------------------------------------------- */}
-              <div className="absolute -top-6 sm:-top-4 lg:-top-2 right-4 sm:-right-4 md:-right-6 lg:-right-8 xl:-right-6 z-20 hidden sm:flex items-center gap-1.5 pointer-events-none select-none animate-hero-doodle">
-                {/* Hand-drawn curved arrow pointing down-left toward Vivek's hair with 25-35px clearance */}
-                <svg className="w-11 h-11 text-purple-600/90 flex-shrink-0" viewBox="0 0 50 44" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M 42,6 C 30,6 18,14 6,30" />
-                  <polyline points="5,18 6,30 18,27" />
-                </svg>
-                {/* Editorial Annotation Text (Matching Reference Visual Language) */}
-                <div className="text-[11px] sm:text-[11.5px] font-mono leading-tight text-purple-700 tracking-tight italic font-medium -rotate-2 select-none">
-                  Business<br />
-                  Growth<br />
-                  Partnerships<br />
-                  Operations<br />
-                  <span className="font-semibold text-purple-900 not-italic">Execution → Scale</span>
-                </div>
-              </div>
+              <div className="absolute top-[14%] left-6 sm:left-8 w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.9)] animate-eco-pulse-particle pointer-events-none z-10" />
+              <div className="absolute top-[6%] right-8 sm:right-10 w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(192,132,252,0.9)] animate-eco-pulse-particle pointer-events-none z-10 [animation-delay:0.7s]" />
+              <div className="absolute top-[36%] -left-1 sm:left-0 w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(52,211,153,0.9)] animate-eco-pulse-particle pointer-events-none z-10 [animation-delay:1.1s]" />
+              <div className="absolute top-[36%] -right-1 sm:right-0 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.9)] animate-eco-pulse-particle pointer-events-none z-10 [animation-delay:0.3s]" />
+              <div className="absolute top-[58%] -left-3 sm:-left-1 w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_6px_rgba(56,189,248,0.9)] animate-eco-pulse-particle pointer-events-none z-10 [animation-delay:1.3s]" />
+              <div className="absolute top-[58%] -right-3 sm:-right-1 w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_6px_rgba(251,191,36,0.9)] animate-eco-pulse-particle pointer-events-none z-10 [animation-delay:0.5s]" />
 
               {/* ----------------------------------------------------------------- */}
               {/* FREESTANDING CUTOUT PORTRAIT (TALL, HEROIC PROPORTIONS)          */}
-              {/* Bottom aligned naturally with hero section baseline               */}
+              {/* Organic mask dissolve at bottom + subtle ambient gradient overlay */}
               {/* ----------------------------------------------------------------- */}
-              <div className="relative w-full aspect-[4/5] max-h-[480px] sm:max-h-[530px] lg:max-h-[520px] xl:max-h-[580px] 2xl:max-h-[610px] flex items-end justify-center z-10 animate-portrait-emerge">
+              <div className="relative w-full aspect-[4/5] max-h-[480px] sm:max-h-[530px] lg:max-h-[520px] xl:max-h-[580px] 2xl:max-h-[610px] flex items-end justify-center z-10 animate-portrait-emerge hero-portrait-dissolve">
                 <Image
                   src={portrait}
                   alt="Vivek Dhoundiyal — Commercial Operator & Builder"
@@ -209,6 +338,8 @@ export default function Hero({ profile = {}, hero = {} }) {
                   unoptimized
                   className="object-contain object-bottom filter contrast-[1.02] brightness-[1.01]"
                 />
+                {/* Subtle gradient feather at the bottom for seamless merge into background */}
+                <div className="absolute inset-x-0 bottom-0 h-16 sm:h-24 bg-gradient-to-t from-white via-white/50 to-transparent pointer-events-none z-20" />
               </div>
 
             </div>
@@ -220,18 +351,6 @@ export default function Hero({ profile = {}, hero = {} }) {
             {/* Mobile: 1 column stacked beneath portrait                             */}
             {/* ===================================================================== */}
             <div id="hero-cards-zone" className="w-full sm:max-w-[560px] lg:w-[205px] xl:w-[225px] flex-shrink-0 flex flex-col gap-3 sm:gap-3.5 z-20 pb-4 lg:pb-8">
-              
-              {/* Floating Sparkline Growth Widget (Sitting neatly above Card 1 in the cards column) */}
-              <div className="self-end mb-3.5 hidden lg:flex items-center gap-2 px-2.5 py-1.5 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-card animate-biz-float-3 select-none pointer-events-none">
-                <div className="flex flex-col">
-                  <span className="text-[9.5px] font-bold text-[#111318] leading-none tracking-tight">Scale Trajectory</span>
-                  <span className="text-[8.5px] text-emerald-600 font-semibold leading-none mt-0.5">+120% ARR</span>
-                </div>
-                <svg className="w-8 h-4 text-[#2563EB]" viewBox="0 0 32 16" fill="none">
-                  <path d="M 2,14 Q 10,12 16,8 T 28,3" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" fill="none" />
-                  <circle cx="28" cy="3" r="2" fill="#2563EB" />
-                </svg>
-              </div>
 
               {/* Card 1: 8+ Years */}
               <div className="p-3 sm:p-3.5 rounded-2xl bg-white/95 backdrop-blur-md border border-[#E5E7EB] shadow-card hover:border-[#2563EB]/40 hover:-translate-y-0.5 transition-all duration-200 animate-hero-card-1">

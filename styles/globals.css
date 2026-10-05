@@ -556,56 +556,228 @@ body {
   }
 }
 
-/* Floating Business Ecosystem Animations (Pure CSS, GPU-Accelerated) */
-@keyframes bizFloat1 {
+/* ========================================================================= */
+/* LIVING BUSINESS & TECH ECOSYSTEM ANIMATIONS (Continuous, Multi-Speed, Pure CSS) */
+/* ========================================================================= */
+
+/* Layer 1: Fast & Crisp Vertical Floating Drift */
+@keyframes ecoFloatV1 {
   0%, 100% {
-    transform: translateY(0px) translateX(0px);
+    transform: translate3d(0, 0, 0) rotate(0deg);
   }
   50% {
-    transform: translateY(-5px) translateX(2px);
+    transform: translate3d(0, -9px, 0) rotate(2.5deg);
   }
 }
 
-@keyframes bizFloat2 {
+/* Layer 2: Medium Vertical Drift with Reverse Tilt */
+@keyframes ecoFloatV2 {
   0%, 100% {
-    transform: translateY(0px) translateX(0px);
+    transform: translate3d(0, 0, 0) rotate(0deg);
   }
   50% {
-    transform: translateY(5px) translateX(-3px);
+    transform: translate3d(0, 10px, 0) rotate(-2.5deg);
   }
 }
 
-@keyframes bizFloat3 {
+/* Layer 3: Diagonal Drifting (Up-Left to Down-Right) */
+@keyframes ecoFloatDiag1 {
   0%, 100% {
-    transform: translateY(0px) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    transform: translateY(-4px) scale(1.02);
+    transform: translate3d(-7px, -8px, 0) scale(1.05);
   }
 }
 
-@keyframes bizFloat4 {
+/* Layer 4: Diagonal Drifting (Up-Right to Down-Left) */
+@keyframes ecoFloatDiag2 {
   0%, 100% {
-    transform: translateY(0px) translateX(0px);
+    transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    transform: translateY(4px) translateX(2px);
+    transform: translate3d(8px, -7px, 0) scale(0.97);
   }
 }
 
-.animate-hero-orbital {
-  animation: heroOrbitalSlow 20s linear infinite;
+/* Layer 5: Horizontal Drifting & Sway */
+@keyframes ecoFloatH1 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(8px, -4px, 0) rotate(3deg);
+  }
+}
+
+/* Layer 6: Horizontal Counter-Sway */
+@keyframes ecoFloatH2 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(-8px, 5px, 0) rotate(-3deg);
+  }
+}
+
+/* Layer 7: Brisk Pulse & Twinkle for AI Star & Lightning */
+@keyframes ecoPulseBrisk {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate3d(0, -6px, 0) scale(1.15);
+    opacity: 1;
+  }
+}
+
+/* Layer 8: Luminous Micro-Particle Twinkle & Drift */
+@keyframes ecoPulseParticle {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(0.85);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate3d(3px, -7px, 0) scale(1.25);
+    opacity: 1;
+  }
+}
+
+/* Layer 9: Gentle Continuous Rotation for Cog / Systems Engine */
+@keyframes ecoSpinGentle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ecosystem Utility Classes (GPU-Accelerated) */
+.animate-eco-float-v1 {
+  animation: ecoFloatV1 3.2s ease-in-out infinite;
   will-change: transform;
 }
 
-.animate-hero-orbital-reverse {
-  animation: heroOrbitalReverse 26s linear infinite;
+.animate-eco-float-v2 {
+  animation: ecoFloatV2 4.0s ease-in-out infinite 0.5s;
   will-change: transform;
 }
 
-.animate-hero-glow {
-  animation: heroGlowPulse 6s ease-in-out infinite;
+.animate-eco-float-diag1 {
+  animation: ecoFloatDiag1 3.6s ease-in-out infinite 0.3s;
+  will-change: transform;
+}
+
+.animate-eco-float-diag2 {
+  animation: ecoFloatDiag2 4.4s ease-in-out infinite 0.8s;
+  will-change: transform;
+}
+
+.animate-eco-float-h1 {
+  animation: ecoFloatH1 3.4s ease-in-out infinite 0.2s;
+  will-change: transform;
+}
+
+.animate-eco-float-h2 {
+  animation: ecoFloatH2 4.2s ease-in-out infinite 0.6s;
+  will-change: transform;
+}
+
+.animate-eco-pulse-brisk {
+  animation: ecoPulseBrisk 2.7s ease-in-out infinite 0.4s;
   will-change: transform, opacity;
+}
+
+.animate-eco-pulse-particle {
+  animation: ecoPulseParticle 2.9s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-eco-spin-gentle {
+  animation: ecoSpinGentle 14s linear infinite;
+  will-change: transform;
+}
+
+/* Subtle organic mask for portrait lower torso/jeans dissolve */
+.hero-portrait-dissolve {
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 68%, rgba(0, 0, 0, 0.82) 78%, rgba(0, 0, 0, 0.35) 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 68%, rgba(0, 0, 0, 0.82) 78%, rgba(0, 0, 0, 0.35) 90%, transparent 100%);
+}
+
+/* Mobile responsive animation tuning: keeps motion continuous while tightening travel distance */
+@media (max-width: 640px) {
+  @keyframes ecoFloatV1 {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate3d(0, -6px, 0) rotate(1.5deg);
+    }
+  }
+
+  @keyframes ecoFloatV2 {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate3d(0, 6px, 0) rotate(-1.5deg);
+    }
+  }
+
+  @keyframes ecoFloatDiag1 {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(-4px, -5px, 0) scale(1.04);
+    }
+  }
+
+  @keyframes ecoFloatDiag2 {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(5px, -5px, 0) scale(0.98);
+    }
+  }
+
+  @keyframes ecoFloatH1 {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate3d(5px, -3px, 0) rotate(2deg);
+    }
+  }
+
+  @keyframes ecoFloatH2 {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate3d(-5px, 3px, 0) rotate(-2deg);
+    }
+  }
+}
+
+/* Respect prefers-reduced-motion gracefully */
+@media (prefers-reduced-motion: reduce) {
+  .animate-eco-float-v1,
+  .animate-eco-float-v2,
+  .animate-eco-float-diag1,
+  .animate-eco-float-diag2,
+  .animate-eco-float-h1,
+  .animate-eco-float-h2,
+  .animate-eco-pulse-brisk,
+  .animate-eco-pulse-particle {
+    animation-duration: 8s !important;
+  }
+  .animate-eco-spin-gentle {
+    animation: none !important;
+  }
 }
 
 .animate-hero-glow-primary {
@@ -643,11 +815,6 @@ body {
   will-change: transform, opacity;
 }
 
-.animate-hero-constellation {
-  animation: heroConstellationPulse 8s ease-in-out infinite;
-  will-change: transform, opacity;
-}
-
 .animate-hero-card-1 {
   animation: heroCardFloat1 6.5s ease-in-out infinite;
   will-change: transform;
@@ -660,31 +827,6 @@ body {
 
 .animate-hero-card-3 {
   animation: heroCardFloat3 5.8s ease-in-out infinite 2s;
-  will-change: transform;
-}
-
-.animate-hero-doodle {
-  animation: heroDoodleNudge 5s ease-in-out infinite;
-  will-change: transform;
-}
-
-.animate-biz-float-1 {
-  animation: bizFloat1 7s ease-in-out infinite;
-  will-change: transform;
-}
-
-.animate-biz-float-2 {
-  animation: bizFloat2 8.5s ease-in-out infinite 1s;
-  will-change: transform;
-}
-
-.animate-biz-float-3 {
-  animation: bizFloat3 6s ease-in-out infinite 0.5s;
-  will-change: transform;
-}
-
-.animate-biz-float-4 {
-  animation: bizFloat4 9s ease-in-out infinite 2s;
   will-change: transform;
 }
 
