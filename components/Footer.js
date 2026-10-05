@@ -28,13 +28,13 @@ export default function Footer({ profile }) {
             </div>
 
             <p className="text-sm text-[#555B66] max-w-md leading-relaxed font-normal">
-              Building commercial revenue engines, operating physical systems, and engineering software products that solve real friction.
+              Building commercial revenue engines, forging high-trust partnerships, and executing scalable business operations.
             </p>
 
             <div className="pt-2">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono bg-emerald-50 text-emerald-700 border border-emerald-200 shadow-2xs">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                <span>Available for Select Advisory & Product Roles</span>
+                <span>Available for Leadership, Business Development & Growth Opportunities</span>
               </div>
             </div>
           </div>
@@ -50,8 +50,8 @@ export default function Footer({ profile }) {
               <li><Link href="/#corporate" className="hover:text-[#2563EB] transition-colors">Corporate Experience</Link></li>
               <li><Link href="/#experience" className="hover:text-[#2563EB] transition-colors">Executive Timeline</Link></li>
               <li><Link href="/#building" className="hover:text-[#2563EB] transition-colors">Where I Am Building</Link></li>
-              <li><Link href="/#thinking" className="hover:text-[#2563EB] transition-colors">Thinking & Writing</Link></li>
-              <li><Link href="/#about" className="hover:text-[#2563EB] transition-colors">About Vivek</Link></li>
+              <li><Link href="/blog" className="hover:text-[#2563EB] transition-colors">Blog & Insights</Link></li>
+              <li><Link href="/#about-contact" className="hover:text-[#2563EB] transition-colors">About Vivek</Link></li>
             </ul>
           </div>
 

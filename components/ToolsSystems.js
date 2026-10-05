@@ -17,7 +17,7 @@ export default function ToolsSystems({ tools = [] }) {
   const [activeCategory, setActiveCategory] = useState('All Tools')
   const [activeHoverId, setActiveHoverId] = useState(null)
 
-  // Deterministic category matching
+  // Deterministic category matching with robust multi-category support
   const filteredTools = useMemo(() => {
     if (!tools || tools.length === 0) return []
     if (activeCategory === 'All Tools') return tools
@@ -25,17 +25,37 @@ export default function ToolsSystems({ tools = [] }) {
     const target = activeCategory.trim().toLowerCase()
     return tools.filter((t) => {
       const cat = (t.category || '').trim().toLowerCase()
+      const tid = (t.id || '').toLowerCase()
       if (cat === target) return true
 
-      // Semantic normalization & synonyms
-      if (target === 'ai' && (cat.includes('ai') || cat.includes('intelligence'))) return true
-      if (target === 'development' && (cat.includes('dev') || cat.includes('code') || cat.includes('engineering'))) return true
-      if (target === 'productivity' && (cat.includes('productiv') || cat.includes('ops') || cat.includes('operations'))) return true
-      if (target === 'research' && (cat.includes('research') || cat.includes('intel') || cat.includes('discovery'))) return true
-      if (target === 'crm' && (cat.includes('crm') || cat.includes('sales') || cat.includes('pipeline'))) return true
-      if (target === 'automation' && (cat.includes('auto') || cat.includes('workflow'))) return true
-      if (target === 'analytics' && (cat.includes('analytic') || cat.includes('data') || cat.includes('spread'))) return true
-      if (target === 'communication' && (cat.includes('commun') || cat.includes('collab'))) return true
+      // Category semantic normalization according to user specification
+      if (target === 'ai') {
+        const aiToolIds = ['chatgpt', 'claude', 'gemini', 'perplexity', 'openai-codex', 'claude-code', 'antigravity', 'stitch']
+        return cat.includes('ai') || cat.includes('intelligence') || aiToolIds.includes(tid)
+      }
+      if (target === 'research') {
+        return cat.includes('research') || cat.includes('intel') || cat.includes('discovery') || tid === 'perplexity'
+      }
+      if (target === 'development') {
+        const devToolIds = ['openai-codex', 'claude-code', 'antigravity', 'stitch', 'python']
+        return cat.includes('dev') || cat.includes('code') || cat.includes('engineering') || devToolIds.includes(tid)
+      }
+      if (target === 'productivity') {
+        const prodToolIds = ['clickup', 'notion', 'google-workspace', 'microsoft-word', 'microsoft-powerpoint', 'microsoft-excel']
+        return cat.includes('productiv') || cat.includes('ops') || cat.includes('operations') || prodToolIds.includes(tid)
+      }
+      if (target === 'analytics') {
+        return cat.includes('analytic') || cat.includes('data') || cat.includes('spread') || tid === 'microsoft-excel'
+      }
+      if (target === 'crm') {
+        return cat.includes('crm') || cat.includes('sales') || cat.includes('pipeline') || tid === 'zoho-crm' || tid === 'hubspot'
+      }
+      if (target === 'automation') {
+        return cat.includes('auto') || cat.includes('workflow') || tid === 'zapier' || tid === 'make'
+      }
+      if (target === 'communication') {
+        return cat.includes('commun') || cat.includes('collab') || tid === 'slack'
+      }
 
       return false
     })

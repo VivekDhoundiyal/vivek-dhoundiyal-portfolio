@@ -9,104 +9,108 @@ import {
 
 const DEFAULT_DOMAINS = [
   {
-    id: 'bizdev',
-    title: 'Business Development',
-    tag: 'Commercial Deals',
-    summary: 'Enterprise consultative sales, institutional partnerships, and commercial deal structuring.',
+    id: 'sales-strategy',
+    title: 'Sales Strategy & Enterprise Deals',
+    tag: 'Enterprise Sales',
+    summary: 'Enterprise consultative sales, institutional partnerships, pipeline management, and deal execution.',
+    skills: [
+      'Sales Strategy',
+      'Enterprise Sales',
+      'Revenue Generation',
+      'Deal Execution',
+      'Pipeline Management',
+      'Account Management'
+    ]
+  },
+  {
+    id: 'bizdev-partnerships',
+    title: 'Business Development & Partnerships',
+    tag: 'Strategic Alliances',
+    summary: 'Strategic partnerships, co-distribution channels, commercial negotiation, and market expansion.',
     skills: [
       'Business Development',
-      'Revenue Generation',
-      'Partnerships',
-      'B2B Sales',
-      'Account Management',
-      'Client Relationships'
+      'Strategic Partnerships',
+      'Negotiation',
+      'Market Expansion',
+      'Client Relationships',
+      'Distribution Channels'
     ]
   },
   {
-    id: 'growth',
-    title: 'Growth & Commercial',
+    id: 'growth-gtm',
+    title: 'Revenue & Go-To-Market',
     tag: 'GTM Strategy',
-    summary: 'Data-driven GTM strategy, outbound pipeline architecture, and revenue operations.',
+    summary: 'Go-to-market strategy, outbound prospecting architecture, lead generation, and commercial growth.',
     skills: [
+      'Go-To-Market Strategy',
+      'Commercial Strategy',
       'Growth Strategy',
-      'Go-to-Market Thinking',
-      'Revenue Operations',
-      'Market Research',
       'Lead Generation',
-      'Commercial Strategy'
-    ]
-  },
-  {
-    id: 'operations',
-    title: 'Operations & Systems',
-    tag: 'Execution',
-    summary: 'Repeatable process design, supplier SLA governance, and operational bottleneck removal.',
-    skills: [
-      'Business Operations',
-      'Process Design',
-      'Workflow Optimization',
-      'Cross-functional Coordination',
-      'Execution',
-      'Systems Thinking'
-    ]
-  },
-  {
-    id: 'product',
-    title: 'Product Thinking',
-    tag: 'Product Architecture',
-    summary: 'User problem discovery, systems architecture, spec critique, and product-led operating loops.',
-    skills: [
-      'Product Thinking',
-      'Product Strategy',
-      'Product Discovery',
-      'User Problem Analysis',
-      'Product Operations',
-      'AI Product Thinking'
-    ]
-  },
-  {
-    id: 'ai-automation',
-    title: 'AI & Automation',
-    tag: 'Modern Leverage',
-    summary: 'AI-assisted workflows, agentic experimentation, prompt engineering, and low-code integrations.',
-    skills: [
-      'AI-assisted workflows',
-      'AI research',
-      'Workflow automation',
-      'Prompt engineering',
-      'AI product experimentation',
-      'No-code/low-code automation'
+      'Revenue Operations',
+      'Market Research'
     ]
   },
   {
     id: 'entrepreneurship',
-    title: 'Entrepreneurship',
-    tag: '0→1 Building',
-    summary: 'Rapid hypothesis validation, hands-on commercial execution, and scaling from zero to cash-flow.',
+    title: 'Entrepreneurship & 0→1 Building',
+    tag: '0→1 Execution',
+    summary: 'Rapid business validation, hands-on commercial execution, and scaling from zero to sustainable revenue.',
     skills: [
-      'Startup Building',
-      'Business Validation',
+      'Entrepreneurship',
+      'Founder/Business Execution',
       'Commercial Execution',
-      'Problem Solving',
-      '0→1 Execution'
+      '0→1 Building',
+      'Business Validation',
+      'Unit Economics'
+    ]
+  },
+  {
+    id: 'operations-process',
+    title: 'Operations & Process Improvement',
+    tag: 'Execution & Scale',
+    summary: 'Business operations, process improvement, workflow optimization, and building repeatable business systems.',
+    skills: [
+      'Business Operations',
+      'Process Improvement',
+      'Workflow Optimization',
+      'Execution',
+      'Cross-functional Coordination',
+      'SLA Governance'
+    ]
+  },
+  {
+    id: 'modern-leverage',
+    title: 'Commercial Strategy & Modern Tooling',
+    tag: 'Modern Leverage',
+    summary: 'AI-assisted workflows, market intelligence, automation tooling, and data-driven commercial decision making.',
+    skills: [
+      'Commercial Strategy',
+      'AI-assisted Workflows',
+      'Market Intelligence',
+      'Workflow Automation',
+      'CRM Optimization',
+      'Data Analysis'
     ]
   }
 ]
 
 const CORE_PILL_CAPABILITIES = [
+  'Sales Strategy',
   'Business Development',
-  'Partnerships',
-  'Growth Strategy',
-  'Revenue Operations',
-  'Product Thinking',
-  'AI & Automation',
+  'Enterprise Sales',
+  'Strategic Partnerships',
+  'Revenue Generation',
+  'Go-To-Market (GTM)',
+  'Commercial Strategy',
+  'Deal Execution',
   'Business Operations',
+  'Process Improvement',
   '0→1 Entrepreneurship'
 ]
 
 export default function SkillsSection({ skills = {} }) {
   const domains = skills?.domains && skills.domains.length > 0 ? skills.domains : DEFAULT_DOMAINS
-  const intro = skills?.intro || 'I work across commercial strategy, growth, operations and product thinking — using technology and AI to turn ideas into executable systems.'
+  const intro = skills?.intro || 'I work across commercial sales strategy, business development, revenue generation, partnerships, and operations — applying hands-on execution and modern tools to drive measurable business outcomes.'
 
   return (
     <section id="skills" className="py-20 sm:py-28 border-t border-[#E5E7EB] bg-white text-[#111318] relative">

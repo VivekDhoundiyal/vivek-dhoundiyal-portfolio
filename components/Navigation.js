@@ -91,10 +91,10 @@ export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
   const navLinks = [
     { label: 'Home', href: '/#hero', sectionId: 'hero' },
     { label: 'Work', href: '/#work', sectionId: 'work' },
-    { label: 'Thinking', href: '/#thinking', sectionId: 'thinking' },
+    { label: 'Blog', href: '/blog', sectionId: 'blog' },
     { label: 'Building', href: '/#building', sectionId: 'building' },
-    { label: 'About', href: '/#about-contact', sectionId: 'about' },
     { label: 'Experience', href: '/#experience', sectionId: 'experience' },
+    { label: 'About', href: '/#about-contact', sectionId: 'about' },
     { label: 'Resume', href: '/resume', sectionId: 'resume' },
   ]
 
@@ -131,7 +131,7 @@ export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
                   Vivek Dhoundiyal
                 </span>
                 <span className="text-[11px] text-[#737984] font-medium hidden sm:inline -mt-0.5">
-                  Business · Growth · Systems
+                  Business · Growth · Partnerships
                 </span>
               </div>
             </Link>

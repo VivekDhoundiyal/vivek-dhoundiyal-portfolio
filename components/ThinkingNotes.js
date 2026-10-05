@@ -23,23 +23,23 @@ export default function ThinkingNotes({ articles = [] }) {
           <div className="max-w-2xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-              <span className="uppercase tracking-wider">08 · Perspectives & Writing</span>
+              <span className="uppercase tracking-wider">08 · Blog & Commercial Insights</span>
             </div>
 
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318] leading-tight">
-              Thinking & Writing
+              Blog & Writing
             </h2>
 
             <p className="text-base sm:text-lg text-[#555B66] leading-relaxed font-normal">
-              Essays and operational frameworks exploring the intersections of commercial operations, systems architecture, and modern technology.
+              Essays, playbooks, and operating frameworks exploring B2B sales strategy, strategic partnerships, business development, and scalable execution.
             </p>
           </div>
 
           <Link
-            href="/thinking"
+            href="/blog"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 hover:bg-[#FAFAF8] text-[#111318] shadow-xs transition-all self-start md:self-auto"
           >
-            <span>View All Essays</span>
+            <span>View All Articles</span>
             <ArrowRight className="w-3.5 h-3.5 text-[#2563EB]" />
           </Link>
         </div>
@@ -51,13 +51,13 @@ export default function ThinkingNotes({ articles = [] }) {
           {featured && (
             <div className="lg:col-span-7">
               <Link
-                href={`/thinking/${featured.slug}`}
+                href={`/blog/${featured.slug}`}
                 className="p-8 sm:p-12 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 hover-card-elevate shadow-xs transition-all duration-300 flex flex-col justify-between space-y-8 block group reveal-on-scroll"
               >
                 <div className="space-y-6">
                   <div className="flex items-center justify-between pb-4 border-b border-slate-100">
                     <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-[#2563EB] bg-blue-50 border border-blue-100">
-                      FEATURED ESSAY · {featured.category}
+                      FEATURED ARTICLE · {featured.category}
                     </span>
                     <span className="text-xs font-mono text-[#737984]">
                       {featured.readingTime}
@@ -78,7 +78,7 @@ export default function ThinkingNotes({ articles = [] }) {
                     Published {featured.date}
                   </span>
                   <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#2563EB] group-hover:underline">
-                    <span>Read Essay</span>
+                    <span>Read Article</span>
                     <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </span>
                 </div>
@@ -91,7 +91,7 @@ export default function ThinkingNotes({ articles = [] }) {
             {secondary.map((art, idx) => (
               <Link
                 key={art.id || idx}
-                href={`/thinking/${art.slug}`}
+                href={`/blog/${art.slug}`}
                 className={`p-7 sm:p-8 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 hover-card-elevate shadow-xs transition-all duration-300 flex flex-col justify-between space-y-4 block group reveal-on-scroll delay-${(idx + 1) * 100}`}
               >
                 <div className="space-y-2.5">
@@ -112,7 +112,7 @@ export default function ThinkingNotes({ articles = [] }) {
                 <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
                   <span className="text-xs font-mono text-[#737984]">{art.date}</span>
                   <span className="text-[#2563EB] font-semibold group-hover:underline flex items-center gap-1">
-                    <span>Read Note</span>
+                    <span>Read Playbook</span>
                     <ArrowRight className="w-3 h-3" />
                   </span>
                 </div>

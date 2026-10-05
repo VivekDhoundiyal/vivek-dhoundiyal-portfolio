@@ -85,7 +85,7 @@
   },
   "profile": {
     "name": "Vivek Dhoundiyal",
-    "role": "Revenue • Growth • Commercial Operator",
+    "role": "Entrepreneur · Business Development · Growth Leader",
     "location": "India / Remote",
     "availability": "Open for revenue leadership, strategic growth consulting & 0-to-1 ventures",
     "email": "vivekdhoundiyal2901@gmail.com",
@@ -94,9 +94,9 @@
     "linkedin": "https://www.linkedin.com/in/vivekdhoundiyal",
     "x": "https://x.com/Vivek_Dh_",
     "github": "https://github.com/VivekDhoundiyal",
-    "heroEyebrow": "REVENUE • BUSINESS DEVELOPMENT • GROWTH",
-    "heroHeadline": "I build revenue, relationships and businesses.",
-    "heroDescription": "I am a commercial operator and business builder with 8+ years of experience across B2B sales, revenue generation, partnerships, entrepreneurship and commercial operations. Today, I am applying that experience to technology, AI workflows and systems — including CareerOS.",
+    "heroEyebrow": "REVENUE • PARTNERSHIPS • OPERATIONS • GROWTH",
+    "heroHeadline": "I build revenue, relationships and scalable businesses.",
+    "heroDescription": "I'm Vivek Dhoundiyal — an entrepreneurial sales, business development and growth professional with 8+ years of experience across enterprise sales, strategic partnerships, revenue operations and scaling businesses from 0→1. I focus on building high-trust commercial relationships, driving repeatable revenue, and executing scalable operations.",
     "portraitImage": "/images/vivek-canonical.png",
     "avatarImage": "/images/vivek-canonical.png",
     "education": "B.Tech in Mechanical Engineering, Manav Rachna International University (2014–2018)",
@@ -105,22 +105,22 @@
       "Hindi"
     ],
     "experienceYears": "8+ Years",
-    "heroHeadlineAlt": "I help businesses grow and run better.",
+    "heroHeadlineAlt": "I build revenue, relationships and scalable businesses.",
     "milestones": [
       {
         "value": "8+ Years",
         "title": "Sales · Partnerships",
-        "subtitle": "Operations · Entrepreneurship"
+        "subtitle": "Business Development · Revenue"
       },
       {
         "value": "3+ Ventures",
         "title": "Built · Operated · Scaled",
-        "subtitle": "Marketplace, B2B food supply & distribution"
+        "subtitle": "SettleMyCar · Kitchen · Fixins"
       },
       {
-        "value": "Next Chapter",
-        "title": "Product · AI · Systems",
-        "subtitle": "Applying commercial leverage to technology"
+        "value": "Entrepreneurship",
+        "title": "Commercial Growth · Execution",
+        "subtitle": "0→1 Building · Scalable Operations"
       }
     ]
   },
@@ -181,14 +181,14 @@
     "favicon": "/favicon.ico"
   },
   "hero": {
-    "eyebrow": "REVENUE • BUSINESS DEVELOPMENT • GROWTH",
-    "title": "I build revenue, relationships and businesses.",
-    "description": "I am a commercial operator and business builder with 8+ years of experience across B2B sales, revenue generation, partnerships, entrepreneurship and commercial operations. Today, I am applying that experience to technology, AI workflows and systems — including CareerOS.",
+    "eyebrow": "REVENUE • PARTNERSHIPS • OPERATIONS • GROWTH",
+    "title": "I build revenue, relationships and scalable businesses.",
+    "description": "I'm Vivek Dhoundiyal — an entrepreneurial sales, business development and growth professional with 8+ years of experience across enterprise sales, strategic partnerships, revenue operations and scaling businesses from 0→1. I focus on building high-trust commercial relationships, driving repeatable revenue, and executing scalable operations.",
     "primaryButtonText": "Explore My Work",
     "primaryButtonUrl": "#work",
     "secondaryButtonText": "View Resume",
     "secondaryButtonUrl": "/resume",
-    "titleAlt": "I help businesses\ngrow and run better."
+    "titleAlt": "I build revenue, relationships and scalable businesses."
   },
   "resumes": [
     {
@@ -213,9 +213,9 @@
       "slug": "careeros",
       "title": "CareerOS",
       "subtitle": "The AI-Powered Career Operating System",
-      "projectType": "PRODUCT / SYSTEMS ARCHITECTURE",
-      "category": "Product / Systems Architecture",
-      "role": "Product & Systems Architect",
+      "projectType": "COMMERCIAL PRODUCT & OPERATIONS SYSTEM",
+      "category": "Product Concept & Commercial Strategy",
+      "role": "Product Creator & Commercial Operator",
       "year": "2024–2026",
       "status": "Featured Architecture",
       "statusType": "active",
@@ -229,7 +229,7 @@
       "tags": [
         "AI Product",
         "Product Management",
-        "Systems Architecture"
+        "Commercial Architecture"
       ],
       "evidence": [
         {
@@ -686,52 +686,89 @@
   ],
   "thinking": [
     {
-      "id": "operator-to-product",
-      "slug": "operator-to-product",
-      "title": "From Operator to Product: Bridging the Commercial-Engineering Gap",
-      "category": "PRODUCT",
-      "date": "2026-08-12",
-      "readingTime": "5 min read",
-      "excerpt": "Why the most effective product builders think like business operators first, and how commercial realities shape superior software architecture.",
+      "id": "how-to-build-a-predictable-sales-pipeline",
+      "slug": "how-to-build-a-predictable-sales-pipeline",
+      "title": "How to Build a Predictable B2B Sales Pipeline from Scratch",
+      "category": "Sales Strategy",
+      "date": "2026-09-15",
+      "readingTime": "7 min read",
+      "excerpt": "A practitioner's blueprint for ICP definition, multi-channel outbound sequencing, and qualification frameworks that build repeatable enterprise revenue.",
       "tags": [
-        "Product Thinking",
-        "Commercial Strategy",
-        "Unit Economics"
+        "Sales Strategy",
+        "Pipeline Management",
+        "B2B Sales",
+        "Lead Generation",
+        "Deal Execution"
       ]
     },
     {
-      "id": "systems-that-outlive-builders",
-      "slug": "systems-that-outlive-builders",
-      "title": "Designing Systems That Outlive Their Builders",
-      "category": "SYSTEMS",
+      "id": "strategic-partnerships-gtm-playbook",
+      "slug": "strategic-partnerships-gtm-playbook",
+      "title": "The Strategic Partnerships Playbook: Unlocking Non-Linear Growth",
+      "category": "Partnerships",
+      "date": "2026-08-20",
+      "readingTime": "6 min read",
+      "excerpt": "How to structure high-trust commercial distribution agreements, co-marketing alliances, and mutual-upside channel partnerships that lower CAC and scale distribution.",
+      "tags": [
+        "Partnerships",
+        "GTM Strategy",
+        "Market Expansion",
+        "Distribution",
+        "Commercial Strategy"
+      ]
+    },
+    {
+      "id": "scaling-business-operations-0-to-1",
+      "slug": "scaling-business-operations-0-to-1",
+      "title": "Scaling Business Operations: From Chaos to Predictable Execution",
+      "category": "Business Operations",
       "date": "2026-07-28",
       "readingTime": "6 min read",
-      "excerpt": "How to structure documentation, operating playbooks, and automated workflows so businesses execute with high velocity without depending on heroics.",
+      "excerpt": "Tactical operational lessons from running early-stage ventures: process decomposition, unit economics governance, and building repeatable business systems.",
       "tags": [
         "Operations",
-        "System Architecture",
-        "Scalability"
+        "Entrepreneurship",
+        "Execution",
+        "Unit Economics",
+        "Process Improvement"
       ]
     },
     {
-      "id": "ai-commercial-loop",
-      "slug": "ai-product-loop",
-      "title": "AI in the Commercial Loop: Augmentation Over Automation",
-      "category": "AI",
+      "id": "commercial-discipline-in-modern-business",
+      "slug": "commercial-discipline-in-modern-business",
+      "title": "Commercial Discipline in Modern Business: Aligning Sales and Operations",
+      "category": "Revenue Growth",
       "date": "2026-06-19",
-      "readingTime": "7 min read",
-      "excerpt": "Why full automation often breaks trust in professional workflows, and how to design human-in-the-loop AI interfaces that operators actually rely on.",
+      "readingTime": "5 min read",
+      "excerpt": "Why sustainable growth requires tight alignment between commercial commitments and operational fulfillment, and how operators bridge the gap.",
       "tags": [
-        "Artificial Intelligence",
-        "Workflows",
-        "Agentic Systems"
+        "Commercial Strategy",
+        "Revenue Growth",
+        "Operations",
+        "Leadership",
+        "Account Management"
+      ]
+    },
+    {
+      "id": "operator-to-product",
+      "slug": "operator-to-product",
+      "title": "Bridging Commercial Strategy and Software Execution: An Operator's Blueprint",
+      "category": "Commercial Strategy",
+      "date": "2026-08-12",
+      "readingTime": "5 min read",
+      "excerpt": "Why the most effective commercial leaders and builders ground software in business reality, unit economics, and operational scalability.",
+      "tags": [
+        "Commercial Strategy",
+        "Business Operations",
+        "Unit Economics",
+        "Execution"
       ]
     }
   ],
   "seo": {
-    "siteTitle": "Vivek Dhoundiyal — Builder · Systems · Growth",
-    "siteDescription": "I build products, businesses and systems. 8+ years across entrepreneurship, commercial growth, operations and software.",
-    "canonicalUrl": "https://vivekdhoundiyal.com",
+    "siteTitle": "Vivek Dhoundiyal — Sales Strategy · Business Development · Growth",
+    "siteDescription": "Vivek Dhoundiyal — Entrepreneur, Sales & Business Development leader with 8+ years across revenue generation, enterprise partnerships, operations and 0→1 business building.",
+    "canonicalUrl": "https://vivek-dhoundiyal-portfolio.pages.dev",
     "ogImage": "/images/vivek-canonical.png",
     "twitterHandle": "@Vivek_Dh_"
   },
@@ -945,7 +982,7 @@
       "id": "business-operations",
       "slug": "business-operations",
       "title": "Business & Operations",
-      "tag": "System Design",
+      "tag": "Operations & Scale",
       "headline": "Unit economics, ground-level logistics, working capital governance, and repeatable operating machines.",
       "summary": "I build and run physical and digital operational systems. From morning farm-to-kitchen fresh supply deliveries to multi-point automotive workshop repair logistics, I design systems that eliminate friction and protect cash flow.",
       "approach": "Operations is about turning uncertainty into predictable routines. By breaking down complex workflows into deterministic checkpoints and clear SLAs, businesses scale without chaotic fire-fighting.",
@@ -1585,91 +1622,92 @@
     }
   },
   "skills": {
-    "headline": "Skills & Capabilities",
-    "subhead": "What I actually do — bridging commercial execution, operations, product architecture, and AI leverage.",
-    "intro": "I work across commercial strategy, growth, operations and product thinking — using technology and AI to turn ideas into executable systems.",
+    "headline": "Professional Skills & Capabilities",
+    "subhead": "What I actually do — commercial growth, enterprise sales, strategic partnerships, operations, and scalable execution.",
+    "intro": "I work across commercial sales strategy, business development, revenue generation, partnerships, and operations — applying hands-on execution and modern tools to drive measurable business outcomes.",
     "domains": [
       {
-        "id": "bizdev",
-        "title": "Business Development",
-        "tag": "Commercial Deals",
-        "summary": "Enterprise consultative sales, institutional partnerships, and commercial deal structuring.",
+        "id": "sales-strategy",
+        "title": "Sales Strategy & Enterprise Deals",
+        "tag": "Enterprise Sales",
+        "summary": "Enterprise consultative sales, institutional partnerships, pipeline management, and deal execution.",
+        "skills": [
+          "Sales Strategy",
+          "Enterprise Sales",
+          "Revenue Generation",
+          "Deal Execution",
+          "Pipeline Management",
+          "Account Management"
+        ]
+      },
+      {
+        "id": "bizdev-partnerships",
+        "title": "Business Development & Partnerships",
+        "tag": "Strategic Alliances",
+        "summary": "Strategic partnerships, co-distribution channels, commercial negotiation, and market expansion.",
         "skills": [
           "Business Development",
-          "Revenue Generation",
-          "Partnerships",
-          "B2B Sales",
-          "Account Management",
-          "Client Relationships"
+          "Strategic Partnerships",
+          "Negotiation",
+          "Market Expansion",
+          "Client Relationships",
+          "Distribution Channels"
         ]
       },
       {
-        "id": "growth",
-        "title": "Growth & Commercial",
+        "id": "growth-gtm",
+        "title": "Revenue & Go-To-Market",
         "tag": "GTM Strategy",
-        "summary": "Data-driven GTM strategy, outbound pipeline architecture, and revenue operations.",
+        "summary": "Go-to-market strategy, outbound prospecting architecture, lead generation, and commercial growth.",
         "skills": [
+          "Go-To-Market Strategy",
+          "Commercial Strategy",
           "Growth Strategy",
-          "Go-to-Market Thinking",
-          "Revenue Operations",
-          "Market Research",
           "Lead Generation",
-          "Commercial Strategy"
-        ]
-      },
-      {
-        "id": "operations",
-        "title": "Operations & Systems",
-        "tag": "Execution",
-        "summary": "Repeatable process design, supplier SLA governance, and operational bottleneck removal.",
-        "skills": [
-          "Business Operations",
-          "Process Design",
-          "Workflow Optimization",
-          "Cross-functional Coordination",
-          "Execution",
-          "Systems Thinking"
-        ]
-      },
-      {
-        "id": "product",
-        "title": "Product Thinking",
-        "tag": "Product Design",
-        "summary": "User discovery, systems architecture, spec critique, and product-led operating loops.",
-        "skills": [
-          "Product Thinking",
-          "Product Strategy",
-          "Product Discovery",
-          "User Problem Analysis",
-          "Product Operations",
-          "AI Product Thinking"
-        ]
-      },
-      {
-        "id": "ai-automation",
-        "title": "AI & Automation",
-        "tag": "Modern Leverage",
-        "summary": "AI-assisted workflows, agentic experimentation, prompt engineering, and low-code integrations.",
-        "skills": [
-          "AI-assisted workflows",
-          "AI research",
-          "Workflow automation",
-          "Prompt engineering",
-          "AI product experimentation",
-          "No-code/low-code automation"
+          "Revenue Operations",
+          "Market Research"
         ]
       },
       {
         "id": "entrepreneurship",
-        "title": "Entrepreneurship",
-        "tag": "0→1 Building",
-        "summary": "Rapid hypothesis validation, hands-on commercial execution, and scaling from zero to cash-flow.",
+        "title": "Entrepreneurship & 0→1 Building",
+        "tag": "0→1 Execution",
+        "summary": "Rapid business validation, hands-on commercial execution, and scaling from zero to sustainable revenue.",
         "skills": [
-          "Startup Building",
-          "Business Validation",
+          "Entrepreneurship",
+          "Founder/Business Execution",
           "Commercial Execution",
-          "Problem Solving",
-          "0→1 Execution"
+          "0→1 Building",
+          "Business Validation",
+          "Unit Economics"
+        ]
+      },
+      {
+        "id": "operations-process",
+        "title": "Operations & Process Improvement",
+        "tag": "Execution & Scale",
+        "summary": "Business operations, process improvement, workflow optimization, and building repeatable business systems.",
+        "skills": [
+          "Business Operations",
+          "Process Improvement",
+          "Workflow Optimization",
+          "Execution",
+          "Cross-functional Coordination",
+          "SLA Governance"
+        ]
+      },
+      {
+        "id": "modern-leverage",
+        "title": "Commercial Strategy & Modern Tooling",
+        "tag": "Modern Leverage",
+        "summary": "AI-assisted workflows, market intelligence, automation tooling, and data-driven commercial decision making.",
+        "skills": [
+          "Commercial Strategy",
+          "AI-assisted Workflows",
+          "Market Intelligence",
+          "Workflow Automation",
+          "CRM Optimization",
+          "Data Analysis"
         ]
       }
     ]
