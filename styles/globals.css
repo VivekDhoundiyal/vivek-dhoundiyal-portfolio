@@ -759,6 +759,17 @@ body {
   mask-image: linear-gradient(to bottom, #000 0%, #000 68%, rgba(0, 0, 0, 0.85) 78%, rgba(0, 0, 0, 0.35) 90%, transparent 100%);
 }
 
+/* Suppress all native browser video controls, play buttons, and overlays */
+video::-webkit-media-controls,
+video::-webkit-media-controls-enclosure,
+video::-webkit-media-controls-panel,
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none !important;
+  opacity: 0 !important;
+}
+
 /* Mobile responsive animation tuning: keeps motion continuous while tightening travel distance */
 @media (max-width: 640px) {
   @keyframes ecoFloatV1 {

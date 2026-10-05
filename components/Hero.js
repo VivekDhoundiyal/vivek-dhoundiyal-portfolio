@@ -15,10 +15,34 @@ export default function Hero({ profile = {}, hero = {} }) {
   const title = hero?.title || profile?.heroHeadlineAlt || profile?.heroHeadline || 'I build revenue, relationships and scalable businesses.'
   const description = hero?.description || profile?.heroDescription || "I'm Vivek Dhoundiyal — an entrepreneurial sales, business development and growth professional with 8+ years of experience across enterprise sales, strategic partnerships, revenue operations and scaling businesses from 0→1. I focus on building high-trust commercial relationships, driving repeatable revenue, and executing scalable operations."
   const portrait = profile?.portraitImage || '/images/vivek-canonical.png'
+  const videoSrc = hero?.videoUrl || profile?.heroVideo || '/videos/vivek-hero.mp4'
   const primaryButtonText = hero?.primaryButtonText || 'Explore My Work'
   const primaryButtonUrl = hero?.primaryButtonUrl || '#work'
   const secondaryButtonText = hero?.secondaryButtonText || 'View Resume'
   const secondaryButtonUrl = hero?.secondaryButtonUrl || '/resume'
+
+  const videoRef = React.useRef(null)
+
+  React.useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true
+      videoRef.current.muted = true
+      const playPromise = videoRef.current.play()
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          const startPlayback = () => {
+            if (videoRef.current) {
+              videoRef.current.play().catch(() => {})
+            }
+            window.removeEventListener('click', startPlayback)
+            window.removeEventListener('touchstart', startPlayback)
+          }
+          window.addEventListener('click', startPlayback, { once: true })
+          window.addEventListener('touchstart', startPlayback, { once: true })
+        })
+      }
+    }
+  }, [])
 
   const renderTitle = (text) => {
     if (!text) return null
@@ -416,18 +440,23 @@ export default function Hero({ profile = {}, hero = {} }) {
               <div className="absolute top-[58%] -right-3 sm:-right-1 w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_6px_rgba(251,191,36,0.9)] animate-eco-pulse-particle pointer-events-none z-10 [animation-delay:0.5s]" />
 
               {/* ----------------------------------------------------------------- */}
-              {/* FREESTANDING CUTOUT PORTRAIT (TALL, HEROIC PROPORTIONS)          */}
+              {/* HERO PROFILE VIDEO (AUTOPLAY, CONTINUOUS LOOP, MUTED, INLINE)     */}
+              {/* Native browser playback, zero UI controls, seamless performance  */}
               {/* Organic mask dissolve at bottom + subtle ambient gradient overlay */}
               {/* ----------------------------------------------------------------- */}
               <div className="relative w-full aspect-[4/5] max-h-[480px] sm:max-h-[530px] lg:max-h-[520px] xl:max-h-[580px] 2xl:max-h-[610px] flex items-end justify-center z-10 animate-portrait-emerge hero-portrait-dissolve">
-                <Image
-                  src={portrait}
-                  alt="Vivek Dhoundiyal — Commercial Operator & Builder"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 440px, 480px"
-                  priority
-                  unoptimized
-                  className="object-contain object-bottom filter contrast-[1.02] brightness-[1.01]"
+                <video
+                  ref={videoRef}
+                  src={videoSrc}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  controls={false}
+                  disablePictureInPicture
+                  aria-label="Vivek Dhoundiyal — Commercial Operator & Builder"
+                  className="w-auto h-full object-contain object-bottom rounded-t-3xl sm:rounded-t-[2.5rem] filter contrast-[1.02] brightness-[1.01] pointer-events-none select-none"
                 />
                 {/* Subtle gradient feather at the bottom for seamless merge into background */}
                 <div className="absolute inset-x-0 bottom-0 h-16 sm:h-24 bg-gradient-to-t from-white via-white/50 to-transparent pointer-events-none z-20" />
