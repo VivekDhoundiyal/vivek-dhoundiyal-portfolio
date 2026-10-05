@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -547,13 +547,18 @@ body {
   }
 }
 
-@keyframes heroDoodleNudge {
+@keyframes heroDoodleMotion {
   0%, 100% {
-    transform: translateY(0px) rotate(-2deg);
+    transform: translate3d(0, 0, 0) rotate(-2deg);
   }
   50% {
-    transform: translateY(-3px) rotate(-3.5deg);
+    transform: translate3d(2px, -3px, 0) rotate(-3.5deg);
   }
+}
+
+.animate-hero-doodle {
+  animation: heroDoodleMotion 3.8s ease-in-out infinite;
+  will-change: transform;
 }
 
 /* ========================================================================= */
@@ -566,7 +571,7 @@ body {
     transform: translate3d(0, 0, 0) rotate(0deg);
   }
   50% {
-    transform: translate3d(0, -9px, 0) rotate(2.5deg);
+    transform: translate3d(0, -8px, 0) rotate(2deg);
   }
 }
 
@@ -576,7 +581,7 @@ body {
     transform: translate3d(0, 0, 0) rotate(0deg);
   }
   50% {
-    transform: translate3d(0, 10px, 0) rotate(-2.5deg);
+    transform: translate3d(0, 8px, 0) rotate(-2deg);
   }
 }
 
@@ -586,7 +591,7 @@ body {
     transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    transform: translate3d(-7px, -8px, 0) scale(1.05);
+    transform: translate3d(-6px, -7px, 0) scale(1.04);
   }
 }
 
@@ -596,7 +601,7 @@ body {
     transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    transform: translate3d(8px, -7px, 0) scale(0.97);
+    transform: translate3d(7px, -6px, 0) scale(0.96);
   }
 }
 
@@ -606,7 +611,7 @@ body {
     transform: translate3d(0, 0, 0) rotate(0deg);
   }
   50% {
-    transform: translate3d(8px, -4px, 0) rotate(3deg);
+    transform: translate3d(7px, -3px, 0) rotate(2.5deg);
   }
 }
 
@@ -616,35 +621,73 @@ body {
     transform: translate3d(0, 0, 0) rotate(0deg);
   }
   50% {
-    transform: translate3d(-8px, 5px, 0) rotate(-3deg);
+    transform: translate3d(-7px, 4px, 0) rotate(-2.5deg);
   }
 }
 
-/* Layer 7: Brisk Pulse & Twinkle for AI Star & Lightning */
+/* Layer 7: Subtle Curved Orbital Drift 1 */
+@keyframes ecoFloatOrbit1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  25% {
+    transform: translate3d(5px, -4px, 0) scale(1.03);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0) scale(1);
+  }
+  75% {
+    transform: translate3d(-5px, -3px, 0) scale(0.97);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* Layer 8: Subtle Curved Orbital Drift 2 */
+@keyframes ecoFloatOrbit2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  25% {
+    transform: translate3d(-5px, 4px, 0) scale(0.97);
+  }
+  50% {
+    transform: translate3d(0, 7px, 0) scale(1);
+  }
+  75% {
+    transform: translate3d(5px, 3px, 0) scale(1.03);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* Layer 9: Brisk Pulse & Twinkle for AI Star & Lightning */
 @keyframes ecoPulseBrisk {
   0%, 100% {
     transform: translate3d(0, 0, 0) scale(1);
     opacity: 0.9;
   }
   50% {
-    transform: translate3d(0, -6px, 0) scale(1.15);
+    transform: translate3d(0, -5px, 0) scale(1.14);
     opacity: 1;
   }
 }
 
-/* Layer 8: Luminous Micro-Particle Twinkle & Drift */
+/* Layer 10: Luminous Micro-Particle Twinkle & Drift */
 @keyframes ecoPulseParticle {
   0%, 100% {
     transform: translate3d(0, 0, 0) scale(0.85);
-    opacity: 0.6;
+    opacity: 0.65;
   }
   50% {
-    transform: translate3d(3px, -7px, 0) scale(1.25);
+    transform: translate3d(3px, -6px, 0) scale(1.25);
     opacity: 1;
   }
 }
 
-/* Layer 9: Gentle Continuous Rotation for Cog / Systems Engine */
+/* Layer 11: Gentle Continuous Rotation for Cog / Systems Engine */
 @keyframes ecoSpinGentle {
   from {
     transform: rotate(0deg);
@@ -654,56 +697,66 @@ body {
   }
 }
 
-/* Ecosystem Utility Classes (GPU-Accelerated) */
+/* Ecosystem Utility Classes (GPU-Accelerated & Fast/Continuous) */
 .animate-eco-float-v1 {
-  animation: ecoFloatV1 3.2s ease-in-out infinite;
+  animation: ecoFloatV1 2.8s ease-in-out infinite;
   will-change: transform;
 }
 
 .animate-eco-float-v2 {
-  animation: ecoFloatV2 4.0s ease-in-out infinite 0.5s;
+  animation: ecoFloatV2 3.4s ease-in-out infinite 0.4s;
   will-change: transform;
 }
 
 .animate-eco-float-diag1 {
-  animation: ecoFloatDiag1 3.6s ease-in-out infinite 0.3s;
+  animation: ecoFloatDiag1 3.1s ease-in-out infinite 0.2s;
   will-change: transform;
 }
 
 .animate-eco-float-diag2 {
-  animation: ecoFloatDiag2 4.4s ease-in-out infinite 0.8s;
+  animation: ecoFloatDiag2 3.6s ease-in-out infinite 0.5s;
   will-change: transform;
 }
 
 .animate-eco-float-h1 {
-  animation: ecoFloatH1 3.4s ease-in-out infinite 0.2s;
+  animation: ecoFloatH1 2.9s ease-in-out infinite 0.3s;
   will-change: transform;
 }
 
 .animate-eco-float-h2 {
-  animation: ecoFloatH2 4.2s ease-in-out infinite 0.6s;
+  animation: ecoFloatH2 3.3s ease-in-out infinite 0.6s;
+  will-change: transform;
+}
+
+.animate-eco-float-orbit1 {
+  animation: ecoFloatOrbit1 3.9s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-eco-float-orbit2 {
+  animation: ecoFloatOrbit2 4.3s ease-in-out infinite 0.7s;
   will-change: transform;
 }
 
 .animate-eco-pulse-brisk {
-  animation: ecoPulseBrisk 2.7s ease-in-out infinite 0.4s;
+  animation: ecoPulseBrisk 2.3s ease-in-out infinite 0.3s;
   will-change: transform, opacity;
 }
 
 .animate-eco-pulse-particle {
-  animation: ecoPulseParticle 2.9s ease-in-out infinite;
+  animation: ecoPulseParticle 2.5s ease-in-out infinite;
   will-change: transform, opacity;
 }
 
 .animate-eco-spin-gentle {
-  animation: ecoSpinGentle 14s linear infinite;
+  animation: ecoSpinGentle 11s linear infinite;
   will-change: transform;
 }
 
 /* Subtle organic mask for portrait lower torso/jeans dissolve */
 .hero-portrait-dissolve {
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 68%, rgba(0, 0, 0, 0.82) 78%, rgba(0, 0, 0, 0.35) 90%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 68%, rgba(0, 0, 0, 0.82) 78%, rgba(0, 0, 0, 0.35) 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 68%, rgba(0, 0, 0, 0.85) 78%, rgba(0, 0, 0, 0.35) 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 68%, rgba(0, 0, 0, 0.85) 78%, rgba(0, 0, 0, 0.35) 90%, transparent 100%);
 }
 
 /* Mobile responsive animation tuning: keeps motion continuous while tightening travel distance */
@@ -713,7 +766,7 @@ body {
       transform: translate3d(0, 0, 0) rotate(0deg);
     }
     50% {
-      transform: translate3d(0, -6px, 0) rotate(1.5deg);
+      transform: translate3d(0, -5px, 0) rotate(1.5deg);
     }
   }
 
@@ -722,7 +775,7 @@ body {
       transform: translate3d(0, 0, 0) rotate(0deg);
     }
     50% {
-      transform: translate3d(0, 6px, 0) rotate(-1.5deg);
+      transform: translate3d(0, 5px, 0) rotate(-1.5deg);
     }
   }
 
@@ -731,7 +784,7 @@ body {
       transform: translate3d(0, 0, 0) scale(1);
     }
     50% {
-      transform: translate3d(-4px, -5px, 0) scale(1.04);
+      transform: translate3d(-3px, -4px, 0) scale(1.03);
     }
   }
 
@@ -740,7 +793,7 @@ body {
       transform: translate3d(0, 0, 0) scale(1);
     }
     50% {
-      transform: translate3d(5px, -5px, 0) scale(0.98);
+      transform: translate3d(4px, -4px, 0) scale(0.98);
     }
   }
 
@@ -749,7 +802,7 @@ body {
       transform: translate3d(0, 0, 0) rotate(0deg);
     }
     50% {
-      transform: translate3d(5px, -3px, 0) rotate(2deg);
+      transform: translate3d(4px, -2px, 0) rotate(1.5deg);
     }
   }
 
@@ -758,7 +811,25 @@ body {
       transform: translate3d(0, 0, 0) rotate(0deg);
     }
     50% {
-      transform: translate3d(-5px, 3px, 0) rotate(-2deg);
+      transform: translate3d(-4px, 2px, 0) rotate(-1.5deg);
+    }
+  }
+
+  @keyframes ecoFloatOrbit1 {
+    0%, 100% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(3px, -4px, 0);
+    }
+  }
+
+  @keyframes ecoFloatOrbit2 {
+    0%, 100% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(-3px, 4px, 0);
     }
   }
 }
