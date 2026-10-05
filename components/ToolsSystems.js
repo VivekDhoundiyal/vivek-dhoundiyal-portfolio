@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { getToolBrandLogo } from './BrandLogos'
 
 export default function ToolsSystems({ tools = [] }) {
@@ -17,9 +17,28 @@ export default function ToolsSystems({ tools = [] }) {
   const [activeCategory, setActiveCategory] = useState('All Tools')
   const [activeHoverId, setActiveHoverId] = useState(null)
 
-  const filteredTools = React.useMemo(() => {
+  // Deterministic category matching
+  const filteredTools = useMemo(() => {
+    if (!tools || tools.length === 0) return []
     if (activeCategory === 'All Tools') return tools
-    return tools.filter(t => t.category === activeCategory)
+
+    const target = activeCategory.trim().toLowerCase()
+    return tools.filter((t) => {
+      const cat = (t.category || '').trim().toLowerCase()
+      if (cat === target) return true
+
+      // Semantic normalization & synonyms
+      if (target === 'ai' && (cat.includes('ai') || cat.includes('intelligence'))) return true
+      if (target === 'development' && (cat.includes('dev') || cat.includes('code') || cat.includes('engineering'))) return true
+      if (target === 'productivity' && (cat.includes('productiv') || cat.includes('ops') || cat.includes('operations'))) return true
+      if (target === 'research' && (cat.includes('research') || cat.includes('intel') || cat.includes('discovery'))) return true
+      if (target === 'crm' && (cat.includes('crm') || cat.includes('sales') || cat.includes('pipeline'))) return true
+      if (target === 'automation' && (cat.includes('auto') || cat.includes('workflow'))) return true
+      if (target === 'analytics' && (cat.includes('analytic') || cat.includes('data') || cat.includes('spread'))) return true
+      if (target === 'communication' && (cat.includes('commun') || cat.includes('collab'))) return true
+
+      return false
+    })
   }, [tools, activeCategory])
 
   return (
@@ -31,29 +50,30 @@ export default function ToolsSystems({ tools = [] }) {
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-              <span className="uppercase tracking-wider">09 · Tools & Capabilities</span>
+              <span className="uppercase tracking-wider">09 · Tools & Systems</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318]">
-              Tools & Capabilities
+              Tools I Actually Use
             </h2>
           </div>
           <p className="text-sm sm:text-base text-[#555B66] max-w-md leading-relaxed font-normal">
-            The actual software platforms, automation engines, and intelligence tooling I use across commercial execution, outbound research, and product engineering.
+            The actual software platforms, AI intelligence tooling, and development engines I use across commercial execution, research, and product building.
           </p>
         </div>
 
-        {/* Category Filter Chips */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none reveal-on-scroll">
+        {/* Category Filter Chips (Horizontally scrollable with no scrollbar) */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-8 scrollbar-none no-scrollbar">
           {categories.map((cat) => {
             const isActive = cat === activeCategory
             return (
               <button
                 key={cat}
+                type="button"
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-2 rounded-full text-xs font-semibold tracking-normal whitespace-nowrap transition-all duration-200 cursor-pointer ${
                   isActive
-                    ? 'bg-[#111318] text-white shadow-sm ring-1 ring-[#111318]'
-                    : 'bg-white text-[#555B66] hover:text-[#111318] hover:bg-slate-50 border border-[#E5E7EB] shadow-xs'
+                    ? 'bg-[#111318] text-white shadow-xs ring-1 ring-[#111318]'
+                    : 'bg-white text-[#555B66] hover:text-[#111318] hover:bg-slate-50 border border-[#E5E7EB] shadow-2xs'
                 }`}
               >
                 {cat}
@@ -62,44 +82,52 @@ export default function ToolsSystems({ tools = [] }) {
           })}
         </div>
 
-        {/* Interactive Tool Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
-          {filteredTools.map((tool, idx) => {
-            const isHovered = activeHoverId === tool.id
-            return (
-              <div
-                key={tool.id}
-                onMouseEnter={() => setActiveHoverId(tool.id)}
-                onMouseLeave={() => setActiveHoverId(null)}
-                className={`p-5 rounded-2xl bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 shadow-xs hover-card-elevate transition-all duration-200 flex flex-col justify-between group cursor-default relative reveal-on-scroll delay-${(idx % 4) * 100}`}
-              >
-                <div className="flex items-center gap-3.5">
-                  {/* Brand SVG with subtle scale on hover */}
-                  <div className="w-12 h-12 rounded-xl bg-[#FAFAF8] border border-[#E5E7EB] flex items-center justify-center text-slate-800 flex-shrink-0 transition-transform duration-200 group-hover:scale-110 shadow-2xs">
-                    {getToolBrandLogo(tool.id, "w-6 h-6")}
+        {/* Interactive Tool Cards Grid (No reveal-on-scroll on dynamic cards to prevent empty opacity states) */}
+        {filteredTools.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 transition-all duration-300">
+            {filteredTools.map((tool) => {
+              const isHovered = activeHoverId === tool.id
+              return (
+                <div
+                  key={tool.id}
+                  onMouseEnter={() => setActiveHoverId(tool.id)}
+                  onMouseLeave={() => setActiveHoverId(null)}
+                  className={`p-5 rounded-2xl bg-white border transition-all duration-200 flex flex-col justify-between group cursor-default relative shadow-xs hover-card-elevate ${
+                    isHovered ? 'border-[#2563EB]/40' : 'border-[#E5E7EB]'
+                  }`}
+                >
+                  <div className="flex items-center gap-3.5">
+                    {/* Brand SVG with subtle scale on hover */}
+                    <div className="w-12 h-12 rounded-xl bg-[#FAFAF8] border border-[#E5E7EB] flex items-center justify-center text-slate-800 flex-shrink-0 transition-transform duration-200 group-hover:scale-110 shadow-2xs">
+                      {getToolBrandLogo(tool.id, 'w-6 h-6')}
+                    </div>
+
+                    {/* Tool Identity */}
+                    <div className="min-w-0 flex-1">
+                      <div className="text-sm font-bold text-[#111318] tracking-tight truncate group-hover:text-[#2563EB] transition-colors">
+                        {tool.name}
+                      </div>
+                      <div className="text-[10px] font-mono text-[#2563EB] font-semibold uppercase tracking-wider">
+                        {tool.category}
+                      </div>
+                    </div>
                   </div>
 
-                  {/* Tool Identity */}
-                  <div className="min-w-0 flex-1">
-                    <div className="text-sm font-bold text-[#111318] tracking-tight truncate group-hover:text-[#2563EB] transition-colors">
-                      {tool.name}
-                    </div>
-                    <div className="text-[10px] font-mono text-[#2563EB] font-semibold uppercase tracking-wider">
-                      {tool.category}
-                    </div>
-                  </div>
+                  {/* Usage Context */}
+                  {tool.desc && (
+                    <p className="text-xs text-[#555B66] leading-relaxed pt-3 border-t border-slate-100 mt-3 line-clamp-2">
+                      {tool.desc}
+                    </p>
+                  )}
                 </div>
-
-                {/* Usage Context */}
-                {tool.desc && (
-                  <p className="text-xs text-[#555B66] leading-relaxed pt-3 border-t border-slate-100 mt-3 line-clamp-2">
-                    {tool.desc}
-                  </p>
-                )}
-              </div>
-            )
-          })}
-        </div>
+              )
+            })}
+          </div>
+        ) : (
+          <div className="p-12 text-center rounded-2xl bg-white border border-[#E5E7EB] text-[#737984] text-xs font-mono">
+            No tools found for "{activeCategory}". Click "All Tools" to view complete stack.
+          </div>
+        )}
 
       </div>
     </section>

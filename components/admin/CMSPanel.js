@@ -221,6 +221,7 @@ export default function CMSPanel({ initialContent, currentUser, csrfToken, onLog
   const thinking = content.thinking || []
   const currentlyBuilding = content.currentlyBuilding || []
   const tools = content.tools || []
+  const skills = content.skills || {}
   const resumes = content.resumes || []
 
   const capabilities = content.capabilities || []
@@ -241,6 +242,7 @@ export default function CMSPanel({ initialContent, currentUser, csrfToken, onLog
     { id: 'careeros', label: 'CareerOS Case Study (15 Slides)' },
     { id: 'thinking', label: `Thinking & Writing (${thinking.length})` },
     { id: 'tools', label: `Tools Stack (${tools.length})` },
+    { id: 'skills', label: 'Skills & Capabilities' },
     { id: 'profile', label: 'Profile & Identity' },
     { id: 'resumes', label: `Resumes (${resumes.length})` },
     { id: 'contact', label: 'About & Contact Channels' },
@@ -1055,6 +1057,73 @@ export default function CMSPanel({ initialContent, currentUser, csrfToken, onLog
                     }}
                     className="w-full px-2.5 py-1 text-xs rounded-lg bg-black/40 border border-white/15 text-slate-200"
                   />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* ==================================================== */}
+        {/* TAB: SKILLS & DOMAIN CAPABILITIES                    */}
+        {/* ==================================================== */}
+        {activeTab === 'skills' && (
+          <div className="space-y-6 animate-fadeIn">
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-lg font-black text-white">Skills & Domain Capabilities</h2>
+                <p className="text-xs text-slate-400 font-mono">Differentiated from software tools — what you can actually execute.</p>
+              </div>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-ink-900 border border-white/10 space-y-4">
+              <div>
+                <label className="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold block mb-1">
+                  Introductory Overview Statement
+                </label>
+                <textarea
+                  rows={2}
+                  value={skills.intro || ''}
+                  onChange={e => setContent({ ...content, skills: { ...skills, intro: e.target.value } })}
+                  className="w-full px-3 py-2 text-xs rounded-xl bg-black/40 border border-white/15 text-slate-200"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {(skills.domains || []).map((domain, dIdx) => (
+                <div key={domain.id || dIdx} className="p-5 rounded-2xl bg-ink-900 border border-white/10 space-y-3">
+                  <div className="flex items-center justify-between pb-2 border-b border-white/10">
+                    <span className="font-bold text-sm text-white">{domain.title}</span>
+                    <span className="text-[11px] font-mono text-signal-cyan">{domain.tag}</span>
+                  </div>
+
+                  <div>
+                    <label className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block mb-1">Domain Summary</label>
+                    <input
+                      type="text"
+                      value={domain.summary || ''}
+                      onChange={e => {
+                        const newDomains = [...(skills.domains || [])]
+                        newDomains[dIdx].summary = e.target.value
+                        setContent({ ...content, skills: { ...skills, domains: newDomains } })
+                      }}
+                      className="w-full px-2.5 py-1 text-xs rounded-lg bg-black/40 border border-white/15 text-slate-200"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block mb-1">Skills (comma separated)</label>
+                    <input
+                      type="text"
+                      value={(domain.skills || []).join(', ')}
+                      onChange={e => {
+                        const newDomains = [...(skills.domains || [])]
+                        newDomains[dIdx].skills = e.target.value.split(',').map(s => s.trim()).filter(Boolean)
+                        setContent({ ...content, skills: { ...skills, domains: newDomains } })
+                      }}
+                      className="w-full px-2.5 py-1 text-xs rounded-lg bg-black/40 border border-white/15 text-slate-200"
+                    />
+                  </div>
                 </div>
               ))}
             </div>

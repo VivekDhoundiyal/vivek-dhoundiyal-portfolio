@@ -54,7 +54,7 @@ export default function ContactSection({ contact, profile, social, onOpenContact
 
   return (
     <section id="contact" className="py-24 sm:py-32 border-t border-[#E5E7EB] bg-[#FAFAF8] text-[#111318] relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Header & Statement */}
         <div className="text-center space-y-4 reveal-on-scroll">

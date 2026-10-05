@@ -12,7 +12,7 @@ import ThinkingNotes from '../components/ThinkingNotes'
 import ToolsSystems from '../components/ToolsSystems'
 import AboutBackground from '../components/AboutBackground'
 import ContactSection from '../components/ContactSection'
-import ToolsBar from '../components/ToolsBar'
+import SkillsSection from '../components/SkillsSection'
 import { useScrollReveal } from '../lib/useScrollReveal'
 
 const DEFAULT_SECTIONS = [
@@ -24,7 +24,8 @@ const DEFAULT_SECTIONS = [
   { id: 'education-certifications', type: 'education-certifications', name: 'Education & Certifications', enabled: true },
   { id: 'building', type: 'building', name: 'Where I Am Building', enabled: true },
   { id: 'thinking', type: 'thinking', name: 'Thinking & Writing', enabled: true },
-  { id: 'tools', type: 'tools', name: 'Tools & Capabilities', enabled: true },
+  { id: 'tools', type: 'tools', name: 'Tools & Systems', enabled: true },
+  { id: 'skills', type: 'skills', name: 'Skills & Capabilities', enabled: true },
   { id: 'about-contact', type: 'about-contact', name: 'About & Contact', enabled: true }
 ]
 
@@ -65,6 +66,7 @@ export default function Home({ siteData: initialData }) {
     experience,
     thinking,
     tools,
+    skills,
     certifications,
     about,
     education,
@@ -78,15 +80,12 @@ export default function Home({ siteData: initialData }) {
     ? configuredSections.filter(s => s.enabled)
     : DEFAULT_SECTIONS
 
+  const hasExplicitSkills = activeSections.some(s => s.type === 'skills')
+
   const renderSection = (sec) => {
     switch (sec.type) {
       case 'hero':
-        return (
-          <React.Fragment key={sec.id}>
-            <Hero profile={profile} hero={hero} contact={contact} social={social} />
-            <ToolsBar />
-          </React.Fragment>
-        )
+        return <Hero key={sec.id} profile={profile} hero={hero} contact={contact} social={social} />
       case 'capabilities':
         return <WhatIDo key={sec.id} capabilities={capabilities} />
       case 'entrepreneurial':
@@ -102,7 +101,14 @@ export default function Home({ siteData: initialData }) {
       case 'thinking':
         return <ThinkingNotes key={sec.id} articles={thinking} />
       case 'tools':
-        return <ToolsSystems key={sec.id} tools={tools} />
+        return (
+          <React.Fragment key={sec.id}>
+            <ToolsSystems tools={tools} />
+            {!hasExplicitSkills && <SkillsSection skills={skills} />}
+          </React.Fragment>
+        )
+      case 'skills':
+        return <SkillsSection key={sec.id} skills={skills} />
       case 'about-contact':
         return (
           <div key={sec.id} id="about-contact" className="space-y-0">

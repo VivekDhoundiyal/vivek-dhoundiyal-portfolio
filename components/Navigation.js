@@ -37,6 +37,7 @@ export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
           'building',
           'thinking',
           'tools',
+          'skills',
           'about',
           'contact'
         ]

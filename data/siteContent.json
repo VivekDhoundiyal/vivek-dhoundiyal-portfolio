@@ -64,6 +64,13 @@
       "order": 8
     },
     {
+      "id": "skills",
+      "type": "skills",
+      "name": "09.1 · Skills & Capabilities",
+      "enabled": true,
+      "order": 8.5
+    },
+    {
       "id": "about-contact",
       "type": "about-contact",
       "name": "10 · About & Direct Contact",
@@ -560,7 +567,7 @@
       "id": "chatgpt",
       "name": "ChatGPT",
       "category": "AI",
-      "desc": "Synthetic customer scenario modeling, prompt engineering & conversational synthesis"
+      "desc": "Synthetic scenario modeling, prompt engineering & conversational analysis"
     },
     {
       "id": "claude",
@@ -575,94 +582,34 @@
       "desc": "Multimodal analysis, large-context document processing & research extraction"
     },
     {
-      "id": "cursor",
-      "name": "Cursor",
-      "category": "AI",
-      "desc": "AI-native code engineering, rapid prototyping & interface building"
-    },
-    {
       "id": "perplexity",
       "name": "Perplexity",
       "category": "Research",
-      "desc": "Real-time market discovery, competitor intelligence & verified industry research"
+      "desc": "AI-powered real-time research, competitor analysis & verified industry discovery"
     },
     {
-      "id": "apollo",
-      "name": "Apollo",
-      "category": "Research",
-      "desc": "B2B prospect intelligence, verified account mapping & outbound intent triggers"
+      "id": "openai-codex",
+      "name": "OpenAI Codex",
+      "category": "Development",
+      "desc": "AI-assisted software development and code workflows"
     },
     {
-      "id": "lusha",
-      "name": "Lusha",
-      "category": "Research",
-      "desc": "Verified decision-maker contact data & enterprise account enrichment"
+      "id": "claude-code",
+      "name": "Claude Code",
+      "category": "Development",
+      "desc": "Agentic terminal coding, codebase refactoring & autonomous development loops"
     },
     {
-      "id": "hubspot",
-      "name": "HubSpot",
-      "category": "CRM",
-      "desc": "Inbound marketing, deal pipeline tracking, contact lifecycle stages & automated sequences"
+      "id": "antigravity",
+      "name": "Antigravity",
+      "category": "Development",
+      "desc": "AI-assisted application building and end-to-end system development workflows"
     },
     {
-      "id": "zoho-crm",
-      "name": "Zoho CRM",
-      "category": "CRM",
-      "desc": "Pipeline management, lead status machines & revenue forecasting"
-    },
-    {
-      "id": "stripe",
-      "name": "Stripe",
-      "category": "CRM",
-      "desc": "Commercial billing infrastructure, checkout flows, recurring billing & invoices"
-    },
-    {
-      "id": "n8n",
-      "name": "n8n",
-      "category": "Automation",
-      "desc": "Self-hosted workflow automations, custom webhooks & API connectors"
-    },
-    {
-      "id": "make",
-      "name": "Make",
-      "category": "Automation",
-      "desc": "Visual multi-app integration routers & event-triggered pipelines"
-    },
-    {
-      "id": "zapier",
-      "name": "Zapier",
-      "category": "Automation",
-      "desc": "Rapid connector pipelines for zero-to-one prototype validation"
-    },
-    {
-      "id": "notion",
-      "name": "Notion",
-      "category": "Productivity",
-      "desc": "Operating playbooks, project documentation, PRDs & company knowledge architecture"
-    },
-    {
-      "id": "linear",
-      "name": "Linear",
-      "category": "Productivity",
-      "desc": "High-velocity issue tracking, sprint cadences & milestone execution"
-    },
-    {
-      "id": "clickup",
-      "name": "ClickUp",
-      "category": "Productivity",
-      "desc": "Operational workflow tracking, resource coordination & task maps"
-    },
-    {
-      "id": "google-workspace",
-      "name": "Google Workspace",
-      "category": "Productivity",
-      "desc": "Executive memos, financial modeling, spreadsheets & shared collaboration"
-    },
-    {
-      "id": "monday",
-      "name": "Monday.com",
-      "category": "Productivity",
-      "desc": "Cross-functional operational boards, project tracking & resource management"
+      "id": "stitch",
+      "name": "Stitch",
+      "category": "Development",
+      "desc": "AI-assisted interface design, component prototyping & UX engineering workflows"
     },
     {
       "id": "python",
@@ -671,34 +618,70 @@
       "desc": "Data transformation scripts, web scrapers & automated ETL utilities"
     },
     {
-      "id": "figma",
-      "name": "Figma",
-      "category": "Development",
-      "desc": "Design systems, interactive prototypes & high-fidelity wireframing"
+      "id": "clickup",
+      "name": "ClickUp",
+      "category": "Productivity",
+      "desc": "Operational workflow tracking, resource coordination & task maps"
     },
     {
-      "id": "webflow",
-      "name": "Webflow",
-      "category": "Development",
-      "desc": "Landing pages, rapid commercial test sites & editorial publishing"
+      "id": "notion",
+      "name": "Notion",
+      "category": "Productivity",
+      "desc": "Operating playbooks, project documentation, PRDs & company knowledge architecture"
     },
     {
-      "id": "posthog",
-      "name": "PostHog",
+      "id": "google-workspace",
+      "name": "Google Workspace",
+      "category": "Productivity",
+      "desc": "Executive memos, shared spreadsheets, docs & team collaboration"
+    },
+    {
+      "id": "microsoft-word",
+      "name": "Microsoft Word",
+      "category": "Productivity",
+      "desc": "Executive documentation, client proposals and business agreements"
+    },
+    {
+      "id": "microsoft-powerpoint",
+      "name": "Microsoft PowerPoint",
+      "category": "Productivity",
+      "desc": "Client pitch decks, board presentations and commercial communication"
+    },
+    {
+      "id": "microsoft-excel",
+      "name": "Microsoft Excel",
       "category": "Analytics",
-      "desc": "Product analytics, event tracking, user journeys & session telemetry"
+      "desc": "Business analysis, financial modeling, unit economic spreadsheets & reporting"
+    },
+    {
+      "id": "zoho-crm",
+      "name": "Zoho CRM",
+      "category": "CRM",
+      "desc": "Pipeline management, lead status machines & revenue forecasting"
+    },
+    {
+      "id": "hubspot",
+      "name": "HubSpot",
+      "category": "CRM",
+      "desc": "Inbound marketing, deal pipeline tracking, contact lifecycle stages & automated sequences"
+    },
+    {
+      "id": "zapier",
+      "name": "Zapier",
+      "category": "Automation",
+      "desc": "Rapid connector pipelines and automated webhooks for 0→1 validation"
+    },
+    {
+      "id": "make",
+      "name": "Make",
+      "category": "Automation",
+      "desc": "Visual multi-app integration routers & event-triggered data pipelines"
     },
     {
       "id": "slack",
       "name": "Slack",
       "category": "Communication",
       "desc": "Async team coordination, real-time alert webhooks & integration hubs"
-    },
-    {
-      "id": "loom",
-      "name": "Loom",
-      "category": "Communication",
-      "desc": "Async video walkthroughs, design critiques & asynchronous team updates"
     }
   ],
   "thinking": [
@@ -1600,5 +1583,95 @@
         }
       ]
     }
+  },
+  "skills": {
+    "headline": "Skills & Capabilities",
+    "subhead": "What I actually do — bridging commercial execution, operations, product architecture, and AI leverage.",
+    "intro": "I work across commercial strategy, growth, operations and product thinking — using technology and AI to turn ideas into executable systems.",
+    "domains": [
+      {
+        "id": "bizdev",
+        "title": "Business Development",
+        "tag": "Commercial Deals",
+        "summary": "Enterprise consultative sales, institutional partnerships, and commercial deal structuring.",
+        "skills": [
+          "Business Development",
+          "Revenue Generation",
+          "Partnerships",
+          "B2B Sales",
+          "Account Management",
+          "Client Relationships"
+        ]
+      },
+      {
+        "id": "growth",
+        "title": "Growth & Commercial",
+        "tag": "GTM Strategy",
+        "summary": "Data-driven GTM strategy, outbound pipeline architecture, and revenue operations.",
+        "skills": [
+          "Growth Strategy",
+          "Go-to-Market Thinking",
+          "Revenue Operations",
+          "Market Research",
+          "Lead Generation",
+          "Commercial Strategy"
+        ]
+      },
+      {
+        "id": "operations",
+        "title": "Operations & Systems",
+        "tag": "Execution",
+        "summary": "Repeatable process design, supplier SLA governance, and operational bottleneck removal.",
+        "skills": [
+          "Business Operations",
+          "Process Design",
+          "Workflow Optimization",
+          "Cross-functional Coordination",
+          "Execution",
+          "Systems Thinking"
+        ]
+      },
+      {
+        "id": "product",
+        "title": "Product Thinking",
+        "tag": "Product Design",
+        "summary": "User discovery, systems architecture, spec critique, and product-led operating loops.",
+        "skills": [
+          "Product Thinking",
+          "Product Strategy",
+          "Product Discovery",
+          "User Problem Analysis",
+          "Product Operations",
+          "AI Product Thinking"
+        ]
+      },
+      {
+        "id": "ai-automation",
+        "title": "AI & Automation",
+        "tag": "Modern Leverage",
+        "summary": "AI-assisted workflows, agentic experimentation, prompt engineering, and low-code integrations.",
+        "skills": [
+          "AI-assisted workflows",
+          "AI research",
+          "Workflow automation",
+          "Prompt engineering",
+          "AI product experimentation",
+          "No-code/low-code automation"
+        ]
+      },
+      {
+        "id": "entrepreneurship",
+        "title": "Entrepreneurship",
+        "tag": "0→1 Building",
+        "summary": "Rapid hypothesis validation, hands-on commercial execution, and scaling from zero to cash-flow.",
+        "skills": [
+          "Startup Building",
+          "Business Validation",
+          "Commercial Execution",
+          "Problem Solving",
+          "0→1 Execution"
+        ]
+      }
+    ]
   }
 }

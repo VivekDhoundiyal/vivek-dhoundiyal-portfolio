@@ -207,9 +207,110 @@ export function LoomLogo({ className = "w-6 h-6", ...props }) {
   )
 }
 
+export function OpenAICodexLogo({ className = "w-6 h-6", ...props }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <rect width="24" height="24" rx="5" fill="#10A37F" fillOpacity="0.12" />
+      <path
+        d="M9.5 8.5L6 12L9.5 15.5M14.5 8.5L18 12L14.5 15.5M13 7L11 17"
+        stroke="#10A37F"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+export function ClaudeCodeLogo({ className = "w-6 h-6", ...props }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <rect width="24" height="24" rx="5" fill="#D97706" fillOpacity="0.12" />
+      <path
+        d="M6 8L10 12L6 16M12 16H18"
+        stroke="#D97706"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+export function AntigravityLogo({ className = "w-6 h-6", ...props }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <rect width="24" height="24" rx="5" fill="#2563EB" fillOpacity="0.1" />
+      <circle cx="12" cy="12" r="7.5" stroke="#2563EB" strokeWidth="1.75" strokeDasharray="3 2" />
+      <circle cx="12" cy="12" r="3" fill="#2563EB" />
+      <path d="M12 4.5V2M12 22v-2.5M4.5 12H2M22 12h-2.5" stroke="#2563EB" strokeWidth="1.75" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+export function StitchLogo({ className = "w-6 h-6", ...props }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <rect width="24" height="24" rx="5" fill="#0EA5E9" fillOpacity="0.12" />
+      <path
+        d="M7 7H17V17H7V7Z"
+        stroke="#0EA5E9"
+        strokeWidth="1.75"
+        strokeLinejoin="round"
+      />
+      <path d="M4 12H7M17 12H20M12 4V7M12 17V20" stroke="#0EA5E9" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+export function MicrosoftWordLogo({ className = "w-6 h-6", ...props }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <rect width="24" height="24" rx="5" fill="#185ABD" />
+      <path
+        d="M7 6.5L8.75 16.5L12 9.5L15.25 16.5L17 6.5"
+        stroke="#FFFFFF"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+export function MicrosoftExcelLogo({ className = "w-6 h-6", ...props }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <rect width="24" height="24" rx="5" fill="#107C41" />
+      <path
+        d="M7.5 7.5L16.5 16.5M16.5 7.5L7.5 16.5"
+        stroke="#FFFFFF"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+      />
+    </svg>
+  )
+}
+
+export function MicrosoftPowerPointLogo({ className = "w-6 h-6", ...props }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <rect width="24" height="24" rx="5" fill="#D83B01" />
+      <path
+        d="M8 7H13.5C15.433 7 17 8.567 17 10.5C17 12.433 15.433 14 13.5 14H8V7ZM8 14V17.5"
+        stroke="#FFFFFF"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
 // Map helper to resolve tool ID to real SVG logo
 export function getToolBrandLogo(id, className = "w-6 h-6") {
-  switch (id) {
+  const normId = (id || '').toLowerCase().trim()
+  switch (normId) {
     case 'chatgpt':
     case 'openai':
       return <ChatGPTLogo className={className} />
@@ -219,6 +320,15 @@ export function getToolBrandLogo(id, className = "w-6 h-6") {
       return <GeminiLogo className={className} />
     case 'claude':
       return <ClaudeLogo className={className} />
+    case 'openai-codex':
+    case 'codex':
+      return <OpenAICodexLogo className={className} />
+    case 'claude-code':
+      return <ClaudeCodeLogo className={className} />
+    case 'antigravity':
+      return <AntigravityLogo className={className} />
+    case 'stitch':
+      return <StitchLogo className={className} />
     case 'cursor':
       return <CursorLogo className={className} />
     case 'notion':
@@ -234,6 +344,18 @@ export function getToolBrandLogo(id, className = "w-6 h-6") {
     case 'gsuite':
     case 'google-workspace':
       return <GoogleWorkspaceLogo className={className} />
+    case 'microsoft-word':
+    case 'ms-word':
+    case 'word':
+      return <MicrosoftWordLogo className={className} />
+    case 'microsoft-excel':
+    case 'ms-excel':
+    case 'excel':
+      return <MicrosoftExcelLogo className={className} />
+    case 'microsoft-powerpoint':
+    case 'ms-powerpoint':
+    case 'powerpoint':
+      return <MicrosoftPowerPointLogo className={className} />
     case 'make':
       return <MakeLogo className={className} />
     case 'zapier':
@@ -264,7 +386,7 @@ export function getToolBrandLogo(id, className = "w-6 h-6") {
       return <LoomLogo className={className} />
     default:
       return (
-        <div className={`${className} rounded flex items-center justify-center font-mono font-bold text-xs bg-signal-blue/10 text-signal-blue`}>
+        <div className={`${className} rounded flex items-center justify-center font-mono font-bold text-xs bg-blue-50 text-[#2563EB]`}>
           {id?.slice(0, 2).toUpperCase() || 'TL'}
         </div>
       )
