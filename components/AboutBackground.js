@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 function CompassIcon({ className = "w-6 h-6", ...props }) {
   return (
@@ -89,8 +90,8 @@ export default function AboutBackground() {
     <section id="about" className="py-20 sm:py-28 bg-[#FAFAF8] text-[#111318] border-t border-[#E5E7EB] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-on-scroll">
+        {/* Section Header with Global Network Visual */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal-on-scroll">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
@@ -100,11 +101,34 @@ export default function AboutBackground() {
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318] leading-tight">
               Personal Journey &amp; Trajectory
             </h2>
+            <p className="text-sm sm:text-base text-[#555B66] max-w-lg leading-relaxed font-normal pt-1">
+              From first-principles engineering to 0→1 business building, enterprise commercial sales, and AI software architecture.
+            </p>
           </div>
 
-          <p className="text-sm sm:text-base text-[#555B66] max-w-md leading-relaxed font-normal">
-            From first-principles engineering to 0→1 business building, enterprise commercial sales, and AI software architecture.
-          </p>
+          {/* 3D Glass Global Network Illustration */}
+          <div className="flex items-center gap-4 bg-white/90 backdrop-blur-md p-4 sm:p-5 rounded-3xl border border-[#E5E7EB] shadow-xs self-start lg:self-auto hover:border-[#2563EB]/40 transition-all">
+            <div className="relative w-20 h-18 sm:w-24 sm:h-20 flex-shrink-0 animate-float-medium illustration-tilt">
+              <Image
+                src="/illustrations/global-network-illustration.png"
+                alt="Global Markets & Partnerships 3D Glass Globe Illustration"
+                width={120}
+                height={100}
+                className="object-contain w-full h-full drop-shadow-md"
+              />
+            </div>
+            <div className="space-y-1 pr-2">
+              <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#2563EB] font-bold block">
+                Global Perspective
+              </span>
+              <div className="text-xs font-semibold text-[#111318]">
+                Markets · Partnerships
+              </div>
+              <p className="text-[11px] text-[#737984]">
+                Continuous scale &amp; expansion
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* ==================================================== */}
@@ -162,17 +186,30 @@ export default function AboutBackground() {
 
         </div>
 
-        {/* Operating Philosophy Quote Card (Subtle & High-Impact) */}
+        {/* Operating Philosophy Quote Card with 3D Scalable Growth Illustration */}
         <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-blue-900 via-[#111318] to-slate-900 text-white shadow-md relative overflow-hidden reveal-on-scroll">
-          <div className="relative z-10 max-w-2xl space-y-2">
-            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-white/10 border border-white/20 text-blue-200">
-              Core Operating Thesis
-            </span>
-            <blockquote className="text-base sm:text-xl font-medium leading-relaxed text-slate-100">
-              "The most durable software systems are built by operators who understand the ground-level economic reality of the customer first, and write code second."
-            </blockquote>
-            <div className="text-xs font-mono text-blue-300 pt-1">
-              — Vivek Dhoundiyal · Commercial Operator &amp; Builder
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 relative z-10">
+            <div className="max-w-2xl space-y-2">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-white/10 border border-white/20 text-blue-200">
+                Core Operating Thesis
+              </span>
+              <blockquote className="text-base sm:text-xl font-medium leading-relaxed text-slate-100">
+                "The most durable software systems are built by operators who understand the ground-level economic reality of the customer first, and write code second."
+              </blockquote>
+              <div className="text-xs font-mono text-blue-300 pt-1">
+                — Vivek Dhoundiyal · Commercial Operator &amp; Builder
+              </div>
+            </div>
+
+            {/* 3D Glass Scalable Growth Illustration */}
+            <div className="relative w-40 sm:w-48 h-28 sm:h-32 flex-shrink-0 animate-float-medium illustration-tilt self-center sm:self-auto">
+              <Image
+                src="/illustrations/scalable-growth-illustration.png"
+                alt="Scalable Growth 3D Glass Chart Illustration"
+                fill
+                sizes="200px"
+                className="object-contain drop-shadow-xl"
+              />
             </div>
           </div>
         </div>

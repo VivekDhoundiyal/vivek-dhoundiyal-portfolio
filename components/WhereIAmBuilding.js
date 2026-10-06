@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight } from './Icons'
 
 function WindowTerminalIcon({ className = "w-5 h-5", ...props }) {
@@ -75,8 +76,8 @@ export default function WhereIAmBuilding() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-on-scroll">
+        {/* Section Header with 3D Glass Innovation Lightbulb */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal-on-scroll">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
@@ -86,11 +87,34 @@ export default function WhereIAmBuilding() {
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318] leading-tight">
               Where I Am Building
             </h2>
+            <p className="text-sm sm:text-base text-[#555B66] max-w-lg leading-relaxed font-normal pt-1">
+              Applying commercial sales, operations, and entrepreneurship to practical software systems and AI automation.
+            </p>
           </div>
 
-          <p className="text-sm sm:text-base text-[#555B66] max-w-md leading-relaxed font-normal">
-            Applying commercial sales, operations, and entrepreneurship to practical software systems and AI automation.
-          </p>
+          {/* 3D Glass Innovation Lightbulb Illustration */}
+          <div className="flex items-center gap-4 bg-white/90 backdrop-blur-md p-4 sm:p-5 rounded-3xl border border-[#E5E7EB] shadow-xs self-start lg:self-auto hover:border-[#2563EB]/40 transition-all">
+            <div className="relative w-20 h-18 sm:w-24 sm:h-20 flex-shrink-0 animate-pulse-soft animate-float-medium illustration-tilt">
+              <Image
+                src="/illustrations/innovation-illustration.png"
+                alt="Ideas Products Systems Execution Innovation Lightbulb 3D Glass Illustration"
+                width={120}
+                height={100}
+                className="object-contain w-full h-full drop-shadow-md"
+              />
+            </div>
+            <div className="space-y-1 pr-2">
+              <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#2563EB] font-bold block">
+                Innovation Loop
+              </span>
+              <div className="text-xs font-semibold text-[#111318]">
+                Ideas → Products → Systems
+              </div>
+              <p className="text-[11px] text-[#737984]">
+                Deterministic real-world execution
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* 3 Visual Pillar Cards */}

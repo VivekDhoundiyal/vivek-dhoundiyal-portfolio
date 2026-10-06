@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowUpRight, ArrowRight } from './Icons'
 
 export default function ThinkingNotes({ articles = [] }) {
@@ -68,29 +69,42 @@ export default function ThinkingNotes({ articles = [] }) {
         {/* Editorial Layout: Large Featured Visual Card + 3 Compact Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           
-          {/* FEATURED ESSAY (7 cols) */}
+          {/* FEATURED ESSAY (7 cols) with 3D Glass Tablet Illustration */}
           <div className="lg:col-span-7">
             <Link
               href={`/blog/${featured.slug}`}
-              className="p-8 sm:p-11 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#2563EB]/50 hover-card-elevate shadow-xs transition-all duration-300 flex flex-col justify-between space-y-8 block group reveal-on-scroll"
+              className="p-8 sm:p-10 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#2563EB]/50 hover-card-elevate shadow-xs transition-all duration-300 flex flex-col justify-between space-y-6 block group reveal-on-scroll relative overflow-hidden"
             >
-              <div className="space-y-5">
-                <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                  <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-[#2563EB] bg-blue-50 border border-blue-100">
-                    FEATURED ESSAY · {featured.category}
-                  </span>
-                  <span className="text-xs font-mono text-[#737984]">
-                    {featured.readingTime} · {featured.date}
-                  </span>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                <div className="space-y-3.5 max-w-md">
+                  <div className="flex items-center gap-3">
+                    <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-[#2563EB] bg-blue-50 border border-blue-100">
+                      FEATURED ESSAY · {featured.category}
+                    </span>
+                    <span className="text-xs font-mono text-[#737984]">
+                      {featured.readingTime} · {featured.date}
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#111318] group-hover:text-[#2563EB] transition-colors leading-tight">
+                    {featured.title}
+                  </h3>
+
+                  <p className="text-sm text-[#555B66] leading-relaxed font-normal">
+                    {featured.excerpt}
+                  </p>
                 </div>
 
-                <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#111318] group-hover:text-[#2563EB] transition-colors leading-tight">
-                  {featured.title}
-                </h3>
-
-                <p className="text-sm sm:text-base text-[#555B66] leading-relaxed font-normal">
-                  {featured.excerpt}
-                </p>
+                {/* 3D Glass Blog & Writing Tablet Illustration */}
+                <div className="relative w-40 sm:w-48 h-28 sm:h-36 flex-shrink-0 animate-float-medium illustration-tilt self-center">
+                  <Image
+                    src="/illustrations/blog-illustration.png"
+                    alt="Blog & Writing Editorial 3D Glass Tablet Illustration"
+                    fill
+                    sizes="200px"
+                    className="object-contain drop-shadow-md"
+                  />
+                </div>
               </div>
 
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between">

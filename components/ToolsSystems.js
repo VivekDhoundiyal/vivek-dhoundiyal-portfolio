@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react'
+import Image from 'next/image'
 import { getToolBrandLogo } from './BrandLogos'
 
 export default function ToolsSystems({ tools = [] }) {
@@ -87,8 +88,8 @@ export default function ToolsSystems({ tools = [] }) {
     <section id="tools" className="py-20 sm:py-28 border-t border-[#E5E7EB] bg-[#FAFAF8] text-[#111318] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-on-scroll">
+        {/* Section Header with 3D Glass AI & Tools Illustration */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal-on-scroll">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
@@ -98,11 +99,34 @@ export default function ToolsSystems({ tools = [] }) {
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318] leading-tight">
               Tools I Actually Use
             </h2>
+            <p className="text-sm sm:text-base text-[#555B66] max-w-lg leading-relaxed font-normal pt-1">
+              Everyday software platforms, AI intelligence tooling, automation engines, and development environments.
+            </p>
           </div>
 
-          <p className="text-sm sm:text-base text-[#555B66] max-w-md leading-relaxed font-normal">
-            Everyday software platforms, AI intelligence tooling, automation engines, and development environments.
-          </p>
+          {/* 3D Glass AI Chip & Orbiting Tools Illustration */}
+          <div className="flex items-center gap-4 bg-white/90 backdrop-blur-md p-4 sm:p-5 rounded-3xl border border-[#E5E7EB] shadow-xs self-start lg:self-auto hover:border-[#2563EB]/40 transition-all">
+            <div className="relative w-24 h-20 sm:w-28 sm:h-22 flex-shrink-0 animate-pulse-soft animate-float-medium illustration-tilt">
+              <Image
+                src="/illustrations/ai-illustration.png"
+                alt="AI Chip with Orbiting Notion Figma Slack ChatGPT 3D Glass Illustration"
+                width={130}
+                height={100}
+                className="object-contain w-full h-full drop-shadow-md"
+              />
+            </div>
+            <div className="space-y-1 pr-2">
+              <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#2563EB] font-bold block">
+                AI &amp; Tool Stack
+              </span>
+              <div className="text-xs font-semibold text-[#111318]">
+                Multi-Modal Intelligence
+              </div>
+              <p className="text-[11px] text-[#737984]">
+                Automated workflow execution
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Category Filter Pills */}

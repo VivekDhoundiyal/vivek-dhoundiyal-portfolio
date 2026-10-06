@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowUpRight, ArrowRight } from './Icons'
 
 export default function WhatIDo() {
@@ -13,7 +14,10 @@ export default function WhatIDo() {
       tags: ['Enterprise Sales', 'Pipeline Velocity', 'Deal Strategy'],
       metric: 'Predictable Pipeline Engine',
       slug: 'revenue-business-development',
-      accent: 'blue'
+      accent: 'blue',
+      illustration: '/illustrations/analytics-illustration.png',
+      illustrationAlt: 'Analytics & Revenue Dashboard 3D Glass Illustration',
+      anim: 'animate-float-fast'
     },
     {
       number: '02',
@@ -24,7 +28,10 @@ export default function WhatIDo() {
       tags: ['Strategic Alliances', 'Channel Scale', 'GTM Strategy'],
       metric: 'Co-Distribution Network',
       slug: 'partnerships-growth',
-      accent: 'purple'
+      accent: 'purple',
+      illustration: '/illustrations/partnerships-illustration.png',
+      illustrationAlt: 'Strategic Partnerships & Alliances 3D Glass Illustration',
+      anim: 'animate-float-medium'
     },
     {
       number: '03',
@@ -35,7 +42,10 @@ export default function WhatIDo() {
       tags: ['SOP Playbooks', 'Unit Economics', 'SLA Governance'],
       metric: 'Repeatable Execution',
       slug: 'business-operations',
-      accent: 'emerald'
+      accent: 'emerald',
+      illustration: '/illustrations/operations-illustration.png',
+      illustrationAlt: 'Systems & Operations 3D Glass Illustration',
+      anim: 'animate-float-slow'
     }
   ]
 
@@ -72,8 +82,8 @@ export default function WhatIDo() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
-        {/* Section Header: Crisp, Bold, 3-second Scan */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-on-scroll">
+        {/* Section Header: Crisp, Bold, 3-second Scan with Growth Illustration */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal-on-scroll">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E5E7EB] shadow-2xs">
               <span className="w-2 h-2 rounded-full bg-[#2563EB]" />
@@ -86,11 +96,34 @@ export default function WhatIDo() {
               From commercial opportunity<br />
               <span className="text-[#2563EB]">to verifiable outcome.</span>
             </h2>
+            <p className="text-sm sm:text-base text-[#555B66] max-w-lg leading-relaxed font-normal pt-1">
+              A three-pillar execution framework connecting front-end commercial deal-making with robust back-end operational systems.
+            </p>
           </div>
 
-          <p className="text-sm sm:text-base text-[#555B66] max-w-md leading-relaxed font-normal">
-            A three-pillar execution framework connecting front-end commercial deal-making with robust back-end operational systems.
-          </p>
+          {/* Right: 3D Glass Growth Illustration Feature */}
+          <div className="flex items-center gap-4 bg-white/90 backdrop-blur-md p-4 sm:p-5 rounded-3xl border border-[#E5E7EB] shadow-xs self-start lg:self-auto hover:border-[#2563EB]/40 transition-all">
+            <div className="relative w-20 h-18 sm:w-24 sm:h-20 flex-shrink-0 animate-float-medium illustration-tilt">
+              <Image
+                src="/illustrations/growth-illustration.png"
+                alt="Growth Chart & Commercial Scalability 3D Glass Illustration"
+                width={120}
+                height={100}
+                className="object-contain w-full h-full drop-shadow-md"
+              />
+            </div>
+            <div className="space-y-1 pr-2">
+              <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#2563EB] font-bold block">
+                Growth Engine
+              </span>
+              <div className="text-xs font-semibold text-[#111318]">
+                Opportunity → Revenue → Scale
+              </div>
+              <p className="text-[11px] text-[#737984]">
+                Compounding commercial velocity
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* 3 Visual Capability Cards */}
@@ -134,8 +167,21 @@ export default function WhatIDo() {
                     </p>
                   </div>
 
+                  {/* 3D Glassmorphism Pillar Illustration */}
+                  <div className="relative w-full h-24 sm:h-28 flex items-center justify-center my-1 pointer-events-none">
+                    <div className={`relative w-28 h-20 sm:w-32 sm:h-24 ${cap.anim} illustration-tilt`}>
+                      <Image
+                        src={cap.illustration}
+                        alt={cap.illustrationAlt}
+                        fill
+                        sizes="140px"
+                        className="object-contain drop-shadow-md"
+                      />
+                    </div>
+                  </div>
+
                   {/* Visual Pipeline Flow Diagram */}
-                  <div className="pt-2">
+                  <div className="pt-1">
                     <span className="text-[10px] font-mono uppercase tracking-wider text-[#737984] font-bold block mb-2">
                       Execution Flow
                     </span>
@@ -194,3 +240,4 @@ export default function WhatIDo() {
     </section>
   )
 }
+

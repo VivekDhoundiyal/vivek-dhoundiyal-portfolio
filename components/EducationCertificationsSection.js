@@ -198,15 +198,28 @@ export default function EducationCertificationsSection({ education = {}, certifi
               </div>
             </div>
 
-            {/* Right: Graduated Verified Stamp */}
-            <div className="lg:border-l lg:border-slate-200/80 lg:pl-8 flex items-center lg:flex-col lg:items-end justify-between gap-2">
-              <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 shadow-2xs">
-                <CheckCircleIcon className="w-4 h-4 text-emerald-600" />
-                <span>GRADUATED ✓</span>
+            {/* Right: Graduated Verified Stamp & 3D Glass Education Illustration */}
+            <div className="lg:border-l lg:border-slate-200/80 lg:pl-8 flex items-center justify-between lg:justify-end gap-6 flex-shrink-0">
+              <div className="flex items-center lg:items-end flex-col gap-1.5">
+                <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 shadow-2xs">
+                  <CheckCircleIcon className="w-4 h-4 text-emerald-600" />
+                  <span>GRADUATED ✓</span>
+                </div>
+                <span className="text-[10.5px] font-mono text-[#737984]">
+                  Verified 4-Year B.Tech
+                </span>
               </div>
-              <span className="text-[10.5px] font-mono text-[#737984]">
-                Verified 4-Year B.Tech
-              </span>
+
+              {/* 3D Glassmorphism Education Illustration */}
+              <div className="relative w-28 sm:w-32 lg:w-40 h-24 sm:h-28 lg:h-32 flex-shrink-0 animate-float-slow illustration-tilt">
+                <Image
+                  src="/illustrations/education-illustration.png"
+                  alt="Education & Graduation 3D Glass Illustration"
+                  width={180}
+                  height={140}
+                  className="object-contain w-full h-full drop-shadow-md"
+                />
+              </div>
             </div>
 
           </div>
@@ -215,9 +228,20 @@ export default function EducationCertificationsSection({ education = {}, certifi
         {/* ==================================================== */}
         {/* ROW 2: GOOGLE PROJECT MANAGEMENT CERTIFICATE (HERO)  */}
         {/* ==================================================== */}
-        <div className="rounded-3xl bg-white border border-[#E5E7EB] shadow-xs hover:border-[#2563EB]/40 transition-all duration-300 p-6 sm:p-9 lg:p-10 reveal-on-scroll">
+        <div className="rounded-3xl bg-white border border-[#E5E7EB] shadow-xs hover:border-[#2563EB]/40 transition-all duration-300 p-6 sm:p-9 lg:p-10 reveal-on-scroll relative overflow-hidden">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Subtle Decorative Background Glass Certificate Watermark */}
+          <div className="absolute -top-6 -right-6 w-36 h-36 lg:w-48 lg:h-48 opacity-25 pointer-events-none animate-float-medium hidden sm:block">
+            <Image
+              src="/illustrations/certificate-illustration.png"
+              alt="Google Credential Decorative Watermark"
+              width={200}
+              height={160}
+              className="object-contain w-full h-full"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
             
             {/* LEFT: LARGE CERTIFICATE IMAGE (Takes 58% of width on lg screens) */}
             <div className="lg:col-span-7">
@@ -256,11 +280,23 @@ export default function EducationCertificationsSection({ education = {}, certifi
             {/* RIGHT: CREDENTIAL METADATA & ACTIONS (Takes 42% of width) */}
             <div className="lg:col-span-5 space-y-6">
               
-              {/* Header Badges */}
+              {/* Header Badges with Decorative 3D Glass Badge */}
               <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-[#E5E7EB]">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200">
-                  <CheckCircleIcon className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>Verified Credential ✓</span>
+                <div className="flex items-center gap-2.5">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200">
+                    <CheckCircleIcon className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>Verified Credential ✓</span>
+                  </div>
+                  {/* Decorative 3D Glass Badge */}
+                  <div className="w-8 h-8 rounded-lg overflow-hidden animate-pulse-soft hidden sm:block">
+                    <Image
+                      src="/illustrations/certificate-illustration.png"
+                      alt="3D Verified Badge"
+                      width={32}
+                      height={32}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
                 </div>
                 <span className="text-xs font-mono text-[#737984]">
                   Completed 2024

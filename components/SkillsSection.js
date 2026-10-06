@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Image from 'next/image'
 
 export default function SkillsSection() {
   const categories = [
@@ -79,8 +80,8 @@ export default function SkillsSection() {
     <section id="skills" className="py-20 sm:py-28 border-t border-[#E5E7EB] bg-white text-[#111318] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-on-scroll">
+        {/* Section Header with Strategy 3D Target Visual */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal-on-scroll">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
@@ -90,11 +91,34 @@ export default function SkillsSection() {
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318] leading-tight">
               Capability &amp; Systems Map
             </h2>
+            <p className="text-sm sm:text-base text-[#555B66] max-w-lg leading-relaxed font-normal pt-1">
+              An interactive node network connecting commercial deal strategy, revenue growth, operating systems, and AI product building.
+            </p>
           </div>
 
-          <p className="text-sm sm:text-base text-[#555B66] max-w-md leading-relaxed font-normal">
-            An interactive node network connecting commercial deal strategy, revenue growth, operating systems, and AI product building.
-          </p>
+          {/* 3D Glass Strategy Target Illustration */}
+          <div className="flex items-center gap-4 bg-white/90 backdrop-blur-md p-4 sm:p-5 rounded-3xl border border-[#E5E7EB] shadow-xs self-start lg:self-auto hover:border-[#2563EB]/40 transition-all">
+            <div className="relative w-20 h-18 sm:w-24 sm:h-20 flex-shrink-0 animate-float-medium illustration-tilt">
+              <Image
+                src="/illustrations/strategy-illustration.png"
+                alt="Target Strategy Growth Operations Partnerships 3D Glass Illustration"
+                width={120}
+                height={100}
+                className="object-contain w-full h-full drop-shadow-md"
+              />
+            </div>
+            <div className="space-y-1 pr-2">
+              <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#2563EB] font-bold block">
+                Central Architecture
+              </span>
+              <div className="text-xs font-semibold text-[#111318]">
+                Strategy · Execution · Ops
+              </div>
+              <p className="text-[11px] text-[#737984]">
+                Cross-functional alignment
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Category Selector Tabs */}
@@ -124,17 +148,30 @@ export default function SkillsSection() {
         {/* INTERACTIVE CAPABILITY NODE MAP DISPLAY */}
         <div className="p-8 sm:p-12 rounded-3xl bg-[#FAFAF8] border border-[#E5E7EB] shadow-xs relative overflow-hidden bg-blueprint-grid">
           
-          {/* Active Category Header */}
-          <div className="max-w-xl space-y-1.5 mb-8">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2563EB]">
-              Domain Cluster · {currentCategory.title}
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#111318]">
-              {currentCategory.title}
-            </h3>
-            <p className="text-xs sm:text-sm text-[#555B66]">
-              {currentCategory.desc}
-            </p>
+          {/* Active Category Header with Dynamic Domain Visual */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+            <div className="max-w-xl space-y-1.5">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#2563EB]">
+                Domain Cluster · {currentCategory.title}
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#111318]">
+                {currentCategory.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-[#555B66]">
+                {currentCategory.desc}
+              </p>
+            </div>
+
+            {/* Dynamic Visual Illustration for Active Domain */}
+            <div className="relative w-24 h-18 sm:w-28 sm:h-20 flex-shrink-0 animate-float-fast illustration-tilt self-end sm:self-auto">
+              <Image
+                src={currentCategory.id === 'partnerships' ? '/illustrations/global-network-illustration.png' : '/illustrations/strategy-illustration.png'}
+                alt={`${currentCategory.title} 3D Glass Schematic Illustration`}
+                width={120}
+                height={90}
+                className="object-contain w-full h-full drop-shadow-md"
+              />
+            </div>
           </div>
 
           {/* Visual Connected Nodes Grid */}

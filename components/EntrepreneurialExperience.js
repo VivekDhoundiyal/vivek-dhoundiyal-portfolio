@@ -116,11 +116,25 @@ export default function EntrepreneurialExperience() {
                 </p>
               </div>
 
-              {/* Animated Flow: Profile → Matching → Discovery → Application */}
-              <div className="space-y-2 pt-1">
+              {/* Animated Flow: Profile → Matching → Discovery → Application + 3D Workflow Illustration */}
+              <div className="space-y-3 pt-1">
                 <span className="text-[10px] font-mono uppercase tracking-wider text-[#737984] font-bold block">
                   Closed-Loop Pipeline Flow
                 </span>
+
+                {/* 3D Glassmorphic Workflow Visual (Discover → Match → Apply → Grow) */}
+                <div className="relative w-full h-14 sm:h-16 flex items-center justify-center p-1 rounded-2xl bg-white border border-[#E5E7EB] shadow-2xs">
+                  <div className="relative w-full h-full max-w-md animate-float-fast illustration-tilt">
+                    <Image
+                      src="/illustrations/workflow-illustration.png"
+                      alt="Discover Match Apply Grow 3D Workflow Illustration"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 450px"
+                      className="object-contain drop-shadow-xs"
+                    />
+                  </div>
+                </div>
+
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                   {careerosFlow.map((f, idx) => (
                     <div
@@ -182,21 +196,37 @@ export default function EntrepreneurialExperience() {
 
             </div>
 
-            {/* Right: Visual Product Screenshot Preview */}
-            <div className="lg:col-span-5">
+            {/* Right: 3D CareerOS Laptop Visual & Architecture Preview */}
+            <div className="lg:col-span-5 space-y-4">
+              {/* 3D Glass Laptop Hero Illustration */}
+              <Link href="/work/careeros" className="block group/laptop">
+                <div className="relative w-full aspect-[16/11] flex items-center justify-center p-3 sm:p-5 rounded-2xl glass-frame bg-gradient-to-b from-blue-50/40 via-white to-indigo-50/20 shadow-md group-hover/laptop:border-[#2563EB]/50 transition-all">
+                  <div className="relative w-full h-full animate-float-slow illustration-tilt">
+                    <Image
+                      src="/illustrations/careeros-illustration.png"
+                      alt="CareerOS AI Product Interface 3D Glass Laptop Illustration"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 550px"
+                      className="object-contain drop-shadow-xl"
+                      priority
+                    />
+                  </div>
+                </div>
+              </Link>
+
+              {/* Secondary Architecture Blueprint Peek */}
               <Link href="/work/careeros" className="block group/preview">
-                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden glass-frame border border-[#E5E7EB] shadow-md group-hover/preview:border-[#2563EB]/50 transition-all duration-300">
+                <div className="relative w-full aspect-[21/9] rounded-xl overflow-hidden border border-[#E5E7EB] bg-slate-50 group-hover/preview:border-[#2563EB]/50 transition-all">
                   <Image
                     src="/images/careeros/careeros-operating-system-infographic.png"
-                    alt="CareerOS AI-Powered Career Operating System Infographic Architecture"
+                    alt="CareerOS Architecture Blueprint"
                     fill
-                    sizes="(max-width: 1024px) 100vw, 600px"
-                    className="object-cover object-center transition-transform duration-500 group-hover/preview:scale-[1.03]"
-                    priority
+                    sizes="550px"
+                    className="object-cover object-top opacity-85 group-hover/preview:opacity-100 transition-opacity"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover/preview:opacity-100 transition-opacity flex items-end p-4">
-                    <span className="text-xs font-medium text-white bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20">
-                      Click to inspect full architecture blueprint ↗
+                  <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px] flex items-center justify-center p-2">
+                    <span className="text-[11px] font-semibold text-white bg-black/60 px-3 py-1.5 rounded-full border border-white/20">
+                      Inspect 10-Stage Architecture Blueprint ↗
                     </span>
                   </div>
                 </div>
@@ -217,6 +247,32 @@ export default function EntrepreneurialExperience() {
             <span className="text-xs font-mono text-[#737984]">
               Compact Operator Profiles
             </span>
+          </div>
+
+          {/* 3D Glass Ventures Visual Stack Header Feature */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 p-6 sm:p-8 rounded-3xl bg-[#FAFAF8] border border-[#E5E7EB] shadow-xs">
+            <div className="space-y-2 max-w-lg">
+              <span className="text-[10.5px] font-mono font-bold uppercase tracking-wider text-[#2563EB] bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200">
+                VENTURE PORTFOLIO STACK
+              </span>
+              <h4 className="text-xl sm:text-2xl font-bold text-[#111318]">
+                3 Ground-Level Operational Businesses
+              </h4>
+              <p className="text-xs sm:text-sm text-[#555B66] leading-relaxed">
+                Automotive repair marketplace, early morning cold-chain food distribution, and regional institutional wholesale supply.
+              </p>
+            </div>
+
+            {/* 3D Glass Ventures Illustration */}
+            <div className="relative w-64 sm:w-72 h-36 sm:h-40 flex-shrink-0 animate-float-medium illustration-tilt">
+              <Image
+                src="/illustrations/ventures-illustration.png"
+                alt="SettleMyCar, Dark Kitchen, Fixins 3D Glassmorphism Visual Stack"
+                fill
+                sizes="300px"
+                className="object-contain drop-shadow-md"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
