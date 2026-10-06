@@ -1116,19 +1116,32 @@
     {
       "id": "google-pm",
       "name": "Google Project Management Professional Certificate",
-      "issuer": "Google / Coursera",
-      "date": "2024",
-      "credentialId": "Verified Professional Credential",
-      "credentialUrl": "https://coursera.org/share/67ea64a2fef42c262142277d33b497fe",
-      "status": "Verified",
-      "description": "Comprehensive 6-course professional curriculum covering project initiation, planning, execution, Agile and Scrum frameworks, documentation, risk mitigation, and stakeholder management.",
+      "issuer": "Google · Coursera",
+      "date": "August 22, 2026",
+      "credentialId": "3QGWMKPNG7ZR",
+      "credentialUrl": "https://coursera.org/verify/professional-cert/3QGWMKPNG7ZR",
+      "status": "Verified Credential",
+      "image": "/images/google-project-management-certificate.png",
+      "pdfUrl": "/certificates/google-project-management-professional-certificate.pdf",
+      "description": "Comprehensive seven-course professional curriculum developed by Google and delivered via Coursera, preparing practitioners for introductory-level to senior execution in traditional and agile project environments.",
+      "coursesCount": 7,
+      "courses": [
+        "Foundations of Project Management",
+        "Project Initiation: Starting a Successful Project",
+        "Project Planning: Putting It All Together",
+        "Project Execution: Running the Project",
+        "Agile Project Management",
+        "Capstone: Applying Project Management in the Real World",
+        "Accelerate Your Job Search with AI"
+      ],
       "skills": [
-        "Agile & Scrum",
-        "Project Planning",
-        "Risk Management",
-        "Stakeholder Alignment",
-        "Documentation & PRDs",
-        "Sprint Cadences"
+        "Traditional & Agile Methodologies",
+        "Scrum & Sprint Frameworks",
+        "Project Planning & Work Breakdown",
+        "Risk Mitigation & Governance",
+        "Stakeholder Communication",
+        "Resource & Budget Management",
+        "AI-Assisted Workflow Execution"
       ]
     }
   ],

@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
+import { ArrowRight } from './Icons'
 
 function WindowTerminalIcon({ className = "w-5 h-5", ...props }) {
   return (
@@ -35,6 +36,8 @@ function CheckBulletIcon({ className = "w-4 h-4", ...props }) {
 }
 
 export default function WhereIAmBuilding({ data = {} }) {
+  const [activeTab, setActiveTab] = useState({}) // { [idx]: 'spotlight' | 'capabilities' }
+
   const defaultCards = [
     {
       category: '01 — DIGITAL PRODUCTS',
@@ -45,14 +48,15 @@ export default function WhereIAmBuilding({ data = {} }) {
       badgeStyle: 'bg-blue-50 text-[#2563EB] border-blue-200/80',
       iconContainerStyle: 'bg-blue-50 text-[#2563EB] border-blue-100',
       description:
-        'Focus on building practical software and digital products that solve real workflow and business problems. Rather than designing around speculative assumptions, I approach product development from an operator’s perspective—identifying friction in everyday professional execution and translating it into clean, responsive software.',
+        'Building practical software and digital products that eliminate real workflow friction. Rather than speculative feature bloat, I design from an operator’s perspective — turning day-to-day commercial bottlenecks into clean, deterministic software.',
       spotlight:
-        'Currently developing CareerOS as a personal career infrastructure utility built locally with Next.js, SQLite, and Tailwind CSS to streamline opportunity discovery, pipeline organization, and preparation workflows.',
+        'Currently architecting CareerOS as an AI-powered personal career infrastructure utility built with Next.js, SQLite/D1, and Tailwind CSS to streamline discovery, qualification, and application telemetry.',
       capabilities: [
         'Direct utility and intuitive, lightweight interfaces',
         'Local-first architecture and deterministic state management',
-        'Products grounded in genuine commercial and user bottlenecks'
+        'Products grounded in genuine commercial bottlenecks'
       ],
+      techStack: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Cloudflare Edge', 'SQLite / D1'],
       footerNote: 'Active Technical Building · Next.js, SQLite & Tailwind'
     },
     {
@@ -64,14 +68,15 @@ export default function WhereIAmBuilding({ data = {} }) {
       badgeStyle: 'bg-emerald-50 text-emerald-700 border-emerald-200/80',
       iconContainerStyle: 'bg-emerald-50 text-emerald-600 border-emerald-100',
       description:
-        'Focus on exploring AI-assisted workflows, automation and intelligent systems that reduce repetitive work and improve execution. By connecting modern orchestration platforms like n8n and Make with structured prompt design and API connectors, I evaluate practical ways to accelerate day-to-day operations.',
+        'Developing event-driven automations and AI pipelines that eliminate administrative drag. Connecting orchestration platforms like n8n and Make with structured prompt design and APIs to multiply operational leverage.',
       spotlight:
-        'Designing event-driven automations that parse unstructured data, automate qualification steps, and bridge disconnected CRM tools without requiring bloated software overhead.',
+        'Designing webhook pipelines that ingest unstructured emails, extract verified company signals, qualify prospect fit, and sync cleanly into CRM pipelines without manual copy-paste overhead.',
       capabilities: [
         'Webhook orchestration and automated multi-platform sync',
-        'Structured prompt engineering for document summarization & research',
-        'Targeted automation that reduces manual administrative friction'
+        'Structured prompt engineering for document extraction',
+        'Targeted automations that reduce manual administrative friction'
       ],
+      techStack: ['n8n', 'Make.com', 'OpenAI API', 'Claude API', 'REST Webhooks'],
       footerNote: 'Workflow Architecture · n8n, Make & LLM Workflows'
     },
     {
@@ -83,14 +88,15 @@ export default function WhereIAmBuilding({ data = {} }) {
       badgeStyle: 'bg-indigo-50 text-indigo-700 border-indigo-200/80',
       iconContainerStyle: 'bg-indigo-50 text-indigo-600 border-indigo-100',
       description:
-        'Focus on designing repeatable processes and operating systems that connect commercial execution, operations and growth. A company cannot scale sustainably on ad-hoc effort alone; it requires structured standard operating procedures (SOPs), clear escalation paths, and robust SLA governance.',
+        'Engineering standard operating procedures (SOPs) and governance frameworks that connect commercial sales with fulfillment. Scale requires robust escalation paths, SLA governance, and unit economics accountability.',
       spotlight:
-        'Drawing from ground-level experience across 50+ garage supply partners, daily restaurant supply logistics, and enterprise edtech sales to build operational systems that run with predictable quality.',
+        'Drawing from ground-level management of 50+ garage supply partners, daily 4 AM restaurant supply logistics, and enterprise edtech sales to build operational systems that run with predictable quality.',
       capabilities: [
         'Comprehensive SOP playbooks and exception-handling frameworks',
         'Cross-functional handoff protocols between sales and fulfillment',
         'Unit economics accountability and vendor governance'
       ],
+      techStack: ['Notion SOPs', 'ClickUp Ops', 'SLA Dashboards', 'Unit Economics Models'],
       footerNote: 'Operational Systems · Playbooks, SOPs & Governance'
     }
   ]
@@ -105,7 +111,7 @@ export default function WhereIAmBuilding({ data = {} }) {
       ...card,
       ...override,
       capabilities: override.capabilities || card.capabilities,
-      icon: card.icon // keep bespoke SVG
+      icon: card.icon
     }
   })
 
@@ -115,15 +121,13 @@ export default function WhereIAmBuilding({ data = {} }) {
       aria-label="Where I Am Building"
       className="py-20 sm:py-28 border-t border-[#E5E7EB] bg-white text-[#111318] relative"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
-        {/* ==================================================== */}
-        {/* SECTION HEADER                                       */}
-        {/* ==================================================== */}
+        {/* Section Header */}
         <div className="max-w-3xl space-y-4 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
             <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-            <span className="uppercase tracking-wider">{eyebrow}</span>
+            <span className="uppercase tracking-wider font-semibold">{eyebrow}</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318] leading-tight">
@@ -135,21 +139,21 @@ export default function WhereIAmBuilding({ data = {} }) {
           </p>
         </div>
 
-        {/* ==================================================== */}
-        {/* 3 DIFFERENTIATED FOCUS CARDS                         */}
-        {/* ==================================================== */}
+        {/* 3 Visual Pillar Focus Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {cards.map((card, idx) => {
             const Icon = card.icon
+            const currentTab = activeTab[idx] || 'spotlight'
+
             return (
               <div
                 key={card.category}
-                className={`p-8 sm:p-10 rounded-3xl bg-[#FAFAF8] border border-[#E5E7EB] hover:border-[#2563EB]/40 hover-card-elevate shadow-xs transition-all duration-300 flex flex-col justify-between space-y-6 reveal-on-scroll delay-${(idx + 1) * 100} group`}
+                className={`p-7 sm:p-9 rounded-3xl bg-[#FAFAF8] border border-[#E5E7EB] hover:border-[#2563EB]/40 hover-card-elevate shadow-xs transition-all duration-300 flex flex-col justify-between space-y-6 reveal-on-scroll delay-${(idx + 1) * 100} group`}
               >
                 <div className="space-y-5">
-                  {/* Card Header: Category & Visual Marker */}
+                  {/* Card Header: Category & Icon */}
                   <div className="flex items-center justify-between pb-4 border-b border-slate-200/80">
-                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#111318]">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#111318]">
                       {card.category}
                     </span>
 
@@ -158,9 +162,9 @@ export default function WhereIAmBuilding({ data = {} }) {
                     </div>
                   </div>
 
-                  {/* Title & Badge */}
+                  {/* Title & Status Badge */}
                   <div className="space-y-2">
-                    <div className={`inline-flex items-center px-3 py-1 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wider border shadow-2xs ${card.badgeStyle}`}>
+                    <div className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[10.5px] font-mono font-semibold uppercase tracking-wider border shadow-2xs ${card.badgeStyle}`}>
                       {card.badge}
                     </div>
 
@@ -169,44 +173,87 @@ export default function WhereIAmBuilding({ data = {} }) {
                     </h3>
                   </div>
 
-                  {/* Primary Narrative */}
-                  <p className="text-sm text-[#555B66] leading-relaxed font-normal">
+                  {/* Core Narrative */}
+                  <p className="text-xs sm:text-sm text-[#555B66] leading-relaxed font-normal">
                     {card.description}
                   </p>
 
-                  {/* Context / Spotlight Card */}
-                  <div className="p-5 rounded-2xl bg-white border border-[#E5E7EB] text-xs text-[#111318] font-normal leading-relaxed shadow-2xs">
-                    <span className="font-semibold block text-[10.5px] uppercase font-mono tracking-wider text-[#2563EB] mb-1.5">
-                      Practical Application
-                    </span>
-                    <p className="text-sm text-[#555B66] leading-relaxed">{card.spotlight}</p>
-                    {card.category.includes('01') && (
-                      <div className="pt-3">
-                        <Link
-                          href="/work/careeros"
-                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#2563EB] hover:underline"
-                        >
-                          <span>Explore CareerOS Case Study</span>
-                          <span aria-hidden="true">→</span>
-                        </Link>
-                      </div>
-                    )}
+                  {/* Interactive Tab Switcher */}
+                  <div className="flex items-center gap-1 p-1 rounded-xl bg-white border border-[#E5E7EB]">
+                    <button
+                      type="button"
+                      onClick={() => setActiveTab({ ...activeTab, [idx]: 'spotlight' })}
+                      className={`flex-1 py-1 text-[11px] font-mono font-semibold rounded-lg transition-all ${
+                        currentTab === 'spotlight'
+                          ? 'bg-[#111318] text-white shadow-2xs'
+                          : 'text-[#737984] hover:text-[#111318]'
+                      }`}
+                    >
+                      Real Application
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setActiveTab({ ...activeTab, [idx]: 'capabilities' })}
+                      className={`flex-1 py-1 text-[11px] font-mono font-semibold rounded-lg transition-all ${
+                        currentTab === 'capabilities'
+                          ? 'bg-[#111318] text-white shadow-2xs'
+                          : 'text-[#737984] hover:text-[#111318]'
+                      }`}
+                    >
+                      Core Principles
+                    </button>
                   </div>
 
-                  {/* Structured Core Capabilities */}
-                  <div className="space-y-2.5 pt-1">
-                    <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#737984] font-semibold block">
-                      Core Principles
-                    </span>
-                    <ul className="space-y-2 text-xs text-[#555B66]">
-                      {card.capabilities.map((item, cIdx) => (
-                        <li key={cIdx} className="flex items-start gap-2">
-                          <CheckBulletIcon className="w-3.5 h-3.5 text-[#2563EB] mt-0.5 flex-shrink-0" />
-                          <span className="text-xs leading-relaxed">{item}</span>
-                        </li>
+                  {/* Tab Content */}
+                  {currentTab === 'spotlight' ? (
+                    <div className="p-4 rounded-2xl bg-white border border-[#E5E7EB] text-xs text-[#111318] space-y-2 shadow-2xs animate-fade-in">
+                      <span className="font-semibold block text-[10.5px] uppercase font-mono tracking-wider text-[#2563EB]">
+                        Practical Implementation
+                      </span>
+                      <p className="text-xs text-[#555B66] leading-relaxed">
+                        {card.spotlight}
+                      </p>
+                      {card.category.includes('01') && (
+                        <div className="pt-2 border-t border-slate-100">
+                          <Link
+                            href="/work/careeros"
+                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#2563EB] hover:underline"
+                          >
+                            <span>Explore CareerOS Case Study</span>
+                            <ArrowRight className="w-3 h-3" />
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="p-4 rounded-2xl bg-white border border-[#E5E7EB] space-y-2 shadow-2xs animate-fade-in">
+                      <span className="font-semibold block text-[10.5px] uppercase font-mono tracking-wider text-[#2563EB]">
+                        Architectural Principles
+                      </span>
+                      <ul className="space-y-1.5">
+                        {card.capabilities.map((item, cIdx) => (
+                          <li key={cIdx} className="flex items-start gap-1.5 text-xs text-[#555B66] leading-relaxed">
+                            <CheckBulletIcon className="w-3.5 h-3.5 text-[#2563EB] mt-0.5 flex-shrink-0" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Tech Stack Pills */}
+                  {card.techStack && (
+                    <div className="flex flex-wrap gap-1 pt-1">
+                      {card.techStack.map((tech, tIdx) => (
+                        <span
+                          key={tIdx}
+                          className="px-2 py-0.5 rounded text-[10px] font-mono bg-white border border-slate-200 text-slate-600"
+                        >
+                          {tech}
+                        </span>
                       ))}
-                    </ul>
-                  </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Footer Note */}

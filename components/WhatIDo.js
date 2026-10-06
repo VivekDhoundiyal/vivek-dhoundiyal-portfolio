@@ -1,32 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { ArrowUpRight, ArrowRight } from './Icons'
 
 export default function WhatIDo({ capabilities = [] }) {
-  const cardAccents = [
+  const [activeTab, setActiveTab] = useState({}) // { [idx]: 'problems' | 'outcomes' }
+
+  const cardThemes = [
     {
-      accentText: 'text-[#2563EB]',
-      accentBg: 'bg-blue-50 border-blue-100 text-[#2563EB]',
-      hoverBorder: 'hover:border-[#2563EB]/40',
-      hoverText: 'group-hover:text-[#2563EB]',
-      bulletText: 'text-[#2563EB]',
-      linkText: 'text-[#2563EB]'
+      domain: '01 · COMMERCIAL ENGINE',
+      accentColor: '#2563EB',
+      badgeBg: 'bg-blue-50 text-[#2563EB] border-blue-200/80',
+      iconBg: 'bg-blue-500/10 text-[#2563EB]',
+      borderHover: 'hover:border-[#2563EB]/50',
+      titleHover: 'group-hover:text-[#2563EB]',
+      metrics: ['High-Ticket Deal Velocity', 'Predictable Outbound Pipeline', 'CXO Stakeholder Closing']
     },
     {
-      accentText: 'text-purple-600',
-      accentBg: 'bg-purple-50 border-purple-100 text-purple-700',
-      hoverBorder: 'hover:border-purple-400/40',
-      hoverText: 'group-hover:text-purple-600',
-      bulletText: 'text-purple-600',
-      linkText: 'text-purple-600'
+      domain: '02 · STRATEGIC ALLIANCES',
+      accentColor: '#7C3AED',
+      badgeBg: 'bg-purple-50 text-purple-700 border-purple-200/80',
+      iconBg: 'bg-purple-500/10 text-purple-700',
+      borderHover: 'hover:border-purple-500/50',
+      titleHover: 'group-hover:text-purple-700',
+      metrics: ['Distribution Channel Scale', 'Strategic Partner Ecosystems', 'CAC Optimization']
     },
     {
-      accentText: 'text-emerald-600',
-      accentBg: 'bg-emerald-50 border-emerald-100 text-emerald-700',
-      hoverBorder: 'hover:border-emerald-400/40',
-      hoverText: 'group-hover:text-emerald-600',
-      bulletText: 'text-emerald-600',
-      linkText: 'text-emerald-600'
+      domain: '03 · OPERATING RIGOR',
+      accentColor: '#059669',
+      badgeBg: 'bg-emerald-50 text-emerald-700 border-emerald-200/80',
+      iconBg: 'bg-emerald-500/10 text-emerald-700',
+      borderHover: 'hover:border-emerald-500/50',
+      titleHover: 'group-hover:text-emerald-700',
+      metrics: ['Deterministic SOP Playbooks', 'Zero-Stockout Fulfillment', 'Unit Economics Governance']
     }
   ]
 
@@ -36,37 +41,49 @@ export default function WhatIDo({ capabilities = [] }) {
       slug: 'revenue-business-development',
       title: 'Revenue & Business Development',
       tag: 'Commercial Execution',
-      headline: 'Revenue generation, pipeline development, enterprise sales, account management and deal execution.',
+      headline: 'End-to-end commercial pipeline development, consultative enterprise closing, and account growth.',
       summary: 'Revenue generation, pipeline development, enterprise sales, account management and deal execution.',
       problemsSolved: [
-        'Unfocused outbound campaigns resulting in single-digit reply rates and bloated sales cycles',
-        'Stalled enterprise deals caused by unmapped procurement and executive stakeholders'
+        'Unfocused outbound campaigns resulting in single-digit reply rates and bloated sales cycles.',
+        'Stalled enterprise deals caused by unmapped procurement and executive decision-makers.'
       ],
-      toolsUsed: ['Zoho CRM', 'Apollo', 'Lusha', 'HubSpot']
+      outcomesDelivered: [
+        'Structured outbound cadences with ICP qualification and verified stakeholder mapping.',
+        'Multi-million enterprise deal negotiations closed with sustainable contract margins.'
+      ],
+      toolsUsed: ['Zoho CRM', 'Apollo', 'HubSpot', 'LinkedIn Sales Nav']
     },
     {
       id: 'partnerships-growth',
       slug: 'partnerships-growth',
-      title: 'Partnerships & Growth',
+      title: 'Partnerships & Strategic Growth',
       tag: 'Market Expansion',
-      headline: 'Strategic partnerships, GTM strategy, market expansion, distribution and commercial growth.',
+      headline: 'Strategic partnerships, co-distribution channels, commercial negotiation, and market expansion.',
       summary: 'Strategic partnerships, GTM strategy, market expansion, distribution and commercial growth.',
       problemsSolved: [
-        'High customer acquisition costs (CAC) in saturated direct marketing channels',
-        'Fragmented supply partners with inconsistent service quality and low retention'
+        'Escalating customer acquisition costs (CAC) in saturated direct marketing channels.',
+        'Fragmented supply partners with erratic service quality and zero long-term retention.'
+      ],
+      outcomesDelivered: [
+        'Co-distribution channel structures unlocking organic partner audience access.',
+        'Partner performance SLAs and standardized onboarding frameworks ensuring 90%+ retention.'
       ],
       toolsUsed: ['Slack', 'Notion', 'ClickUp', 'Zapier']
     },
     {
       id: 'business-operations',
       slug: 'business-operations',
-      title: 'Business & Operations',
+      title: 'Business Systems & Operations',
       tag: 'Operations & Scale',
-      headline: 'Business operations, process improvement, execution, scaling and building repeatable business systems.',
+      headline: 'Operating playbooks, process improvement, exception routing, and repeatable execution architectures.',
       summary: 'Business operations, process improvement, execution, scaling and building repeatable business systems.',
       problemsSolved: [
-        'Volatile supplier quality and erratic early-morning logistics delivery failures',
-        'Working capital depletion caused by loose credit terms and uncollected receivables'
+        'Volatile supplier quality and erratic early-morning logistics delivery failures.',
+        'Working capital depletion caused by loose credit terms and uncollected receivables.'
+      ],
+      outcomesDelivered: [
+        'Zero-stockout JIT supply pipelines with daily predictive demand replenishment.',
+        'Tight credit-governance systems and automated invoicing cadences securing positive cashflow.'
       ],
       toolsUsed: ['n8n', 'Make', 'Monday.com', 'Python']
     }
@@ -75,85 +92,172 @@ export default function WhatIDo({ capabilities = [] }) {
   return (
     <section id="what-i-do" className="py-20 sm:py-28 bg-[#FAFAF8] text-[#111318] relative">
       <div id="capabilities" className="sr-only" tabIndex={-1} />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
-        {/* Section Header: Two-column Split matching reference */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-14 sm:mb-18 reveal-on-scroll">
+        {/* Section Header: 2-Column Split */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end reveal-on-scroll">
           
-          {/* Left Column: Eyebrow + Big Headline (6 cols) */}
-          <div className="lg:col-span-6 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E5E7EB] shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-[#2563EB] flex-shrink-0" />
-              <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider font-semibold text-[#555B66]">
-                01 · WHAT I DO
+          {/* Left Column: Eyebrow + Headline */}
+          <div className="lg:col-span-6 space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E5E7EB] shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-[#2563EB]" />
+              <span className="text-[10.5px] font-mono uppercase tracking-wider font-semibold text-[#555B66]">
+                01 · CORE CAPABILITIES &amp; EXECUTION
               </span>
             </div>
 
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318] leading-[1.12]">
-              From opportunities to <span className="text-[#2563EB]">real outcomes.</span>
+              From commercial opportunity to <span className="text-[#2563EB]">verifiable outcome.</span>
             </h2>
           </div>
 
-          {/* Right Column: Editorial Overview Paragraph (6 cols) */}
+          {/* Right Column: Editorial Overview */}
           <div className="lg:col-span-6">
             <p className="text-base sm:text-lg text-[#555B66] leading-relaxed font-normal">
-              I work on business development, partnerships, revenue generation and operations — from finding commercial opportunities to executing them on the ground. With 8+ years of hands-on sales and entrepreneurial experience, I focus on building high-trust relationships, driving predictable revenue, and scaling repeatable business systems.
+              I operate across business development, strategic partnerships, revenue systems, and ground execution. With 8+ years of hands-on experience, I focus on building high-trust commercial relationships, accelerating pipeline velocity, and engineering repeatable operational systems.
             </p>
           </div>
 
         </div>
 
-        {/* 3 Clickable Capability Cards with Distinct Accent Colors */}
+        {/* 3 Structured Capability Pillar Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {list.map((item, idx) => {
-            const accent = cardAccents[idx % cardAccents.length]
+            const theme = cardThemes[idx % cardThemes.length]
+            const viewMode = activeTab[idx] || 'problems'
+
             return (
-              <Link
+              <div
                 key={item.id || idx}
-                href={`/capabilities/${item.slug}`}
-                className={`p-7 sm:p-8 rounded-3xl bg-white border border-[#E5E7EB] ${accent.hoverBorder} hover-card-elevate shadow-xs transition-all duration-300 flex flex-col justify-between group space-y-6 reveal-on-scroll delay-${(idx + 1) * 100}`}
+                className={`p-7 sm:p-8 rounded-3xl bg-white border border-[#E5E7EB] ${theme.borderHover} hover-card-elevate shadow-xs transition-all duration-300 flex flex-col justify-between group space-y-6 reveal-on-scroll delay-${(idx + 1) * 100}`}
               >
-                <div className="space-y-4">
+                <div className="space-y-5">
+                  
+                  {/* Top Bar: Domain Eyebrow + External Link Icon */}
                   <div className="flex items-center justify-between pb-3.5 border-b border-[#E5E7EB]">
-                    <span className={`text-[11px] font-mono font-bold tracking-wider uppercase px-2.5 py-0.5 rounded-full border ${accent.accentBg}`}>
-                      0{idx + 1} · {item.tag === 'System Design' ? 'Operations & Scale' : item.tag}
+                    <span className={`text-[10.5px] font-mono font-bold tracking-wider uppercase px-2.5 py-0.5 rounded-full border ${theme.badgeBg}`}>
+                      {theme.domain}
                     </span>
-                    <ArrowUpRight className={`w-4 h-4 text-slate-400 ${accent.hoverText} group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all`} />
+                    <Link
+                      href={`/capabilities/${item.slug}`}
+                      className="p-1 rounded-lg text-slate-400 hover:text-[#111318] transition-colors"
+                      title="Inspect detailed capability dossier"
+                    >
+                      <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </Link>
                   </div>
 
-                  <h3 className={`text-2xl font-bold tracking-tight text-[#111318] ${accent.hoverText} transition-colors`}>
-                    {item.title}
-                  </h3>
+                  {/* Title & Tagline */}
+                  <div className="space-y-2">
+                    <h3 className={`text-xl sm:text-2xl font-bold tracking-tight text-[#111318] ${theme.titleHover} transition-colors leading-snug`}>
+                      <Link href={`/capabilities/${item.slug}`}>
+                        {item.title}
+                      </Link>
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#555B66] leading-relaxed font-normal">
+                      {item.headline || item.summary}
+                    </p>
+                  </div>
 
-                  <p className="text-sm text-[#555B66] leading-relaxed font-normal">
-                    {item.headline || item.summary}
-                  </p>
+                  {/* Highlight Metrics Strip */}
+                  <div className="space-y-1.5 pt-1">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#737984] font-semibold block">
+                      Execution Focus
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {theme.metrics.map((metric, mIdx) => (
+                        <span
+                          key={mIdx}
+                          className="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-[#FAFAF8] border border-[#E5E7EB] text-[#111318]"
+                        >
+                          {metric}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
 
-                  {/* Problems Solved Preview */}
-                  {item.problemsSolved && item.problemsSolved.length > 0 && (
-                    <div className="pt-2 space-y-2">
-                      <span className="text-[11px] font-mono uppercase text-[#737984] font-semibold block">
-                        Key Problems Solved:
-                      </span>
-                      <ul className="space-y-1.5">
-                        {item.problemsSolved.slice(0, 2).map((prob, pIdx) => (
-                          <li key={pIdx} className="text-xs text-[#555B66] flex items-start gap-2">
-                            <span className={`${accent.bulletText} font-bold`}>›</span>
+                  {/* Interactive Toggle: Problems Solved vs Outcomes Delivered */}
+                  <div className="pt-2">
+                    <div className="flex items-center gap-1 p-1 rounded-xl bg-[#FAFAF8] border border-[#E5E7EB] mb-3">
+                      <button
+                        type="button"
+                        onClick={() => setActiveTab({ ...activeTab, [idx]: 'problems' })}
+                        className={`flex-1 py-1 text-[11px] font-mono font-semibold rounded-lg transition-all ${
+                          viewMode === 'problems'
+                            ? 'bg-white text-[#111318] shadow-2xs border border-[#E5E7EB]'
+                            : 'text-[#737984] hover:text-[#111318]'
+                        }`}
+                      >
+                        Bottlenecks Solved
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setActiveTab({ ...activeTab, [idx]: 'outcomes' })}
+                        className={`flex-1 py-1 text-[11px] font-mono font-semibold rounded-lg transition-all ${
+                          viewMode === 'outcomes'
+                            ? 'bg-white text-[#111318] shadow-2xs border border-[#E5E7EB]'
+                            : 'text-[#737984] hover:text-[#111318]'
+                        }`}
+                      >
+                        Outcomes Delivered
+                      </button>
+                    </div>
+
+                    <ul className="space-y-2 min-h-[72px]">
+                      {viewMode === 'problems' ? (
+                        (item.problemsSolved || []).map((prob, pIdx) => (
+                          <li key={pIdx} className="text-xs text-[#555B66] flex items-start gap-2 leading-relaxed">
+                            <span className="text-amber-600 font-bold mt-0.5">✕</span>
                             <span>{prob}</span>
                           </li>
+                        ))
+                      ) : (
+                        (item.outcomesDelivered || item.problemsSolved || []).map((outc, oIdx) => (
+                          <li key={oIdx} className="text-xs text-[#555B66] flex items-start gap-2 leading-relaxed">
+                            <span className="text-emerald-600 font-bold mt-0.5">✓</span>
+                            <span>{outc}</span>
+                          </li>
+                        ))
+                      )}
+                    </ul>
+                  </div>
+
+                  {/* Tool Stack */}
+                  {item.toolsUsed && item.toolsUsed.length > 0 && (
+                    <div className="pt-1">
+                      <div className="text-[10px] font-mono uppercase tracking-wider text-[#737984] font-semibold mb-1.5">
+                        Tool Stack
+                      </div>
+                      <div className="flex flex-wrap gap-1">
+                        {item.toolsUsed.map((t, tIdx) => (
+                          <span
+                            key={tIdx}
+                            className="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-50 border border-slate-200 text-slate-600"
+                          >
+                            {t}
+                          </span>
                         ))}
-                      </ul>
+                      </div>
                     </div>
                   )}
+
                 </div>
 
+                {/* Card Footer Link */}
                 <div className="pt-4 border-t border-[#E5E7EB] flex items-center justify-between">
-                  <span className={`text-xs font-semibold ${accent.linkText} group-hover:underline flex items-center gap-1.5`}>
-                    <span>Explore Methodology & Evidence</span>
+                  <Link
+                    href={`/capabilities/${item.slug}`}
+                    className="text-xs font-semibold text-[#2563EB] group-hover:underline flex items-center gap-1.5"
+                  >
+                    <span>Inspect Case Study &amp; Playbook</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                  <span className="text-[10.5px] font-mono text-[#737984]">
+                    Evidence →
                   </span>
                 </div>
-              </Link>
+
+              </div>
             )
           })}
         </div>
