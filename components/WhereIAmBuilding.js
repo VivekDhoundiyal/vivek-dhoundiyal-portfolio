@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import { ArrowRight } from './Icons'
 
@@ -27,93 +27,45 @@ function ProcessGearsIcon({ className = "w-5 h-5", ...props }) {
   )
 }
 
-function CheckBulletIcon({ className = "w-4 h-4", ...props }) {
-  return (
-    <svg className={className} fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-    </svg>
-  )
-}
-
-export default function WhereIAmBuilding({ data = {} }) {
-  const [activeTab, setActiveTab] = useState({}) // { [idx]: 'spotlight' | 'capabilities' }
-
-  const defaultCards = [
+export default function WhereIAmBuilding() {
+  const pillars = [
     {
-      category: '01 — DIGITAL PRODUCTS',
-      badge: 'Active Exploration',
-      title: 'Practical Software & Digital Products',
+      number: '01',
+      title: 'Digital Products',
+      subtitle: 'PRACTICAL SOFTWARE',
+      description: 'Building tools that eliminate real operational friction.',
+      highlight: 'Developing CareerOS as an AI-powered applicant command center.',
       icon: WindowTerminalIcon,
-      accentColor: '#2563EB',
-      badgeStyle: 'bg-blue-50 text-[#2563EB] border-blue-200/80',
-      iconContainerStyle: 'bg-blue-50 text-[#2563EB] border-blue-100',
-      description:
-        'Building practical software and digital products that eliminate real workflow friction. Rather than speculative feature bloat, I design from an operator’s perspective — turning day-to-day commercial bottlenecks into clean, deterministic software.',
-      spotlight:
-        'Currently architecting CareerOS as an AI-powered personal career infrastructure utility built with Next.js, SQLite/D1, and Tailwind CSS to streamline discovery, qualification, and application telemetry.',
-      capabilities: [
-        'Direct utility and intuitive, lightweight interfaces',
-        'Local-first architecture and deterministic state management',
-        'Products grounded in genuine commercial bottlenecks'
-      ],
-      techStack: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Cloudflare Edge', 'SQLite / D1'],
-      footerNote: 'Active Technical Building · Next.js, SQLite & Tailwind'
+      tags: ['Next.js 14', 'TypeScript', 'Tailwind', 'SQLite / D1'],
+      metric: 'Active Technical Building',
+      link: '/work/careeros',
+      linkText: 'Explore CareerOS →'
     },
     {
-      category: '02 — AI & AUTOMATION',
-      badge: 'Applied Workflows',
-      title: 'AI-Assisted Workflows & Intelligent Systems',
+      number: '02',
+      title: 'AI & Automation',
+      subtitle: 'APPLIED WORKFLOWS',
+      description: 'Event-driven automations reducing repetitive human tasks.',
+      highlight: 'Webhook pipelines extracting CRM signals and research data.',
       icon: WorkflowNodesIcon,
-      accentColor: '#059669',
-      badgeStyle: 'bg-emerald-50 text-emerald-700 border-emerald-200/80',
-      iconContainerStyle: 'bg-emerald-50 text-emerald-600 border-emerald-100',
-      description:
-        'Developing event-driven automations and AI pipelines that eliminate administrative drag. Connecting orchestration platforms like n8n and Make with structured prompt design and APIs to multiply operational leverage.',
-      spotlight:
-        'Designing webhook pipelines that ingest unstructured emails, extract verified company signals, qualify prospect fit, and sync cleanly into CRM pipelines without manual copy-paste overhead.',
-      capabilities: [
-        'Webhook orchestration and automated multi-platform sync',
-        'Structured prompt engineering for document extraction',
-        'Targeted automations that reduce manual administrative friction'
-      ],
-      techStack: ['n8n', 'Make.com', 'OpenAI API', 'Claude API', 'REST Webhooks'],
-      footerNote: 'Workflow Architecture · n8n, Make & LLM Workflows'
+      tags: ['n8n', 'Make.com', 'OpenAI API', 'REST Hooks'],
+      metric: 'Automated Operations',
+      link: null,
+      linkText: null
     },
     {
-      category: '03 — BUSINESS SYSTEMS',
-      badge: 'Operating Architecture',
-      title: 'Repeatable Operating Processes & Systems',
+      number: '03',
+      title: 'Business Systems',
+      subtitle: 'OPERATING ARCHITECTURE',
+      description: 'Repeatable playbooks connecting sales with fulfillment.',
+      highlight: 'Standard operating procedures (SOPs) and SLA governance frameworks.',
       icon: ProcessGearsIcon,
-      accentColor: '#4F46E5',
-      badgeStyle: 'bg-indigo-50 text-indigo-700 border-indigo-200/80',
-      iconContainerStyle: 'bg-indigo-50 text-indigo-600 border-indigo-100',
-      description:
-        'Engineering standard operating procedures (SOPs) and governance frameworks that connect commercial sales with fulfillment. Scale requires robust escalation paths, SLA governance, and unit economics accountability.',
-      spotlight:
-        'Drawing from ground-level management of 50+ garage supply partners, daily 4 AM restaurant supply logistics, and enterprise edtech sales to build operational systems that run with predictable quality.',
-      capabilities: [
-        'Comprehensive SOP playbooks and exception-handling frameworks',
-        'Cross-functional handoff protocols between sales and fulfillment',
-        'Unit economics accountability and vendor governance'
-      ],
-      techStack: ['Notion SOPs', 'ClickUp Ops', 'SLA Dashboards', 'Unit Economics Models'],
-      footerNote: 'Operational Systems · Playbooks, SOPs & Governance'
+      tags: ['SOP Playbooks', 'ClickUp Ops', 'SLA Dashboards', 'Unit Economics'],
+      metric: 'Predictable Scale',
+      link: null,
+      linkText: null
     }
   ]
-
-  const intro = data.intro || 'I’m continuing to build at the intersection of business, technology, automation and digital products — applying my experience in revenue, operations and entrepreneurship to practical systems and products.'
-  const title = data.title || 'Where I Am Building'
-  const eyebrow = data.eyebrow || '07 · FORWARD FOCUS & SYSTEMS'
-
-  const cards = defaultCards.map((card, idx) => {
-    const override = data.cards?.[idx] || {}
-    return {
-      ...card,
-      ...override,
-      capabilities: override.capabilities || card.capabilities,
-      icon: card.icon
-    }
-  })
 
   return (
     <section
@@ -124,141 +76,91 @@ export default function WhereIAmBuilding({ data = {} }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
         {/* Section Header */}
-        <div className="max-w-3xl space-y-4 reveal-on-scroll">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-            <span className="uppercase tracking-wider font-semibold">{eyebrow}</span>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-on-scroll">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+              <span className="uppercase tracking-wider font-semibold">07 · Forward Focus</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318] leading-tight">
+              Where I Am Building
+            </h2>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318] leading-tight">
-            {title}
-          </h2>
-
-          <p className="text-base sm:text-lg text-[#555B66] leading-relaxed font-normal">
-            {intro}
+          <p className="text-sm sm:text-base text-[#555B66] max-w-md leading-relaxed font-normal">
+            Applying commercial sales, operations, and entrepreneurship to practical software systems and AI automation.
           </p>
         </div>
 
-        {/* 3 Visual Pillar Focus Cards */}
+        {/* 3 Visual Pillar Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-          {cards.map((card, idx) => {
-            const Icon = card.icon
-            const currentTab = activeTab[idx] || 'spotlight'
-
+          {pillars.map((p) => {
+            const Icon = p.icon
             return (
               <div
-                key={card.category}
-                className={`p-7 sm:p-9 rounded-3xl bg-[#FAFAF8] border border-[#E5E7EB] hover:border-[#2563EB]/40 hover-card-elevate shadow-xs transition-all duration-300 flex flex-col justify-between space-y-6 reveal-on-scroll delay-${(idx + 1) * 100} group`}
+                key={p.number}
+                className="p-7 sm:p-9 rounded-3xl bg-[#FAFAF8] border border-[#E5E7EB] hover:border-[#2563EB]/40 hover-card-elevate shadow-xs transition-all duration-300 flex flex-col justify-between space-y-6 reveal-on-scroll group"
               >
                 <div className="space-y-5">
-                  {/* Card Header: Category & Icon */}
-                  <div className="flex items-center justify-between pb-4 border-b border-slate-200/80">
-                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#111318]">
-                      {card.category}
+                  {/* Top Bar: Number & Icon */}
+                  <div className="flex items-center justify-between pb-3.5 border-b border-[#E5E7EB]">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#2563EB]">
+                      {p.number} · {p.subtitle}
                     </span>
 
-                    <div className={`w-11 h-11 rounded-2xl flex items-center justify-center border ${card.iconContainerStyle} transition-transform group-hover:scale-105 duration-200 shadow-2xs`}>
+                    <div className="w-10 h-10 rounded-2xl bg-white border border-[#E5E7EB] flex items-center justify-center text-[#2563EB] shadow-2xs group-hover:scale-110 transition-transform">
                       <Icon className="w-5 h-5" />
                     </div>
                   </div>
 
-                  {/* Title & Status Badge */}
-                  <div className="space-y-2">
-                    <div className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[10.5px] font-mono font-semibold uppercase tracking-wider border shadow-2xs ${card.badgeStyle}`}>
-                      {card.badge}
-                    </div>
-
-                    <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#111318] leading-snug">
-                      {card.title}
+                  {/* Title & 1-Sentence Description */}
+                  <div className="space-y-1">
+                    <h3 className="text-2xl font-bold tracking-tight text-[#111318] group-hover:text-[#2563EB] transition-colors">
+                      {p.title}
                     </h3>
+                    <p className="text-xs sm:text-sm text-[#555B66] leading-relaxed">
+                      {p.description}
+                    </p>
                   </div>
 
-                  {/* Core Narrative */}
-                  <p className="text-xs sm:text-sm text-[#555B66] leading-relaxed font-normal">
-                    {card.description}
-                  </p>
-
-                  {/* Interactive Tab Switcher */}
-                  <div className="flex items-center gap-1 p-1 rounded-xl bg-white border border-[#E5E7EB]">
-                    <button
-                      type="button"
-                      onClick={() => setActiveTab({ ...activeTab, [idx]: 'spotlight' })}
-                      className={`flex-1 py-1 text-[11px] font-mono font-semibold rounded-lg transition-all ${
-                        currentTab === 'spotlight'
-                          ? 'bg-[#111318] text-white shadow-2xs'
-                          : 'text-[#737984] hover:text-[#111318]'
-                      }`}
-                    >
-                      Real Application
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setActiveTab({ ...activeTab, [idx]: 'capabilities' })}
-                      className={`flex-1 py-1 text-[11px] font-mono font-semibold rounded-lg transition-all ${
-                        currentTab === 'capabilities'
-                          ? 'bg-[#111318] text-white shadow-2xs'
-                          : 'text-[#737984] hover:text-[#111318]'
-                      }`}
-                    >
-                      Core Principles
-                    </button>
-                  </div>
-
-                  {/* Tab Content */}
-                  {currentTab === 'spotlight' ? (
-                    <div className="p-4 rounded-2xl bg-white border border-[#E5E7EB] text-xs text-[#111318] space-y-2 shadow-2xs animate-fade-in">
-                      <span className="font-semibold block text-[10.5px] uppercase font-mono tracking-wider text-[#2563EB]">
-                        Practical Implementation
-                      </span>
-                      <p className="text-xs text-[#555B66] leading-relaxed">
-                        {card.spotlight}
-                      </p>
-                      {card.category.includes('01') && (
-                        <div className="pt-2 border-t border-slate-100">
-                          <Link
-                            href="/work/careeros"
-                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#2563EB] hover:underline"
-                          >
-                            <span>Explore CareerOS Case Study</span>
-                            <ArrowRight className="w-3 h-3" />
-                          </Link>
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <div className="p-4 rounded-2xl bg-white border border-[#E5E7EB] space-y-2 shadow-2xs animate-fade-in">
-                      <span className="font-semibold block text-[10.5px] uppercase font-mono tracking-wider text-[#2563EB]">
-                        Architectural Principles
-                      </span>
-                      <ul className="space-y-1.5">
-                        {card.capabilities.map((item, cIdx) => (
-                          <li key={cIdx} className="flex items-start gap-1.5 text-xs text-[#555B66] leading-relaxed">
-                            <CheckBulletIcon className="w-3.5 h-3.5 text-[#2563EB] mt-0.5 flex-shrink-0" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  {/* Tech Stack Pills */}
-                  {card.techStack && (
-                    <div className="flex flex-wrap gap-1 pt-1">
-                      {card.techStack.map((tech, tIdx) => (
-                        <span
-                          key={tIdx}
-                          className="px-2 py-0.5 rounded text-[10px] font-mono bg-white border border-slate-200 text-slate-600"
+                  {/* Spotlight Box */}
+                  <div className="p-3.5 rounded-2xl bg-white border border-[#E5E7EB] text-xs text-[#111318] space-y-1 shadow-2xs">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#2563EB] font-bold block">
+                      Active Execution
+                    </span>
+                    <p className="text-xs text-[#555B66] leading-relaxed">
+                      {p.highlight}
+                    </p>
+                    {p.link && (
+                      <div className="pt-1.5">
+                        <Link
+                          href={p.link}
+                          className="inline-flex items-center gap-1 text-xs font-semibold text-[#2563EB] hover:underline"
                         >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                          <span>{p.linkText}</span>
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {p.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-0.5 rounded text-[10.5px] font-mono bg-white border border-slate-200 text-slate-600"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
                 </div>
 
                 {/* Footer Note */}
-                <div className="pt-4 border-t border-slate-200/80 flex items-center justify-between text-[11px] font-mono text-[#737984]">
-                  <span>{card.footerNote}</span>
+                <div className="pt-4 border-t border-[#E5E7EB] flex items-center justify-between text-[11px] font-mono text-[#737984]">
+                  <span>{p.metric}</span>
                   <span className="w-2 h-2 rounded-full bg-slate-300 group-hover:bg-[#2563EB] transition-colors" />
                 </div>
               </div>

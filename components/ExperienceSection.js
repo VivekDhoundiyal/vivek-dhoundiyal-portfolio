@@ -1,18 +1,105 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ArrowUpRight, ArrowRight } from './Icons'
 
-export default function ExperienceSection({ experience = {} }) {
-  const [expandedIndex, setExpandedIndex] = useState(0)
-  const nodes = (experience.nodes || []).filter(item => item.id !== 'building' && item.company !== 'CareerOS' && item.category !== 'Current Building')
+function CloseIcon({ className = "w-5 h-5", ...props }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  )
+}
 
-  const milestoneRoadmap = [
-    { label: '01 · Foundation', role: 'Engineering Logic', year: '2014–18' },
-    { label: '02 · 0→1 Ventures', role: 'Ground Operations', year: '2017–23' },
-    { label: '03 · Enterprise B2B', role: 'Commercial Sales', year: '2023–24' },
-    { label: '04 · Advisory', role: 'Revenue Consulting', year: '2024–Now' },
-    { label: '05 · Products', role: 'AI & Systems', year: 'Active' }
+export default function ExperienceSection({ experience = {} }) {
+  const [activeModalItem, setActiveModalItem] = useState(null)
+
+  const roles = [
+    {
+      id: 'supersurge',
+      role: 'Growth & Revenue Consultant',
+      company: 'SuperSurge Consulting',
+      period: 'Oct 2024 – Present',
+      location: 'India',
+      badge: 'Advisory',
+      contributions: [
+        'Outbound pipeline design & ICP qualification for B2B founders',
+        'Multi-channel outreach automation reducing sales cycle length',
+        'CRM data governance and pipeline stage audit frameworks'
+      ],
+      skills: ['Revenue Operations', 'Outbound Systems', 'GTM Strategy'],
+      summary: 'Advising B2B founders and executive teams on cold outbound pipeline engineering, revenue operations, and commercial execution rigor.',
+      takeaway: 'High-converting sales pipelines are built on strict ICP criteria and disciplined CRM hygiene, not spray-and-pray volume.',
+      link: '/resume'
+    },
+    {
+      id: 'kreedon',
+      role: 'Media Sales Manager',
+      company: 'KreedOn (Voice of Indian Sports)',
+      period: 'Dec 2023 – Oct 2024',
+      location: 'India',
+      badge: 'Media Sales',
+      contributions: [
+        'End-to-end commercial brand sponsorships & media campaigns',
+        'Direct relationship management with national advertising agencies',
+        'Multi-format sponsorship packages across athlete & sports media'
+      ],
+      skills: ['Media Monetization', 'Brand Sponsorships', 'Agency Accounts'],
+      summary: 'Spearheaded B2B brand partnerships and media sponsorship deals, translating sports audience attention into high-impact commercial campaigns.',
+      takeaway: 'Monetizing media properties requires understanding the agency media planner’s exact KPIs and delivering transparent post-campaign telemetry.',
+      link: '/experience/kreedon'
+    },
+    {
+      id: 'collegedunia',
+      role: 'Senior Manager — Business Development',
+      company: 'CollegeDunia Web Pvt Ltd',
+      period: 'Apr 2023 – Sep 2023',
+      location: 'India',
+      badge: 'Enterprise B2B',
+      contributions: [
+        'Consultative institutional sales cycles with higher-ed leadership',
+        'Customized digital marketing & student acquisition solution bundles',
+        'Multi-stakeholder executive contract negotiations and closings'
+      ],
+      skills: ['Enterprise Sales', 'Consultative Selling', 'Contract Negotiation'],
+      summary: 'Led consultative business development cycles for higher education institutions, pitching institutional leaders and managing contract negotiations.',
+      takeaway: 'Enterprise deals stall when procurement criteria are unmapped; multi-threading champions across departments is essential for closure.',
+      link: '/experience/collegedunia'
+    },
+    {
+      id: 'settlemycar',
+      role: 'Co-founder & Operator',
+      company: 'SettleMyCar & Ventures',
+      period: '2017 – 2023',
+      location: 'Delhi-NCR, India',
+      badge: '0→1 Ventures',
+      contributions: [
+        'Onboarded and governed network of 50+ vetted multi-brand garages',
+        'Fulfilled 1,000+ customer automotive service orders with doorstep pickup',
+        'Operated daily morning food-supply and regional wholesale distribution'
+      ],
+      skills: ['Ground Operations', 'Unit Economics', 'Vendor Governance'],
+      summary: 'Founded and scaled multi-sided operational businesses across automotive repair, daily commercial restaurant food supply, and wholesale distribution.',
+      takeaway: 'Ground-level execution requires uncompromising unit economics and daily cashflow discipline over vanity top-line growth.',
+      link: '/work/settlemycar'
+    }
   ]
+
+  // ESC handler for detail drawer modal
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setActiveModalItem(null)
+    }
+    if (activeModalItem) {
+      document.body.style.overflow = 'hidden'
+      window.addEventListener('keydown', handleKeyDown)
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [activeModalItem])
 
   return (
     <section id="experience" className="py-20 sm:py-28 border-t border-[#E5E7EB] bg-white text-[#111318] relative">
@@ -20,190 +107,206 @@ export default function ExperienceSection({ experience = {} }) {
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-on-scroll">
-          <div className="max-w-2xl space-y-3">
+          <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-              <span className="uppercase tracking-wider font-semibold">05 · Executive Trajectory</span>
+              <span className="uppercase tracking-wider font-semibold">05 · Professional Track Record</span>
             </div>
 
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318] leading-tight">
-              Professional Experience Progression
+              Professional Experience
             </h2>
-
-            <p className="text-base sm:text-lg text-[#555B66] leading-relaxed font-normal">
-              A high-level career overview mapping the progression from 0→1 venture building and enterprise commercial sales to revenue consulting and operational systems.
-            </p>
           </div>
 
-          <div className="flex items-center gap-4 self-start md:self-auto">
-            <Link
-              href="/resume"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 hover:bg-[#FAFAF8] text-[#111318] shadow-xs transition-all"
+          <Link
+            href="/resume"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 hover:bg-[#FAFAF8] text-[#111318] shadow-xs transition-all self-start md:self-auto"
+          >
+            <span>Inspect Full Resume</span>
+            <ArrowUpRight className="w-3.5 h-3.5 text-[#2563EB]" />
+          </Link>
+        </div>
+
+        {/* 2-Column Minimalist Experience Cards (Role · Company · Date · 3 Contributions · 3 Skills · View Details) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          {roles.map((item) => (
+            <div
+              key={item.id}
+              className="p-7 sm:p-9 rounded-3xl bg-[#FAFAF8] border border-[#E5E7EB] hover:border-[#2563EB]/40 hover-card-elevate shadow-xs transition-all duration-300 flex flex-col justify-between space-y-6 reveal-on-scroll group"
             >
-              <span>Inspect Full Resume</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-[#2563EB]" />
-            </Link>
-          </div>
-        </div>
-
-        {/* Visual Progression Trajectory Bar */}
-        <div className="p-6 sm:p-8 rounded-3xl bg-[#FAFAF8] border border-[#E5E7EB] shadow-2xs reveal-on-scroll">
-          <div className="text-[10.5px] font-mono uppercase tracking-wider text-[#737984] font-semibold mb-4">
-            Macro Career Trajectory: Experience → Responsibility → Capability → Outcome
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-            {milestoneRoadmap.map((ms, idx) => (
-              <div
-                key={idx}
-                className="p-3.5 rounded-2xl bg-white border border-[#E5E7EB] space-y-1 shadow-2xs"
-              >
-                <div className="flex items-center justify-between text-[10px] font-mono text-[#2563EB] font-bold">
-                  <span>{ms.label}</span>
-                  <span className="text-[#737984]">{ms.year}</span>
-                </div>
-                <div className="text-xs font-bold text-[#111318]">{ms.role}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* PROGRESSIVE TIMELINE: Interactive 2-Column Split */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          {/* LEFT: Chronological Rail (5 cols) */}
-          <div className="lg:col-span-5 space-y-3">
-            {nodes.map((item, idx) => {
-              const isSelected = idx === expandedIndex
-              return (
-                <button
-                  key={item.id || idx}
-                  onClick={() => setExpandedIndex(idx)}
-                  className={`w-full text-left p-5 sm:p-6 rounded-2xl transition-all duration-200 border flex flex-col space-y-2 reveal-on-scroll delay-${(idx + 1) * 100} cursor-pointer ${
-                    isSelected
-                      ? 'bg-white border-[#2563EB] shadow-sm ring-2 ring-[#2563EB]/20 translate-x-1'
-                      : 'bg-white border-[#E5E7EB] hover:border-slate-300 hover:bg-[#FAFAF8]'
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="px-2.5 py-0.5 rounded-full text-[10.5px] font-mono uppercase tracking-wider text-[#2563EB] bg-blue-50 border border-blue-100 font-semibold">
-                      {item.badge}
-                    </span>
-                    <span className="text-xs font-mono text-[#737984]">
-                      {item.period}
-                    </span>
-                  </div>
-
-                  <div className="text-base sm:text-lg font-bold text-[#111318]">
-                    {item.company}
-                  </div>
-
-                  <div className="text-xs font-medium text-[#555B66]">
-                    {item.role}
-                  </div>
-
-                  {item.scope && (
-                    <div className="text-xs text-[#737984] pt-1 line-clamp-1 italic">
-                      "{item.scope}"
-                    </div>
-                  )}
-                </button>
-              )
-            })}
-          </div>
-
-          {/* RIGHT: Detailed Narrative Pane for Active Node (7 cols) */}
-          <div className="lg:col-span-7">
-            {nodes[expandedIndex] && (
-              <div className="p-8 sm:p-10 rounded-3xl bg-[#FAFAF8] border border-[#E5E7EB] shadow-xs space-y-6 reveal-on-scroll animate-scale-in">
+              <div className="space-y-4">
                 
-                {/* Node Header */}
-                <div className="space-y-3 pb-5 border-b border-[#E5E7EB]">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <span className="px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider text-[#2563EB] bg-blue-50 border border-blue-100 font-semibold">
-                      {nodes[expandedIndex].badge}
-                    </span>
-                    <span className="text-xs font-mono text-[#737984] bg-white px-3 py-1 rounded-full border border-[#E5E7EB] shadow-2xs">
-                      {nodes[expandedIndex].period} · {nodes[expandedIndex].location}
-                    </span>
-                  </div>
-
-                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111318]">
-                    {nodes[expandedIndex].role}
-                  </h3>
-
-                  <div className="text-base font-semibold text-[#555B66]">
-                    {nodes[expandedIndex].company}
-                  </div>
-                </div>
-
-                {/* 3 Structured Dimension Cards: Responsibility · Capability · Outcome */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {nodes[expandedIndex].scope && (
-                    <div className="p-4 rounded-2xl bg-white border border-[#E5E7EB] space-y-1 shadow-2xs">
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-[#2563EB] font-bold block">
-                        Core Responsibility
-                      </span>
-                      <p className="text-xs text-[#111318] font-medium leading-relaxed">
-                        {nodes[expandedIndex].scope}
-                      </p>
-                    </div>
-                  )}
-
-                  <div className="p-4 rounded-2xl bg-white border border-[#E5E7EB] space-y-1 shadow-2xs">
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#059669] font-bold block">
-                      Target Outcome
-                    </span>
-                    <p className="text-xs text-[#111318] font-medium leading-relaxed">
-                      {nodes[expandedIndex].outcome || 'Delivered predictable pipeline execution and verified business targets.'}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Summary Body */}
-                <div className="space-y-1.5">
-                  <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#737984] font-semibold block">
-                    Execution Overview
+                {/* Meta Header */}
+                <div className="flex items-center justify-between pb-3.5 border-b border-[#E5E7EB]">
+                  <span className="px-2.5 py-0.5 rounded-full text-[10.5px] font-mono uppercase tracking-wider text-[#2563EB] bg-blue-50 border border-blue-100 font-semibold">
+                    {item.badge}
                   </span>
-                  <p className="text-xs sm:text-sm text-[#555B66] leading-relaxed font-normal">
-                    {nodes[expandedIndex].summary}
-                  </p>
+                  <span className="text-xs font-mono text-[#737984]">
+                    {item.period}
+                  </span>
                 </div>
 
-                {/* Key First-Principles Takeaway */}
-                {nodes[expandedIndex].takeaway && (
-                  <div className="p-5 rounded-2xl bg-white border border-[#E5E7EB] space-y-1.5 shadow-2xs">
-                    <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#2563EB] font-semibold block">
-                      Operator Principle &amp; Key Insight
-                    </span>
-                    <p className="text-xs sm:text-sm text-[#555B66] italic leading-relaxed">
-                      "{nodes[expandedIndex].takeaway}"
-                    </p>
+                {/* Role & Company */}
+                <div className="space-y-0.5">
+                  <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#111318] group-hover:text-[#2563EB] transition-colors leading-snug">
+                    {item.role}
+                  </h3>
+                  <div className="text-sm font-semibold text-[#555B66]">
+                    {item.company} · {item.location}
                   </div>
-                )}
+                </div>
 
-                {/* Direct Link to Detailed Page */}
-                {nodes[expandedIndex].link && (
-                  <div className="pt-2 border-t border-[#E5E7EB] flex items-center justify-between">
-                    <Link
-                      href={nodes[expandedIndex].link}
-                      className="inline-flex items-center gap-2 text-xs font-semibold text-[#2563EB] hover:underline"
-                    >
-                      <span>Inspect Deep-Dive Details</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                    <span className="text-[10.5px] font-mono text-[#737984]">
-                      Role Case Study →
-                    </span>
+                {/* 3 Key Contributions */}
+                <div className="space-y-1.5 pt-1">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#737984] font-bold block">
+                    Key Contributions
+                  </span>
+                  <ul className="space-y-1.5 text-xs text-[#555B66]">
+                    {item.contributions.map((c, cIdx) => (
+                      <li key={cIdx} className="flex items-start gap-2 leading-relaxed">
+                        <span className="text-[#2563EB] font-bold mt-0.5">✓</span>
+                        <span>{c}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* 3 Skills */}
+                <div className="pt-1">
+                  <div className="flex flex-wrap gap-1.5">
+                    {item.skills.map((s, sIdx) => (
+                      <span
+                        key={sIdx}
+                        className="px-2.5 py-1 rounded-lg text-[10.5px] font-mono bg-white border border-[#E5E7EB] text-[#111318] shadow-2xs"
+                      >
+                        {s}
+                      </span>
+                    ))}
                   </div>
-                )}
+                </div>
 
               </div>
-            )}
-          </div>
 
+              {/* View Details Action */}
+              <div className="pt-4 border-t border-[#E5E7EB] flex items-center justify-between">
+                <button
+                  type="button"
+                  onClick={() => setActiveModalItem(item)}
+                  className="text-xs font-semibold text-[#2563EB] group-hover:underline flex items-center gap-1.5 cursor-pointer"
+                >
+                  <span>View Details</span>
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                </button>
+                <span className="text-[10.5px] font-mono text-[#737984]">
+                  Inspect Record →
+                </span>
+              </div>
+
+            </div>
+          ))}
         </div>
 
       </div>
+
+      {/* ==================================================== */}
+      {/* EXPANDABLE DETAIL MODAL / DRAWER                     */}
+      {/* ==================================================== */}
+      {activeModalItem && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Experience Details"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/70 backdrop-blur-sm animate-fade-in"
+          onClick={() => setActiveModalItem(null)}
+        >
+          <div
+            className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200 p-7 sm:p-9 space-y-6 animate-scale-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-start justify-between pb-4 border-b border-[#E5E7EB]">
+              <div>
+                <span className="px-2.5 py-0.5 rounded-full text-[10.5px] font-mono uppercase tracking-wider text-[#2563EB] bg-blue-50 border border-blue-100 font-semibold inline-block mb-1">
+                  {activeModalItem.badge} · {activeModalItem.period}
+                </span>
+                <h3 className="text-2xl font-bold tracking-tight text-[#111318]">
+                  {activeModalItem.role}
+                </h3>
+                <div className="text-sm font-semibold text-[#555B66]">
+                  {activeModalItem.company} · {activeModalItem.location}
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setActiveModalItem(null)}
+                className="p-1.5 rounded-lg text-slate-400 hover:text-[#111318] hover:bg-slate-100 transition-colors"
+                aria-label="Close details"
+              >
+                <CloseIcon className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="space-y-4">
+              <div className="space-y-1">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#737984] font-bold block">
+                  Role Overview
+                </span>
+                <p className="text-sm text-[#555B66] leading-relaxed">
+                  {activeModalItem.summary}
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#737984] font-bold block">
+                  Key Delivered Contributions
+                </span>
+                <ul className="space-y-2 text-xs sm:text-sm text-[#555B66]">
+                  {activeModalItem.contributions.map((c, cIdx) => (
+                    <li key={cIdx} className="flex items-start gap-2 leading-relaxed">
+                      <span className="text-[#2563EB] font-bold mt-0.5">✓</span>
+                      <span>{c}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Operator Takeaway */}
+              {activeModalItem.takeaway && (
+                <div className="p-4 rounded-2xl bg-slate-50 border border-[#E5E7EB] space-y-1">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#2563EB] font-bold block">
+                    Operating Principle / Takeaway
+                  </span>
+                  <p className="text-xs sm:text-sm text-[#111318] italic leading-relaxed">
+                    "{activeModalItem.takeaway}"
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* Modal Footer */}
+            <div className="pt-4 border-t border-[#E5E7EB] flex items-center justify-between">
+              <Link
+                href={activeModalItem.link}
+                className="text-xs font-semibold text-[#2563EB] hover:underline flex items-center gap-1.5"
+              >
+                <span>Inspect Full Case Study / Record</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <button
+                type="button"
+                onClick={() => setActiveModalItem(null)}
+                className="px-4 py-2 rounded-xl bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800 transition-colors"
+              >
+                Done
+              </button>
+            </div>
+
+          </div>
+        </div>
+      )}
+
     </section>
   )
 }
