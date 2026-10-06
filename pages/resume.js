@@ -13,13 +13,13 @@ export default function ResumePage({ siteData }) {
     title: 'B2B Sales & Business Development Resume',
     subtitle: 'B2B Sales · Enterprise Development · Revenue Operations · Partnerships',
     url: '/resumes/Vivek_Dhoundiyal_B2B_Sales_Resume.pdf',
-    description: 'Detailed record of 8+ years driving commercial revenue, consultative B2B sales cycles, client negotiation, and outbound pipeline architecture.',
+    description: 'Detailed record of 8+ years driving commercial revenue, consultative B2B sales cycles, client negotiation, and outbound pipeline systems.',
     focusAreas: [
       'Enterprise B2B Sales & Consultative Selling',
       'Lead Generation & Multi-Channel Outbound',
       'Commercial Negotiation & Contract Closing',
       'Key Account Management & Revenue Retention',
-      'CRM Pipeline Architecture (Zoho, Apollo, Lusha)'
+      'CRM Pipeline Systems (Zoho, Apollo, Lusha)'
     ]
   }
 
@@ -75,7 +75,7 @@ export default function ResumePage({ siteData }) {
           </h1>
 
           <p className="text-sm sm:text-base text-[#555B66] max-w-2xl leading-relaxed font-normal">
-            A comprehensive record of 8+ years driving enterprise B2B sales cycles, consultative client negotiation, revenue pipeline architecture, and commercial operations.
+            A comprehensive record of 8+ years driving enterprise B2B sales cycles, consultative client negotiation, revenue pipeline systems, and commercial operations.
           </p>
         </div>
 
@@ -136,7 +136,7 @@ export default function ResumePage({ siteData }) {
                 </div>
                 <div className="text-xs font-semibold text-[#2563EB]">SuperSurge Consulting · Remote</div>
                 <p className="text-xs text-[#555B66] leading-relaxed">
-                  Advising B2B startups and commercial ventures on go-to-market structure, ICP segmentation, multichannel outbound architecture, and conversion funnel optimization.
+                  Advising B2B startups and commercial ventures on go-to-market structure, ICP segmentation, multichannel outbound strategy, and conversion funnel optimization.
                 </p>
               </div>
 

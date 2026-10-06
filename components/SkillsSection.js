@@ -17,9 +17,9 @@ export default function SkillsSection() {
     {
       id: 'growth',
       title: 'GROWTH',
-      desc: 'Predictable outbound prospecting architectures & pipeline velocity.',
+      desc: 'Predictable outbound prospecting systems & pipeline velocity.',
       nodes: [
-        { name: 'Revenue Operations', detail: 'CRM pipeline stage hygiene and conversion telemetry.' },
+        { name: 'Revenue Operations', detail: 'CRM pipeline stage discipline and conversion analytics.' },
         { name: 'Outbound Sourcing', detail: 'Targeted ICP list building and qualification cadences.' },
         { name: 'Pipeline Velocity', detail: 'Compressing sales cycle duration from lead to contract.' },
         { name: 'GTM Strategy', detail: 'Go-to-market commercial positioning and launch playbooks.' }
@@ -44,7 +44,7 @@ export default function SkillsSection() {
         { name: 'SOP Playbooks', detail: 'Deterministic standard operating procedures.' },
         { name: 'Unit Economics', detail: 'Contribution margin governance and cashflow discipline.' },
         { name: 'SLA Governance', detail: 'Zero-stockout delivery fulfillment and vendor SLAs.' },
-        { name: 'Exception Routing', detail: 'Automated escalation paths for fulfillment bottlenecks.' }
+        { name: 'Exception Management', detail: 'Automated escalation paths for fulfillment bottlenecks.' }
       ]
     },
     {
@@ -52,7 +52,7 @@ export default function SkillsSection() {
       title: 'PRODUCT',
       desc: 'Translating ground commercial insight into intuitive software products.',
       nodes: [
-        { name: 'Systems Architecture', detail: 'Closed-loop data pipelines and deterministic state.' },
+        { name: 'Business Systems', detail: 'Closed-loop operational workflows and dependable execution.' },
         { name: 'Problem Discovery', detail: 'Extracting genuine operator bottlenecks before code.' },
         { name: 'Specification Design', detail: 'Scoping functional PRDs and wireframe flows.' },
         { name: 'CareerOS Platform', detail: 'AI career operating system developed from scratch.' }
@@ -61,12 +61,12 @@ export default function SkillsSection() {
     {
       id: 'ai-automation',
       title: 'AI & AUTOMATION',
-      desc: 'Leverage multiplication through webhook workflows & LLM pipelines.',
+      desc: 'Operational leverage through automated workflows and intelligent tools.',
       nodes: [
-        { name: 'Prompt Engineering', detail: 'Structured JSON schemas and system prompt design.' },
-        { name: 'Webhook Pipelines', detail: 'Event-driven multi-platform sync via REST hooks.' },
+        { name: 'AI Workflows', detail: 'Targeted prompt structures and formatted business deliverables.' },
+        { name: 'Process Automation', detail: 'Cross-platform synchronization and event-driven updates.' },
         { name: 'n8n Orchestration', detail: 'Automating administrative drag without software bloat.' },
-        { name: 'Vector Embeddings', detail: 'Semantic similarity matching and candidate scoring.' }
+        { name: 'Intelligent Matching', detail: 'Semantic similarity algorithms and automated candidate scoring.' }
       ]
     }
   ]
@@ -109,7 +109,7 @@ export default function SkillsSection() {
             </div>
             <div className="space-y-1 pr-2">
               <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#2563EB] font-bold block">
-                Central Architecture
+                Core Capabilities
               </span>
               <div className="text-xs font-semibold text-[#111318]">
                 Strategy · Execution · Ops
@@ -210,7 +210,7 @@ export default function SkillsSection() {
             })}
           </div>
 
-          {/* Live Node Telemetry Footer */}
+          {/* Live Competency Status Footer */}
           <div className="mt-8 pt-6 border-t border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono text-[#737984]">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />

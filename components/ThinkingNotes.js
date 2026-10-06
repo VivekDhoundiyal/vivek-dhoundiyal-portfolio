@@ -24,7 +24,7 @@ export default function ThinkingNotes({ articles = [] }) {
     },
     {
       slug: 'how-to-build-a-predictable-sales-pipeline',
-      title: 'Architecting Predictable Outbound B2B Pipelines',
+      title: 'Building Predictable Outbound B2B Pipelines',
       category: 'SALES ENGINE',
       date: 'Jun 2026',
       readingTime: '6 min read',
@@ -36,7 +36,7 @@ export default function ThinkingNotes({ articles = [] }) {
       category: 'SYSTEMS & SOPS',
       date: 'May 2026',
       readingTime: '4 min read',
-      excerpt: 'Deterministic schema constraints over human goodwill.'
+      excerpt: 'Systematic operational standards over reliance on human goodwill.'
     }
   ]
 

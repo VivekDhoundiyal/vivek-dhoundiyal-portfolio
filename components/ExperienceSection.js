@@ -45,7 +45,7 @@ export default function ExperienceSection({ experience = {} }) {
       ],
       skills: ['Media Monetization', 'Brand Sponsorships', 'Agency Accounts'],
       summary: 'Spearheaded B2B brand partnerships and media sponsorship deals, translating sports audience attention into high-impact commercial campaigns.',
-      takeaway: 'Monetizing media properties requires understanding the agency media planner’s exact KPIs and delivering transparent post-campaign telemetry.',
+      takeaway: 'Monetizing media properties requires understanding the agency media planner’s exact KPIs and delivering transparent post-campaign analytics and reporting.',
       link: '/experience/kreedon'
     },
     {

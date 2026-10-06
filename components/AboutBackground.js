@@ -80,7 +80,7 @@ export default function AboutBackground() {
       stage: '05',
       title: 'PRODUCT + AI',
       period: 'ACTIVE',
-      sentence: 'Architecting CareerOS and automated webhook pipelines to eliminate professional friction.',
+      sentence: 'Building CareerOS and automated business workflows to eliminate professional friction.',
       icon: TerminalIcon,
       accent: '#2563EB'
     }
@@ -102,7 +102,7 @@ export default function AboutBackground() {
               Personal Journey &amp; Trajectory
             </h2>
             <p className="text-sm sm:text-base text-[#555B66] max-w-lg leading-relaxed font-normal pt-1">
-              From first-principles engineering to 0→1 business building, enterprise commercial sales, and AI software architecture.
+              From first-principles engineering to 0→1 business building, enterprise commercial sales, and intelligent digital products.
             </p>
           </div>
 
@@ -194,7 +194,7 @@ export default function AboutBackground() {
                 Core Operating Thesis
               </span>
               <blockquote className="text-base sm:text-xl font-medium leading-relaxed text-slate-100">
-                "The most durable software systems are built by operators who understand the ground-level economic reality of the customer first, and write code second."
+                "The most durable digital products are built by operators who understand the ground-level economic reality of the customer first, and build technology second."
               </blockquote>
               <div className="text-xs font-mono text-blue-300 pt-1">
                 — Vivek Dhoundiyal · Commercial Operator &amp; Builder

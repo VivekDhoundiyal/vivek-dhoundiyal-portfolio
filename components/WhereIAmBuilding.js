@@ -37,8 +37,8 @@ export default function WhereIAmBuilding() {
       description: 'Building tools that eliminate real operational friction.',
       highlight: 'Developing CareerOS as an AI-powered applicant command center.',
       icon: WindowTerminalIcon,
-      tags: ['Next.js 14', 'TypeScript', 'Tailwind', 'SQLite / D1'],
-      metric: 'Active Technical Building',
+      tags: ['Product Strategy', 'User Experience', 'High Performance', 'Data Reliability'],
+      metric: 'Active Product Building',
       link: '/work/careeros',
       linkText: 'Explore CareerOS →'
     },
@@ -47,9 +47,9 @@ export default function WhereIAmBuilding() {
       title: 'AI & Automation',
       subtitle: 'APPLIED WORKFLOWS',
       description: 'Event-driven automations reducing repetitive human tasks.',
-      highlight: 'Webhook pipelines extracting CRM signals and research data.',
+      highlight: 'Automated data pipelines extracting CRM signals and market research.',
       icon: WorkflowNodesIcon,
-      tags: ['n8n', 'Make.com', 'OpenAI API', 'REST Hooks'],
+      tags: ['n8n', 'Make.com', 'Applied AI', 'Workflow Automation'],
       metric: 'Automated Operations',
       link: null,
       linkText: null
@@ -57,7 +57,7 @@ export default function WhereIAmBuilding() {
     {
       number: '03',
       title: 'Business Systems',
-      subtitle: 'OPERATING ARCHITECTURE',
+      subtitle: 'OPERATING SYSTEMS & SOPS',
       description: 'Repeatable playbooks connecting sales with fulfillment.',
       highlight: 'Standard operating procedures (SOPs) and SLA governance frameworks.',
       icon: ProcessGearsIcon,

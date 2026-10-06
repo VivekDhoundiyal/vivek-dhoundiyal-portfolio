@@ -37,7 +37,7 @@ export default function WhatIDo() {
       number: '03',
       title: 'OPERATIONS',
       subtitle: 'Systems, Playbooks & Execution',
-      description: 'Engineering deterministic SOPs, exception routing, and unit economics accountability.',
+      description: 'Engineering disciplined SOPs, escalation protocols, and unit economics accountability.',
       flow: ['Process', 'Systems', 'Repeatability'],
       tags: ['SOP Playbooks', 'Unit Economics', 'SLA Governance'],
       metric: 'Repeatable Execution',

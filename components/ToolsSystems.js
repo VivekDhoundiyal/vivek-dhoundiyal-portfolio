@@ -6,7 +6,7 @@ export default function ToolsSystems({ tools = [] }) {
   const categories = [
     'All Tools',
     'AI',
-    'Development',
+    'Product Development',
     'Automation',
     'CRM',
     'Productivity',
@@ -23,11 +23,11 @@ export default function ToolsSystems({ tools = [] }) {
     { id: 'claude', name: 'Claude', category: 'AI' },
     { id: 'gemini', name: 'Gemini', category: 'AI' },
     { id: 'perplexity', name: 'Perplexity', category: 'Research' },
-    { id: 'openai-codex', name: 'OpenAI Codex', category: 'Development' },
-    { id: 'claude-code', name: 'Claude Code', category: 'Development' },
-    { id: 'antigravity', name: 'Antigravity', category: 'Development' },
-    { id: 'stitch', name: 'Stitch', category: 'Development' },
-    { id: 'python', name: 'Python', category: 'Development' },
+    { id: 'openai-codex', name: 'OpenAI Codex', category: 'Product Development' },
+    { id: 'claude-code', name: 'Claude Code', category: 'Product Development' },
+    { id: 'antigravity', name: 'Antigravity', category: 'Product Development' },
+    { id: 'stitch', name: 'Stitch', category: 'Product Development' },
+    { id: 'python', name: 'Python', category: 'Product Development' },
     { id: 'n8n', name: 'n8n', category: 'Automation' },
     { id: 'make', name: 'Make', category: 'Automation' },
     { id: 'zapier', name: 'Zapier', category: 'Automation' },
@@ -55,9 +55,9 @@ export default function ToolsSystems({ tools = [] }) {
       const aiToolIds = ['chatgpt', 'claude', 'gemini', 'perplexity', 'openai-codex', 'claude-code', 'antigravity', 'stitch']
       return cat.includes('ai') || cat.includes('intelligence') || aiToolIds.includes(tid)
     }
-    if (target === 'development') {
+    if (target === 'product development' || target === 'development') {
       const devToolIds = ['openai-codex', 'claude-code', 'antigravity', 'stitch', 'python']
-      return cat.includes('dev') || cat.includes('code') || devToolIds.includes(tid)
+      return cat.includes('product') || cat.includes('dev') || cat.includes('code') || devToolIds.includes(tid)
     }
     if (target === 'automation') {
       return cat.includes('auto') || cat.includes('workflow') || tid === 'zapier' || tid === 'make' || tid === 'n8n'
@@ -100,7 +100,7 @@ export default function ToolsSystems({ tools = [] }) {
               Tools I Actually Use
             </h2>
             <p className="text-sm sm:text-base text-[#555B66] max-w-lg leading-relaxed font-normal pt-1">
-              Everyday software platforms, AI intelligence tooling, automation engines, and development environments.
+              Everyday operational platforms, AI tooling, workflow automation engines, and product workspaces.
             </p>
           </div>
 

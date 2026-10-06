@@ -46,7 +46,7 @@ export default function CorporateExperience() {
       points: [
         'Commercial Growth Advisory',
         'Outbound Pipeline Systems',
-        'AI Product Architecture'
+        'AI Product Strategy'
       ],
       skills: ['GTM Strategy', 'Workflow Automation', 'CareerOS']
     }

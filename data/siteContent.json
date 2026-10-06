@@ -418,7 +418,7 @@
   "experience": {
     "headline": "A builder with deep commercial and operating foundations.",
     "subhead": "The verified trajectory: Engineering → Entrepreneurship → 0→1 Building → B2B Sales & Growth → Operations → Product.",
-    "intro": "I began with an engineering background where I learned system constraints, logic, and debugging. Moving into entrepreneurship and commercial roles, I learned how businesses actually acquire customers, negotiate terms, manage cash flows, and build repeatable operational machines.",
+    "intro": "I began with an engineering background where I learned system constraints, logic, and root-cause troubleshooting. Moving into entrepreneurship and commercial roles, I learned how businesses actually acquire customers, negotiate terms, manage cash flows, and build repeatable operational machines.",
     "nodes": [
       {
         "id": "corporate-collegedunia",
@@ -522,7 +522,7 @@
       "tagline": "Rapid modular execution & delivery cadence",
       "question": "How fast can we put a real mechanism into user hands?",
       "lookFor": "Execution drag, manual edge cases, speed to first feedback loop.",
-      "produce": "Working system, operational SOPs, telemetry instrumentation.",
+      "produce": "Working system, operational SOPs, performance analytics.",
       "relatedWork": "Dark Kitchen"
     },
     {
@@ -546,16 +546,16 @@
       "tagline": "Architecting a unified system for career progression — centralizing opportunity discovery, intelligent positioning artifacts, application pipeline tracking, and interview preparation workflows.",
       "description": "An AI-powered career operating system I am building to streamline opportunity discovery, eliminate pipeline fragmentation, and accelerate professional growth.",
       "currentObjective": "Engineering core opportunity indexing and state-machine pipeline tracking modules locally.",
-      "whatIsBeingBuilt": "Full-stack interface with local state management, structured candidate profile generators, and opportunity ranking algorithms.",
+      "whatIsBeingBuilt": "End-to-end user workspace with structured candidate profile generators, and opportunity ranking algorithms.",
       "technology": [
-        "Next.js",
-        "React",
-        "Tailwind CSS",
-        "Node.js",
-        "Local Storage APIs"
+        "Product Strategy",
+        "Applied AI",
+        "Data Automation",
+        "Modern Web Technologies",
+        "Local Storage"
       ],
       "progress": "Opportunity Discovery & Pipeline Tracking modules engineered in local build.",
-      "milestone": "Active local architecture & engineering (zero fabricated metrics)",
+      "milestone": "Active product development & execution (zero fabricated metrics)",
       "link": "#building",
       "lastUpdated": "September 2026",
       "highlight": true,
@@ -590,31 +590,31 @@
     {
       "id": "openai-codex",
       "name": "OpenAI Codex",
-      "category": "Development",
+      "category": "Product Development",
       "desc": "AI-assisted software development and code workflows"
     },
     {
       "id": "claude-code",
       "name": "Claude Code",
-      "category": "Development",
-      "desc": "Agentic terminal coding, codebase refactoring & autonomous development loops"
+      "category": "Product Development",
+      "desc": "Agentic terminal execution, product refactoring & automated development workflows"
     },
     {
       "id": "antigravity",
       "name": "Antigravity",
-      "category": "Development",
+      "category": "Product Development",
       "desc": "AI-assisted application building and end-to-end system development workflows"
     },
     {
       "id": "stitch",
       "name": "Stitch",
-      "category": "Development",
-      "desc": "AI-assisted interface design, component prototyping & UX engineering workflows"
+      "category": "Product Development",
+      "desc": "AI-assisted interface design, interactive prototyping & UX product workflows"
     },
     {
       "id": "python",
       "name": "Python",
-      "category": "Development",
+      "category": "Product Development",
       "desc": "Data transformation scripts, web scrapers & automated ETL utilities"
     },
     {
@@ -1010,8 +1010,8 @@
         },
         {
           "step": "04",
-          "name": "Automation & Exception Routing",
-          "desc": "Automate routine notifications via webhooks and flag anomalies immediately to operators."
+          "name": "Automation & Exception Management",
+          "desc": "Automate routine notifications and flag anomalies immediately to operational leads."
         }
       ],
       "relevantExperience": [
@@ -1114,7 +1114,7 @@
       "summary": "Advising B2B founders and commercial teams on go-to-market structure, ICP segmentation, multichannel outbound engine design, and conversion optimization.",
       "context": "Early and growth-stage B2B ventures often burn capital on unfocused outbound campaigns that yield low response rates, unqualified discovery calls, and bloated sales cycles.",
       "responsibilities": [
-        "Audit existing commercial sales pipelines, messaging frameworks, and lead routing mechanics",
+        "Audit existing commercial sales pipelines, messaging frameworks, and lead distribution mechanisms",
         "Design targeted ICP criteria using verified intent data, tech-stack signals, and hiring triggers",
         "Build automated multi-touch outbound cadences combining email, LinkedIn, and direct research dossiers",
         "Implement CRM operational workflows in Zoho and Apollo with strict SLA benchmarks"
@@ -1184,7 +1184,7 @@
       },
       {
         "title": "AI & Agentic Workflows",
-        "desc": "Deploying LLM prompt chaining, webhook automations (n8n, Make), and deterministic schemas to eliminate commercial drag."
+        "desc": "Deploying intelligent prompt chaining, workflow automations (n8n, Make), and structured operational templates to eliminate commercial drag."
       },
       {
         "title": "Scalable Business Systems",
@@ -1311,8 +1311,8 @@
         "imagePng": "/images/careeros/architecture-page-05.png",
         "alt": "Root Cause Diagnosis Across Ingestion, Domain, Logic, and Pipeline",
         "transition": "Diagnosing the root causes showed that superficial visual polish could not solve underlying data fragmentation.",
-        "whatThisLayerRepresents": "Categorization of system breakdowns across four core tiers: Ingestion Fragmentation (unvalidated schema ingestion), Domain Ambiguity (loose entity boundaries), Logic Collisions (competing filter heuristics), and Pipeline Mutation (inconsistent state progression).",
-        "whyItMatters": "Treating structural ingestion and domain failures with cosmetic frontend changes creates technical debt while leaving data inaccuracies and pipeline drop-offs unresolved.",
+        "whatThisLayerRepresents": "Categorization of system breakdowns across four core tiers: Ingestion Fragmentation (unvalidated data ingestion), Domain Ambiguity (loose entity boundaries), Logic Collisions (competing filter heuristics), and Pipeline Mutation (inconsistent stage progression).",
+        "whyItMatters": "Treating structural ingestion and domain failures with cosmetic surface-level changes leaves data inaccuracies and pipeline drop-offs unresolved.",
         "productThinking": "Product managers must address the root systemic causes rather than masking architectural flaws behind polished UI facades."
       },
       {
@@ -1339,21 +1339,21 @@
         "imagePng": "/images/careeros/architecture-page-07.png",
         "alt": "Canonical Entity Normalization Engine",
         "transition": "With query algebra established, incoming unstandardized job metadata required strict entity normalization.",
-        "whatThisLayerRepresents": "The multi-tiered normalization schema that maps raw text inputs from hundreds of ATS platforms into canonical domain models (e.g., mapping \"Staff PM\", \"Lead Product Owner\", \"Group PM\" into standardized role archetypes and location bands).",
+        "whatThisLayerRepresents": "The multi-tiered normalization framework that maps raw text inputs from hundreds of ATS platforms into canonical domain models (e.g., mapping \"Staff PM\", \"Lead Product Owner\", \"Group PM\" into standardized role archetypes and location bands).",
         "whyItMatters": "ATS nomenclature varies wildly across companies. Without normalization, candidates miss critical opportunities simply due to divergent naming conventions.",
         "productThinking": "Taxonomy is core product infrastructure. Normalizing disparate terminology enables accurate cross-platform comparisons and automated matchmaking."
       },
       {
         "pageNumber": 8,
         "id": "architecture-08",
-        "chapter": "DATA INTEGRITY · TELEMETRY & FRESHNESS",
+        "chapter": "DATA INTEGRITY · REAL-TIME VERIFICATION & FRESHNESS",
         "badge": "DATA INTEGRITY",
-        "title": "Enforcing a Strict Freshness Mandate and True Telemetry",
+        "title": "Enforcing a Strict Freshness Mandate and Live Verification",
         "imageWebp": "/images/careeros/architecture-page-08.webp",
         "imagePng": "/images/careeros/architecture-page-08.png",
-        "alt": "Strict Freshness Mandate and Real-Time Telemetry Specification",
+        "alt": "Strict Freshness Mandate and Real-Time Verification Specification",
         "transition": "Beyond taxonomy, stale data undermines trust, necessitating a strict operational freshness mandate.",
-        "whatThisLayerRepresents": "The strict operational SLA: listings older than 7 days from first verification are flagged for re-validation; unverified postings are purged. Real-time telemetry tracks API response latency, worker extraction health, and URL dead-link rates.",
+        "whatThisLayerRepresents": "The strict operational SLA: listings older than 7 days from first verification are flagged for re-validation; unverified postings are purged. Real-time monitoring tracks service latency, extraction health, and URL dead-link rates.",
         "whyItMatters": "Ghost jobs and zombie listings on legacy job boards consume candidate energy on opportunities that have already closed or been filled weeks prior.",
         "productThinking": "Freshness is an uncompromisable product contract. A smaller, verified catalog of active opportunities creates far higher utility than millions of stale records."
       },
@@ -1367,7 +1367,7 @@
         "imagePng": "/images/careeros/architecture-page-09.png",
         "alt": "Core PM Strategic Tradeoff Matrix: Quality vs Volume",
         "transition": "Enforcing strict freshness and normalization required making an explicit strategic trade-off.",
-        "whatThisLayerRepresents": "The foundational product trade-off matrix: deliberately rejecting aggregate volume metrics in favor of high-signal precision, schema completeness, verified posting dates, and low noise.",
+        "whatThisLayerRepresents": "The foundational product trade-off matrix: deliberately rejecting aggregate volume metrics in favor of high-signal precision, data completeness, verified posting dates, and low noise.",
         "whyItMatters": "Vanity metrics prioritize displaying tens of thousands of low-quality jobs. For candidates, noise creates decision paralysis and wasted effort.",
         "productThinking": "High-conviction product positioning: CareerOS is engineered for the candidate seeking 10 exceptional, verified matches rather than 500 dubious listings."
       },
@@ -1381,7 +1381,7 @@
         "imagePng": "/images/careeros/architecture-page-10.png",
         "alt": "Unified End-to-End Pipeline Architecture",
         "transition": "With strategic trade-offs defined, we engineered the consolidated end-to-end processing pipeline.",
-        "whatThisLayerRepresents": "The unified system architecture: Raw multi-source ingestion → Canonical entity normalization → Freshness validation engine → Profile vector matching → Stateful application tracking.",
+        "whatThisLayerRepresents": "The unified operational workflow: Raw multi-source ingestion → Canonical entity normalization → Freshness validation engine → Profile semantic matching → Active application tracking.",
         "whyItMatters": "A single, observable pipeline prevents split-brain state, eliminates race conditions, and guarantees consistent data flow from external job boards into candidate tracking.",
         "productThinking": "Clean architecture enables sustainable iteration. Consolidating fragmented micro-scripts into a unified pipeline dramatically lowers maintenance overhead."
       },
@@ -1423,7 +1423,7 @@
         "imagePng": "/images/careeros/architecture-page-13.png",
         "alt": "Definition of Done (DoD) Engineering Governance Framework",
         "transition": "To sustain system integrity, engineering releases must adhere to a strict Definition of Done.",
-        "whatThisLayerRepresents": "Engineering governance framework mandating that every deployed feature passes schema validation, automated freshness verification, unit test coverage, and end-to-end pipeline integration before release.",
+        "whatThisLayerRepresents": "Product governance framework mandating that every released feature passes data validation, automated freshness verification, rigorous quality checks, and end-to-end workflow integration before release.",
         "whyItMatters": "Without rigorous release gates, edge cases in web extraction and data parsing quickly corrupt downstream candidate tracking states.",
         "productThinking": "Operational discipline as product strategy. Reliability is a non-negotiable feature that compounds user trust over time."
       },
@@ -1555,7 +1555,7 @@
         {
           "num": "05",
           "title": "Explainable AI Over Black-Box Magic",
-          "status": "Trust Vector",
+          "status": "Trust Foundation",
           "concept": "High-stakes career decisions require absolute transparency. Every algorithmic recommendation must expose the exact criteria, data points, and trade-offs that produced the match score."
         }
       ]
@@ -1592,7 +1592,7 @@
             "Automated source registry worker execution queue",
             "Strict 7-day posting date freshness validator",
             "Multi-source deduplication and URL liveness check",
-            "Local JSON AST layout and positioning engine"
+            "Local visual document layout and positioning engine"
           ]
         },
         {
@@ -1601,7 +1601,7 @@
           "items": [
             "Multi-tenant cloud synchronization and user collaboration",
             "LLM-assisted interview transcript synthesis and objection handling",
-            "Direct ATS webhook dispatch integrations",
+            "Direct ATS automated dispatch integrations",
             "Predictive career progression modeling"
           ]
         }

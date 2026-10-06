@@ -5,10 +5,10 @@ import { ArrowUpRight, ArrowRight } from './Icons'
 
 export default function EntrepreneurialExperience() {
   const careerosFlow = [
-    { step: '01', label: 'Profile', desc: 'Vector Ingestion' },
-    { step: '02', label: 'Matching', desc: '7-D Semantic AI' },
+    { step: '01', label: 'Profile', desc: 'Profile Ingestion' },
+    { step: '02', label: 'Matching', desc: 'Precision AI Alignment' },
     { step: '03', label: 'Discovery', desc: '7-Day Freshness SLA' },
-    { step: '04', label: 'Application', desc: 'Stage Telemetry' }
+    { step: '04', label: 'Application', desc: 'Status Tracking' }
   ]
 
   const compactVentures = [
@@ -88,11 +88,11 @@ export default function EntrepreneurialExperience() {
               <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-[#E5E7EB]">
                 <div className="flex items-center gap-2">
                   <span className="px-3 py-1 rounded-full text-[11px] font-mono font-bold tracking-wider uppercase text-[#2563EB] bg-blue-50 border border-blue-200">
-                    FLAGSHIP PRODUCT · AI SYSTEMS ARCHITECTURE
+                    FLAGSHIP PRODUCT · APPLIED AI PLATFORM
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    Active Architecture
+                    Active Product
                   </span>
                 </div>
                 <span className="text-xs font-mono text-[#737984]">
@@ -112,14 +112,14 @@ export default function EntrepreneurialExperience() {
                   AI-powered career operating system.
                 </p>
                 <p className="text-xs sm:text-sm text-[#555B66] leading-relaxed pt-1">
-                  Transforms a candidate’s background into a 7-dimensional semantic search query, orchestrating discovery, ATS alignment, and application telemetry.
+                  Transforms a candidate’s background into targeted high-conviction opportunities, orchestrating discovery, role alignment, and submission tracking.
                 </p>
               </div>
 
               {/* Animated Flow: Profile → Matching → Discovery → Application + 3D Workflow Illustration */}
               <div className="space-y-3 pt-1">
                 <span className="text-[10px] font-mono uppercase tracking-wider text-[#737984] font-bold block">
-                  Closed-Loop Pipeline Flow
+                  Closed-Loop Operating Flow
                 </span>
 
                 {/* 3D Glassmorphic Workflow Visual (Discover → Match → Apply → Grow) */}
@@ -156,10 +156,10 @@ export default function EntrepreneurialExperience() {
               <div className="grid grid-cols-3 gap-2 pt-1">
                 <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-0.5">
                   <div className="text-sm font-bold text-[#111318]">10 Stages</div>
-                  <div className="text-[9.5px] font-mono uppercase text-[#2563EB] font-bold">Pipeline Architecture</div>
+                  <div className="text-[9.5px] font-mono uppercase text-[#2563EB] font-bold">End-to-End Workflow</div>
                 </div>
                 <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-0.5">
-                  <div className="text-sm font-bold text-[#111318]">7-D Vector</div>
+                  <div className="text-sm font-bold text-[#111318]">Multivariate</div>
                   <div className="text-[9.5px] font-mono uppercase text-[#2563EB] font-bold">Profile Matching</div>
                 </div>
                 <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-0.5">
@@ -170,7 +170,7 @@ export default function EntrepreneurialExperience() {
 
               {/* Category & Tech Tags */}
               <div className="flex flex-wrap gap-1.5 pt-1">
-                {['AI Product', 'Next.js 14', 'TypeScript', 'Vector Embeddings', 'Cloudflare Edge', 'SQLite / D1'].map((tag) => (
+                {['AI Product', 'Semantic Matching', 'Real-Time Discovery', 'Cloud Infrastructure', 'Data Verification'].map((tag) => (
                   <span
                     key={tag}
                     className="px-2.5 py-1 rounded-lg text-xs font-mono bg-white border border-[#E5E7EB] text-[#555B66] shadow-2xs"
@@ -186,17 +186,17 @@ export default function EntrepreneurialExperience() {
                   href="/work/careeros"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#111318] hover:bg-[#2563EB] text-white text-xs font-semibold transition-colors shadow-xs group/btn"
                 >
-                  <span>Explore Architecture &amp; Case Study</span>
+                  <span>Explore Product Case Study</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
                 </Link>
                 <span className="text-xs font-mono text-[#737984]">
-                  Full Blueprint Breakdown →
+                  Full Operating Blueprint →
                 </span>
               </div>
 
             </div>
 
-            {/* Right: 3D CareerOS Laptop Visual & Architecture Preview */}
+            {/* Right: 3D CareerOS Laptop Visual & Product Preview */}
             <div className="lg:col-span-5 space-y-4">
               {/* 3D Glass Laptop Hero Illustration */}
               <Link href="/work/careeros" className="block group/laptop">
@@ -214,19 +214,19 @@ export default function EntrepreneurialExperience() {
                 </div>
               </Link>
 
-              {/* Secondary Architecture Blueprint Peek */}
+              {/* Secondary Product Blueprint Peek */}
               <Link href="/work/careeros" className="block group/preview">
                 <div className="relative w-full aspect-[21/9] rounded-xl overflow-hidden border border-[#E5E7EB] bg-slate-50 group-hover/preview:border-[#2563EB]/50 transition-all">
                   <Image
                     src="/images/careeros/careeros-operating-system-infographic.png"
-                    alt="CareerOS Architecture Blueprint"
+                    alt="CareerOS Systems Blueprint"
                     fill
                     sizes="550px"
                     className="object-cover object-top opacity-85 group-hover/preview:opacity-100 transition-opacity"
                   />
                   <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px] flex items-center justify-center p-2">
                     <span className="text-[11px] font-semibold text-white bg-black/60 px-3 py-1.5 rounded-full border border-white/20">
-                      Inspect 10-Stage Architecture Blueprint ↗
+                      Inspect 10-Stage Operating Blueprint ↗
                     </span>
                   </div>
                 </div>
