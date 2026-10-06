@@ -14,7 +14,7 @@ export default function Hero({ profile = {}, hero = {} }) {
   const eyebrow = (rawEyebrow && !rawEyebrow.includes('TEST')) ? rawEyebrow : 'BUSINESS • GROWTH • PARTNERSHIPS'
   const title = hero?.title || profile?.heroHeadlineAlt || profile?.heroHeadline || 'I build revenue, relationships and scalable businesses.'
   const description = hero?.description || profile?.heroDescription || "I'm Vivek Dhoundiyal — an entrepreneurial sales, business development and growth professional with 8+ years of experience across enterprise sales, strategic partnerships, revenue operations and scaling businesses from 0→1. I focus on building high-trust commercial relationships, driving repeatable revenue, and executing scalable operations."
-  const portrait = profile?.portraitImage || '/images/vivek-hero-character.png'
+  const portrait = '/images/vivek-hero-character.png'
   const primaryButtonText = hero?.primaryButtonText || 'Explore My Work'
   const primaryButtonUrl = hero?.primaryButtonUrl || '#work'
   const secondaryButtonText = hero?.secondaryButtonText || 'View Resume'
