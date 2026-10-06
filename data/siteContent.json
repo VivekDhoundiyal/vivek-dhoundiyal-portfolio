@@ -197,13 +197,13 @@
       "subtitle": "B2B Sales · Enterprise Development · Revenue Operations · Partnerships",
       "filename": "Vivek_Dhoundiyal_B2B_Sales_Resume.pdf",
       "url": "/resumes/Vivek_Dhoundiyal_B2B_Sales_Resume.pdf",
-      "description": "Detailed record of 8+ years driving commercial revenue, consultative B2B sales cycles, client negotiation, and outbound pipeline architecture.",
+      "description": "Detailed record of 8+ years driving commercial revenue, consultative B2B sales cycles, client negotiation, and outbound pipeline systems.",
       "focusAreas": [
         "Enterprise B2B Sales & Consultative Selling",
         "Lead Generation & Multi-Channel Outbound",
         "Commercial Negotiation & Contract Closing",
         "Key Account Management & Revenue Retention",
-        "CRM Pipeline Architecture (Zoho, Apollo, Lusha)"
+        "CRM Pipeline Systems (Zoho, Apollo, Lusha)"
       ]
     }
   ],
@@ -217,7 +217,7 @@
       "category": "Product Concept & Commercial Strategy",
       "role": "Product Creator & Commercial Operator",
       "year": "2024–2026",
-      "status": "Featured Architecture",
+      "status": "Featured Product",
       "statusType": "active",
       "featured": true,
       "tagline": "The AI-Powered Career Operating System",
@@ -225,15 +225,15 @@
       "summary": "An AI-powered career operating system that turns a candidate's profile into an active search engine for relevant opportunities.",
       "image": "/images/careeros/careeros-operating-system-infographic.webp",
       "imagePng": "/images/careeros/careeros-operating-system-infographic.png",
-      "alt": "CareerOS AI-powered career operating system architecture",
+      "alt": "CareerOS AI-powered career operating system",
       "tags": [
         "AI Product",
         "Product Management",
-        "Commercial Architecture"
+        "Commercial Systems"
       ],
       "evidence": [
         {
-          "label": "Architecture",
+          "label": "Product Blueprint",
           "value": "10-Stage Pipeline",
           "sub": "closed-loop flow"
         },
@@ -354,7 +354,7 @@
       "id": "supersurge",
       "slug": "supersurge",
       "title": "SuperSurge Consulting",
-      "projectType": "REVENUE ARCHITECTURE · CONSULTING",
+      "projectType": "REVENUE OPERATIONS · CONSULTING",
       "category": "Growth / Commercial",
       "role": "Growth & Revenue Consultant",
       "year": "Oct 2024 – Present",
@@ -362,7 +362,7 @@
       "statusType": "active",
       "featured": false,
       "tagline": "Outbound pipeline design, revenue operations, and commercial growth advisory.",
-      "summary": "Advising B2B startups and commercial ventures on go-to-market structure, ICP segmentation, multichannel outbound architecture, and conversion funnel optimization.",
+      "summary": "Advising B2B startups and commercial ventures on go-to-market structure, ICP segmentation, multichannel outbound strategy, and conversion funnel optimization.",
       "evidence": [
         {
           "label": "Tenure",
@@ -466,8 +466,8 @@
         "role": "Growth & Revenue Consultant",
         "period": "Oct 2024 – Present",
         "location": "India / Remote",
-        "badge": "Consulting · GTM Architecture",
-        "summary": "Advising B2B ventures on go-to-market architecture, ICP definition, outbound engines, and revenue operations.",
+        "badge": "Consulting · GTM Strategy",
+        "summary": "Advising B2B ventures on go-to-market strategy, ICP definition, outbound engines, and revenue operations.",
         "scope": "Outbound sales process auditing, multi-channel email/LinkedIn cadences, and CRM pipeline restructuring.",
         "link": "/experience/supersurge",
         "takeaway": "Revenue is an engineering problem: when you constrain inputs to high-intent signals and repeatable cadences, pipeline growth becomes deterministic."
@@ -627,7 +627,7 @@
       "id": "notion",
       "name": "Notion",
       "category": "Productivity",
-      "desc": "Operating playbooks, project documentation, PRDs & company knowledge architecture"
+      "desc": "Operating playbooks, project documentation, PRDs & company knowledge systems"
     },
     {
       "id": "google-workspace",
@@ -826,7 +826,7 @@
       {
         "value": "8+ Years",
         "label": "Commercial Execution",
-        "sub": "B2B sales, revenue architecture & deal closing"
+        "sub": "B2B sales, revenue operations & deal closing"
       },
       {
         "value": "3+ Ventures",
@@ -856,7 +856,7 @@
       "slug": "revenue-business-development",
       "title": "Revenue & Business Development",
       "tag": "Commercial Execution",
-      "headline": "Consultative pipeline architecture, enterprise deal closing and recurring revenue systems.",
+      "headline": "Consultative pipeline systems, enterprise deal closing and recurring revenue systems.",
       "summary": "I build predictable commercial revenue engines. From initial ICP identification and outbound research to multi-stakeholder consultative pitching and contract negotiation, I focus on commercial durability rather than empty volume.",
       "approach": "Revenue is an engineering problem. When you define clear ICP boundaries, map buyer incentives, and automate context-rich research dossiers, sales cycles shorten and conversion rates compound.",
       "problemsSolved": [
@@ -1081,7 +1081,7 @@
       "period": "Dec 2023 – Oct 2024",
       "location": "India",
       "badge": "Media Sales & Sponsorships",
-      "tagline": "Brand sponsorships, sports media monetization, and commercial campaign architecture.",
+      "tagline": "Brand sponsorships, sports media monetization, and commercial campaign execution.",
       "summary": "Spearheaded B2B brand partnerships and media sponsorship deals, translating sports audience attention into high-impact commercial campaigns for consumer brands, corporate sponsors, and advertising agencies.",
       "context": "Digital sports media monetization requires bridging the gap between raw viewer attention and tangible corporate brand objectives, brand awareness, and lead generation.",
       "responsibilities": [
@@ -1110,7 +1110,7 @@
       "period": "Oct 2024 – Present",
       "location": "India / Remote",
       "badge": "Active Advisory",
-      "tagline": "GTM outbound architecture, revenue operations, and pipeline engineering for B2B ventures.",
+      "tagline": "GTM outbound systems, revenue operations, and pipeline development for B2B ventures.",
       "summary": "Advising B2B founders and commercial teams on go-to-market structure, ICP segmentation, multichannel outbound engine design, and conversion optimization.",
       "context": "Early and growth-stage B2B ventures often burn capital on unfocused outbound campaigns that yield low response rates, unqualified discovery calls, and bloated sales cycles.",
       "responsibilities": [
@@ -1126,7 +1126,7 @@
         "GTM Strategy",
         "Revenue Operations",
         "Outbound Pipeline Engineering",
-        "ICP Architecture",
+        "ICP Strategy",
         "CRM Optimization"
       ],
       "lessons": "High-performing revenue teams succeed not through volume, but through extreme precision in prospect selection and context-rich positioning."
@@ -1176,7 +1176,7 @@
   "buildingToward": {
     "eyebrow": "STRATEGIC FOCUS",
     "title": "Where I am Building",
-    "narrative": "My foundation began in engineering and evolved through 8+ years of 0→1 entrepreneurship, enterprise B2B sales, revenue architecture, and commercial operations. Today, I am channeling that commercial leverage into technology, automated business systems, AI workflows, and digital products.",
+    "narrative": "My foundation began in engineering and evolved through 8+ years of 0→1 entrepreneurship, enterprise B2B sales, revenue operations, and commercial execution. Today, I am channeling that commercial leverage into technology, automated business systems, AI workflows, and digital products.",
     "focusAreas": [
       {
         "title": "Independent Software Products",
@@ -1195,16 +1195,16 @@
   "careeros": {
     "seo": {
       "title": "CareerOS: The AI-Powered Career Operating System — Product Case Study | Vivek Dhoundiyal",
-      "description": "Comprehensive product case study and systems architecture for CareerOS: inverting job discovery into an active, profile-driven intelligence engine.",
+      "description": "Comprehensive product case study and operational blueprint for CareerOS: inverting job discovery into an active, profile-driven intelligence engine.",
       "canonical": "https://vivekdhoundiyal.com/work/careeros"
     },
     "hero": {
-      "eyebrow": "CASE STUDY / SYSTEMS ARCHITECTURE",
+      "eyebrow": "CASE STUDY / OPERATIONAL BLUEPRINT",
       "title": "CareerOS: The AI-Powered Career Operating System",
       "subtitle": "A continuous, profile-driven career operating system that shifts the integration burden away from the candidate and transforms job discovery into an automated intelligence engine.",
-      "role": "Product Management & Systems Architecture",
+      "role": "Product Management & Product Strategy",
       "author": "Vivek Dhoundiyal",
-      "status": "Product Concept & Systems Architecture",
+      "status": "Product Concept & Product Strategy",
       "category": "Independent Software Product",
       "thesis": "A person's career profile should become an active search engine for their career. The system should continuously evaluate opportunities against the user, rather than forcing the user to search through thousands of jobs."
     },
@@ -1241,8 +1241,8 @@
     },
     "transition": {
       "heading": "Inside CareerOS",
-      "lead": "The operating-system view explains the product at a high level. The architecture below shows how that idea becomes a real product system.",
-      "body": "The following architecture sections present the core system models, forensic failure-mode analyses, domain normalization schemas, query engines, and engineering standards formulated during system discovery. Each chapter illustrates a foundational layer of the end-to-end product architecture."
+      "lead": "The operating-system view explains the product at a high level. The product blueprint below shows how that idea becomes a real product system.",
+      "body": "The following blueprint sections present the core system models, forensic failure-mode analyses, domain normalization schemas, query engines, and engineering standards formulated during system discovery. Each chapter illustrates a foundational layer of the end-to-end product architecture."
     },
     "architecturePages": [
       {
@@ -1276,8 +1276,8 @@
       {
         "pageNumber": 3,
         "id": "architecture-03",
-        "chapter": "DOMAIN MODEL · PERSISTENT ARCHITECTURE",
-        "badge": "DOMAIN ARCHITECTURE",
+        "chapter": "DOMAIN MODEL · PERSISTENT FRAMEWORK",
+        "badge": "DOMAIN FRAMEWORK",
         "title": "Evolving from Temporary Job Cards to a Persistent Intelligence System",
         "imageWebp": "/images/careeros/architecture-page-03.webp",
         "imagePng": "/images/careeros/architecture-page-03.png",
@@ -1374,16 +1374,16 @@
       {
         "pageNumber": 10,
         "id": "architecture-10",
-        "chapter": "PIPELINE ARCHITECTURE · CONSOLIDATED FLOW",
-        "badge": "PIPELINE ARCHITECTURE",
-        "title": "The Rebuilt Architecture: A Single, Consolidated Pipeline",
+        "chapter": "OPERATIONAL PIPELINE · CONSOLIDATED FLOW",
+        "badge": "OPERATIONAL PIPELINE",
+        "title": "The Rebuilt Pipeline: A Single, Consolidated Operational Flow",
         "imageWebp": "/images/careeros/architecture-page-10.webp",
         "imagePng": "/images/careeros/architecture-page-10.png",
-        "alt": "Unified End-to-End Pipeline Architecture",
+        "alt": "Unified End-to-End Operational Pipeline",
         "transition": "With strategic trade-offs defined, we engineered the consolidated end-to-end processing pipeline.",
         "whatThisLayerRepresents": "The unified operational workflow: Raw multi-source ingestion → Canonical entity normalization → Freshness validation engine → Profile semantic matching → Active application tracking.",
         "whyItMatters": "A single, observable pipeline prevents split-brain state, eliminates race conditions, and guarantees consistent data flow from external job boards into candidate tracking.",
-        "productThinking": "Clean architecture enables sustainable iteration. Consolidating fragmented micro-scripts into a unified pipeline dramatically lowers maintenance overhead."
+        "productThinking": "Clean system design enables sustainable iteration. Consolidating fragmented micro-scripts into a unified pipeline dramatically lowers maintenance overhead."
       },
       {
         "pageNumber": 11,
@@ -1393,7 +1393,7 @@
         "title": "Moving Beyond Keywords: The Matching Engine Paradigm",
         "imageWebp": "/images/careeros/architecture-page-11.webp",
         "imagePng": "/images/careeros/architecture-page-11.png",
-        "alt": "Seven-Dimensional Matching Engine Architecture",
+        "alt": "Seven-Dimensional Matching Engine Blueprint",
         "transition": "With clean data flowing through the pipeline, we rebuilt the core intelligence: the 7-dimensional matching engine.",
         "whatThisLayerRepresents": "The multi-dimensional matching engine evaluating 7 orthogonal vectors: Domain Skills, Scope & Seniority, Strategic Alignment, Working Modality, Cultural Attributes, Compensation Bracket, and Growth Trajectory.",
         "whyItMatters": "Naive keyword searches match irrelevant jobs containing identical words while missing deeply relevant roles with slightly different titles.",
@@ -1402,7 +1402,7 @@
       {
         "pageNumber": 12,
         "id": "architecture-12",
-        "chapter": "INTERFACE SPECIFICATION · UX ARCHITECTURE",
+        "chapter": "INTERFACE SPECIFICATION · UX DESIGN",
         "badge": "INTERFACE SPECIFICATION",
         "title": "UX Direction: High Information Density, Low Cognitive Load",
         "imageWebp": "/images/careeros/architecture-page-12.webp",
@@ -1437,7 +1437,7 @@
         "imagePng": "/images/careeros/architecture-page-14.png",
         "alt": "Sequenced Product Execution Roadmap",
         "transition": "Governed by this standard, the implementation roadmap phases technical stability ahead of feature expansion.",
-        "whatThisLayerRepresents": "The phased execution roadmap prioritizing core architecture, data integrity, and matching precision in Phase 1 before expanding to advanced automation, interview copilots, and multi-tenant capabilities in Phase 2 & 3.",
+        "whatThisLayerRepresents": "The phased execution roadmap prioritizing core systems, data integrity, and matching precision in Phase 1 before expanding to advanced automation, interview copilots, and multi-tenant capabilities in Phase 2 & 3.",
         "whyItMatters": "Premature feature expansion on unstable foundations leads to technical collapse. Solidifying core domain mechanics ensures future capabilities scale effortlessly.",
         "productThinking": "Sequencing is the essence of product leadership: knowing what not to build yet is as important as knowing what to build first."
       },
@@ -1450,9 +1450,9 @@
         "imageWebp": "/images/careeros/architecture-page-15.webp",
         "imagePng": "/images/careeros/architecture-page-15.png",
         "alt": "Executive PM Synthesis and Four-Stage Architectural Maturity Model",
-        "transition": "The case study concludes with an executive synthesis of the systems architecture and product trajectory.",
+        "transition": "The case study concludes with an executive synthesis of the product blueprint and strategic trajectory.",
         "whatThisLayerRepresents": "Executive synthesis uniting the four pillars of CareerOS: Systems Thinking (holistic lifecycle), Rigorous Prioritization (quality over volume), Transparent Engineering (zero vanity metrics), and Architectural Longevity (persistent data).",
-        "whyItMatters": "Demonstrates end-to-end product mastery: bridging strategic market vision, domain architecture, algorithmic matching, and technical execution into a coherent product asset.",
+        "whyItMatters": "Demonstrates end-to-end product mastery: bridging strategic market vision, domain systems, intelligent matching, and product execution into a coherent product asset.",
         "productThinking": "True product leadership balances vision with architectural rigor. CareerOS proves how systems thinking transforms broken, fragmented experiences into elegant, high-impact software."
       }
     ],
@@ -1537,7 +1537,7 @@
         {
           "num": "02",
           "title": "Profile as an Active Search Engine",
-          "status": "Architecture Shift",
+          "status": "Strategic Shift",
           "concept": "Instead of forcing candidates to query thousands of noisy listings repeatedly, candidate credentials, preferences, and trajectory act as an autonomous engine pulling and scoring incoming opportunities."
         },
         {
@@ -1563,13 +1563,13 @@
     "currentState": {
       "eyebrow": "SYSTEM INVENTORY",
       "heading": "Current State & Demonstration",
-      "intro": "CareerOS is a professional product architecture and engineering laboratory. Credibility matters more than vanity metrics; here is the transparent breakdown of what is built versus what is planned.",
+      "intro": "CareerOS is a professional product development and innovation laboratory. Credibility matters more than vanity metrics; here is the transparent breakdown of what is built versus what is planned.",
       "columns": [
         {
           "status": "Implemented",
           "badgeColor": "emerald",
           "items": [
-            "End-to-end product architecture and systems specification",
+            "End-to-end product strategy and systems specification",
             "Canonical domain schemas for Opportunities, Roles, and Geography",
             "Local state machine for application lifecycle tracking",
             "Normalized query logic (OR within dimensions, AND across dimensions)"
@@ -1622,7 +1622,7 @@
           "primary": true
         },
         {
-          "label": "Explore Architecture",
+          "label": "Explore Blueprint",
           "href": "#architecture-01",
           "secondary": true
         },
@@ -1671,7 +1671,7 @@
         "id": "growth-gtm",
         "title": "Revenue & Go-To-Market",
         "tag": "GTM Strategy",
-        "summary": "Go-to-market strategy, outbound prospecting architecture, lead generation, and commercial growth.",
+        "summary": "Go-to-market strategy, outbound prospecting strategy, lead generation, and commercial growth.",
         "skills": [
           "Go-To-Market Strategy",
           "Commercial Strategy",
