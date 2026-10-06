@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import Layout from '../components/Layout'
+import Analytics from '../components/Analytics'
 
 export default function MyApp({ Component, pageProps }) {
   // Allow per-page layout or fallback to global Layout
@@ -9,5 +10,10 @@ export default function MyApp({ Component, pageProps }) {
     </Layout>
   ))
 
-  return getLayout(<Component {...pageProps} />)
+  return (
+    <>
+      <Analytics />
+      {getLayout(<Component {...pageProps} />)}
+    </>
+  )
 }
