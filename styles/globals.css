@@ -392,25 +392,118 @@ body {
   animation: portraitEmerge 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Hero Character Continuous Subtle Floating & Natural Living Motion */
-@keyframes heroCharacterFloat {
+/* Hero Character Continuous Subtle Floating & Breathing Motion */
+@keyframes heroCharacterBreatheFloat {
   0%, 100% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate3d(0.5px, -5px, 0) rotate(0.35deg);
+    transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    transform: translate3d(0, -2px, 0) rotate(0deg);
-  }
-  75% {
-    transform: translate3d(-0.5px, 4px, 0) rotate(-0.3deg);
+    transform: translate3d(0, -5px, 0) scale(1.012);
   }
 }
 
-.animate-hero-character-float {
-  animation: heroCharacterFloat 5.6s ease-in-out infinite;
+.animate-hero-character-breathe {
+  animation: heroCharacterBreatheFloat 6.2s ease-in-out infinite;
   will-change: transform;
+}
+
+/* Hero Soft Blue Background Halo Slow Breathing Pulse */
+@keyframes heroHaloPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+.animate-hero-halo-pulse {
+  animation: heroHaloPulse 9s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Premium Natural Organic Floating Signs Animations */
+@keyframes ecoFloatA {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  30% {
+    transform: translate3d(2.5px, -5px, 0) rotate(1.2deg);
+  }
+  70% {
+    transform: translate3d(-2px, 3.5px, 0) rotate(-0.8deg);
+  }
+}
+
+@keyframes ecoFloatB {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  35% {
+    transform: translate3d(-3px, -4.5px, 0) rotate(-1.5deg);
+  }
+  75% {
+    transform: translate3d(2px, 4px, 0) rotate(1deg);
+  }
+}
+
+@keyframes ecoFloatC {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  40% {
+    transform: translate3d(3px, -6px, 0) rotate(-1deg);
+  }
+  80% {
+    transform: translate3d(-2.5px, 3px, 0) rotate(1.4deg);
+  }
+}
+
+@keyframes ecoFloatD {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  30% {
+    transform: translate3d(-2px, 4px, 0) rotate(1deg);
+  }
+  70% {
+    transform: translate3d(3.5px, -5px, 0) rotate(-1.2deg);
+  }
+}
+
+.animate-eco-float-a {
+  animation: ecoFloatA 6.8s ease-in-out infinite;
+  will-change: transform;
+}
+.animate-eco-float-b {
+  animation: ecoFloatB 7.6s ease-in-out infinite;
+  will-change: transform;
+}
+.animate-eco-float-c {
+  animation: ecoFloatC 8.4s ease-in-out infinite;
+  will-change: transform;
+}
+.animate-eco-float-d {
+  animation: ecoFloatD 9.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes ecoDotPulse {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate3d(1px, -4px, 0) scale(1.25);
+    opacity: 0.95;
+  }
+}
+
+.animate-eco-dot-pulse {
+  animation: ecoDotPulse 4.5s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
 .animate-ambient-drift {
@@ -546,7 +639,7 @@ body {
     transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translate3d(0, -6px, 0);
+    transform: translate3d(0, -3px, 0);
   }
 }
 
@@ -555,7 +648,7 @@ body {
     transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translate3d(0, 6px, 0);
+    transform: translate3d(0, 3px, 0);
   }
 }
 
@@ -564,7 +657,7 @@ body {
     transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -2.5px, 0);
   }
 }
 
@@ -784,16 +877,21 @@ body {
 @media (max-width: 640px) {
   @keyframes heroCharacterFloat {
     0%, 100% {
-      transform: translate3d(0, 0, 0) rotate(0deg);
-    }
-    25% {
-      transform: translate3d(0, -3px, 0) rotate(0.2deg);
+      transform: translate3d(0, 0, 0) scale(1);
     }
     50% {
-      transform: translate3d(0, -1px, 0) rotate(0deg);
+      transform: translate3d(0, -3px, 0) scale(1.008);
     }
-    75% {
-      transform: translate3d(0, 2px, 0) rotate(-0.15deg);
+  }
+
+  @keyframes heroHaloPulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.03);
+      opacity: 0.95;
     }
   }
 
@@ -872,7 +970,14 @@ body {
 
 /* Respect prefers-reduced-motion gracefully */
 @media (prefers-reduced-motion: reduce) {
-  .animate-hero-character-float {
+  .animate-hero-character-breathe,
+  .animate-hero-character-float,
+  .animate-hero-halo-pulse,
+  .animate-eco-float-a,
+  .animate-eco-float-b,
+  .animate-eco-float-c,
+  .animate-eco-float-d,
+  .animate-eco-dot-pulse {
     animation: none !important;
   }
   .animate-eco-float-v1,
