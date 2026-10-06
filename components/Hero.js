@@ -14,7 +14,7 @@ export default function Hero({ profile = {}, hero = {} }) {
   const eyebrow = (rawEyebrow && !rawEyebrow.includes('TEST')) ? rawEyebrow : 'BUSINESS • GROWTH • PARTNERSHIPS'
   const title = hero?.title || profile?.heroHeadlineAlt || profile?.heroHeadline || 'I build revenue, relationships and scalable businesses.'
   const description = hero?.description || profile?.heroDescription || "I'm Vivek Dhoundiyal — an entrepreneurial sales, business development and growth professional with 8+ years of experience across enterprise sales, strategic partnerships, revenue operations and scaling businesses from 0→1. I focus on building high-trust commercial relationships, driving repeatable revenue, and executing scalable operations."
-  const portrait = profile?.portraitImage || '/images/vivek-canonical.png'
+  const portrait = profile?.portraitImage || '/images/vivek-hero-character.png'
   const primaryButtonText = hero?.primaryButtonText || 'Explore My Work'
   const primaryButtonUrl = hero?.primaryButtonUrl || '#work'
   const secondaryButtonText = hero?.secondaryButtonText || 'View Resume'
@@ -138,34 +138,30 @@ export default function Hero({ profile = {}, hero = {} }) {
           {/* Profile photo moved slightly LEFT for closer relationship with copy.    */}
           {/* Cards positioned to the right with 32-48px gap (Zero overlap).          */}
           {/* ======================================================================= */}
-          <div className="lg:col-span-7 xl:col-span-7 flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-8 sm:gap-10 lg:gap-6 xl:gap-8 relative">
+          <div className="lg:col-span-7 xl:col-span-7 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 sm:gap-8 lg:gap-5 xl:gap-8 relative">
             
             {/* ===================================================================== */}
             {/* ZONE 2: CENTER ZONE — HEROIC PROFILE PHOTO + LIVING BUSINESS ECOSYSTEM */}
             {/* ===================================================================== */}
-            <div id="hero-portrait-zone" className="relative w-full max-w-[290px] sm:max-w-[340px] lg:max-w-[330px] xl:max-w-[380px] 2xl:max-w-[420px] flex items-end justify-center flex-shrink-0 z-10 mt-10 sm:mt-12 lg:mt-0">
+            <div id="hero-portrait-zone" className="relative w-full max-w-[330px] sm:max-w-[390px] lg:max-w-[380px] xl:max-w-[440px] 2xl:max-w-[480px] flex items-end justify-center flex-shrink-0 z-10 mt-8 sm:mt-10 lg:mt-0">
               
               {/* =================================================================== */}
-              {/* 1. SOFT SKY-BLUE ORGANIC GRADIENT BACKDROP (MATCHING REFERENCE)     */}
-              {/* Soft illustrated backdrop, subtle layered blue tones, light opacity,*/}
-              {/* faint dotted/gradient details, photo merges softly into base.       */}
+              {/* 1. SOFT SKY-BLUE ORGANIC GRADIENT BACKDROP (IRREGULAR BLOB, NO RINGS) */}
+              {/* Soft illustrated backdrop, subtle layered blue tones, light opacity, */}
+              {/* organic atmospheric depth, zero circular rings, photo merges at base. */}
               {/* =================================================================== */}
               <div
-                className="absolute top-2 sm:top-4 left-1/2 -translate-x-1/2 w-[280px] sm:w-[330px] lg:w-[330px] xl:w-[380px] 2xl:w-[410px] h-[280px] sm:h-[330px] lg:h-[330px] xl:h-[380px] 2xl:h-[410px] pointer-events-none select-none z-0"
+                className="absolute top-2 sm:top-4 left-1/2 -translate-x-1/2 w-[300px] sm:w-[360px] lg:w-[360px] xl:w-[420px] 2xl:w-[460px] h-[300px] sm:h-[360px] lg:h-[360px] xl:h-[420px] 2xl:h-[460px] pointer-events-none select-none z-0"
                 aria-hidden="true"
               >
-                {/* Layer A: Core sky-blue organic gradient aura */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#38bdf8]/35 via-[#60a5fa]/25 to-[#c084fc]/15 blur-2xl transform-gpu" />
+                {/* Layer A: Core sky-blue organic gradient aura with gentle breathing */}
+                <div className="absolute inset-0 rounded-[48%_52%_60%_40%_/_50%_45%_55%_50%] bg-gradient-to-tr from-[#38bdf8]/25 via-[#60a5fa]/20 to-[#c084fc]/12 blur-3xl transform-gpu animate-hero-glow-primary" />
 
                 {/* Layer B: Secondary luminous cyan/sky atmospheric aura */}
-                <div className="absolute inset-2 sm:inset-4 rounded-full bg-gradient-to-b from-[#38bdf8]/30 via-[#93c5fd]/20 to-transparent blur-xl transform-gpu" />
+                <div className="absolute inset-3 sm:inset-6 rounded-[55%_45%_48%_52%_/_45%_55%_50%_50%] bg-gradient-to-b from-[#38bdf8]/22 via-[#93c5fd]/16 to-transparent blur-2xl transform-gpu animate-hero-glow-ambient" />
 
-                {/* Layer C: Delicate illustrated accent ring with fine subtle dashes/dots */}
-                <div className="absolute inset-3 sm:inset-5 rounded-full border border-sky-300/40 border-dashed opacity-50" />
-
-                {/* Layer D: Faint illustrated orbital dots */}
-                <div className="absolute top-3 left-1/4 w-1.5 h-1.5 rounded-full bg-[#38bdf8]/70" />
-                <div className="absolute bottom-8 right-1/4 w-1 h-1 rounded-full bg-[#60a5fa]/70" />
+                {/* Layer C: Delicate atmospheric center highlight for photographic depth */}
+                <div className="absolute inset-8 sm:inset-12 rounded-full bg-radial from-white/35 via-sky-100/20 to-transparent blur-xl" />
               </div>
 
               {/* =================================================================== */}
@@ -175,10 +171,10 @@ export default function Hero({ profile = {}, hero = {} }) {
               {/* Understated continuous float animation. Never hidden on mobile.    */}
               {/* =================================================================== */}
               <div
-                className="absolute -top-11 sm:-top-12 lg:-top-13 xl:-top-14 left-1 sm:left-2 lg:left-2 xl:left-3 z-20 pointer-events-none select-none flex flex-col items-start animate-hero-doodle"
+                className="absolute -top-10 sm:-top-11 lg:-top-12 xl:-top-13 left-0 sm:left-1 lg:-left-2 xl:left-0 z-20 pointer-events-none select-none flex flex-col items-start animate-hero-doodle"
                 aria-label="Business Growth Partnerships Operations Future -> Product"
               >
-                <div className="font-['Caveat',_cursive,_sans-serif] text-[13px] sm:text-[14px] lg:text-[14.5px] xl:text-[15.5px] font-semibold text-purple-600/90 leading-[1.25] tracking-wide -rotate-3 filter drop-shadow-xs">
+                <div className="font-['Caveat',_cursive,_sans-serif] text-[13px] sm:text-[14px] lg:text-[14px] xl:text-[15.5px] font-semibold text-purple-600/90 leading-[1.25] tracking-wide -rotate-3 filter drop-shadow-xs">
                   <div>Business</div>
                   <div>Growth</div>
                   <div>Partnerships</div>
@@ -188,7 +184,7 @@ export default function Hero({ profile = {}, hero = {} }) {
 
                 {/* Curved hand-drawn arrow with clear gap before Vivek's silhouette */}
                 <svg
-                  className="w-10 h-7 sm:w-11 sm:h-8 lg:w-13 lg:h-9 text-purple-500/85 ml-6 sm:ml-8 -mt-0.5 filter drop-shadow-xs"
+                  className="w-10 h-7 sm:w-11 sm:h-8 lg:w-12 lg:h-8.5 text-purple-500/85 ml-6 sm:ml-8 -mt-0.5 filter drop-shadow-xs"
                   viewBox="0 0 54 36"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -416,20 +412,18 @@ export default function Hero({ profile = {}, hero = {} }) {
               <div className="absolute top-[58%] -right-3 sm:-right-1 w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_6px_rgba(251,191,36,0.9)] animate-eco-pulse-particle pointer-events-none z-10 [animation-delay:0.5s]" />
 
               {/* ----------------------------------------------------------------- */}
-              {/* HERO PROFILE PORTRAIT (TRANSPARENT CANONICAL PNG)                 */}
-              {/* Pure CSS dissolve at bottom + subtle ambient gradient overlay     */}
+              {/* HERO PROFILE CHARACTER (TRANSPARENT PNG WITH LIVING FLOAT MOTION)  */}
+              {/* Pure CSS organic alpha dissolve at bottom, zero rectangular boxes */}
               {/* ----------------------------------------------------------------- */}
-              <div className="relative w-full aspect-[3/4] max-h-[400px] sm:max-h-[440px] lg:max-h-[430px] xl:max-h-[480px] 2xl:max-h-[520px] flex items-end justify-center z-10 animate-portrait-emerge hero-portrait-dissolve">
+              <div className="relative w-full aspect-[1274/1234] max-h-[380px] sm:max-h-[430px] lg:max-h-[420px] xl:max-h-[470px] 2xl:max-h-[510px] flex items-end justify-center z-10 hero-portrait-dissolve animate-hero-character-float will-change-transform">
                 <Image
                   src={portrait}
                   alt="Vivek Dhoundiyal — Commercial Operator & Builder"
-                  width={1086}
-                  height={1448}
+                  width={1274}
+                  height={1234}
                   priority
                   className="w-full h-full object-contain object-bottom filter contrast-[1.02] brightness-[1.01] pointer-events-none select-none"
                 />
-                {/* Subtle gradient feather at the bottom for seamless merge into background */}
-                <div className="absolute inset-x-0 bottom-0 h-16 sm:h-24 bg-gradient-to-t from-white via-white/50 to-transparent pointer-events-none z-20" />
               </div>
 
             </div>
