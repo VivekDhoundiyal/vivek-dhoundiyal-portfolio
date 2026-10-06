@@ -172,7 +172,7 @@ export default function Hero({ profile = {}, hero = {} }) {
 
               {/* Sign 1: Growth Chart (Upper-Left Outer Flank) */}
               <div
-                className="absolute -top-5 sm:-top-7 -left-3 sm:-left-6 lg:-left-5 xl:-left-7 z-20 flex items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-emerald-200/90 shadow-card animate-eco-float-a [animation-delay:0.3s] select-none pointer-events-none"
+                className="absolute -top-5 sm:-top-7 -left-3 sm:-left-6 lg:-left-5 xl:-left-7 z-20 flex items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-emerald-200/90 shadow-card animate-flow-drift-1 select-none pointer-events-none"
                 aria-hidden="true"
               >
                 <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600">
@@ -186,7 +186,7 @@ export default function Hero({ profile = {}, hero = {} }) {
 
               {/* Sign 2: Upward Arrow (Outer-Left Upper) */}
               <div
-                className="absolute top-[22%] -left-6 sm:-left-9 lg:-left-8 xl:-left-11 z-20 flex items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-sky-200/90 shadow-card animate-eco-float-b [animation-delay:1.1s] select-none pointer-events-none"
+                className="absolute top-[22%] -left-6 sm:-left-9 lg:-left-8 xl:-left-11 z-20 flex items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-sky-200/90 shadow-card animate-flow-drift-2 select-none pointer-events-none"
                 aria-hidden="true"
               >
                 <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg bg-sky-50 border border-sky-200/80 flex items-center justify-center text-sky-600">
@@ -199,7 +199,7 @@ export default function Hero({ profile = {}, hero = {} }) {
 
               {/* Sign 3: Analytics Line / Bar (Outer-Left Mid) */}
               <div
-                className="absolute top-[46%] -left-5 sm:-left-8 lg:-left-7 xl:-left-9 z-20 flex items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-blue-200/90 shadow-card animate-eco-float-c [animation-delay:0.6s] select-none pointer-events-none"
+                className="absolute top-[46%] -left-5 sm:-left-8 lg:-left-7 xl:-left-9 z-20 flex items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-blue-200/90 shadow-card animate-flow-drift-3 select-none pointer-events-none"
                 aria-hidden="true"
               >
                 <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg bg-blue-50 border border-blue-200/80 flex items-center justify-center text-[#2563EB]">
@@ -211,7 +211,7 @@ export default function Hero({ profile = {}, hero = {} }) {
 
               {/* Sign 4: Commercial Briefcase (Outer-Left Lower) */}
               <div
-                className="hidden sm:flex absolute top-[70%] -left-4 sm:-left-7 lg:-left-6 xl:-left-8 z-20 items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-card animate-eco-float-d [animation-delay:1.8s] select-none pointer-events-none"
+                className="hidden sm:flex absolute top-[70%] -left-4 sm:-left-7 lg:-left-6 xl:-left-8 z-20 items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-card animate-flow-drift-4 select-none pointer-events-none"
                 aria-hidden="true"
               >
                 <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg bg-slate-50 border border-slate-200/80 flex items-center justify-center text-slate-600">
@@ -224,7 +224,7 @@ export default function Hero({ profile = {}, hero = {} }) {
 
               {/* Sign 5: Strategy Stack (Upper-Right Crown) */}
               <div
-                className="absolute -top-6 sm:-top-8 right-[20%] sm:right-[26%] z-20 flex items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-purple-200/90 shadow-card animate-eco-float-b [animation-delay:0.8s] select-none pointer-events-none"
+                className="absolute -top-6 sm:-top-8 right-[20%] sm:right-[26%] z-20 flex items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-purple-200/90 shadow-card animate-flow-drift-5 select-none pointer-events-none"
                 aria-hidden="true"
               >
                 <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg bg-purple-50 border border-purple-200/80 flex items-center justify-center text-purple-600">
@@ -238,7 +238,7 @@ export default function Hero({ profile = {}, hero = {} }) {
 
               {/* Sign 6: Percentage % (Upper-Right Flank) */}
               <div
-                className="absolute top-[4%] -right-3 sm:-right-6 lg:-right-4 xl:-right-6 z-20 flex items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-emerald-200/90 shadow-card animate-eco-float-c [animation-delay:1.5s] select-none pointer-events-none"
+                className="absolute top-[4%] -right-3 sm:-right-6 lg:-right-4 xl:-right-6 z-20 flex items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-emerald-200/90 shadow-card animate-flow-drift-6 select-none pointer-events-none"
                 aria-hidden="true"
               >
                 <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600 font-bold text-xs">
@@ -248,7 +248,7 @@ export default function Hero({ profile = {}, hero = {} }) {
 
               {/* Sign 7: Revenue Currency ($) (Upper-Right High Outer Flank) */}
               <div
-                className="hidden sm:flex absolute -top-4 sm:-top-6 right-2 sm:right-4 lg:-right-10 xl:-right-12 z-20 items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-emerald-200/90 shadow-card animate-eco-float-d [animation-delay:2.1s] select-none pointer-events-none"
+                className="hidden sm:flex absolute -top-4 sm:-top-6 right-2 sm:right-4 lg:-right-10 xl:-right-12 z-20 items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-emerald-200/90 shadow-card animate-flow-drift-7 select-none pointer-events-none"
                 aria-hidden="true"
               >
                 <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600 font-bold text-xs">
@@ -258,7 +258,7 @@ export default function Hero({ profile = {}, hero = {} }) {
 
               {/* Sign 8: Target / Bullseye (Lower-Right Inner Flank) */}
               <div
-                className="absolute bottom-2 sm:bottom-4 -right-2 sm:-right-4 lg:-right-3 xl:-right-5 z-20 flex items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-rose-200/90 shadow-card animate-eco-float-b [animation-delay:2.7s] select-none pointer-events-none"
+                className="absolute bottom-2 sm:bottom-4 -right-2 sm:-right-4 lg:-right-3 xl:-right-5 z-20 flex items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-rose-200/90 shadow-card animate-flow-drift-8 select-none pointer-events-none"
                 aria-hidden="true"
               >
                 <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg bg-rose-50 border border-rose-200/80 flex items-center justify-center text-rose-600">
@@ -272,7 +272,7 @@ export default function Hero({ profile = {}, hero = {} }) {
 
               {/* Sign 9: Rocket (0→1 Launch) (Lower Outer Gutter) */}
               <div
-                className="hidden sm:flex absolute -bottom-5 sm:-bottom-7 right-[18%] sm:right-[24%] z-20 items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-violet-200/90 shadow-card animate-eco-float-c [animation-delay:0.4s] select-none pointer-events-none"
+                className="hidden sm:flex absolute -bottom-5 sm:-bottom-7 right-[18%] sm:right-[24%] z-20 items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-violet-200/90 shadow-card animate-flow-drift-9 select-none pointer-events-none"
                 aria-hidden="true"
               >
                 <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg bg-violet-50 border border-violet-200/80 flex items-center justify-center text-violet-600">
@@ -285,7 +285,7 @@ export default function Hero({ profile = {}, hero = {} }) {
 
               {/* Sign 10: Partnerships / Link (Bottom Center-Left) */}
               <div
-                className="hidden sm:flex absolute -bottom-5 sm:-bottom-7 left-[22%] sm:left-[26%] z-20 items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-indigo-200/90 shadow-card animate-eco-float-a [animation-delay:1.2s] select-none pointer-events-none"
+                className="hidden sm:flex absolute -bottom-5 sm:-bottom-7 left-[22%] sm:left-[26%] z-20 items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-indigo-200/90 shadow-card animate-flow-drift-10 select-none pointer-events-none"
                 aria-hidden="true"
               >
                 <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg bg-indigo-50 border border-indigo-200/80 flex items-center justify-center text-indigo-600">
@@ -298,7 +298,7 @@ export default function Hero({ profile = {}, hero = {} }) {
 
               {/* Sign 11: Settings / Operations Cog (Lower-Left Outer Flank) */}
               <div
-                className="absolute bottom-1 sm:bottom-3 -left-3 sm:-left-5 lg:-left-4 xl:-left-6 z-20 flex items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-card animate-eco-float-d [animation-delay:1.9s] select-none pointer-events-none"
+                className="absolute bottom-1 sm:bottom-3 -left-3 sm:-left-5 lg:-left-4 xl:-left-6 z-20 flex items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-card animate-flow-drift-11 select-none pointer-events-none"
                 aria-hidden="true"
               >
                 <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg bg-slate-50 border border-slate-200/80 flex items-center justify-center text-slate-600">
@@ -311,7 +311,7 @@ export default function Hero({ profile = {}, hero = {} }) {
 
               {/* Sign 12: Network / Graph Nodes (Mid-High Left Gap) */}
               <div
-                className="hidden sm:flex absolute top-[10%] -left-2 sm:-left-4 lg:-left-3 xl:-left-4 z-20 items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-cyan-200/90 shadow-card animate-eco-float-a [animation-delay:2.9s] select-none pointer-events-none"
+                className="hidden sm:flex absolute top-[10%] -left-2 sm:-left-4 lg:-left-3 xl:-left-4 z-20 items-center justify-center w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-cyan-200/90 shadow-card animate-flow-drift-12 select-none pointer-events-none"
                 aria-hidden="true"
               >
                 <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-lg bg-cyan-50 border border-cyan-200/80 flex items-center justify-center text-cyan-600">
@@ -326,10 +326,10 @@ export default function Hero({ profile = {}, hero = {} }) {
               </div>
 
               {/* Small abstract accent dots */}
-              <div className="absolute top-[16%] left-[18%] w-2 h-2 rounded-full bg-sky-400 shadow-[0_0_8px_rgba(56,189,248,0.85)] animate-eco-dot-pulse pointer-events-none z-10 [animation-delay:0.2s]" />
-              <div className="absolute top-[34%] right-[14%] w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.85)] animate-eco-dot-pulse pointer-events-none z-10 [animation-delay:1.1s]" />
-              <div className="absolute top-[65%] left-[10%] w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(192,132,252,0.85)] animate-eco-dot-pulse pointer-events-none z-10 [animation-delay:1.8s]" />
-              <div className="absolute bottom-[18%] right-[16%] w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.85)] animate-eco-dot-pulse pointer-events-none z-10 [animation-delay:2.4s]" />
+              <div className="absolute top-[16%] left-[18%] w-2 h-2 rounded-full bg-sky-400 shadow-[0_0_8px_rgba(56,189,248,0.85)] animate-eco-dot-1 pointer-events-none z-10" />
+              <div className="absolute top-[34%] right-[14%] w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.85)] animate-eco-dot-2 pointer-events-none z-10" />
+              <div className="absolute top-[65%] left-[10%] w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(192,132,252,0.85)] animate-eco-dot-3 pointer-events-none z-10" />
+              <div className="absolute bottom-[18%] right-[16%] w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.85)] animate-eco-dot-4 pointer-events-none z-10" />
 
               {/* =================================================================== */}
               {/* 3. HERO PRIMARY CHARACTER (TECH CREATOR ANALYTICS AVATAR)           */}
