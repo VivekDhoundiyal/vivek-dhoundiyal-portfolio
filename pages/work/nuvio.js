@@ -1,0 +1,23 @@
+import React from 'react'
+import { getSiteContent } from '../../lib/content'
+import NuvioCaseStudy from '../../components/nuvio/NuvioCaseStudy'
+
+export default function NuvioWorkPage({ siteData }) {
+  return <NuvioCaseStudy siteData={siteData} />
+}
+
+export async function getStaticProps() {
+  const siteData = getSiteContent()
+  const nuvio = siteData?.nuvio || {}
+
+  return {
+    props: {
+      siteData,
+      seoProps: {
+        title: nuvio.seo?.title || 'NUVIO: Private PDF Editing, Reimagined — Product Case Study | Vivek Dhoundiyal',
+        description: nuvio.seo?.description || 'Comprehensive product case study for NUVIO: private client-side PDF editing workspace.',
+        canonical: nuvio.seo?.canonical || 'https://vivekdhoundiyal.com/work/nuvio',
+      }
+    }
+  }
+}

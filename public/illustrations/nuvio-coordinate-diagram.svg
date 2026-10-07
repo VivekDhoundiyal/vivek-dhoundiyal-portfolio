@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" fill="none">
+  <defs>
+    <linearGradient id="coordGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <filter id="boxShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.1" />
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="880" height="440" rx="20" fill="#FAFAF8" stroke="#E2E8F0" stroke-width="1.5" />
+
+  <!-- Title / Legend -->
+  <g transform="translate(40, 30)">
+    <rect x="0" y="0" width="180" height="24" rx="12" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1" />
+    <circle cx="12" cy="12" r="3.5" fill="#2563EB" />
+    <text x="24" y="16" font-family="monospace" font-size="10" font-weight="700" fill="#1D4ED8">COORDINATE MAPPING</text>
+    <text x="0" y="48" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800" fill="#111318">PDF Primitives vs. Fluid Documents</text>
+    <text x="0" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="400" fill="#64748B">PDFs contain absolute geometric coordinates, requiring dual-layer synchronization for editing.</text>
+  </g>
+
+  <!-- Left: Fluid Document (Docs / HTML) -->
+  <g transform="translate(40, 115)" filter="url(#boxShadow)">
+    <rect x="0" y="0" width="380" height="285" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" />
+    
+    <rect x="18" y="16" width="160" height="22" rx="6" fill="#F1F5F9" />
+    <text x="28" y="31" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#475569">Fluid Text Model (Word/Docs)</text>
+
+    <!-- Reflowing paragraphs visualization -->
+    <g transform="translate(24, 54)">
+      <rect x="0" y="0" width="332" height="18" rx="3" fill="#E2E8F0" />
+      <rect x="0" y="24" width="290" height="18" rx="3" fill="#E2E8F0" />
+      <rect x="0" y="48" width="310" height="18" rx="3" fill="#E2E8F0" />
+      <rect x="0" y="72" width="220" height="18" rx="3" fill="#E2E8F0" />
+
+      <!-- Insertion Cursor demonstrating reflow -->
+      <g transform="translate(180, 20)">
+        <line x1="0" y1="4" x2="0" y2="22" stroke="#2563EB" stroke-width="2.5" />
+        <rect x="-35" y="-18" width="70" height="16" rx="4" fill="#2563EB" />
+        <text x="0" y="-7" font-family="monospace" font-size="8" font-weight="700" fill="#FFFFFF" text-anchor="middle">REFLOWS ↓</text>
+      </g>
+    </g>
+
+    <rect x="24" y="180" width="332" height="75" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+    <text x="36" y="202" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#0F172A">Dynamic Layout Engine</text>
+    <text x="36" y="218" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="400" fill="#64748B">Adding text pushes subsequent lines downwards automatically.</text>
+    <text x="36" y="234" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="400" fill="#64748B">No fixed bounding coordinates to preserve.</text>
+  </g>
+
+  <!-- Right: PDF Absolute Coordinate Model (The Hard Part) -->
+  <g transform="translate(460, 115)" filter="url(#boxShadow)">
+    <rect x="0" y="0" width="380" height="285" rx="14" fill="#FFFFFF" stroke="#3B82F6" stroke-width="2" />
+    
+    <rect x="18" y="16" width="180" height="22" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1" />
+    <text x="28" y="31" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#1D4ED8">PDF Absolute Coordinate Canvas</text>
+
+    <!-- Canvas Grid with (0,0) axis -->
+    <g transform="translate(30, 52)">
+      <!-- Axis lines -->
+      <line x1="0" y1="0" x2="320" y2="0" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2 2" />
+      <line x1="0" y1="0" x2="0" y2="120" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2 2" />
+      <circle cx="0" cy="0" r="4" fill="#2563EB" />
+      <text x="8" y="12" font-family="monospace" font-size="9" font-weight="700" fill="#2563EB">(0, 0) Origin</text>
+
+      <!-- Absolute Bounding Box 1 -->
+      <g transform="translate(40, 20)">
+        <rect x="0" y="0" width="160" height="34" rx="4" fill="rgba(59, 130, 246, 0.08)" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="3 3" />
+        <text x="8" y="15" font-family="monospace" font-size="8.5" font-weight="700" fill="#1D4ED8">Object[1]: [x:40, y:20, w:160, h:34]</text>
+        <text x="8" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="600" fill="#0F172A">"CONFIDENTIAL CLIENT CONTRACT"</text>
+      </g>
+
+      <!-- Absolute Bounding Box 2 -->
+      <g transform="translate(40, 68)">
+        <rect x="0" y="0" width="220" height="42" rx="4" fill="rgba(16, 185, 129, 0.08)" stroke="#059669" stroke-width="1.5" stroke-dasharray="3 3" />
+        <text x="8" y="15" font-family="monospace" font-size="8.5" font-weight="700" fill="#047857">Object[2]: [x:40, y:68, w:220, h:42]</text>
+        <text x="8" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="500" fill="#475569">Paragraph glyph vector array</text>
+        <text x="8" y="37" font-family="monospace" font-size="7.5" font-weight="600" fill="#059669">Baseline matrix: Tm = [12 0 0 12 40 68]</text>
+      </g>
+    </g>
+
+    <rect x="24" y="180" width="332" height="75" rx="10" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1" />
+    <text x="36" y="202" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#1D4ED8">The NUVIO Challenge</text>
+    <text x="36" y="218" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#0F172A">Making edits feel naturally fluid to the user...</text>
+    <text x="36" y="234" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="400" fill="#475569">...while preserving exact mathematical coordinates upon PDF export.</text>
+  </g>
+</svg>

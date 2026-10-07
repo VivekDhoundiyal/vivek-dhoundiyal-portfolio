@@ -245,6 +245,43 @@
       ]
     },
     {
+      "id": "nuvio",
+      "slug": "nuvio",
+      "title": "NUVIO",
+      "subtitle": "Private PDF Editing, Reimagined",
+      "projectType": "ACTIVE BUILD · PRODUCT IN PROGRESS",
+      "category": "Client-Side Workspace & Document Integrity",
+      "role": "Product Strategy & Systems Thinking",
+      "year": "2026",
+      "status": "BUILDING",
+      "statusType": "active",
+      "featured": false,
+      "tagline": "Private PDF editing, reimagined around privacy and simplicity.",
+      "description": "A browser-based PDF workspace designed to keep sensitive documents on the user's device while making editing feel as simple as a modern productivity app.",
+      "summary": "A browser-based PDF workspace designed to keep sensitive documents on the user's device while making editing feel as simple as a modern productivity app.",
+      "image": "/illustrations/nuvio-hero-illustration.svg",
+      "imagePng": "/illustrations/nuvio-hero-illustration.svg",
+      "alt": "NUVIO Private PDF Workspace Interface Illustration",
+      "tags": [
+        "Product Strategy",
+        "UX",
+        "Product Management",
+        "Systems Thinking"
+      ],
+      "evidence": [
+        {
+          "label": "Architecture",
+          "value": "100% Client-Side",
+          "sub": "zero server uploads"
+        },
+        {
+          "label": "Document Model",
+          "value": "Single Source of Truth",
+          "sub": "deterministic export"
+        }
+      ]
+    },
+    {
       "id": "settlemycar",
       "slug": "settlemycar",
       "title": "SettleMyCar",
@@ -560,6 +597,30 @@
       "lastUpdated": "September 2026",
       "highlight": true,
       "badge": "Active Build"
+    },
+    {
+      "id": "nuvio",
+      "title": "NUVIO",
+      "category": "Independent Software Product",
+      "status": "BUILDING",
+      "focus": "Private Client-Side PDF Workspace",
+      "tagline": "Reimagining PDF workflows around privacy, simplicity, and control — keeping sensitive documents on the user's device.",
+      "description": "An active product exploration designing a client-side PDF workspace that unifies editing, annotation, and assembly without sending documents to external servers.",
+      "currentObjective": "Designing canonical document state synchronization and local coordinate translation algorithms.",
+      "whatIsBeingBuilt": "Interactive client-side editor with local document state management, direct visual editing canvas, and deterministic PDF export.",
+      "technology": [
+        "Product Strategy",
+        "Client-Side Architecture",
+        "UX Design",
+        "Document Modeling",
+        "Local Sandbox"
+      ],
+      "progress": "Core visual editor hypothesis & coordinate translation model in active exploration.",
+      "milestone": "Active product exploration & MVP design (zero fabricated metrics)",
+      "link": "/work/nuvio",
+      "lastUpdated": "October 2026",
+      "highlight": false,
+      "badge": "Building"
     }
   ],
   "tools": [
@@ -1724,5 +1785,375 @@
         ]
       }
     ]
+  },
+  "nuvio": {
+    "seo": {
+      "title": "NUVIO: Private PDF Editing, Reimagined — Product Case Study | Vivek Dhoundiyal",
+      "description": "A deep dive into NUVIO: product thinking, UX strategy, canonical document modeling, and client-side privacy architecture for PDF editing.",
+      "canonical": "https://vivekdhoundiyal.com/work/nuvio"
+    },
+    "hero": {
+      "headline": "NUVIO",
+      "subheadline": "Reimagining PDF workflows around privacy, simplicity, and control.",
+      "badge": "BUILDING",
+      "statusText": "Active Product Exploration",
+      "secondaryText": "An active product exploration focused on making PDF editing feel like a modern productivity experience — without requiring users to send sensitive documents to external servers.",
+      "primaryIllustration": "/illustrations/nuvio-hero-illustration.svg"
+    },
+    "problem": {
+      "eyebrow": "01 · THE PROBLEM",
+      "headline": "The problem isn't a lack of PDF tools.",
+      "statement": "It's the trust and fragmentation tax.",
+      "fragmentedWorkflow": [
+        {
+          "step": "01",
+          "label": "Search tool",
+          "desc": "Find single-purpose utility web page"
+        },
+        {
+          "step": "02",
+          "label": "Upload file",
+          "desc": "Send confidential document to third-party server"
+        },
+        {
+          "step": "03",
+          "label": "Wait processing",
+          "desc": "Server queue latency & unknown retention risk"
+        },
+        {
+          "step": "04",
+          "label": "New interface",
+          "desc": "Clunky UI disconnected from original design"
+        },
+        {
+          "step": "05",
+          "label": "Download file",
+          "desc": "Save locally and repeat again for next task"
+        }
+      ],
+      "nuvioWorkflow": [
+        {
+          "step": "01",
+          "label": "Open NUVIO",
+          "desc": "Load document directly in local browser memory"
+        },
+        {
+          "step": "02",
+          "label": "Direct Edit",
+          "desc": "Manipulate text, layout & elements in place"
+        },
+        {
+          "step": "03",
+          "label": "Validate",
+          "desc": "Instant visual preview matches canonical model"
+        },
+        {
+          "step": "04",
+          "label": "Export",
+          "desc": "Deterministic PDF output without data ever leaving device"
+        }
+      ]
+    },
+    "hypothesis": {
+      "eyebrow": "02 · STRATEGIC DIRECTION",
+      "headline": "The Product Hypothesis",
+      "subheadline": "Four foundational design pillars transforming how users interact with PDFs.",
+      "cards": [
+        {
+          "num": "01",
+          "title": "Privacy by Architecture",
+          "tagline": "Privacy isn't a setting. It's part of the product.",
+          "detail": "Instead of asking users to trust server retention policies, documents never leave the local device sandbox."
+        },
+        {
+          "num": "02",
+          "title": "One Workspace",
+          "tagline": "One place for the entire PDF workflow.",
+          "detail": "Eliminating multi-tool context switching by combining text editing, merging, signing, and organizing in a single canvas."
+        },
+        {
+          "num": "03",
+          "title": "Visual Editing",
+          "tagline": "Edit the document you actually see.",
+          "detail": "WYSIWYG in-place editing rather than detached form overlays that misalign upon export."
+        },
+        {
+          "num": "04",
+          "title": "Zero Complexity",
+          "tagline": "Complexity stays behind the interface.",
+          "detail": "The mathematical coordinate translation and glyph matrices stay invisible, giving users a simple, modern canvas."
+        }
+      ]
+    },
+    "workspace": {
+      "eyebrow": "03 · USER INTERACTION",
+      "headline": "One workspace. Every PDF task.",
+      "copy": "Editing, merging, converting and organizing in one understandable workspace.",
+      "hotspots": [
+        {
+          "id": "nav",
+          "name": "Page Matrix",
+          "desc": "Visual thumbnail navigation for intuitive page reordering, extraction, and split operations."
+        },
+        {
+          "id": "canvas",
+          "name": "Document Canvas",
+          "desc": "Direct-manipulation workspace displaying true typographic metrics and coordinate boundaries."
+        },
+        {
+          "id": "format",
+          "name": "Contextual Bar",
+          "desc": "Floating formatting ribbon revealing typography controls, spacing, and styling only when editing."
+        },
+        {
+          "id": "tools",
+          "name": "Integrated Tools",
+          "desc": "Unified access to digital signatures, redactions, vector stamps, and file compression without tool-hopping."
+        }
+      ]
+    },
+    "mvp": {
+      "eyebrow": "04 · PRODUCT SCOPING",
+      "headline": "Start with the hardest, highest-value workflow.",
+      "subheadline": "A deliberate radial scoping model that builds core defensibility first.",
+      "layers": {
+        "core": {
+          "title": "CORE",
+          "name": "Visual PDF Editor",
+          "desc": "The hardest, most technically differentiated problem: direct in-place visual manipulation preserving exact document coordinate output."
+        },
+        "extensions": [
+          {
+            "name": "Merge & Split",
+            "desc": "Multi-document assembly"
+          },
+          {
+            "name": "Compress",
+            "desc": "Local vector optimization"
+          },
+          {
+            "name": "Convert",
+            "desc": "Format transformation"
+          },
+          {
+            "name": "Signatures",
+            "desc": "Cryptographic digital signatures"
+          },
+          {
+            "name": "Images & Shapes",
+            "desc": "Vector placement"
+          },
+          {
+            "name": "Stamps & Badges",
+            "desc": "Operational approval stamps"
+          },
+          {
+            "name": "Watermarks",
+            "desc": "Document security overlay"
+          }
+        ],
+        "peripherals": [
+          {
+            "name": "Guides & Best Practices",
+            "desc": "Interactive workflow templates"
+          },
+          {
+            "name": "Educational Tooling",
+            "desc": "PDF standard explanations"
+          }
+        ]
+      }
+    },
+    "uxStrategy": {
+      "eyebrow": "05 · UX STRATEGY",
+      "headline": "Changing the mental model of PDF editing.",
+      "subheadline": "Transitioning users from single-use utility fatigue into continuous productivity.",
+      "traditional": {
+        "title": "Traditional Utility Mental Model",
+        "steps": [
+          "Upload",
+          "Choose",
+          "Process",
+          "Download"
+        ],
+        "sentiment": "High cognitive friction, data anxiety, repetitive page refreshes."
+      },
+      "nuvio": {
+        "title": "Modern Productivity App",
+        "steps": [
+          "Open",
+          "Edit",
+          "Validate",
+          "Export"
+        ],
+        "sentiment": "Fluid direct manipulation, absolute data sovereignty, instantaneous feedback."
+      }
+    },
+    "coordinateChallenge": {
+      "eyebrow": "06 · THE CORE SYSTEM PROBLEM",
+      "headline": "Editing a PDF isn't the same as editing a document.",
+      "subheadline": "PDF = positioned geometric objects, not reflowable text blocks.",
+      "diagram": "/illustrations/nuvio-coordinate-diagram.svg",
+      "explanation": "Word processors rely on fluid reflow where adding words shifts lines downward automatically. In contrast, PDFs place every character glyph at exact (x, y) Cartesian coordinates on an immutable canvas. The challenge is making edits visually intuitive while preserving the exact document result."
+    },
+    "fakeEditor": {
+      "eyebrow": "07 · SYSTEM INTEGRITY",
+      "headline": "An editor that looks right isn't enough.",
+      "subheadline": "Why surface-level overlay tricks fail upon final document export.",
+      "badPath": {
+        "title": "The Superficial Approach",
+        "flow": [
+          "Visual Canvas Overlay",
+          "Naive Text Box",
+          "Export to PDF",
+          "Font Mismatch & Overlaps"
+        ],
+        "verdict": "Result: Text clips, kerning breaks, and the exported PDF diverges from what the user saw."
+      },
+      "goodPath": {
+        "title": "The Canonical Approach",
+        "flow": [
+          "Canonical Document Model",
+          "In-Place Modification",
+          "Integrated Render Engine",
+          "Identical PDF Output"
+        ],
+        "verdict": "Result: 100% Deterministic match between visual screen presentation and exported PDF file."
+      }
+    },
+    "singleSourceOfTruth": {
+      "eyebrow": "08 · DATA ARCHITECTURE",
+      "headline": "One document. One source of truth.",
+      "subheadline": "What users see and what they export must originate from the exact same document state.",
+      "centralState": "NUVIO Canonical Document State",
+      "branches": [
+        {
+          "name": "EDITOR CANVAS",
+          "desc": "Live in-memory manipulation"
+        },
+        {
+          "name": "PREVIEW ENGINE",
+          "desc": "Real-time visual verification"
+        },
+        {
+          "name": "EXPORT PIPELINE",
+          "desc": "Deterministic file generation"
+        }
+      ]
+    },
+    "privacy": {
+      "eyebrow": "09 · PRIVACY BY ARCHITECTURE",
+      "headline": "Privacy isn't a checkbox.",
+      "subheadline": "It's part of the architecture.",
+      "diagram": "/illustrations/nuvio-privacy-diagram.svg",
+      "principles": [
+        {
+          "title": "Local-First Sandbox",
+          "desc": "Documents process inside the user's local device sandbox with zero outbound uploads."
+        },
+        {
+          "title": "Zero Cloud Retention",
+          "desc": "No remote server storage, external cloud buckets, or unmonitored disk caches."
+        },
+        {
+          "title": "Architectural Guarantee",
+          "desc": "Privacy enforced by systems design rather than terms-of-service promises."
+        }
+      ],
+      "disclaimer": "Design direction: NUVIO is being engineered around client-side processing principles to maximize privacy without claiming formal third-party regulatory certifications."
+    },
+    "building": {
+      "eyebrow": "10 · BUILDING IN PUBLIC",
+      "headline": "Building NUVIO",
+      "subheadline": "An active product exploration moving systematically from hypothesis to usable MVP.",
+      "stages": [
+        {
+          "step": "01",
+          "name": "Problem Discovery",
+          "status": "complete"
+        },
+        {
+          "step": "02",
+          "name": "Product Definition",
+          "status": "complete"
+        },
+        {
+          "step": "03",
+          "name": "UX Strategy",
+          "status": "complete"
+        },
+        {
+          "step": "04",
+          "name": "Systems Design",
+          "status": "complete"
+        },
+        {
+          "step": "05",
+          "name": "Prototype Engine",
+          "status": "current"
+        },
+        {
+          "step": "06",
+          "name": "Edge Case Testing",
+          "status": "upcoming"
+        },
+        {
+          "step": "07",
+          "name": "User Feedback",
+          "status": "upcoming"
+        },
+        {
+          "step": "08",
+          "name": "MVP Release",
+          "status": "upcoming"
+        }
+      ],
+      "statusCallout": "Currently building: Focusing on robust client-side coordinate translation and text bounding box integrity before feature expansion."
+    },
+    "learnings": {
+      "eyebrow": "11 · PRODUCT RETROSPECTIVE",
+      "headline": "What this project is teaching me",
+      "cards": [
+        {
+          "num": "01",
+          "title": "Product architecture shapes UX",
+          "desc": "Interface simplicity is only as durable as the underlying document state model."
+        },
+        {
+          "num": "02",
+          "title": "Privacy can be a product advantage",
+          "desc": "Keeping sensitive files local creates an unassailable trust boundary against cloud utilities."
+        },
+        {
+          "num": "03",
+          "title": "The hardest workflow should define the MVP",
+          "desc": "Solving in-place visual text editing unlocks every simpler peripheral tool effortlessly."
+        },
+        {
+          "num": "04",
+          "title": "Outcomes matter, not cosmetic state",
+          "desc": "A feature only delivers real value when the final exported document re-opens perfectly."
+        }
+      ]
+    },
+    "northStar": {
+      "eyebrow": "12 · NORTH STAR METRIC",
+      "headline": "The metric that matters",
+      "metric": "SUCCESSFUL DOCUMENT COMPLETION",
+      "flow": [
+        "Open File",
+        "Modify In Place",
+        "Export Document",
+        "Re-Open Verification"
+      ],
+      "statement": "The user only receives genuine value when the final document is successfully completed and persisted without corruption."
+    },
+    "cta": {
+      "eyebrow": "ACTIVE STATUS",
+      "heading": "Complex technology. Simple experience.",
+      "subheading": "NUVIO is currently being designed and built as an independent product exploration.",
+      "badge": "BUILDING · Product in Progress",
+      "backLink": "/#work"
+    }
   }
 }

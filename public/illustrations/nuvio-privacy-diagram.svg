@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="920" height="540" fill="none">
+  <defs>
+    <linearGradient id="cloudBoxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF1F2" />
+      <stop offset="100%" stop-color="#FFE4E6" />
+    </linearGradient>
+    <linearGradient id="localBoxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0FDF4" />
+      <stop offset="100%" stop-color="#DCFCE7" />
+    </linearGradient>
+    <linearGradient id="shieldGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="dangerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E" />
+      <stop offset="100%" stop-color="#BE123C" />
+    </linearGradient>
+    <linearGradient id="blueCardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EFF6FF" />
+      <stop offset="100%" stop-color="#DBEAFE" />
+    </linearGradient>
+    
+    <filter id="shadowP" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0F172A" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- Ambient Backdrop Grid -->
+  <rect x="0" y="0" width="920" height="540" rx="24" fill="#FAFAF8" stroke="#E5E7EB" stroke-width="2" />
+  
+  <!-- Diagram Header -->
+  <g transform="translate(40, 36)">
+    <rect x="0" y="0" width="170" height="26" rx="13" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1" />
+    <circle cx="12" cy="13" r="3.5" fill="#2563EB" />
+    <text x="24" y="17" font-family="monospace" font-size="10" font-weight="700" fill="#1D4ED8" letter-spacing="0.8">PRIVACY ARCHITECTURE</text>
+    
+    <text x="0" y="52" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#111318">Document Flow Comparison</text>
+    <text x="0" y="72" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="400" fill="#64748B">Structural contrast between external cloud relays and client-side device execution.</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- PATH 1: TRADITIONAL CLOUD UTILITIES (FLAWED / EXPOSURE RISK)             -->
+  <!-- ========================================================================= -->
+  <g transform="translate(40, 130)" filter="url(#shadowP)">
+    <rect x="0" y="0" width="840" height="160" rx="18" fill="#FFFFFF" stroke="#FECDD3" stroke-width="1.5" />
+    
+    <!-- Path Label -->
+    <rect x="20" y="18" width="220" height="24" rx="12" fill="url(#cloudBoxGrad)" stroke="#FDA4AF" stroke-width="1" />
+    <circle cx="32" cy="30" r="4" fill="#E11D48" />
+    <text x="44" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#9F1239">TRADITIONAL CLOUD UTILITY</text>
+    <text x="250" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="500" fill="#64748B">Network transit required for processing</text>
+
+    <!-- Node 1: User Device -->
+    <g transform="translate(30, 60)">
+      <rect x="0" y="0" width="130" height="76" rx="12" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+      <text x="14" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#0F172A">Local File</text>
+      <text x="14" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" font-weight="500" fill="#64748B">Tax/Contract Doc</text>
+      <rect x="14" y="48" width="60" height="16" rx="4" fill="#E2E8F0" />
+      <text x="20" y="59" font-family="monospace" font-size="8" font-weight="600" fill="#475569">Origin: PC</text>
+    </g>
+
+    <!-- Red Connector Arrow 1 -->
+    <g transform="translate(170, 90)">
+      <line x1="0" y1="8" x2="60" y2="8" stroke="#F43F5E" stroke-width="2" stroke-dasharray="4 3" />
+      <polygon points="60,4 68,8 60,12" fill="#F43F5E" />
+      <text x="8" y="0" font-family="monospace" font-size="8.5" font-weight="700" fill="#E11D48">UPLOAD ↑</text>
+    </g>
+
+    <!-- Node 2: Public Internet Relay -->
+    <g transform="translate(248, 60)">
+      <rect x="0" y="0" width="140" height="76" rx="12" fill="#FFF1F2" stroke="#FECDD3" stroke-width="1" />
+      <text x="14" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#9F1239">Public Internet</text>
+      <text x="14" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" font-weight="500" fill="#BE123C">Packet transit</text>
+      <rect x="14" y="48" width="90" height="16" rx="4" fill="#FFE4E6" />
+      <text x="20" y="59" font-family="system-ui, -apple-system, sans-serif" font-size="8" font-weight="600" fill="#E11D48">Third-party routes</text>
+    </g>
+
+    <!-- Red Connector Arrow 2 -->
+    <g transform="translate(398, 90)">
+      <line x1="0" y1="8" x2="60" y2="8" stroke="#F43F5E" stroke-width="2" stroke-dasharray="4 3" />
+      <polygon points="60,4 68,8 60,12" fill="#F43F5E" />
+      <text x="12" y="0" font-family="monospace" font-size="8.5" font-weight="700" fill="#E11D48">RELAY</text>
+    </g>
+
+    <!-- Node 3: Remote Server & Storage -->
+    <g transform="translate(468, 60)">
+      <rect x="0" y="0" width="160" height="76" rx="12" fill="#FFF1F2" stroke="#FB7185" stroke-width="1.5" />
+      <text x="14" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#9F1239">Remote Server</text>
+      <text x="14" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" font-weight="500" fill="#BE123C">Temporary disk storage</text>
+      <rect x="14" y="48" width="130" height="16" rx="4" fill="#FFE4E6" />
+      <text x="20" y="59" font-family="monospace" font-size="8" font-weight="700" fill="#BE123C">Remote compute run</text>
+    </g>
+
+    <!-- Red Connector Arrow 3 -->
+    <g transform="translate(638, 90)">
+      <line x1="0" y1="8" x2="50" y2="8" stroke="#F43F5E" stroke-width="2" stroke-dasharray="4 3" />
+      <polygon points="50,4 58,8 50,12" fill="#F43F5E" />
+      <text x="2" y="0" font-family="monospace" font-size="8.5" font-weight="700" fill="#E11D48">DOWNLOAD ↓</text>
+    </g>
+
+    <!-- Node 4: Fragile Outcome -->
+    <g transform="translate(706, 60)">
+      <rect x="0" y="0" width="114" height="76" rx="12" fill="#FFF5F5" stroke="#FECDD3" stroke-width="1" />
+      <text x="12" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#9F1239">Vulnerability</text>
+      <text x="12" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="500" fill="#64748B">Data exposure</text>
+      <text x="12" y="52" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="500" fill="#64748B">Server queue delay</text>
+      <text x="12" y="66" font-family="system-ui, -apple-system, sans-serif" font-size="8.5" font-weight="700" fill="#E11D48">Unverified privacy</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- PATH 2: NUVIO PRIVATE CLIENT SANDBOX (LOCAL-FIRST / INTEGRITY)           -->
+  <!-- ========================================================================= -->
+  <g transform="translate(40, 320)" filter="url(#shadowP)">
+    <rect x="0" y="0" width="840" height="170" rx="18" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="2" />
+    
+    <!-- Path Label -->
+    <rect x="20" y="18" width="220" height="24" rx="12" fill="url(#localBoxGrad)" stroke="#6EE7B7" stroke-width="1" />
+    <circle cx="32" cy="30" r="4" fill="#059669" />
+    <text x="44" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="800" fill="#065F46">NUVIO CLIENT SANDBOX</text>
+    <text x="250" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#047857">100% Client-Side Processing Architecture</text>
+
+    <!-- Node 1: Local Document Loading -->
+    <g transform="translate(30, 60)">
+      <rect x="0" y="0" width="160" height="86" rx="12" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1" />
+      <text x="14" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#065F46">Local Document</text>
+      <text x="14" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" font-weight="500" fill="#047857">Direct memory read</text>
+      <rect x="14" y="48" width="130" height="24" rx="6" fill="#DCFCE7" />
+      <text x="22" y="64" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="#15803D">✓ Zero network requests</text>
+    </g>
+
+    <!-- Green Direct Arrow 1 -->
+    <g transform="translate(200, 95)">
+      <line x1="0" y1="8" x2="45" y2="8" stroke="#10B981" stroke-width="2.5" />
+      <polygon points="45,4 54,8 45,12" fill="#10B981" />
+      <text x="4" y="0" font-family="monospace" font-size="8" font-weight="700" fill="#059669">IN-MEMORY</text>
+    </g>
+
+    <!-- Node 2: Client-Side Engine -->
+    <g transform="translate(265, 60)">
+      <rect x="0" y="0" width="220" height="86" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="2" />
+      
+      <!-- Shield Header Inside -->
+      <g transform="translate(14, 14)">
+        <rect x="0" y="0" width="22" height="22" rx="6" fill="url(#shieldGrad2)" />
+        <path d="M 11 5 L 16 7 L 16 12 C 16 16 11 18 11 18 C 11 18 6 16 6 12 L 6 7 Z" fill="none" stroke="#FFFFFF" stroke-width="1.2" />
+        <text x="28" y="15" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#065F46">Local Sandbox Engine</text>
+      </g>
+      
+      <text x="14" y="52" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" font-weight="500" fill="#047857">In-browser parsing &amp; rendering</text>
+      <rect x="14" y="60" width="190" height="18" rx="4" fill="#D1FAE5" />
+      <text x="20" y="73" font-family="monospace" font-size="8.5" font-weight="700" fill="#065F46">ISOLATED DEVICE SANDBOX</text>
+    </g>
+
+    <!-- Green Direct Arrow 2 -->
+    <g transform="translate(495, 95)">
+      <line x1="0" y1="8" x2="45" y2="8" stroke="#10B981" stroke-width="2.5" />
+      <polygon points="45,4 54,8 45,12" fill="#10B981" />
+      <text x="2" y="0" font-family="monospace" font-size="8" font-weight="700" fill="#059669">SYNTHESIS</text>
+    </g>
+
+    <!-- Node 3: Instant Export on Device -->
+    <g transform="translate(550, 60)">
+      <rect x="0" y="0" width="260" height="86" rx="12" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5" />
+      <text x="16" y="24" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#065F46">Instant Device Export</text>
+      <text x="16" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" font-weight="500" fill="#047857">Preserves font metrics &amp; vectors directly</text>
+      
+      <!-- Triple Security Guarantees -->
+      <g transform="translate(16, 48)">
+        <rect x="0" y="0" width="228" height="26" rx="6" fill="#FFFFFF" stroke="#86EFAC" stroke-width="1" />
+        <circle cx="10" cy="13" r="3" fill="#10B981" />
+        <text x="18" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="700" fill="#065F46">Files never leave the user's browser</text>
+      </g>
+    </g>
+  </g>
+
+</svg>

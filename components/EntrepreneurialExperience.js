@@ -237,6 +237,167 @@ export default function EntrepreneurialExperience() {
         </div>
 
         {/* ==================================================== */}
+        {/* 1B. NUVIO PRODUCT SHOWCASE (ACTIVE BUILD)            */}
+        {/* ==================================================== */}
+        <div className="rounded-3xl bg-gradient-to-br from-[#FAFAF8] via-white to-indigo-50/30 border-2 border-[#E5E7EB] hover:border-[#2563EB]/50 shadow-sm p-6 sm:p-9 lg:p-12 transition-all duration-300 reveal-on-scroll">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            {/* Left: Metadata, Title, Positioning, Flow Diagram, Metrics */}
+            <div className="lg:col-span-7 space-y-6">
+              
+              {/* Status Header */}
+              <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-[#E5E7EB]">
+                <div className="flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-full text-[11px] font-mono font-bold tracking-wider uppercase text-indigo-700 bg-indigo-50 border border-indigo-200">
+                    ACTIVE BUILD · PRODUCT IN PROGRESS
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                    BUILDING
+                  </span>
+                </div>
+                <span className="text-xs font-mono text-[#737984]">
+                  2026 · Active Build
+                </span>
+              </div>
+
+              {/* Title & 1-Line Positioning */}
+              <div className="space-y-1">
+                <Link href="/work/nuvio" className="group/title inline-block">
+                  <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#111318] group-hover/title:text-[#2563EB] transition-colors flex items-center gap-3">
+                    <span>NUVIO</span>
+                    <ArrowUpRight className="w-6 h-6 text-slate-400 group-hover/title:text-[#2563EB] group-hover/title:translate-x-1 group-hover/title:-translate-y-1 transition-transform" />
+                  </h3>
+                </Link>
+                <p className="text-base sm:text-lg font-semibold text-[#2563EB]">
+                  Private PDF Editing, Reimagined.
+                </p>
+                <p className="text-xs sm:text-sm text-[#555B66] leading-relaxed pt-1">
+                  A browser-based PDF workspace designed to keep sensitive documents on the user&apos;s device while making editing feel as simple as a modern productivity app.
+                </p>
+              </div>
+
+              {/* 3 Core Architecture Pillars */}
+              <div className="space-y-3 pt-1">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#737984] font-bold block">
+                  Product Architecture Pillars
+                </span>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                  <div className="p-3 rounded-2xl bg-white border border-[#E5E7EB] shadow-2xs space-y-1">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-[#111318]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+                      Client Sandbox
+                    </div>
+                    <p className="text-[11px] text-[#555B66] leading-snug">
+                      100% in-memory document processing with zero remote server retention.
+                    </p>
+                  </div>
+                  <div className="p-3 rounded-2xl bg-white border border-[#E5E7EB] shadow-2xs space-y-1">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-[#111318]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-600" />
+                      Visual Canvas
+                    </div>
+                    <p className="text-[11px] text-[#555B66] leading-snug">
+                      Direct Cartesian placement for text, signatures, and annotations.
+                    </p>
+                  </div>
+                  <div className="p-3 rounded-2xl bg-white border border-[#E5E7EB] shadow-2xs space-y-1">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-[#111318]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+                      Zero Conversion
+                    </div>
+                    <p className="text-[11px] text-[#555B66] leading-snug">
+                      Single source of truth export preventing destructive formatting shifts.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 3 Status / Product Metrics Strip */}
+              <div className="grid grid-cols-3 gap-2 pt-1">
+                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-0.5">
+                  <div className="text-sm font-bold text-[#111318]">0 Uploads</div>
+                  <div className="text-[9.5px] font-mono uppercase text-[#2563EB] font-bold">100% Local Device</div>
+                </div>
+                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-0.5">
+                  <div className="text-sm font-bold text-[#111318]">WYSIWYG</div>
+                  <div className="text-[9.5px] font-mono uppercase text-[#2563EB] font-bold">Direct Manipulation</div>
+                </div>
+                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-0.5">
+                  <div className="text-sm font-bold text-[#111318]">Phase 05 / 08</div>
+                  <div className="text-[9.5px] font-mono uppercase text-[#2563EB] font-bold">Interactive Sandbox</div>
+                </div>
+              </div>
+
+              {/* Strategy & Product Tags */}
+              <div className="flex flex-wrap gap-1.5 pt-1">
+                {['Product Strategy', 'UX', 'Product Management', 'Systems Thinking'].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-2.5 py-1 rounded-lg text-xs font-mono bg-white border border-[#E5E7EB] text-[#555B66] shadow-2xs"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Action Button */}
+              <div className="pt-2 flex items-center justify-between">
+                <Link
+                  href="/work/nuvio"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#111318] hover:bg-[#2563EB] text-white text-xs font-semibold transition-colors shadow-xs group/btn"
+                >
+                  <span>Explore Product Case Study</span>
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
+                </Link>
+                <span className="text-xs font-mono text-[#737984]">
+                  UX &amp; Systems Teardown →
+                </span>
+              </div>
+
+            </div>
+
+            {/* Right: 3D Nuvio Laptop Visual & Privacy Architecture Peek */}
+            <div className="lg:col-span-5 space-y-4">
+              {/* 3D Glass Laptop Hero Illustration */}
+              <Link href="/work/nuvio" className="block group/laptop">
+                <div className="relative w-full aspect-[16/11] flex items-center justify-center p-3 sm:p-5 rounded-2xl glass-frame bg-gradient-to-b from-indigo-50/40 via-white to-blue-50/20 shadow-md group-hover/laptop:border-[#2563EB]/50 transition-all">
+                  <div className="relative w-full h-full animate-float-slow illustration-tilt">
+                    <Image
+                      src="/illustrations/nuvio-hero-illustration.svg"
+                      alt="NUVIO Private PDF Workspace 3D Laptop Concept Visual"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 550px"
+                      className="object-contain drop-shadow-xl"
+                    />
+                  </div>
+                </div>
+              </Link>
+
+              {/* Secondary Privacy Architecture Peek */}
+              <Link href="/work/nuvio" className="block group/preview">
+                <div className="relative w-full aspect-[21/9] rounded-xl overflow-hidden border border-[#E5E7EB] bg-slate-900 group-hover/preview:border-[#2563EB]/50 transition-all">
+                  <Image
+                    src="/illustrations/nuvio-privacy-diagram.svg"
+                    alt="NUVIO Client-Side Sandbox Privacy Architecture"
+                    fill
+                    sizes="550px"
+                    className="object-cover object-center opacity-85 group-hover/preview:opacity-100 transition-opacity"
+                  />
+                  <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px] flex items-center justify-center p-2">
+                    <span className="text-[11px] font-semibold text-white bg-black/60 px-3 py-1.5 rounded-full border border-white/20">
+                      Inspect Client-Side Privacy Architecture ↗
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+          </div>
+        </div>
+
+        {/* ==================================================== */}
         {/* 2. COMPACT VENTURES: SettleMyCar, Dark Kitchen, Fixins */}
         {/* ==================================================== */}
         <div className="space-y-6">

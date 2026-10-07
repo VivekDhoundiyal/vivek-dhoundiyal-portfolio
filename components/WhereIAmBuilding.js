@@ -35,12 +35,14 @@ export default function WhereIAmBuilding() {
       title: 'Digital Products',
       subtitle: 'PRACTICAL SOFTWARE',
       description: 'Building tools that eliminate real operational friction.',
-      highlight: 'Developing CareerOS as an AI-powered applicant command center.',
+      highlight: 'Developing CareerOS (career intelligence) and NUVIO (private PDF workspace).',
       icon: WindowTerminalIcon,
       tags: ['Product Strategy', 'User Experience', 'High Performance', 'Data Reliability'],
       metric: 'Active Product Building',
-      link: '/work/careeros',
-      linkText: 'Explore CareerOS →'
+      links: [
+        { href: '/work/careeros', label: 'CareerOS →' },
+        { href: '/work/nuvio', label: 'NUVIO →' }
+      ]
     },
     {
       number: '02',
@@ -156,6 +158,19 @@ export default function WhereIAmBuilding() {
                     <p className="text-xs text-[#555B66] leading-relaxed">
                       {p.highlight}
                     </p>
+                    {p.links && (
+                      <div className="pt-1.5 flex flex-wrap items-center gap-3">
+                        {p.links.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            className="inline-flex items-center gap-1 text-xs font-semibold text-[#2563EB] hover:underline"
+                          >
+                            <span>{item.label}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                     {p.link && (
                       <div className="pt-1.5">
                         <Link
