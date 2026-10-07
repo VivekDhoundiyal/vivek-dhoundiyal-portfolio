@@ -1794,365 +1794,450 @@
     },
     "hero": {
       "headline": "NUVIO",
-      "subheadline": "Reimagining PDF workflows around privacy, simplicity, and control.",
-      "badge": "BUILDING",
-      "statusText": "Active Product Exploration",
-      "secondaryText": "An active product exploration focused on making PDF editing feel like a modern productivity experience — without requiring users to send sensitive documents to external servers.",
-      "primaryIllustration": "/illustrations/nuvio-hero-illustration.svg"
+      "subheadline": "Reimagining PDF workflows around privacy, simplicity and control.",
+      "supportingText": "A privacy-first PDF workspace designed to make everyday document work simpler while keeping files on the user's device.",
+      "badge": "LIVE MVP",
+      "statusText": "Actively Evolving",
+      "labels": [
+        "Product Management",
+        "UX Strategy",
+        "0→1 Architecture",
+        "Document Productivity"
+      ]
     },
     "problem": {
       "eyebrow": "01 · THE PROBLEM",
-      "headline": "The problem isn't a lack of PDF tools.",
-      "statement": "It's the trust and fragmentation tax.",
-      "fragmentedWorkflow": [
-        {
-          "step": "01",
-          "label": "Search tool",
-          "desc": "Find single-purpose utility web page"
-        },
-        {
-          "step": "02",
-          "label": "Upload file",
-          "desc": "Send confidential document to third-party server"
-        },
-        {
-          "step": "03",
-          "label": "Wait processing",
-          "desc": "Server queue latency & unknown retention risk"
-        },
-        {
-          "step": "04",
-          "label": "New interface",
-          "desc": "Clunky UI disconnected from original design"
-        },
-        {
-          "step": "05",
-          "label": "Download file",
-          "desc": "Save locally and repeat again for next task"
-        }
-      ],
-      "nuvioWorkflow": [
-        {
-          "step": "01",
-          "label": "Open NUVIO",
-          "desc": "Load document directly in local browser memory"
-        },
-        {
-          "step": "02",
-          "label": "Direct Edit",
-          "desc": "Manipulate text, layout & elements in place"
-        },
-        {
-          "step": "03",
-          "label": "Validate",
-          "desc": "Instant visual preview matches canonical model"
-        },
-        {
-          "step": "04",
-          "label": "Export",
-          "desc": "Deterministic PDF output without data ever leaving device"
-        }
-      ]
-    },
-    "hypothesis": {
-      "eyebrow": "02 · STRATEGIC DIRECTION",
-      "headline": "The Product Hypothesis",
-      "subheadline": "Four foundational design pillars transforming how users interact with PDFs.",
+      "headline": "The PDF problem isn't PDFs.",
+      "subheadline": "It's fragmented workflows, complexity and trust.",
+      "supporting": "Working with documents today forces users across dozens of disconnected single-purpose web utilities.",
       "cards": [
         {
           "num": "01",
-          "title": "Privacy by Architecture",
-          "tagline": "Privacy isn't a setting. It's part of the product.",
-          "detail": "Instead of asking users to trust server retention policies, documents never leave the local device sandbox."
+          "title": "FRAGMENTED",
+          "desc": "Different tools for different PDF tasks. Converting, signing, and editing live in disconnected silos."
         },
         {
           "num": "02",
-          "title": "One Workspace",
-          "tagline": "One place for the entire PDF workflow.",
-          "detail": "Eliminating multi-tool context switching by combining text editing, merging, signing, and organizing in a single canvas."
+          "title": "COMPLEX",
+          "desc": "Upload → process → download → repeat. Each minor adjustment demands a full download cycle."
         },
         {
           "num": "03",
-          "title": "Visual Editing",
-          "tagline": "Edit the document you actually see.",
-          "detail": "WYSIWYG in-place editing rather than detached form overlays that misalign upon export."
+          "title": "TRUST",
+          "desc": "Sensitive documents often leave the user's device, creating continuous data anxiety."
+        }
+      ],
+      "flow": [
+        {
+          "label": "PDF",
+          "note": "Source document"
         },
         {
-          "num": "04",
-          "title": "Zero Complexity",
-          "tagline": "Complexity stays behind the interface.",
-          "detail": "The mathematical coordinate translation and glyph matrices stay invisible, giving users a simple, modern canvas."
+          "label": "Website 1",
+          "note": "Tool hopping"
+        },
+        {
+          "label": "Download",
+          "note": "Context break"
+        },
+        {
+          "label": "Website 2",
+          "note": "Another conversion"
+        },
+        {
+          "label": "Final PDF",
+          "note": "Friction at every step"
         }
       ]
     },
-    "workspace": {
-      "eyebrow": "03 · USER INTERACTION",
-      "headline": "One workspace. Every PDF task.",
-      "copy": "Editing, merging, converting and organizing in one understandable workspace.",
-      "hotspots": [
+    "opportunity": {
+      "eyebrow": "02 · THE PRODUCT OPPORTUNITY",
+      "headline": "What if working with PDFs felt like using a modern productivity app?",
+      "supporting": "Moving from disjointed utility hopping to a fluid, continuous editing lifecycle.",
+      "steps": [
         {
-          "id": "nav",
-          "name": "Page Matrix",
-          "desc": "Visual thumbnail navigation for intuitive page reordering, extraction, and split operations."
+          "step": "01",
+          "name": "OPEN",
+          "desc": "Instant local ingestion straight into memory without upload wait."
         },
         {
-          "id": "canvas",
-          "name": "Document Canvas",
-          "desc": "Direct-manipulation workspace displaying true typographic metrics and coordinate boundaries."
+          "step": "02",
+          "name": "EDIT",
+          "desc": "In-place typographical edits, signatures, and markups without tool hopping."
         },
         {
-          "id": "format",
-          "name": "Contextual Bar",
-          "desc": "Floating formatting ribbon revealing typography controls, spacing, and styling only when editing."
+          "step": "03",
+          "name": "VALIDATE",
+          "desc": "Real-time preview synchronized deterministically with the document model."
         },
         {
-          "id": "tools",
-          "name": "Integrated Tools",
-          "desc": "Unified access to digital signatures, redactions, vector stamps, and file compression without tool-hopping."
+          "step": "04",
+          "name": "EXPORT",
+          "desc": "Clean, high-fidelity vector output generated locally without server latency."
         }
       ]
     },
-    "mvp": {
-      "eyebrow": "04 · PRODUCT SCOPING",
-      "headline": "Start with the hardest, highest-value workflow.",
-      "subheadline": "A deliberate radial scoping model that builds core defensibility first.",
-      "layers": {
-        "core": {
-          "title": "CORE",
-          "name": "Visual PDF Editor",
-          "desc": "The hardest, most technically differentiated problem: direct in-place visual manipulation preserving exact document coordinate output."
-        },
-        "extensions": [
-          {
-            "name": "Merge & Split",
-            "desc": "Multi-document assembly"
-          },
-          {
-            "name": "Compress",
-            "desc": "Local vector optimization"
-          },
-          {
-            "name": "Convert",
-            "desc": "Format transformation"
-          },
-          {
-            "name": "Signatures",
-            "desc": "Cryptographic digital signatures"
-          },
-          {
-            "name": "Images & Shapes",
-            "desc": "Vector placement"
-          },
-          {
-            "name": "Stamps & Badges",
-            "desc": "Operational approval stamps"
-          },
-          {
-            "name": "Watermarks",
-            "desc": "Document security overlay"
-          }
-        ],
-        "peripherals": [
-          {
-            "name": "Guides & Best Practices",
-            "desc": "Interactive workflow templates"
-          },
-          {
-            "name": "Educational Tooling",
-            "desc": "PDF standard explanations"
-          }
-        ]
-      }
-    },
-    "uxStrategy": {
-      "eyebrow": "05 · UX STRATEGY",
-      "headline": "Changing the mental model of PDF editing.",
-      "subheadline": "Transitioning users from single-use utility fatigue into continuous productivity.",
-      "traditional": {
-        "title": "Traditional Utility Mental Model",
-        "steps": [
-          "Upload",
-          "Choose",
-          "Process",
-          "Download"
-        ],
-        "sentiment": "High cognitive friction, data anxiety, repetitive page refreshes."
-      },
-      "nuvio": {
-        "title": "Modern Productivity App",
-        "steps": [
-          "Open",
-          "Edit",
-          "Validate",
-          "Export"
-        ],
-        "sentiment": "Fluid direct manipulation, absolute data sovereignty, instantaneous feedback."
-      }
-    },
-    "coordinateChallenge": {
-      "eyebrow": "06 · THE CORE SYSTEM PROBLEM",
-      "headline": "Editing a PDF isn't the same as editing a document.",
-      "subheadline": "PDF = positioned geometric objects, not reflowable text blocks.",
-      "diagram": "/illustrations/nuvio-coordinate-diagram.svg",
-      "explanation": "Word processors rely on fluid reflow where adding words shifts lines downward automatically. In contrast, PDFs place every character glyph at exact (x, y) Cartesian coordinates on an immutable canvas. The challenge is making edits visually intuitive while preserving the exact document result."
-    },
-    "fakeEditor": {
-      "eyebrow": "07 · SYSTEM INTEGRITY",
-      "headline": "An editor that looks right isn't enough.",
-      "subheadline": "Why surface-level overlay tricks fail upon final document export.",
-      "badPath": {
-        "title": "The Superficial Approach",
-        "flow": [
-          "Visual Canvas Overlay",
-          "Naive Text Box",
-          "Export to PDF",
-          "Font Mismatch & Overlaps"
-        ],
-        "verdict": "Result: Text clips, kerning breaks, and the exported PDF diverges from what the user saw."
-      },
-      "goodPath": {
-        "title": "The Canonical Approach",
-        "flow": [
-          "Canonical Document Model",
-          "In-Place Modification",
-          "Integrated Render Engine",
-          "Identical PDF Output"
-        ],
-        "verdict": "Result: 100% Deterministic match between visual screen presentation and exported PDF file."
-      }
-    },
-    "singleSourceOfTruth": {
-      "eyebrow": "08 · DATA ARCHITECTURE",
-      "headline": "One document. One source of truth.",
-      "subheadline": "What users see and what they export must originate from the exact same document state.",
-      "centralState": "NUVIO Canonical Document State",
-      "branches": [
+    "capabilities": {
+      "eyebrow": "03 · WHAT NUVIO DOES",
+      "headline": "One unified workspace. Seven document capabilities.",
+      "supporting": "Consolidating essential document operations into one intuitive interface.",
+      "items": [
         {
-          "name": "EDITOR CANVAS",
-          "desc": "Live in-memory manipulation"
+          "id": "edit",
+          "title": "EDIT",
+          "desc": "Change content directly inside the document.",
+          "img": "/images/nuvio/extracted/nuvio-edit-canvas.png"
         },
         {
-          "name": "PREVIEW ENGINE",
-          "desc": "Real-time visual verification"
+          "id": "merge",
+          "title": "MERGE",
+          "desc": "Bring multiple PDFs together.",
+          "img": "/images/nuvio/extracted/nuvio-merge-flow.png"
         },
         {
-          "name": "EXPORT PIPELINE",
-          "desc": "Deterministic file generation"
+          "id": "convert",
+          "title": "CONVERT",
+          "desc": "Move documents into editable formats.",
+          "img": "/images/nuvio/extracted/nuvio-convert-flow.png"
+        },
+        {
+          "id": "compress",
+          "title": "COMPRESS",
+          "desc": "Reduce file size without another tool.",
+          "img": "/images/nuvio/extracted/nuvio-compress-flow.png"
+        },
+        {
+          "id": "annotate",
+          "title": "ANNOTATE",
+          "desc": "Add highlights, marks, and notes.",
+          "img": "/images/nuvio/extracted/nuvio-stylus-pen.png"
+        },
+        {
+          "id": "sign",
+          "title": "SIGN",
+          "desc": "Place verifiable signatures directly.",
+          "img": "/images/nuvio/extracted/nuvio-sign-badge.png"
+        },
+        {
+          "id": "organize",
+          "title": "ORGANIZE",
+          "desc": "Reorder, rotate, and extract pages.",
+          "img": "/images/nuvio/extracted/nuvio-organize-flow.png"
         }
       ]
     },
     "privacy": {
-      "eyebrow": "09 · PRIVACY BY ARCHITECTURE",
-      "headline": "Privacy isn't a checkbox.",
-      "subheadline": "It's part of the architecture.",
-      "diagram": "/illustrations/nuvio-privacy-diagram.svg",
-      "principles": [
-        {
-          "title": "Local-First Sandbox",
-          "desc": "Documents process inside the user's local device sandbox with zero outbound uploads."
-        },
-        {
-          "title": "Zero Cloud Retention",
-          "desc": "No remote server storage, external cloud buckets, or unmonitored disk caches."
-        },
-        {
-          "title": "Architectural Guarantee",
-          "desc": "Privacy enforced by systems design rather than terms-of-service promises."
-        }
+      "eyebrow": "04 · PRIVACY BY DESIGN",
+      "headline": "Privacy isn't a setting. It's part of the product.",
+      "subheadline": "NUVIO is designed around client-side document processing, reducing the need to send sensitive files to a server.",
+      "diagram": "/images/nuvio/nuvio-privacy-diagram.png",
+      "shieldImg": "/images/nuvio/extracted/nuvio-privacy-shield.png",
+      "traditionalFlow": [
+        "PDF",
+        "Upload",
+        "External Server",
+        "Process",
+        "Download"
       ],
-      "disclaimer": "Design direction: NUVIO is being engineered around client-side processing principles to maximize privacy without claiming formal third-party regulatory certifications."
+      "nuvioFlow": [
+        "PDF",
+        "Browser",
+        "Process locally",
+        "Export"
+      ],
+      "disclaimer": "NUVIO processes documents locally inside the browser session. Files remain on the device rather than uploading to remote servers."
     },
-    "building": {
-      "eyebrow": "10 · BUILDING IN PUBLIC",
-      "headline": "Building NUVIO",
-      "subheadline": "An active product exploration moving systematically from hypothesis to usable MVP.",
+    "productThinking": {
+      "eyebrow": "05 · PRODUCT THINKING",
+      "headline": "From problem to product.",
+      "supporting": "A deliberate PM decision framework connecting user frustration to production execution.",
       "stages": [
         {
-          "step": "01",
-          "name": "Problem Discovery",
-          "status": "complete"
+          "id": "problem",
+          "title": "PROBLEM",
+          "desc": "PDF workflows are fragmented and force users onto untrusted servers."
         },
         {
-          "step": "02",
-          "name": "Product Definition",
-          "status": "complete"
+          "id": "hypothesis",
+          "title": "HYPOTHESIS",
+          "desc": "One workspace + local processing = simpler, more trustworthy workflow."
         },
         {
-          "step": "03",
-          "name": "UX Strategy",
-          "status": "complete"
+          "id": "mvp",
+          "title": "MVP",
+          "desc": "Prioritize the highest-value document tasks — direct in-place editing first."
         },
         {
-          "step": "04",
-          "name": "Systems Design",
-          "status": "complete"
-        },
-        {
-          "step": "05",
-          "name": "Prototype Engine",
-          "status": "current"
-        },
-        {
-          "step": "06",
-          "name": "Edge Case Testing",
-          "status": "upcoming"
-        },
-        {
-          "step": "07",
-          "name": "User Feedback",
-          "status": "upcoming"
-        },
-        {
-          "step": "08",
-          "name": "MVP Release",
-          "status": "upcoming"
-        }
-      ],
-      "statusCallout": "Currently building: Focusing on robust client-side coordinate translation and text bounding box integrity before feature expansion."
-    },
-    "learnings": {
-      "eyebrow": "11 · PRODUCT RETROSPECTIVE",
-      "headline": "What this project is teaching me",
-      "cards": [
-        {
-          "num": "01",
-          "title": "Product architecture shapes UX",
-          "desc": "Interface simplicity is only as durable as the underlying document state model."
-        },
-        {
-          "num": "02",
-          "title": "Privacy can be a product advantage",
-          "desc": "Keeping sensitive files local creates an unassailable trust boundary against cloud utilities."
-        },
-        {
-          "num": "03",
-          "title": "The hardest workflow should define the MVP",
-          "desc": "Solving in-place visual text editing unlocks every simpler peripheral tool effortlessly."
-        },
-        {
-          "num": "04",
-          "title": "Outcomes matter, not cosmetic state",
-          "desc": "A feature only delivers real value when the final exported document re-opens perfectly."
+          "id": "iteration",
+          "title": "ITERATE",
+          "desc": "Build → test → diagnose → improve based on real-world document edge cases."
         }
       ]
     },
-    "northStar": {
-      "eyebrow": "12 · NORTH STAR METRIC",
-      "headline": "The metric that matters",
-      "metric": "SUCCESSFUL DOCUMENT COMPLETION",
-      "flow": [
-        "Open File",
-        "Modify In Place",
-        "Export Document",
-        "Re-Open Verification"
+    "prioritization": {
+      "eyebrow": "06 · MVP PRIORITIZATION",
+      "headline": "Scoping for defensibility, not easy vanity features.",
+      "supporting": "Why we built the hardest core editor first instead of quick utility wrappers.",
+      "tiers": [
+        {
+          "tier": "P0",
+          "name": "CORE EDITOR",
+          "priority": "Foundational Defensibility",
+          "items": [
+            "Document Ingestion",
+            "Canvas Rendering",
+            "In-Place Text Editing",
+            "Local Vector Export"
+          ],
+          "rationale": "The hardest technical moat. Solving in-place visual text editing unlocks every downstream utility."
+        },
+        {
+          "tier": "P1",
+          "name": "PRODUCTIVITY",
+          "priority": "High Daily Utility",
+          "items": [
+            "Document Merge",
+            "Format Conversion",
+            "File Compression",
+            "Digital Signatures"
+          ],
+          "rationale": "Essential document operations that become straightforward transformations once document state is stable."
+        },
+        {
+          "tier": "P2",
+          "name": "SUPPORT",
+          "priority": "User Onboarding",
+          "items": [
+            "NUVIO Guides",
+            "Workflow Playbooks",
+            "Document Templates"
+          ],
+          "rationale": "Pre-configured templates and educational guides to accelerate day-one utility.",
+          "img": "/images/nuvio/extracted/nuvio-guides-card.png"
+        }
+      ]
+    },
+    "hardProblem": {
+      "eyebrow": "07 · THE HARD PRODUCT PROBLEM",
+      "headline": "Making a PDF editor that actually edits PDFs.",
+      "subheadline": "The superficial overlay trap versus authentic document mutation.",
+      "leftTitle": "LOOKS EDITED (Superficial Overlay)",
+      "leftFlow": [
+        "PDF",
+        "Visual overlay",
+        "User sees edit"
       ],
-      "statement": "The user only receives genuine value when the final document is successfully completed and persisted without corruption."
+      "leftVerdict": "Preview looks edited on screen, but changes fail upon export. Text search breaks and layers desync.",
+      "rightTitle": "ACTUALLY EDITED (Canonical State)",
+      "rightFlow": [
+        "PDF",
+        "Document state",
+        "Editor",
+        "Exported PDF",
+        "Edit persists"
+      ],
+      "rightVerdict": "The edit is written directly into the document structure. Searchable, selectable, and mathematically identical across viewers.",
+      "callouts": [
+        "Preview ≠ Product",
+        "The exported document must contain the edit."
+      ]
+    },
+    "documentModel": {
+      "eyebrow": "08 · CANONICAL DOCUMENT MODEL",
+      "headline": "One document state powers both editing and export.",
+      "subheadline": "A single source of truth ensuring what you see in the workspace is exactly what appears in the exported file.",
+      "rationale": [
+        "Eliminates phantom edits where visual markup desyncs from the file",
+        "Guarantees exact coordinate fidelity across display viewports and zoom levels",
+        "Preserves original document metadata, layers, and embedded font structures"
+      ]
+    },
+    "productObjects": {
+      "eyebrow": "09 · PRODUCT OBJECTS",
+      "headline": "Six atomic primitives that make up the editing canvas.",
+      "supporting": "Every annotation, edit, and markup is modeled as a deterministic document object.",
+      "items": [
+        {
+          "name": "TEXT",
+          "desc": "In-place typographical edits preserving exact font styling and bounding boxes."
+        },
+        {
+          "name": "IMAGE",
+          "desc": "Embedded vector and raster graphics with non-destructive aspect scaling."
+        },
+        {
+          "name": "SIGNATURE",
+          "desc": "Vector signature placement with transparent backgrounds and pressure smoothing."
+        },
+        {
+          "name": "STAMP",
+          "desc": "Status markers (Approved, Confidential, Draft) with customizable tint and angle."
+        },
+        {
+          "name": "WATERMARK",
+          "desc": "Background opacity layers protecting sensitive distribution copies."
+        },
+        {
+          "name": "SHAPE",
+          "desc": "Rectangles, callout clouds, and highlight markers for structured redlining."
+        }
+      ]
+    },
+    "challenges": {
+      "eyebrow": "10 · REAL PRODUCT CHALLENGES",
+      "headline": "Four real-world problems that emerged during development.",
+      "supporting": "Building client-side document software requires solving four distinct challenges.",
+      "items": [
+        {
+          "num": "01",
+          "title": "PDF EDITING",
+          "desc": "Existing PDF content is fundamentally harder to modify than a normal document. PDFs are Cartesian coordinate placements, not reflowable paragraphs."
+        },
+        {
+          "num": "02",
+          "title": "PREVIEW → EXPORT",
+          "desc": "What users see must survive export. Text sizing, line breaks, and object positions must match at 100% precision."
+        },
+        {
+          "num": "03",
+          "title": "PERFORMANCE",
+          "desc": "Document processing needs to remain usable in the browser. Handling multi-page files without memory spikes."
+        },
+        {
+          "num": "04",
+          "title": "PRODUCTION",
+          "desc": "Real-world deployment exposed issues that required diagnosis beyond the initial error message."
+        }
+      ]
+    },
+    "loadingIncident": {
+      "eyebrow": "11 · PDF LOADING INCIDENT",
+      "headline": "Debugging in production: When \"Failed to load PDF\" isn't the whole story.",
+      "subheadline": "How structured investigation uncovered the real root cause behind a deceptive error message.",
+      "steps": [
+        {
+          "stage": "USER SEES",
+          "text": "Error banner: \"Failed to load PDF\". The document opened fine in desktop viewers but stalled in the web workspace."
+        },
+        {
+          "stage": "ASSUMPTION",
+          "text": "Initial hypothesis: \"Maybe the PDF is password protected, corrupt, or exceeds size limits.\""
+        },
+        {
+          "stage": "INVESTIGATION",
+          "text": "Trace the document loading pipeline step-by-step to identify where execution halted."
+        },
+        {
+          "stage": "RESOLUTION",
+          "text": "The actual loading issue was an asynchronous asset initialization timing mismatch in the local sandbox — identified and resolved."
+        }
+      ],
+      "takeaway": "An error message is a clue, not always the root cause."
+    },
+    "shippingQualityLoop": {
+      "eyebrow": "12 · SHIPPING & QUALITY LOOP",
+      "headline": "Shipping is part of the product.",
+      "subheadline": "Production verification uncovered routing and document-loading issues that required architectural fixes.",
+      "loop": [
+        "BUILD",
+        "VERIFY",
+        "DIAGNOSE",
+        "FIX",
+        "RE-TEST"
+      ],
+      "note": "Every change to the document parsing pipeline is verified against diverse PDF standards before deployment."
+    },
+    "outcome": {
+      "eyebrow": "13 · OUTCOME & STATUS",
+      "headline": "From disjointed PDF utilities to a privacy-first document workspace.",
+      "subheadline": "NUVIO evolved from a collection of PDF utilities into a defined privacy-first document workspace.",
+      "status": "LIVE MVP · Actively evolving",
+      "pillars": [
+        {
+          "title": "Unified PDF Workflow",
+          "desc": "One workspace replacing fragmented multi-tab utility hopping."
+        },
+        {
+          "title": "Client-Side Processing",
+          "desc": "100% in-browser document sandbox with zero external server upload."
+        },
+        {
+          "title": "Visual In-Place Editing",
+          "desc": "Direct typographical modification synchronized with export."
+        },
+        {
+          "title": "Production MVP",
+          "desc": "Usable, verifiable document pipeline running in real environments."
+        }
+      ]
+    },
+    "roadmap": {
+      "eyebrow": "14 · PRODUCT ROADMAP",
+      "headline": "Where NUVIO is going next.",
+      "subheadline": "Clear demarcation between what is live today, what is actively being built, and future research.",
+      "columns": [
+        {
+          "horizon": "NOW",
+          "badge": "LIVE MVP · Built",
+          "items": [
+            "Core PDF workflow (Open, Edit, Validate, Export)",
+            "In-place text modifications & annotations",
+            "Document merge, split, and compression",
+            "100% Client-side local processing"
+          ]
+        },
+        {
+          "horizon": "NEXT",
+          "badge": "IN PROGRESS · Active Sprint",
+          "items": [
+            "Better multi-page visual drag-and-drop organize",
+            "Expanded typography controls & font matching",
+            "Form field fill-and-sign workflows",
+            "Undo/redo historical timeline state"
+          ]
+        },
+        {
+          "horizon": "FUTURE",
+          "badge": "EXPLORATION · Conceptual Horizon",
+          "items": [
+            "On-device local AI document summarization",
+            "Smart automated redaction of sensitive data",
+            "Offline Optical Character Recognition (OCR)",
+            "Intelligent multi-document comparison & diffing"
+          ]
+        }
+      ]
+    },
+    "learnings": {
+      "eyebrow": "15 · PM LEARNINGS",
+      "headline": "Four core lessons from building NUVIO.",
+      "cards": [
+        {
+          "num": "01",
+          "title": "Architecture can be a product decision.",
+          "desc": "Choosing client-side processing was not just a technical choice — it became the primary value proposition, delivering speed and privacy without recurring server costs."
+        },
+        {
+          "num": "02",
+          "title": "Export is part of the editing experience.",
+          "desc": "If the exported document does not match the workspace canvas down to the millimeter, the editor has failed — regardless of how sleek the UI appears."
+        },
+        {
+          "num": "03",
+          "title": "Error messages are clues, not always root causes.",
+          "desc": "Surface errors often mask asynchronous timing discrepancies or format nuances. Diagnosing the entire pipeline is essential for durable reliability."
+        },
+        {
+          "num": "04",
+          "title": "Good UX hides complexity without hiding capability.",
+          "desc": "The PDF format has three decades of geometric quirks. A good product insulates the user from coordinates and matrix math while giving them total creative control."
+        }
+      ]
     },
     "cta": {
-      "eyebrow": "ACTIVE STATUS",
+      "badge": "LIVE MVP · Actively Evolving",
       "heading": "Complex technology. Simple experience.",
       "subheading": "NUVIO is currently being designed and built as an independent product exploration.",
-      "badge": "BUILDING · Product in Progress",
       "backLink": "/#work"
     }
   }
