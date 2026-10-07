@@ -78,7 +78,7 @@ export default function EntrepreneurialExperience() {
         {/* ==================================================== */}
         {/* 1. CAREEROS FLAGSHIP SHOWCASE                        */}
         {/* ==================================================== */}
-        <div className="rounded-3xl bg-gradient-to-br from-[#FAFAF8] via-white to-blue-50/30 border-2 border-[#E5E7EB] hover:border-[#2563EB]/50 shadow-sm p-6 sm:p-9 lg:p-12 transition-all duration-300 reveal-on-scroll">
+        <div className="rounded-3xl bg-gradient-to-br from-[#FAFAF8] via-white to-blue-50/30 border-2 border-[#E5E7EB] hover:border-[#2563EB]/50 shadow-sm p-6 sm:p-9 lg:p-12 transition-all duration-300">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left: Metadata, Title, Positioning, Flow Diagram, Metrics */}
@@ -239,7 +239,7 @@ export default function EntrepreneurialExperience() {
         {/* ==================================================== */}
         {/* 1B. NUVIO PRODUCT SHOWCASE (ACTIVE BUILD)            */}
         {/* ==================================================== */}
-        <div className="rounded-3xl bg-gradient-to-br from-[#FAFAF8] via-white to-indigo-50/30 border-2 border-[#E5E7EB] hover:border-[#2563EB]/50 shadow-sm p-6 sm:p-9 lg:p-12 transition-all duration-300 reveal-on-scroll">
+        <div className="rounded-3xl bg-gradient-to-br from-[#FAFAF8] via-white to-indigo-50/30 border-2 border-[#E5E7EB] hover:border-[#2563EB]/50 shadow-sm p-6 sm:p-9 lg:p-12 transition-all duration-300">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left: Metadata, Title, Positioning, Flow Diagram, Metrics */}
