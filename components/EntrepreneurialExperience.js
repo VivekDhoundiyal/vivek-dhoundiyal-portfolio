@@ -126,6 +126,7 @@ export default function EntrepreneurialExperience() {
                 alt="Vivek pointing to featured work"
                 width={281}
                 height={443}
+                loading="eager"
                 className="object-contain w-full h-full drop-shadow-sm"
               />
             </div>

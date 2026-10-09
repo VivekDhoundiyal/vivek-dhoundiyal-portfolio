@@ -217,6 +217,8 @@ export default function MyJourneyTimeline() {
                   alt="Vivek pointing toward ambitious milestones"
                   width={320}
                   height={406}
+                  loading="eager"
+                  priority
                   className="max-h-full w-auto object-contain drop-shadow-md hover:scale-105 transition-transform duration-300"
                 />
               </div>
