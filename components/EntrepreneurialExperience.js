@@ -295,6 +295,34 @@ export default function EntrepreneurialExperience() {
           ))}
         </div>
 
+        {/* Supporting Callout: Systems Architecture & Launch Readiness */}
+        <div className="rounded-3xl bg-[#FAFAF8] border border-[#E5E7EB] p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <div className="relative w-16 h-18 sm:w-18 sm:h-20 flex-shrink-0 animate-float-slow">
+              <Image
+                src="/images/avatars/avatar-launch-arrow.png"
+                alt="Vivek Dhoundiyal — Systems Architecture"
+                width={315}
+                height={460}
+                className="object-contain w-full h-full"
+              />
+            </div>
+            <div>
+              <div className="text-sm font-bold text-[#111318]">High Velocity Execution &amp; Practical Systems</div>
+              <p className="text-xs text-[#555B66] max-w-lg">
+                Every project reflects deliberate problem discovery, unit economics validation, and disciplined systems design.
+              </p>
+            </div>
+          </div>
+          <Link
+            href="/work/nuvio"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-[#2563EB] text-white hover:bg-blue-700 shadow-xs transition-all flex-shrink-0"
+          >
+            <span>Read NUVIO Product Teardown</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+
       </div>
     </section>
   )

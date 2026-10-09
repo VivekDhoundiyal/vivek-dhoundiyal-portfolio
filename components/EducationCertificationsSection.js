@@ -95,11 +95,11 @@ export default function EducationCertificationsSection({ education = {}, certifi
       ]
     },
     {
-      group: 'Development & Analytics',
+      group: 'Systems & Analytics',
       tools: [
         { id: 'python', name: 'Python' },
-        { id: 'react', name: 'Next.js / React' },
-        { id: 'tailwind', name: 'Tailwind CSS' },
+        { id: 'web-systems', name: 'Web Applications' },
+        { id: 'design-systems', name: 'Design Systems' },
         { id: 'analytics', name: 'Google Analytics 4' },
         { id: 'microsoft-excel', name: 'Advanced Excel' }
       ]

@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer({ profile }) {
   const email = profile?.email || 'vivekdhoundiyal2901@gmail.com'
@@ -31,10 +32,19 @@ export default function Footer({ profile }) {
               Building commercial revenue engines, forging high-trust partnerships, and executing scalable business operations.
             </p>
 
-            <div className="pt-2">
+            <div className="pt-2 flex items-center gap-3">
+              <div className="relative w-12 h-14 flex-shrink-0 animate-float-slow">
+                <Image
+                  src="/images/avatars/avatar-confident-standing.png"
+                  alt="Vivek Dhoundiyal"
+                  width={315}
+                  height={460}
+                  className="object-contain w-full h-full drop-shadow-xs"
+                />
+              </div>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono bg-emerald-50 text-emerald-700 border border-emerald-200 shadow-2xs">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                <span>Available for Leadership, Business Development & Growth Opportunities</span>
+                <span>Available for Leadership, Business Development &amp; Growth Opportunities</span>
               </div>
             </div>
           </div>

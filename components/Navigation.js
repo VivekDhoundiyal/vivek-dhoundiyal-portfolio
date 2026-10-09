@@ -146,7 +146,7 @@ export default function Navigation({
         className={`hidden lg:flex fixed top-0 left-0 bottom-0 z-40 flex-col justify-between bg-white border-r border-[#E5E7EB] py-4 select-none shadow-[1px_0_4px_rgba(0,0,0,0.02)] transition-[width] duration-200 ${
           sidebarCollapsed ? 'w-[72px] items-center px-2' : 'w-[196px] px-3.5'
         }`}
-        aria-label="Desktop Application Sidebar"
+        aria-label="App Navigation Rail"
       >
         {/* Sidebar Top: Brand Mark + Name */}
         <div className="flex flex-col w-full">
