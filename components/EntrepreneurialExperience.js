@@ -71,7 +71,7 @@ export default function EntrepreneurialExperience() {
       status: 'Scaled',
       statusBadgeClass: 'bg-purple-50 text-purple-700 border-purple-300',
       statusDotClass: 'bg-purple-500',
-      iconSrc: '/images/illustrations/icon-growth-chart.png',
+      iconSrc: '/images/illustrations/icon-logistics-box.png',
       tagline: 'Early-morning B2B food supply chain for commercial restaurants.',
       description: 'Managed 4:00 AM procurement dispatch, cold-chain fulfillment, and institutional restaurant accounts with zero stockouts.',
       tags: ['B2B Supply Chain', 'JIT Fulfillment', 'Route Logistics'],
@@ -203,6 +203,8 @@ export default function EntrepreneurialExperience() {
                         alt={proj.title}
                         width={36}
                         height={36}
+                        loading="eager"
+                        unoptimized={true}
                         className="object-contain w-full h-full"
                       />
                     </div>
