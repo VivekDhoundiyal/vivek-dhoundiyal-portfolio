@@ -62,15 +62,17 @@ export default function Footer({ profile, onOpenContact }) {
             <span className="text-[11px] font-mono uppercase tracking-wider text-[#737984] font-semibold block">
               Navigation
             </span>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-1.5 text-xs text-[#555B66]">
-              {navLinks.map((item) => (
-                <li key={item.label}>
-                  <Link href={item.href} className="hover:text-[#2563EB] transition-colors py-0.5 block">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <nav aria-label="Footer Navigation">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-1.5 text-xs text-[#555B66]">
+                {navLinks.map((item) => (
+                  <li key={item.label}>
+                    <Link href={item.href} className="hover:text-[#2563EB] transition-colors py-0.5 block">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
 
           {/* 3. Connect Column with Single Small Lower-Right Avatar (3 cols) */}
