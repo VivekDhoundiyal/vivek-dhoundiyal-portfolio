@@ -140,19 +140,19 @@ export default function Navigation({
   return (
     <>
       {/* ==================================================== */}
-      {/* 1. DESKTOP LEFT APP SIDEBAR (250px Expanded / 72px Collapsed) */}
+      {/* 1. DESKTOP LEFT APP SIDEBAR (204px Expanded / 60px Collapsed) */}
       {/* ==================================================== */}
       <aside
         className={`hidden lg:flex fixed top-0 left-0 bottom-0 z-40 flex-col justify-between bg-white border-r border-[#E5E7EB] select-none shadow-[1px_0_4px_rgba(0,0,0,0.02)] transition-[width] duration-200 ${
-          sidebarCollapsed ? 'w-[72px] items-center' : 'w-[250px]'
+          sidebarCollapsed ? 'w-[60px] items-center' : 'w-[204px]'
         }`}
         aria-label="App Navigation Rail"
       >
-        {/* Sidebar Top: Brand Mark + Name */}
-        <div className="w-full h-16 border-b border-[#E5E7EB] flex items-center px-4">
+        {/* Sidebar Top: Brand Mark + Name (56px) */}
+        <div className="w-full h-14 border-b border-[#E5E7EB] flex items-center px-3.5">
           <Link
             href="/#hero"
-            className={`flex items-center gap-3 w-full group ${sidebarCollapsed ? 'justify-center' : ''}`}
+            className={`flex items-center gap-2.5 w-full group ${sidebarCollapsed ? 'justify-center' : ''}`}
             title="Vivek Dhoundiyal — Home"
           >
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] text-white font-extrabold text-xs flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform flex-shrink-0">
@@ -161,10 +161,10 @@ export default function Navigation({
 
             {!sidebarCollapsed && (
               <div className="overflow-hidden leading-tight">
-                <div className="text-[13px] font-bold text-[#111318] truncate">
+                <div className="text-[12.5px] font-bold text-[#111318] truncate">
                   Vivek Dhoundiyal
                 </div>
-                <div className="text-[11px] text-[#737984] font-normal truncate">
+                <div className="text-[10.5px] text-[#737984] font-normal truncate">
                   Commercial Operator
                 </div>
               </div>
@@ -173,7 +173,7 @@ export default function Navigation({
         </div>
 
         {/* Sidebar Center: 7 Navigation Links in EXACT AGREED ORDER */}
-        <nav className="flex-1 w-full flex flex-col gap-1 py-3 px-3 overflow-y-auto no-scrollbar">
+        <nav className="flex-1 w-full flex flex-col gap-0.5 py-2.5 px-2.5 overflow-y-auto no-scrollbar">
           {primaryNavItems.map((item) => {
             const Icon = item.icon
             const isActive = isHome
@@ -185,14 +185,14 @@ export default function Navigation({
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`relative group h-[44px] w-[44px] mx-auto rounded-xl flex items-center justify-center transition-colors ${
+                  className={`relative group h-[38px] w-[38px] mx-auto rounded-lg flex items-center justify-center transition-colors ${
                     isActive
                       ? 'bg-blue-50 text-[#2563EB] font-bold shadow-2xs'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                   }`}
                   title={item.label}
                 >
-                  <Icon className="w-[18px] h-[18px]" width={18} height={18} />
+                  <Icon className="w-4 h-4" width={16} height={16} />
                   {/* Collapsed Tooltip */}
                   <div className="absolute left-full ml-2.5 px-2.5 py-1 rounded-md bg-slate-900 text-white text-[11px] font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity shadow-md z-50">
                     {item.label}
@@ -205,14 +205,14 @@ export default function Navigation({
               <Link
                 key={item.label}
                 href={item.href}
-                className={`relative h-[44px] w-full rounded-xl transition-all duration-150 flex items-center gap-3 pr-3 text-[13px] ${
+                className={`relative h-[38px] w-full rounded-lg transition-all duration-150 flex items-center gap-2.5 pr-2.5 text-[12.5px] ${
                   isActive
-                    ? 'bg-blue-50/90 text-[#2563EB] font-semibold border-l-[3px] border-[#2563EB] pl-2.5 shadow-2xs'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50/80 pl-3 font-medium'
+                    ? 'bg-blue-50/90 text-[#2563EB] font-semibold border-l-[3px] border-[#2563EB] pl-2 shadow-2xs'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50/80 pl-2.5 font-medium'
                 }`}
               >
-                <span className="w-5 h-5 flex-shrink-0 flex items-center justify-center text-current">
-                  <Icon className="w-[18px] h-[18px]" width={18} height={18} />
+                <span className="w-4 h-4 flex-shrink-0 flex items-center justify-center text-current">
+                  <Icon className="w-4 h-4" width={16} height={16} />
                 </span>
                 <span className="truncate">{item.label}</span>
               </Link>
@@ -221,33 +221,33 @@ export default function Navigation({
         </nav>
 
         {/* Sidebar Bottom: Let's Talk CTA + Collapse Toggle */}
-        <div className="w-full p-3 border-t border-[#E5E7EB] flex flex-col gap-2 bg-white">
+        <div className="w-full p-2.5 border-t border-[#E5E7EB] flex flex-col gap-1.5 bg-white">
           <button
             onClick={onOpenContact}
-            className={`w-full h-10 rounded-xl bg-[#2563EB] hover:bg-blue-700 text-white font-medium text-xs flex items-center justify-center gap-2 transition-colors shadow-2xs cursor-pointer ${
-              sidebarCollapsed ? 'px-0' : 'px-3'
+            className={`w-full h-8 rounded-lg bg-[#2563EB] hover:bg-blue-700 text-white font-medium text-xs flex items-center justify-center gap-1.5 transition-colors shadow-2xs cursor-pointer ${
+              sidebarCollapsed ? 'px-0' : 'px-2.5'
             }`}
             title="Let's Talk"
             aria-label="Open contact with Vivek"
           >
-            <MessageSquareIcon className="w-4 h-4 flex-shrink-0" width={16} height={16} />
+            <MessageSquareIcon className="w-3.5 h-3.5 flex-shrink-0" width={14} height={14} />
             {!sidebarCollapsed && <span>Let&apos;s Talk</span>}
           </button>
 
           {onToggleSidebar && (
             <button
               onClick={onToggleSidebar}
-              className={`flex items-center justify-center py-1 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer ${
-                sidebarCollapsed ? 'w-9 h-8 mx-auto' : 'w-full gap-1.5 text-[11px]'
+              className={`flex items-center justify-center py-1 text-slate-400 hover:text-slate-600 rounded-md hover:bg-slate-100 transition-colors cursor-pointer ${
+                sidebarCollapsed ? 'w-8 h-7 mx-auto' : 'w-full gap-1.5 text-[10.5px]'
               }`}
               title={sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
               aria-label={sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
             >
               {sidebarCollapsed ? (
-                <ChevronRightIcon className="w-4 h-4" width={16} height={16} />
+                <ChevronRightIcon className="w-3.5 h-3.5" width={14} height={14} />
               ) : (
                 <>
-                  <ChevronLeftIcon className="w-3.5 h-3.5" width={14} height={14} />
+                  <ChevronLeftIcon className="w-3 h-3" width={12} height={12} />
                   <span>Collapse sidebar</span>
                 </>
               )}
@@ -260,21 +260,21 @@ export default function Navigation({
       {/* 2. DESKTOP TOP UTILITY BAR (Fixed, Adapts to Sidebar) */}
       {/* ==================================================== */}
       <header
-        className={`hidden lg:flex fixed top-0 right-0 z-30 h-16 bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] items-center justify-between px-6 transition-[left] duration-200 ${
-          sidebarCollapsed ? 'left-[72px]' : 'left-[250px]'
+        className={`hidden lg:flex fixed top-0 right-0 z-30 h-14 bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] items-center justify-between px-5 transition-[left] duration-200 ${
+          sidebarCollapsed ? 'left-[60px]' : 'left-[204px]'
         }`}
         aria-label="Desktop Utility Header"
       >
         {/* Search Trigger Bar */}
-        <div className="flex items-center gap-3 w-72">
+        <div className="flex items-center gap-3 w-56 xl:w-64">
           <button
             onClick={onOpenSearch}
-            className="w-full flex items-center justify-between px-3 py-1.5 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200/90 text-xs text-slate-500 transition-colors cursor-pointer group"
+            className="w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200/90 text-xs text-slate-500 transition-colors cursor-pointer group"
             aria-label="Open search dialog"
           >
             <div className="flex items-center gap-2">
               <SearchIcon className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-600 transition-colors" width={14} height={14} />
-              <span className="truncate">Search capabilities, work, credentials...</span>
+              <span className="truncate">Search portfolio...</span>
             </div>
             <kbd className="px-1.5 py-0.5 rounded bg-white border border-slate-200 text-[10px] font-mono text-slate-400 font-semibold shadow-2xs">
               /
@@ -283,22 +283,22 @@ export default function Navigation({
         </div>
 
         {/* Right Utility Stack */}
-        <div className="flex items-center gap-3">
-          {/* Live Availability Status Pill */}
-          <div className="hidden xl:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/70 text-emerald-800 text-[11px] font-mono font-medium">
+        <div className="flex items-center gap-2.5">
+          {/* Live Availability Status Pill (2xl only so narrow desktop never squeezes) */}
+          <div className="hidden 2xl:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/70 text-emerald-800 text-[11px] font-mono font-medium">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             <span>Open to strategic growth &amp; advisory roles</span>
           </div>
 
-          <div className="hidden xl:block h-4 w-px bg-slate-200" />
+          <div className="hidden 2xl:block h-3.5 w-px bg-slate-200" />
 
           {/* Social Channels */}
-          <div className="flex items-center gap-1 text-slate-500">
+          <div className="hidden xl:flex items-center gap-1 text-slate-500">
             <a
               href={linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1.5 rounded-lg hover:text-[#2563EB] hover:bg-slate-50 transition-colors"
+              className="p-1 rounded-md hover:text-[#2563EB] hover:bg-slate-50 transition-colors"
               title="LinkedIn"
               aria-label="LinkedIn"
             >
@@ -308,7 +308,7 @@ export default function Navigation({
               href={xUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1.5 rounded-lg hover:text-slate-900 hover:bg-slate-50 transition-colors"
+              className="p-1 rounded-md hover:text-slate-900 hover:bg-slate-50 transition-colors"
               title="X (Twitter)"
               aria-label="X Profile"
             >
@@ -318,30 +318,20 @@ export default function Navigation({
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1.5 rounded-lg hover:text-slate-900 hover:bg-slate-50 transition-colors"
+              className="p-1 rounded-md hover:text-slate-900 hover:bg-slate-50 transition-colors"
               title="GitHub"
               aria-label="GitHub Profile"
             >
               <GitHubIcon className="w-3.5 h-3.5" width={14} height={14} />
             </a>
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-1.5 rounded-lg hover:text-emerald-600 hover:bg-slate-50 transition-colors"
-              title="WhatsApp"
-              aria-label="WhatsApp Contact"
-            >
-              <WhatsAppIcon className="w-3.5 h-3.5" width={14} height={14} />
-            </a>
           </div>
 
-          <div className="h-4 w-px bg-slate-200" />
+          <div className="hidden xl:block h-3.5 w-px bg-slate-200" />
 
           {/* Resume Link */}
           <Link
             href="/resume"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 border border-slate-200 transition-colors"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 border border-slate-200 transition-colors"
           >
             <DocumentIcon className="w-3.5 h-3.5 text-slate-500" width={14} height={14} />
             <span>Resume</span>
@@ -350,7 +340,7 @@ export default function Navigation({
           {/* Primary Let's Talk CTA */}
           <button
             onClick={onOpenContact}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-[#2563EB] text-white hover:bg-blue-700 transition-colors shadow-2xs cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-[#2563EB] text-white hover:bg-blue-700 transition-colors shadow-2xs cursor-pointer"
           >
             <span>Let&apos;s Talk</span>
             <ArrowRight className="w-3 h-3" width={12} height={12} />

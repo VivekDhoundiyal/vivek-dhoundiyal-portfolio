@@ -18,7 +18,7 @@ export default function Layout({ children, siteData, seoProps }) {
   const profile = siteData?.profile || {}
   const modalContact = siteData?.modalContact || {}
 
-  const paddingLeftClass = sidebarCollapsed ? 'lg:pl-[72px]' : 'lg:pl-[250px]'
+  const paddingLeftClass = sidebarCollapsed ? 'lg:pl-[60px]' : 'lg:pl-[204px]'
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#111318] selection:bg-blue-600/10 selection:text-[#111318] font-sans antialiased overflow-x-hidden w-full">
@@ -32,7 +32,7 @@ export default function Layout({ children, siteData, seoProps }) {
         onToggleSidebar={() => setSidebarCollapsed(!sidebarCollapsed)}
       />
 
-      <main className={`flex-1 w-full pt-14 lg:pt-16 ${paddingLeftClass} pb-20 sm:pb-24 lg:pb-0 overflow-x-hidden transition-[padding] duration-200`}>
+      <main className={`flex-1 w-full pt-14 ${paddingLeftClass} pb-20 sm:pb-24 lg:pb-0 overflow-x-hidden transition-[padding] duration-200`}>
         {children}
       </main>
 

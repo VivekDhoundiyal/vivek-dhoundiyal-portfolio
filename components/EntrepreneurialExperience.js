@@ -1,121 +1,113 @@
 import React, { useState, useMemo } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowUpRight, ArrowRight } from './Icons'
+import { ArrowRight, ArrowUpRight } from './Icons'
 
 export default function EntrepreneurialExperience() {
   const [activeFilter, setActiveFilter] = useState('All')
-  const [showAllProjects, setShowAllProjects] = useState(false)
 
   const filterTabs = ['All', 'Products', 'Strategy', 'Growth']
 
-  // Complete 5 project gallery matching master specification
+  // Verified 5 project gallery matching exact master prompt specification
   const allProjects = [
     {
       id: 'careeros',
       slug: 'careeros',
       title: 'CareerOS',
-      category: 'AI PRODUCT · APPLIED WORKFLOWS',
+      category: 'AI Product · Job Intelligence',
       type: 'Products',
       year: '2024–Present',
-      status: 'Live',
+      status: 'Live / Active',
       statusBadgeClass: 'bg-emerald-50 text-emerald-700 border-emerald-300',
       statusDotClass: 'bg-emerald-500',
+      iconSrc: '/images/illustrations/icon-workflow-nodes.png',
       tagline: 'AI-powered career operating system.',
-      description: 'Transforms a candidate’s background into targeted high-conviction opportunities, orchestrating discovery, role alignment, and submission tracking.',
-      tags: ['AI Product', 'Semantic Matching', 'Real-Time Discovery', 'Automation'],
+      description: 'Transforms a candidate background into high-conviction opportunities, orchestrating discovery, role alignment, and submission tracking.',
+      tags: ['AI Workflow', 'Semantic Matching', 'Real-Time Pipeline'],
       href: '/work/careeros',
-      role: 'Product Strategy & Software Architecture',
-      featured: true
+      role: 'Product Strategy & Architecture'
     },
     {
       id: 'nuvio',
       slug: 'nuvio',
       title: 'NUVIO',
-      category: '0→1 PRODUCT · CLIENT-SIDE SANDBOX',
+      category: 'Client-Side PDF Workspace',
       type: 'Products',
       year: '2026 (Building)',
-      status: 'Building',
+      status: 'Building / In Development',
       statusBadgeClass: 'bg-amber-50 text-amber-700 border-amber-300',
       statusDotClass: 'bg-amber-500 animate-pulse',
-      tagline: 'Private PDF editing workspace, reimagined.',
-      description: 'A privacy-first PDF workspace designed to make everyday document work simpler while keeping files on the user’s device with zero remote server upload.',
-      capabilities: ['Edit & Annotate', 'Merge Documents', 'Convert Files', 'Compress PDFs', 'Organize Pages', 'Sign Documents'],
-      tags: ['Local Sandbox', 'Zero Cloud Egress', 'Unified Workspace', 'Active Development'],
+      iconSrc: '/images/illustrations/icon-pdf-card.png',
+      tagline: 'Private client-side PDF editing workspace.',
+      description: 'A privacy-first PDF workspace designed to edit, merge, convert, and organize documents on-device with zero server upload.',
+      tags: ['Local Sandbox', 'Zero Cloud Egress', 'Client-Side WASM'],
       href: '/work/nuvio',
-      role: 'Product Management & Systems Design',
-      featured: true
+      role: 'Product Design & System Architecture'
     },
     {
       id: 'settlemycar',
       slug: 'settlemycar',
       title: 'SettleMyCar',
-      category: 'MARKETPLACE · OPERATED',
+      category: 'Automotive Servicing Marketplace',
       type: 'Growth',
       year: '2018–2021',
       status: 'Operated',
       statusBadgeClass: 'bg-blue-50 text-[#2563EB] border-blue-300',
       statusDotClass: 'bg-blue-500',
+      iconSrc: '/images/illustrations/icon-shield-check.png',
       tagline: 'Automotive servicing marketplace connecting car owners with vetted garages.',
       description: 'Onboarded 50+ multi-brand garages with quality checklists, SLA governance, and end-to-end doorstep logistics.',
-      tags: ['Marketplace', 'Ground Operations', 'Two-Sided Trust', 'Vendor SLAs'],
+      tags: ['Marketplace', 'Doorstep Logistics', '50+ Garages'],
       href: '/work/settlemycar',
-      role: 'Co-Founder & Head of Operations',
-      featured: true
+      role: 'Co-Founder & Head of Operations'
     },
     {
       id: 'dark-kitchen',
       slug: 'dark-kitchen',
       title: 'Dark Kitchen',
-      category: 'B2B FOOD SUPPLY · SCALED',
+      category: 'B2B Food Supply Chain',
       type: 'Strategy',
       year: '2020–2023',
       status: 'Scaled',
       statusBadgeClass: 'bg-purple-50 text-purple-700 border-purple-300',
       statusDotClass: 'bg-purple-500',
+      iconSrc: '/images/illustrations/icon-growth-chart.png',
       tagline: 'Early-morning B2B food supply chain for commercial restaurants.',
       description: 'Managed 4:00 AM procurement dispatch, cold-chain fulfillment, and institutional restaurant accounts with zero stockouts.',
-      tags: ['B2B Supply Chain', 'JIT Fulfillment', 'Daily Logistics', 'Route Ops'],
+      tags: ['B2B Supply Chain', 'JIT Fulfillment', 'Route Logistics'],
       href: '/work/dark-kitchen',
-      role: 'Founder & Commercial Operator',
-      featured: false
+      role: 'Founder & Commercial Operator'
     },
     {
       id: 'fixins',
       slug: 'fixins',
       title: 'Fixins',
-      category: 'B2B DISTRIBUTION · BUSINESS',
+      category: 'B2B FMCG Distribution',
       type: 'Growth',
       year: '2017–2020',
-      status: 'Building',
-      statusBadgeClass: 'bg-amber-50 text-amber-700 border-amber-300',
-      statusDotClass: 'bg-amber-500',
+      status: 'Operated',
+      statusBadgeClass: 'bg-blue-50 text-[#2563EB] border-blue-300',
+      statusDotClass: 'bg-blue-500',
+      iconSrc: '/images/illustrations/icon-briefcase.png',
       tagline: 'Fast-moving goods distribution and wholesale institutional trade.',
       description: 'Negotiated multi-point regional fulfillment contracts, bulk wholesale pricing tiers, and credit risk governance.',
-      tags: ['Wholesale Trade', 'Route Logistics', 'Working Capital', 'B2B Accounts'],
+      tags: ['Wholesale Trade', 'B2B Accounts', 'Working Capital'],
       href: '/work/fixins',
-      role: 'Commercial Operations Lead',
-      featured: false
+      role: 'Commercial Operations Lead'
     }
   ]
 
   const filteredProjects = useMemo(() => {
-    let list = allProjects
-    if (activeFilter !== 'All') {
-      list = list.filter((p) => p.type === activeFilter)
-    }
-    if (!showAllProjects && activeFilter === 'All') {
-      list = list.slice(0, 3) // Show top 3 featured on homepage initially
-    }
-    return list
-  }, [activeFilter, showAllProjects, allProjects])
+    if (activeFilter === 'All') return allProjects
+    return allProjects.filter((p) => p.type === activeFilter)
+  }, [activeFilter, allProjects])
 
   return (
     <section id="work" className="py-12 sm:py-16 border-t border-[#E5E7EB] bg-white text-[#111318] relative scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
         
         {/* ==================================================== */}
-        {/* SECTION HEADER: Dashboard Title + Avatar Callout     */}
+        {/* SECTION HEADER: Dashboard Title + Subtle Avatar      */}
         {/* ==================================================== */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal-on-scroll">
           <div className="space-y-2">
@@ -129,91 +121,97 @@ export default function EntrepreneurialExperience() {
               <span className="text-[#2563EB]">Ventures &amp; software systems.</span>
             </h2>
             <p className="text-sm sm:text-base text-[#555B66] max-w-xl leading-relaxed font-normal pt-1">
-              Complete project gallery of products, digital marketplaces, and commercial operations architected, operated, and in development.
+              Curated product portfolio of digital products, client-side tools, and commercial operations architected, operated, and in development.
             </p>
           </div>
 
-          {/* Right Callout: Avatar Pointing to Work */}
-          <div className="flex items-center gap-3 bg-gradient-to-br from-blue-50/50 to-indigo-50/30 p-3 rounded-2xl border border-blue-100 shadow-xs self-start lg:self-auto hover:border-blue-300 transition-all">
-            <div className="relative w-14 h-16 sm:w-16 sm:h-20 flex-shrink-0 animate-float-medium">
+          {/* Right Callout: Subtle Avatar */}
+          <div className="flex items-center gap-3 bg-slate-50/80 p-2.5 rounded-2xl border border-slate-200/90 shadow-2xs self-start lg:self-auto hover:border-blue-300 transition-all">
+            <div className="relative w-12 h-14 flex-shrink-0">
               <Image
                 src="/images/avatars/avatar-pointing-right.png"
                 alt="Vivek pointing to featured work"
                 width={281}
                 height={443}
                 loading="eager"
-                className="object-contain w-full h-full drop-shadow-sm"
+                className="object-contain w-full h-full drop-shadow-2xs"
               />
             </div>
-            <div className="space-y-1 pr-2">
+            <div className="space-y-0.5 pr-2">
               <span className="text-[10px] font-mono uppercase tracking-wider text-[#2563EB] font-bold block">
                 Proof of Execution
               </span>
               <div className="text-xs font-bold text-[#111318]">
                 Real Products &amp; Operations
               </div>
-              <p className="text-[11px] text-[#737984]">
-                From 0→1 build to full P&amp;L
+              <p className="text-[10.5px] text-[#737984]">
+                From 0→1 build to commercial scale
               </p>
             </div>
           </div>
         </div>
 
         {/* ==================================================== */}
-        {/* FILTER TABS & ALL PROJECTS TOGGLE                   */}
+        {/* COMPACT FILTER TABS                                 */}
         {/* ==================================================== */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E5E7EB] pb-3">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#E5E7EB] pb-3">
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none no-scrollbar">
             {filterTabs.map((tab) => {
               const isActive = activeFilter === tab
+              const count = tab === 'All' ? allProjects.length : allProjects.filter(p => p.type === tab).length
               return (
                 <button
                   key={tab}
                   type="button"
-                  onClick={() => {
-                    setActiveFilter(tab)
-                    if (tab !== 'All') setShowAllProjects(true)
-                  }}
-                  className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${
+                  onClick={() => setActiveFilter(tab)}
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-150 cursor-pointer flex items-center gap-1.5 ${
                     isActive
-                      ? 'bg-[#111318] text-white shadow-xs'
+                      ? 'bg-[#111318] text-white shadow-2xs'
                       : 'bg-[#FAFAF8] text-[#555B66] hover:text-[#111318] hover:bg-slate-100 border border-[#E5E7EB]'
                   }`}
                 >
-                  {tab}
+                  <span>{tab}</span>
+                  <span className={`text-[10px] font-mono rounded-full px-1.5 py-0.2 ${isActive ? 'bg-white/20 text-white' : 'bg-slate-200/80 text-slate-600'}`}>
+                    {count}
+                  </span>
                 </button>
               )
             })}
           </div>
 
-          {activeFilter === 'All' && (
-            <button
-              onClick={() => setShowAllProjects(!showAllProjects)}
-              className="text-xs font-semibold text-[#2563EB] hover:underline flex items-center gap-1 self-start sm:self-auto cursor-pointer"
-            >
-              <span>{showAllProjects ? 'Show Featured (Top 3)' : 'View All 5 Projects'}</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          )}
+          <span className="text-xs font-mono text-slate-400">
+            Showing {filteredProjects.length} of {allProjects.length} case studies
+          </span>
         </div>
 
         {/* ==================================================== */}
-        {/* PROJECT CARDS GRID (DIFFERENTIATED & ACCURATE STATUS)*/}
+        {/* BALANCED 5 PROJECT CARDS GRID (EQUAL VISUAL WEIGHT)  */}
         {/* ==================================================== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((proj) => (
             <div
               key={proj.id}
-              className={`p-7 rounded-3xl bg-[#FAFAF8] border border-[#E5E7EB] hover:border-[#2563EB]/50 hover-card-elevate shadow-xs transition-all duration-300 flex flex-col justify-between space-y-6 group ${
-                proj.id === 'nuvio' ? 'md:col-span-2 lg:col-span-2 bg-gradient-to-br from-[#FAFAF8] via-white to-blue-50/30 border-blue-200/80' : ''
-              }`}
+              className="p-6 sm:p-7 rounded-2xl bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 hover-card-elevate shadow-2xs transition-all duration-200 flex flex-col justify-between space-y-5 group"
             >
               <div className="space-y-4">
-                {/* Category & Status Badge */}
-                <div className="flex items-center justify-between pb-3 border-b border-slate-200/80">
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#2563EB]">
-                    {proj.category}
-                  </span>
+                {/* Card Top: 3D Product Icon + Status Badge */}
+                <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-200/70 p-1 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                      <Image
+                        src={proj.iconSrc}
+                        alt={proj.title}
+                        width={36}
+                        height={36}
+                        className="object-contain w-full h-full"
+                      />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#2563EB] block">
+                        {proj.category}
+                      </span>
+                    </div>
+                  </div>
 
                   <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10.5px] font-mono font-semibold border ${proj.statusBadgeClass}`}>
                     <span className={`w-1.5 h-1.5 rounded-full ${proj.statusDotClass}`} />
@@ -221,16 +219,16 @@ export default function EntrepreneurialExperience() {
                   </span>
                 </div>
 
-                {/* Title & Tagline */}
+                {/* Title & Description */}
                 <div className="space-y-1.5">
                   <Link href={proj.href}>
-                    <h3 className="text-2xl font-bold tracking-tight text-[#111318] group-hover:text-[#2563EB] transition-colors flex items-center gap-2">
+                    <h3 className="text-xl font-bold tracking-tight text-[#111318] group-hover:text-[#2563EB] transition-colors flex items-center justify-between">
                       <span>{proj.title}</span>
-                      <ArrowUpRight className="w-4.5 h-4.5 text-slate-400 group-hover:text-[#2563EB] transition-colors" />
+                      <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#2563EB] transition-colors" />
                     </h3>
                   </Link>
 
-                  <p className="text-xs sm:text-sm font-semibold text-[#2563EB]">
+                  <p className="text-xs font-semibold text-[#2563EB]">
                     {proj.tagline}
                   </p>
 
@@ -239,37 +237,17 @@ export default function EntrepreneurialExperience() {
                   </p>
                 </div>
 
-                {/* Special NUVIO 6 Core Capabilities Strip */}
-                {proj.capabilities && (
-                  <div className="space-y-2 pt-1">
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 font-bold block">
-                      Core Workspace Capabilities
-                    </span>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                      {proj.capabilities.map((cap) => (
-                        <div
-                          key={cap}
-                          className="px-2.5 py-1.5 rounded-xl bg-white border border-blue-100 text-[11px] font-medium text-slate-700 shadow-2xs flex items-center gap-1.5"
-                        >
-                          <span className="text-[#2563EB] font-bold text-xs">✓</span>
-                          <span className="truncate">{cap}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Role / Contribution Note */}
-                <div className="text-[11px] text-[#737984] font-medium pt-1">
+                {/* Role Note */}
+                <div className="text-[11px] text-[#737984] pt-0.5">
                   <span className="font-semibold text-slate-700">Role:</span> {proj.role}
                 </div>
 
-                {/* Tags */}
+                {/* Category Tags */}
                 <div className="flex flex-wrap gap-1.5 pt-1">
                   {proj.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-0.5 rounded text-[10px] font-mono bg-white border border-slate-200 text-slate-600"
+                      className="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-50 border border-slate-200 text-slate-600"
                     >
                       {tag}
                     </span>
@@ -278,12 +256,12 @@ export default function EntrepreneurialExperience() {
               </div>
 
               {/* Card Footer Action */}
-              <div className="pt-3 border-t border-slate-200/80 flex items-center justify-between">
+              <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
                 <Link
                   href={proj.href}
                   className="text-xs font-semibold text-[#2563EB] group-hover:underline flex items-center gap-1"
                 >
-                  <span>Open Case Study &amp; Details</span>
+                  <span>View Case Study</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                 </Link>
 

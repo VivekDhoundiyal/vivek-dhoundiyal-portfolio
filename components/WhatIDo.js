@@ -9,6 +9,7 @@ import {
   SlidersIcon,
   ArrowRight
 } from './Icons'
+import ToolsSystems from './ToolsSystems'
 
 export default function WhatIDo() {
   const capabilities = [
@@ -210,6 +211,11 @@ export default function WhatIDo() {
             </div>
           </div>
         </div>
+
+        {/* ==================================================== */}
+        {/* COMPACT TOOLS & OPERATING SYSTEMS SUBSECTION        */}
+        {/* ==================================================== */}
+        <ToolsSystems />
 
       </div>
     </section>

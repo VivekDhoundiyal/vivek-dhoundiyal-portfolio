@@ -382,8 +382,19 @@ export function getToolBrandLogo(id, className = "w-6 h-6") {
       return <MondayLogo className={className} />
     case 'slack':
       return <SlackLogo className={className} />
-    case 'loom':
-      return <LoomLogo className={className} />
+    case 'cloudflare':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="#F38020" aria-hidden="true">
+          <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
+        </svg>
+      )
+    case 'sales-navigator':
+    case 'linkedin':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+        </svg>
+      )
     default:
       return (
         <div className={`${className} rounded flex items-center justify-center font-mono font-bold text-xs bg-blue-50 text-[#2563EB]`}>

@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /api/
 
-Sitemap: https://vivekdhoundiyal.com/sitemap.xml
+Sitemap: https://vivek-dhoundiyal-portfolio.pages.dev/sitemap.xml

@@ -1,188 +1,148 @@
-import React, { useState, useMemo } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import { getToolBrandLogo } from './BrandLogos'
 
-export default function ToolsSystems({ tools = [] }) {
-  const categories = [
-    'All Tools',
-    'AI',
-    'Product Development',
-    'Automation',
-    'CRM',
-    'Productivity',
-    'Analytics',
-    'Communication',
-  ]
-
-  const [activeCategory, setActiveCategory] = useState('All Tools')
-  const [activeHoverId, setActiveHoverId] = useState(null)
-
-  // Default core stack if tools array is empty
-  const defaultTools = [
-    { id: 'chatgpt', name: 'ChatGPT', category: 'AI' },
-    { id: 'claude', name: 'Claude', category: 'AI' },
-    { id: 'gemini', name: 'Gemini', category: 'AI' },
-    { id: 'perplexity', name: 'Perplexity', category: 'Research' },
-    { id: 'openai-codex', name: 'OpenAI Codex', category: 'Product Development' },
-    { id: 'claude-code', name: 'Claude Code', category: 'Product Development' },
-    { id: 'antigravity', name: 'Antigravity', category: 'Product Development' },
-    { id: 'stitch', name: 'Stitch', category: 'Product Development' },
-    { id: 'python', name: 'Python', category: 'Product Development' },
-    { id: 'n8n', name: 'n8n', category: 'Automation' },
-    { id: 'make', name: 'Make', category: 'Automation' },
-    { id: 'zapier', name: 'Zapier', category: 'Automation' },
-    { id: 'zoho-crm', name: 'Zoho CRM', category: 'CRM' },
-    { id: 'hubspot', name: 'HubSpot', category: 'CRM' },
-    { id: 'notion', name: 'Notion', category: 'Productivity' },
-    { id: 'clickup', name: 'ClickUp', category: 'Productivity' },
-    { id: 'google-workspace', name: 'Google Workspace', category: 'Productivity' },
-    { id: 'microsoft-excel', name: 'Microsoft Excel', category: 'Analytics' },
-    { id: 'slack', name: 'Slack', category: 'Communication' }
-  ]
-
-  const toolList = (tools && tools.length > 0) ? tools : defaultTools
-
-  // Category matching
-  const matchesCategory = (tool, targetCategory) => {
-    if (targetCategory === 'All Tools') return true
-    const target = targetCategory.trim().toLowerCase()
-    const cat = (tool.category || '').trim().toLowerCase()
-    const tid = (tool.id || '').toLowerCase()
-
-    if (cat === target) return true
-
-    if (target === 'ai') {
-      const aiToolIds = ['chatgpt', 'claude', 'gemini', 'perplexity', 'openai-codex', 'claude-code', 'antigravity', 'stitch']
-      return cat.includes('ai') || cat.includes('intelligence') || aiToolIds.includes(tid)
-    }
-    if (target === 'product development' || target === 'development') {
-      const devToolIds = ['openai-codex', 'claude-code', 'antigravity', 'stitch', 'python']
-      return cat.includes('product') || cat.includes('dev') || cat.includes('code') || devToolIds.includes(tid)
-    }
-    if (target === 'automation') {
-      return cat.includes('auto') || cat.includes('workflow') || tid === 'zapier' || tid === 'make' || tid === 'n8n'
-    }
-    if (target === 'crm') {
-      return cat.includes('crm') || cat.includes('sales') || tid === 'zoho-crm' || tid === 'hubspot'
-    }
-    if (target === 'productivity') {
-      const prodToolIds = ['clickup', 'notion', 'google-workspace', 'microsoft-word', 'microsoft-powerpoint', 'microsoft-excel']
-      return cat.includes('productiv') || cat.includes('ops') || prodToolIds.includes(tid)
-    }
-    if (target === 'analytics') {
-      return cat.includes('analytic') || cat.includes('data') || tid === 'microsoft-excel'
-    }
-    if (target === 'communication') {
-      return cat.includes('commun') || tid === 'slack'
-    }
-
-    return false
+const TOOL_CATEGORIES = [
+  {
+    id: 'ai-reasoning',
+    title: 'AI & Reasoning',
+    subtitle: 'LLMs, Reasoning & Code',
+    iconSrc: '/images/illustrations/icon-ai-chip.png',
+    tools: [
+      { id: 'chatgpt', name: 'ChatGPT' },
+      { id: 'claude', name: 'Claude' },
+      { id: 'gemini', name: 'Gemini' },
+      { id: 'perplexity', name: 'Perplexity' },
+      { id: 'cursor', name: 'Cursor' }
+    ]
+  },
+  {
+    id: 'sales-crm',
+    title: 'Sales & CRM',
+    subtitle: 'Outreach, Pipelines & ICP',
+    iconSrc: '/images/illustrations/icon-handshake.png',
+    tools: [
+      { id: 'hubspot', name: 'HubSpot' },
+      { id: 'zoho-crm', name: 'Zoho CRM' },
+      { id: 'apollo', name: 'Apollo.io' },
+      { id: 'sales-navigator', name: 'Sales Navigator' }
+    ]
+  },
+  {
+    id: 'automation-ops',
+    title: 'Automation & Ops',
+    subtitle: 'Triggers, APIs & Loops',
+    iconSrc: '/images/illustrations/icon-automation-gears.png',
+    tools: [
+      { id: 'make', name: 'Make.com' },
+      { id: 'zapier', name: 'Zapier' },
+      { id: 'n8n', name: 'n8n' },
+      { id: 'python', name: 'Python' }
+    ]
+  },
+  {
+    id: 'productivity-design',
+    title: 'Productivity & Design',
+    subtitle: 'Workspaces, Docs & UI',
+    iconSrc: '/images/illustrations/icon-apps-grid.png',
+    tools: [
+      { id: 'notion', name: 'Notion' },
+      { id: 'clickup', name: 'ClickUp' },
+      { id: 'figma', name: 'Figma' },
+      { id: 'slack', name: 'Slack' },
+      { id: 'google-workspace', name: 'Google Workspace' }
+    ]
+  },
+  {
+    id: 'systems-analytics',
+    title: 'Systems & Analytics',
+    subtitle: 'Data, Metrics & Infra',
+    iconSrc: '/images/illustrations/icon-database-cloud.png',
+    tools: [
+      { id: 'microsoft-excel', name: 'Excel' },
+      { id: 'cloudflare', name: 'Cloudflare' },
+      { id: 'stripe', name: 'Stripe' },
+      { id: 'linear', name: 'Linear' }
+    ]
   }
+]
 
-  // Filter tools for current active category
-  const filteredTools = useMemo(() => {
-    return toolList.filter(t => matchesCategory(t, activeCategory))
-  }, [toolList, activeCategory])
-
+export default function ToolsSystems() {
   return (
-    <section id="tools" className="py-20 sm:py-28 border-t border-[#E5E7EB] bg-[#FAFAF8] text-[#111318] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
-        
-        {/* Section Header with 3D Glass AI & Tools Illustration */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal-on-scroll">
-          <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-              <span className="uppercase tracking-wider font-semibold">09 · Tools &amp; Operating Systems</span>
-            </div>
-
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318] leading-tight">
-              Tools I Actually Use
-            </h2>
-            <p className="text-sm sm:text-base text-[#555B66] max-w-lg leading-relaxed font-normal pt-1">
-              Everyday operational platforms, AI tooling, workflow automation engines, and product workspaces.
-            </p>
+    <div className="pt-8 sm:pt-10 border-t border-[#E5E7EB] space-y-6">
+      {/* Section Sub-header */}
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+        <div className="space-y-1.5">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-[10.5px] font-mono font-semibold">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+            <span>APPLIED TOOLS &amp; OPERATING SYSTEMS</span>
           </div>
-
-          {/* Avatar with Speech Bubble Feature */}
-          <div className="flex items-center gap-4 bg-white/95 backdrop-blur-md p-3 sm:p-4 rounded-3xl border border-[#E5E7EB] shadow-xs self-start lg:self-auto hover:border-blue-300 transition-all">
-            <div className="relative w-20 h-24 sm:w-24 sm:h-28 flex-shrink-0 animate-float-medium">
-              <Image
-                src="/images/avatars/avatar-laptop-thumbsup.png"
-                alt="Vivek on laptop giving thumbs up"
-                width={298}
-                height={435}
-                className="object-contain w-full h-full drop-shadow-sm"
-              />
-            </div>
-            <div className="space-y-1.5 pr-2">
-              <div className="relative bg-blue-50 border border-blue-200 text-[#2563EB] text-xs font-semibold px-3 py-1.5 rounded-2xl shadow-2xs">
-                <span>Tools that help me build faster ⚡</span>
-              </div>
-              <div className="text-xs font-bold text-[#111318]">
-                Daily Operational Stack
-              </div>
-              <p className="text-[11px] text-[#737984]">
-                Speed, automation &amp; leverage
-              </p>
-            </div>
-          </div>
+          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#111318]">
+            Tools I Use
+          </h3>
+          <p className="text-xs sm:text-sm text-[#555B66] max-w-xl leading-relaxed">
+            Everyday software systems, AI reasoning models, CRM platforms, and automation engines operated with commercial discipline.
+          </p>
         </div>
 
-        {/* Category Filter Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none no-scrollbar">
-          {categories.map((cat) => {
-            const isActive = cat === activeCategory
-            return (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
-                  isActive
-                    ? 'bg-[#111318] text-white shadow-xs ring-1 ring-[#111318]'
-                    : 'bg-white text-[#555B66] hover:text-[#111318] hover:bg-slate-50 border border-[#E5E7EB] shadow-2xs'
-                }`}
-              >
-                {cat}
-              </button>
-            )
-          })}
-        </div>
-
-        {/* PURE VISUAL TOOL CARDS GRID (ICON + NAME + CATEGORY) */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 transition-all duration-300">
-          {filteredTools.map((tool) => {
-            const isHovered = activeHoverId === tool.id
-            return (
-              <div
-                key={tool.id}
-                onMouseEnter={() => setActiveHoverId(tool.id)}
-                onMouseLeave={() => setActiveHoverId(null)}
-                className={`p-4 rounded-2xl bg-white border transition-all duration-200 flex flex-col items-center justify-center text-center space-y-2.5 cursor-default relative shadow-2xs hover:shadow-md hover:-translate-y-1 ${
-                  isHovered ? 'border-[#2563EB] ring-2 ring-[#2563EB]/15' : 'border-[#E5E7EB]'
-                }`}
-              >
-                {/* Recognized Brand Logo SVG with hover animation */}
-                <div className="w-12 h-12 rounded-xl bg-[#FAFAF8] border border-[#E5E7EB] flex items-center justify-center text-slate-800 transition-transform duration-300 group-hover:scale-110 shadow-2xs">
-                  {getToolBrandLogo(tool.id, 'w-6 h-6')}
-                </div>
-
-                {/* Tool Name */}
-                <div className="space-y-0.5">
-                  <div className="text-xs sm:text-sm font-bold text-[#111318] tracking-tight truncate max-w-[120px]">
-                    {tool.name}
-                  </div>
-                  <div className="text-[10px] font-mono text-[#2563EB] font-semibold uppercase tracking-wider truncate">
-                    {tool.category}
-                  </div>
-                </div>
-              </div>
-            )
-          })}
-        </div>
-
+        <span className="text-[11px] font-mono text-slate-400 self-start sm:self-auto">
+          5 Core Categories · 22 Applied Platforms
+        </span>
       </div>
-    </section>
+
+      {/* 5-Category Responsive Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3.5">
+        {TOOL_CATEGORIES.map((cat) => (
+          <div
+            key={cat.id}
+            className="p-4 rounded-2xl bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 hover:shadow-xs transition-all duration-200 flex flex-col justify-between space-y-3.5"
+          >
+            {/* Category Header with Authentic 3D Illustration */}
+            <div className="flex items-center gap-2.5 pb-2.5 border-b border-slate-100">
+              <div className="w-7 h-7 relative flex-shrink-0">
+                <Image
+                  src={cat.iconSrc}
+                  alt={cat.title}
+                  width={64}
+                  height={64}
+                  className="object-contain w-full h-full"
+                />
+              </div>
+              <div className="overflow-hidden">
+                <h4 className="text-xs font-bold text-[#111318] truncate">
+                  {cat.title}
+                </h4>
+                <p className="text-[10px] text-[#737984] font-mono truncate">
+                  {cat.subtitle}
+                </p>
+              </div>
+            </div>
+
+            {/* Individual Tools List */}
+            <ul className="space-y-1.5 flex-1">
+              {cat.tools.map((tool) => (
+                <li
+                  key={tool.id}
+                  className="flex items-center gap-2 py-1 px-1.5 rounded-lg hover:bg-slate-50 text-xs text-slate-700 transition-colors group"
+                >
+                  <span className="w-4 h-4 flex-shrink-0 flex items-center justify-center text-slate-700 group-hover:scale-105 transition-transform">
+                    {getToolBrandLogo(tool.id, 'w-3.5 h-3.5')}
+                  </span>
+                  <span className="truncate font-medium text-[11.5px] text-[#111318]">
+                    {tool.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Category Card Footer Count */}
+            <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] font-mono text-slate-400">
+              <span>Verified stack</span>
+              <span>{cat.tools.length} tools</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   )
 }
