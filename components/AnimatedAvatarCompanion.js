@@ -4,104 +4,108 @@ import { useRouter } from 'next/router'
 // Mapping of sections to their dedicated avatar poses and micro-animation classes
 const SECTION_AVATAR_MAP = {
   hero: {
-    src: '/images/avatars/avatar_waving.png',
+    src: '/images/avatars/avatar-greeting-wave.png',
     alt: 'Vivek welcoming you',
     animationClass: 'animate-avatar-home'
   },
   'what-i-do': {
-    src: '/images/avatars/avatar_pointing_right.png',
-    alt: 'Vivek pointing to capabilities',
+    src: '/images/avatars/avatar-growth-chart.png',
+    alt: 'Vivek presenting capabilities & growth',
     animationClass: 'animate-avatar-work'
   },
   capabilities: {
-    src: '/images/avatars/avatar_pointing_right.png',
-    alt: 'Vivek pointing to capabilities',
+    src: '/images/avatars/avatar-growth-chart.png',
+    alt: 'Vivek presenting capabilities & growth',
     animationClass: 'animate-avatar-work'
   },
   work: {
-    src: '/images/avatars/avatar_presenting_growth.png',
-    alt: 'Vivek presenting work and achievements',
+    src: '/images/avatars/avatar-pointing-right.png',
+    alt: 'Vivek pointing to selected work and ventures',
     animationClass: 'animate-avatar-work'
   },
+  journey: {
+    src: '/images/avatars/avatar-launch-arrow.png',
+    alt: 'Vivek pointing to career milestones & launch trajectory',
+    animationClass: 'animate-avatar-building'
+  },
   corporate: {
-    src: '/images/avatars/avatar_presenting_growth.png',
+    src: '/images/avatars/avatar-confident-standing.png',
     alt: 'Vivek presenting commercial leadership',
     animationClass: 'animate-avatar-work'
   },
   experience: {
-    src: '/images/avatars/avatar_thinking.png',
+    src: '/images/avatars/avatar-confident-standing.png',
     alt: 'Vivek reflecting on experience and strategy',
     animationClass: 'animate-avatar-experience'
   },
   'education-certifications': {
-    src: '/images/avatars/avatar_education.png',
-    alt: 'Vivek academic and education background',
+    src: '/images/avatars/avatar-thumbsup-winking.png',
+    alt: 'Vivek credentials and degree',
     animationClass: 'animate-avatar-education'
   },
   education: {
-    src: '/images/avatars/avatar_education.png',
-    alt: 'Vivek academic and education background',
+    src: '/images/avatars/avatar-thumbsup-winking.png',
+    alt: 'Vivek credentials and degree',
     animationClass: 'animate-avatar-education'
   },
   building: {
-    src: '/images/avatars/avatar_pointing_growth.png',
-    alt: 'Vivek pointing to upward growth and ventures',
+    src: '/images/avatars/avatar-laptop-typing.png',
+    alt: 'Vivek actively building software systems',
     animationClass: 'animate-avatar-building'
   },
   thinking: {
-    src: '/images/avatars/avatar_laptop_working.png',
-    alt: 'Vivek researching and writing on laptop',
+    src: '/images/avatars/avatar-thinking-idea.png',
+    alt: 'Vivek researching ideas and strategy',
     animationClass: 'animate-avatar-blog'
   },
   blog: {
-    src: '/images/avatars/avatar_laptop_working.png',
-    alt: 'Vivek writing strategy notes on laptop',
+    src: '/images/avatars/avatar-thinking-idea.png',
+    alt: 'Vivek researching ideas and strategy',
     animationClass: 'animate-avatar-blog'
   },
   tools: {
-    src: '/images/avatars/avatar_laptop_thumbs.png',
+    src: '/images/avatars/avatar-laptop-thumbsup.png',
     alt: 'Vivek with systems and tools',
     animationClass: 'animate-avatar-blog'
   },
   skills: {
-    src: '/images/avatars/avatar_pointing_right.png',
+    src: '/images/avatars/avatar-growth-chart.png',
     alt: 'Vivek pointing to capabilities',
     animationClass: 'animate-avatar-work'
   },
   about: {
-    src: '/images/avatars/avatar_arms_crossed.png',
-    alt: 'Vivek confident professional identity',
+    src: '/images/avatars/avatar-coffee-letstalk.png',
+    alt: "Vivek holding coffee mug inviting Let's Talk",
     animationClass: 'animate-avatar-about'
   },
   'about-contact': {
-    src: '/images/avatars/avatar_arms_crossed.png',
-    alt: 'Vivek confident professional identity',
+    src: '/images/avatars/avatar-coffee-letstalk.png',
+    alt: "Vivek holding coffee mug inviting Let's Talk",
     animationClass: 'animate-avatar-about'
   },
   contact: {
-    src: '/images/avatars/avatar_coffee_talk.png',
+    src: '/images/avatars/avatar-coffee-letstalk.png',
     alt: "Vivek holding coffee mug inviting Let's Talk",
     animationClass: 'animate-avatar-contact'
   },
   resume: {
-    src: '/images/avatars/avatar_thumbs_up.png',
+    src: '/images/avatars/avatar-thumbsup-winking.png',
     alt: 'Vivek professional resume and credentials',
     animationClass: 'animate-avatar-resume'
   }
 }
 
 const ALL_AVATAR_SOURCES = [
-  '/images/avatars/avatar_waving.png',
-  '/images/avatars/avatar_pointing_right.png',
-  '/images/avatars/avatar_presenting_growth.png',
-  '/images/avatars/avatar_thinking.png',
-  '/images/avatars/avatar_education.png',
-  '/images/avatars/avatar_pointing_growth.png',
-  '/images/avatars/avatar_laptop_working.png',
-  '/images/avatars/avatar_laptop_thumbs.png',
-  '/images/avatars/avatar_arms_crossed.png',
-  '/images/avatars/avatar_coffee_talk.png',
-  '/images/avatars/avatar_thumbs_up.png'
+  '/images/avatars/avatar-greeting-wave.png',
+  '/images/avatars/avatar-pointing-right.png',
+  '/images/avatars/avatar-growth-chart.png',
+  '/images/avatars/avatar-launch-arrow.png',
+  '/images/avatars/avatar-confident-standing.png',
+  '/images/avatars/avatar-thumbsup-winking.png',
+  '/images/avatars/avatar-laptop-typing.png',
+  '/images/avatars/avatar-thinking-idea.png',
+  '/images/avatars/avatar-laptop-thumbsup.png',
+  '/images/avatars/avatar-coffee-letstalk.png'
 ]
 
 export default function AnimatedAvatarCompanion() {
@@ -246,7 +250,7 @@ export default function AnimatedAvatarCompanion() {
   return (
     <aside
       aria-label="Personal companion"
-      className="fixed bottom-3 right-3 sm:bottom-5 sm:right-5 lg:bottom-7 lg:right-8 z-30 pointer-events-none select-none"
+      className="fixed bottom-20 right-3 sm:bottom-20 sm:right-5 lg:bottom-7 lg:right-8 z-30 pointer-events-none select-none"
     >
       {/* Outer bounding box ensures fixed alignment with bottom ground plane */}
       <div className="relative w-[68px] sm:w-[82px] md:w-[94px] lg:w-[110px] xl:w-[120px] h-[96px] sm:h-[116px] md:h-[132px] lg:h-[154px] xl:h-[168px] flex items-end justify-center">

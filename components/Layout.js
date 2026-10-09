@@ -28,11 +28,13 @@ export default function Layout({ children, siteData, seoProps }) {
         profile={profile}
       />
 
-      <main className="flex-1 w-full pt-16 lg:pt-[70px] overflow-x-hidden">
+      <main className="flex-1 w-full pt-14 lg:pt-16 lg:pl-20 pb-20 sm:pb-24 lg:pb-0 overflow-x-hidden">
         {children}
       </main>
 
-      <Footer profile={profile} onOpenContact={() => setContactOpen(true)} />
+      <div className="lg:pl-20 pb-16 lg:pb-0">
+        <Footer profile={profile} onOpenContact={() => setContactOpen(true)} />
+      </div>
 
       <SearchModal
         isOpen={searchOpen}

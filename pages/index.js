@@ -4,6 +4,7 @@ import { getSiteContent } from '../lib/content'
 import Hero from '../components/Hero'
 import WhatIDo from '../components/WhatIDo'
 import EntrepreneurialExperience from '../components/EntrepreneurialExperience'
+import MyJourneyTimeline from '../components/MyJourneyTimeline'
 import CorporateExperience from '../components/CorporateExperience'
 import ExperienceSection from '../components/ExperienceSection'
 import EducationCertificationsSection from '../components/EducationCertificationsSection'
@@ -17,15 +18,14 @@ import { useScrollReveal } from '../lib/useScrollReveal'
 
 const DEFAULT_SECTIONS = [
   { id: 'hero', type: 'hero', name: 'Hero Section', enabled: true },
+  { id: 'work', type: 'entrepreneurial', name: 'Selected Work & Ventures', enabled: true },
+  { id: 'journey', type: 'journey', name: 'My Journey', enabled: true },
   { id: 'what-i-do', type: 'capabilities', name: 'What I Do', enabled: true },
-  { id: 'work', type: 'entrepreneurial', name: 'Entrepreneurial Experience', enabled: true },
-  { id: 'corporate', type: 'corporate', name: 'Corporate Experience', enabled: true },
+  { id: 'tools', type: 'tools', name: 'Tools & Systems', enabled: true },
+  { id: 'thinking', type: 'thinking', name: 'Thinking & Writing', enabled: true },
+  { id: 'building', type: 'building', name: 'Where I Am Building', enabled: true },
   { id: 'experience', type: 'timeline', name: 'Professional Experience Summary', enabled: true },
   { id: 'education-certifications', type: 'education-certifications', name: 'Education & Certifications', enabled: true },
-  { id: 'building', type: 'building', name: 'Where I Am Building', enabled: true },
-  { id: 'thinking', type: 'thinking', name: 'Thinking & Writing', enabled: true },
-  { id: 'tools', type: 'tools', name: 'Tools & Systems', enabled: true },
-  { id: 'skills', type: 'skills', name: 'Skills & Capabilities', enabled: true },
   { id: 'about-contact', type: 'about-contact', name: 'About & Contact', enabled: true }
 ]
 
@@ -90,6 +90,8 @@ export default function Home({ siteData: initialData }) {
         return <WhatIDo key={sec.id} capabilities={capabilities} />
       case 'entrepreneurial':
         return <EntrepreneurialExperience key={sec.id} projects={projects} />
+      case 'journey':
+        return <MyJourneyTimeline key={sec.id} />
       case 'corporate':
         return <CorporateExperience key={sec.id} corporateExperience={corporateExperience} />
       case 'timeline':

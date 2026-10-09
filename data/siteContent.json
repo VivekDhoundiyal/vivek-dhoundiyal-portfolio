@@ -8,37 +8,37 @@
       "order": 0
     },
     {
-      "id": "what-i-do",
-      "type": "capabilities",
-      "name": "02 · What I Do",
+      "id": "work",
+      "type": "entrepreneurial",
+      "name": "02 · Selected Work & Ventures",
       "enabled": true,
       "order": 1
     },
     {
-      "id": "work",
-      "type": "entrepreneurial",
-      "name": "03 · Entrepreneurial Experience",
+      "id": "journey",
+      "type": "journey",
+      "name": "03 · My Journey Timeline",
       "enabled": true,
       "order": 2
     },
     {
-      "id": "corporate",
-      "type": "corporate",
-      "name": "04 · Corporate Experience",
+      "id": "what-i-do",
+      "type": "capabilities",
+      "name": "04 · Core Capabilities",
       "enabled": true,
       "order": 3
     },
     {
-      "id": "experience",
-      "type": "timeline",
-      "name": "05 · Professional Experience Summary",
+      "id": "tools",
+      "type": "tools",
+      "name": "05 · Tools & Systems",
       "enabled": true,
       "order": 4
     },
     {
-      "id": "education-certifications",
-      "type": "education-certifications",
-      "name": "06 · Education & Certifications",
+      "id": "thinking",
+      "type": "thinking",
+      "name": "06 · Latest from the Blog",
       "enabled": true,
       "order": 5
     },
@@ -50,25 +50,18 @@
       "order": 6
     },
     {
-      "id": "thinking",
-      "type": "thinking",
-      "name": "08 · Thinking & Writing",
+      "id": "experience",
+      "type": "timeline",
+      "name": "08 · Professional Experience",
       "enabled": true,
       "order": 7
     },
     {
-      "id": "tools",
-      "type": "tools",
-      "name": "09 · Tools & Capabilities",
+      "id": "education-certifications",
+      "type": "education-certifications",
+      "name": "09 · Education & Credentials",
       "enabled": true,
       "order": 8
-    },
-    {
-      "id": "skills",
-      "type": "skills",
-      "name": "09.1 · Skills & Capabilities",
-      "enabled": true,
-      "order": 8.5
     },
     {
       "id": "about-contact",

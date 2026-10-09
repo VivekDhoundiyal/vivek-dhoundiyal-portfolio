@@ -95,13 +95,13 @@ export default function ThinkingNotes({ articles = [] }) {
                   </p>
                 </div>
 
-                {/* 3D Glass Blog & Writing Tablet Illustration */}
-                <div className="relative w-40 sm:w-48 h-28 sm:h-36 flex-shrink-0 animate-float-medium illustration-tilt self-center">
+                {/* Avatar with Idea Lightbulb Illustration */}
+                <div className="relative w-28 sm:w-36 h-36 sm:h-44 flex-shrink-0 animate-float-medium self-center">
                   <Image
-                    src="/illustrations/blog-illustration.png"
-                    alt="Blog & Writing Editorial 3D Glass Tablet Illustration"
+                    src="/images/avatars/avatar-thinking-idea.png"
+                    alt="Vivek thinking with idea lightbulb"
                     fill
-                    sizes="200px"
+                    sizes="180px"
                     className="object-contain drop-shadow-md"
                   />
                 </div>

@@ -94,23 +94,23 @@ export default function WhereIAmBuilding() {
             </p>
           </div>
 
-          {/* 3D Glass Innovation Lightbulb Illustration */}
-          <div className="flex items-center gap-4 bg-white/90 backdrop-blur-md p-4 sm:p-5 rounded-3xl border border-[#E5E7EB] shadow-xs self-start lg:self-auto hover:border-[#2563EB]/40 transition-all">
-            <div className="relative w-20 h-18 sm:w-24 sm:h-20 flex-shrink-0 animate-pulse-soft animate-float-medium illustration-tilt">
+          {/* Avatar with Laptop Typing Callout */}
+          <div className="flex items-center gap-4 bg-white/95 backdrop-blur-md p-3 sm:p-4 rounded-3xl border border-[#E5E7EB] shadow-xs self-start lg:self-auto hover:border-blue-300 transition-all">
+            <div className="relative w-20 h-24 sm:w-24 sm:h-28 flex-shrink-0 animate-float-medium">
               <Image
-                src="/illustrations/innovation-illustration.png"
-                alt="Ideas Products Systems Execution Innovation Lightbulb 3D Glass Illustration"
-                width={120}
-                height={100}
-                className="object-contain w-full h-full drop-shadow-md"
+                src="/images/avatars/avatar-laptop-typing.png"
+                alt="Vivek actively coding and building systems on laptop"
+                width={319}
+                height={401}
+                className="object-contain w-full h-full drop-shadow-sm"
               />
             </div>
             <div className="space-y-1 pr-2">
-              <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#2563EB] font-bold block">
-                Innovation Loop
+              <span className="text-[10px] font-mono uppercase tracking-wider text-[#2563EB] font-bold block">
+                Active Building
               </span>
-              <div className="text-xs font-semibold text-[#111318]">
-                Ideas → Products → Systems
+              <div className="text-xs font-bold text-[#111318]">
+                Software &amp; AI Systems
               </div>
               <p className="text-[11px] text-[#737984]">
                 Deterministic real-world execution

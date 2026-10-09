@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowUpRight, ArrowRight } from './Icons'
 
 function CloseIcon({ className = "w-5 h-5", ...props }) {
@@ -106,7 +107,7 @@ export default function ExperienceSection({ experience = {} }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-on-scroll">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal-on-scroll">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
@@ -116,15 +117,38 @@ export default function ExperienceSection({ experience = {} }) {
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318] leading-tight">
               Professional Experience
             </h2>
+            <p className="text-sm sm:text-base text-[#555B66] max-w-lg leading-relaxed font-normal pt-1">
+              8+ years of consultative enterprise sales, executive relationship management, and commercial operations across corporate and founder environments.
+            </p>
           </div>
 
-          <Link
-            href="/resume"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 hover:bg-[#FAFAF8] text-[#111318] shadow-xs transition-all self-start md:self-auto"
-          >
-            <span>Inspect Full Resume</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-[#2563EB]" />
-          </Link>
+          {/* Right Callout with Confident Standing Avatar */}
+          <div className="flex items-center gap-4 bg-[#FAFAF8] p-3 sm:p-4 rounded-3xl border border-[#E5E7EB] shadow-xs self-start lg:self-auto hover:border-blue-300 transition-all">
+            <div className="relative w-16 h-24 sm:w-20 sm:h-28 flex-shrink-0 animate-float-slow">
+              <Image
+                src="/images/avatars/avatar-confident-standing.png"
+                alt="Vivek standing confidently in professional attire"
+                width={229}
+                height={454}
+                className="object-contain w-full h-full drop-shadow-sm"
+              />
+            </div>
+            <div className="space-y-1.5 pr-2">
+              <div className="text-xs font-bold text-[#111318]">
+                Proven Commercial Rigor
+              </div>
+              <p className="text-[11px] text-[#737984]">
+                Enterprise accounts &amp; revenue teams
+              </p>
+              <Link
+                href="/resume"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-[#2563EB] hover:bg-[#2563EB] hover:text-white transition-colors"
+              >
+                <span>Inspect Full CV</span>
+                <ArrowUpRight className="w-3 h-3" />
+              </Link>
+            </div>
+          </div>
         </div>
 
         {/* 2-Column Minimalist Experience Cards (Role · Company · Date · 3 Contributions · 3 Skills · View Details) */}

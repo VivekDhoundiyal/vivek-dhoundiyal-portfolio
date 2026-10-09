@@ -47,6 +47,7 @@ export default function Footer({ profile }) {
             <ul className="space-y-2 text-sm text-[#555B66]">
               <li><Link href="/#what-i-do" className="hover:text-[#2563EB] transition-colors">What I Do</Link></li>
               <li><Link href="/#work" className="hover:text-[#2563EB] transition-colors">Selected Work &amp; Ventures</Link></li>
+              <li><Link href="/#journey" className="hover:text-[#2563EB] transition-colors">My Journey</Link></li>
               <li><Link href="/work/careeros" className="hover:text-[#2563EB] transition-colors">CareerOS Case Study</Link></li>
               <li><Link href="/work/nuvio" className="hover:text-[#2563EB] transition-colors">NUVIO Case Study</Link></li>
               <li><Link href="/#corporate" className="hover:text-[#2563EB] transition-colors">Corporate Experience</Link></li>

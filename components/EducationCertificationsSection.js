@@ -112,9 +112,8 @@ export default function EducationCertificationsSection({ education = {}, certifi
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
         
         {/* ==================================================== */}
-        {/* SECTION HEADER: Editorial & Scannable                */}
-        {/* ==================================================== */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-on-scroll">
+        {/* SECTION HEADER: Editorial & Scannable with Winking Thumbs-up Avatar */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal-on-scroll">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
@@ -124,11 +123,34 @@ export default function EducationCertificationsSection({ education = {}, certifi
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318] leading-tight">
               Credentials &amp; Foundation
             </h2>
+            <p className="text-sm sm:text-base text-[#555B66] max-w-md leading-relaxed font-normal pt-1">
+              Continuous professional accreditation in modern project leadership and agile frameworks, anchored by a rigorous first-principles engineering background.
+            </p>
           </div>
 
-          <p className="text-sm sm:text-base text-[#555B66] max-w-md leading-relaxed font-normal">
-            Continuous professional accreditation in modern project leadership and agile frameworks, anchored by a rigorous first-principles engineering background.
-          </p>
+          {/* Right Callout: Winking Thumbs-up Avatar */}
+          <div className="flex items-center gap-4 bg-white p-3 sm:p-4 rounded-3xl border border-[#E5E7EB] shadow-xs self-start lg:self-auto hover:border-blue-300 transition-all">
+            <div className="relative w-16 h-24 sm:w-20 sm:h-28 flex-shrink-0 animate-float-medium">
+              <Image
+                src="/images/avatars/avatar-thumbsup-winking.png"
+                alt="Vivek giving winking thumbs up for credentials"
+                width={284}
+                height={465}
+                className="object-contain w-full h-full drop-shadow-sm"
+              />
+            </div>
+            <div className="space-y-1 pr-2">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-[#2563EB] font-bold block">
+                Verified Credentials
+              </span>
+              <div className="text-xs font-bold text-[#111318]">
+                B.Tech + Google Certified
+              </div>
+              <p className="text-[11px] text-[#737984]">
+                100% authentic accreditation
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* ==================================================== */}

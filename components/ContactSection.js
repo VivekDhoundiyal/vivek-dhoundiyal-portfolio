@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   LinkedInIcon,
   XIcon,
@@ -56,14 +57,24 @@ export default function ContactSection({ contact, profile, social, onOpenContact
     <section id="contact" className="py-24 sm:py-32 border-t border-[#E5E7EB] bg-[#FAFAF8] text-[#111318] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
-        {/* Header & Statement */}
-        <div className="text-center space-y-4 reveal-on-scroll">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-            <span className="uppercase tracking-wider">10.1 · Direct Channels & Contact</span>
+        {/* Header & Statement with Coffee Let's Talk Avatar */}
+        <div className="text-center space-y-4 reveal-on-scroll flex flex-col items-center">
+          <div className="relative w-28 h-36 sm:w-32 sm:h-40 mb-1 animate-float-medium">
+            <Image
+              src="/images/avatars/avatar-coffee-letstalk.png"
+              alt="Vivek with coffee mug inviting Let's Talk"
+              fill
+              sizes="150px"
+              className="object-contain drop-shadow-md"
+            />
           </div>
 
-          <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-[#111318]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200/60 bg-blue-50/50 text-xs font-medium text-blue-700">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+            <span className="uppercase tracking-wider">Direct Channels &amp; Contact</span>
+          </div>
+
+          <h2 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-[#111318]">
             {title}
           </h2>
 
