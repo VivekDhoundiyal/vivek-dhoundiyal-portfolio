@@ -58,7 +58,7 @@ export default function Hero({ profile = {}, hero = {} }) {
   return (
     <section
       id="hero"
-      className="relative w-full overflow-hidden bg-white text-[#111318] min-h-[calc(100vh-4.5rem)] flex flex-col justify-center pt-2 sm:pt-4 lg:pt-2 pb-6 sm:pb-8 lg:pb-5"
+      className="relative w-full overflow-hidden bg-white text-[#111318] py-8 sm:py-12 lg:py-10"
     >
       {/* ========================================================================= */}
       {/* CLEAN, SPACIOUS HERO BACKGROUND ATMOSPHERE (NO CIRCULAR RINGS)             */}
@@ -86,7 +86,7 @@ export default function Hero({ profile = {}, hero = {} }) {
       {/* [CENTER ZONE] Tall Profile Photo + Floating Business Ecosystem + Arrow   */}
       {/* [RIGHT ZONE] Dedicated Experience Cards Column (Zero Overlap)             */}
       {/* ========================================================================= */}
-      <div className="max-w-7xl xl:max-w-[1360px] 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
+      <div className="max-w-7xl xl:max-w-[1360px] 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-5 xl:gap-8 items-center">
           
           {/* ======================================================================= */}

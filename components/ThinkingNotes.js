@@ -37,10 +37,10 @@ export default function ThinkingNotes({ articles = [] }) {
   const secondary = articleList.slice(1, 3).length > 0 ? articleList.slice(1, 3) : defaultArticles.slice(1, 3)
 
   return (
-    <section id="blog" className="py-20 sm:py-28 border-t border-[#E5E7EB] bg-[#FAFAF8] text-[#111318] relative scroll-mt-16">
+    <section id="blog" className="py-12 sm:py-16 border-t border-[#E5E7EB] bg-[#FAFAF8] text-[#111318] relative scroll-mt-16">
       <div id="thinking" className="sr-only" tabIndex={-1} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
         
         {/* ==================================================== */}
         {/* SECTION HEADER: Title + View All Articles CTA        */}

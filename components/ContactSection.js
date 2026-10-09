@@ -53,22 +53,22 @@ export default function ContactSection({ contact, profile, social, onOpenContact
   }
 
   return (
-    <section id="contact" className="py-20 sm:py-28 border-t border-[#E5E7EB] bg-[#FAFAF8] text-[#111318] relative scroll-mt-16">
+    <section id="contact" className="py-12 sm:py-16 border-t border-[#E5E7EB] bg-[#FAFAF8] text-[#111318] relative scroll-mt-16">
       <div id="about-contact" className="sr-only" tabIndex={-1} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
         
         {/* ==================================================== */}
         {/* SECTION HEADER: Title + Coffee Let's Talk Avatar     */}
         {/* ==================================================== */}
-        <div className="text-center space-y-4 reveal-on-scroll flex flex-col items-center">
-          <div className="relative w-24 h-32 sm:w-28 sm:h-36 mb-1 animate-float-medium">
+        <div className="text-center space-y-3 reveal-on-scroll flex flex-col items-center">
+          <div className="relative w-16 h-20 sm:w-20 sm:h-24 mb-1 animate-float-medium">
             <Image
               src="/images/avatars/avatar-coffee-letstalk.png"
               alt="Vivek with coffee mug inviting Let's Talk"
               fill
-              sizes="150px"
-              className="object-contain drop-shadow-md"
+              sizes="100px"
+              className="object-contain drop-shadow-sm"
             />
           </div>
 

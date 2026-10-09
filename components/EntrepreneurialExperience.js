@@ -111,8 +111,8 @@ export default function EntrepreneurialExperience() {
   }, [activeFilter, showAllProjects, allProjects])
 
   return (
-    <section id="work" className="py-20 sm:py-28 border-t border-[#E5E7EB] bg-white text-[#111318] relative scroll-mt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
+    <section id="work" className="py-12 sm:py-16 border-t border-[#E5E7EB] bg-white text-[#111318] relative scroll-mt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
         
         {/* ==================================================== */}
         {/* SECTION HEADER: Dashboard Title + Avatar Callout     */}
@@ -134,8 +134,8 @@ export default function EntrepreneurialExperience() {
           </div>
 
           {/* Right Callout: Avatar Pointing to Work */}
-          <div className="flex items-center gap-4 bg-gradient-to-br from-blue-50/50 to-indigo-50/30 p-3 sm:p-4 rounded-3xl border border-blue-100 shadow-xs self-start lg:self-auto hover:border-blue-300 transition-all">
-            <div className="relative w-18 h-20 sm:w-20 sm:h-24 flex-shrink-0 animate-float-medium">
+          <div className="flex items-center gap-3 bg-gradient-to-br from-blue-50/50 to-indigo-50/30 p-3 rounded-2xl border border-blue-100 shadow-xs self-start lg:self-auto hover:border-blue-300 transition-all">
+            <div className="relative w-14 h-16 sm:w-16 sm:h-20 flex-shrink-0 animate-float-medium">
               <Image
                 src="/images/avatars/avatar-pointing-right.png"
                 alt="Vivek pointing to featured work"
@@ -293,34 +293,6 @@ export default function EntrepreneurialExperience() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Supporting Callout: Systems Architecture & Launch Readiness */}
-        <div className="rounded-3xl bg-[#FAFAF8] border border-[#E5E7EB] p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <div className="relative w-16 h-18 sm:w-18 sm:h-20 flex-shrink-0 animate-float-slow">
-              <Image
-                src="/images/avatars/avatar-launch-arrow.png"
-                alt="Vivek Dhoundiyal — Systems Architecture"
-                width={315}
-                height={460}
-                className="object-contain w-full h-full"
-              />
-            </div>
-            <div>
-              <div className="text-sm font-bold text-[#111318]">High Velocity Execution &amp; Practical Systems</div>
-              <p className="text-xs text-[#555B66] max-w-lg">
-                Every project reflects deliberate problem discovery, unit economics validation, and disciplined systems design.
-              </p>
-            </div>
-          </div>
-          <Link
-            href="/work/nuvio"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-[#2563EB] text-white hover:bg-blue-700 shadow-xs transition-all flex-shrink-0"
-          >
-            <span>Read NUVIO Product Teardown</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
         </div>
 
       </div>

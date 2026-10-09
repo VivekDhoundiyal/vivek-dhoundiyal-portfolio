@@ -127,11 +127,11 @@ export default function EducationCertificationsSection({ education = {}, certifi
     <section
       id="education"
       aria-label="Education & Credentials"
-      className="py-20 sm:py-28 border-t border-[#E5E7EB] bg-[#FAFAF8] text-[#111318] relative scroll-mt-16"
+      className="py-12 sm:py-16 border-t border-[#E5E7EB] bg-[#FAFAF8] text-[#111318] relative scroll-mt-16"
     >
       <div id="education-certifications" className="sr-only" tabIndex={-1} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
         
         {/* ==================================================== */}
         {/* SECTION HEADER: Title + Winking Thumbs-up Avatar     */}
@@ -153,8 +153,8 @@ export default function EducationCertificationsSection({ education = {}, certifi
           </div>
 
           {/* Right Callout: Winking Thumbs-up Avatar */}
-          <div className="flex items-center gap-4 bg-white p-3 sm:p-4 rounded-3xl border border-[#E5E7EB] shadow-xs self-start lg:self-auto hover:border-blue-300 transition-all">
-            <div className="relative w-18 h-24 sm:w-20 sm:h-28 flex-shrink-0 animate-float-medium">
+          <div className="flex items-center gap-3 bg-white p-3 rounded-2xl border border-[#E5E7EB] shadow-xs self-start lg:self-auto hover:border-blue-300 transition-all">
+            <div className="relative w-14 h-16 sm:w-16 sm:h-20 flex-shrink-0 animate-float-medium">
               <Image
                 src="/images/avatars/avatar-thumbsup-winking.png"
                 alt="Vivek giving winking thumbs up for credentials"

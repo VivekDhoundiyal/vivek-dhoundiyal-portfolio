@@ -140,131 +140,119 @@ export default function Navigation({
   return (
     <>
       {/* ==================================================== */}
-      {/* 1. DESKTOP LEFT APP SIDEBAR (196px Expanded / 72px Collapsed) */}
+      {/* 1. DESKTOP LEFT APP SIDEBAR (250px Expanded / 72px Collapsed) */}
       {/* ==================================================== */}
       <aside
-        className={`hidden lg:flex fixed top-0 left-0 bottom-0 z-40 flex-col justify-between bg-white border-r border-[#E5E7EB] py-4 select-none shadow-[1px_0_4px_rgba(0,0,0,0.02)] transition-[width] duration-200 ${
-          sidebarCollapsed ? 'w-[72px] items-center px-2' : 'w-[196px] px-3.5'
+        className={`hidden lg:flex fixed top-0 left-0 bottom-0 z-40 flex-col justify-between bg-white border-r border-[#E5E7EB] select-none shadow-[1px_0_4px_rgba(0,0,0,0.02)] transition-[width] duration-200 ${
+          sidebarCollapsed ? 'w-[72px] items-center' : 'w-[250px]'
         }`}
         aria-label="App Navigation Rail"
       >
         {/* Sidebar Top: Brand Mark + Name */}
-        <div className="flex flex-col w-full">
-          <div className={`flex items-center gap-2.5 pb-3 border-b border-slate-100 ${sidebarCollapsed ? 'justify-center' : 'px-1'}`}>
-            <Link
-              href="/#hero"
-              className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] text-white font-extrabold text-sm flex items-center justify-center shadow-sm hover:scale-105 hover:shadow-md transition-all flex-shrink-0"
-              title="Vivek Dhoundiyal — Home"
-            >
+        <div className="w-full h-16 border-b border-[#E5E7EB] flex items-center px-4">
+          <Link
+            href="/#hero"
+            className={`flex items-center gap-3 w-full group ${sidebarCollapsed ? 'justify-center' : ''}`}
+            title="Vivek Dhoundiyal — Home"
+          >
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] text-white font-extrabold text-xs flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform flex-shrink-0">
               <span className="tracking-tighter font-mono">VD</span>
-            </Link>
+            </div>
 
             {!sidebarCollapsed && (
-              <div className="overflow-hidden">
-                <div className="text-xs font-bold text-[#111318] truncate leading-tight">
+              <div className="overflow-hidden leading-tight">
+                <div className="text-[13px] font-bold text-[#111318] truncate">
                   Vivek Dhoundiyal
                 </div>
-                <div className="text-[10px] text-[#737984] font-medium truncate leading-tight">
-                  Product &amp; Builder
+                <div className="text-[11px] text-[#737984] font-normal truncate">
+                  Commercial Operator
                 </div>
               </div>
             )}
-          </div>
+          </Link>
         </div>
 
-        {/* Sidebar Center: Navigation Links in EXACT AGREED ORDER */}
-        <nav className="flex flex-col w-full gap-1 my-auto overflow-y-auto no-scrollbar py-2">
+        {/* Sidebar Center: 7 Navigation Links in EXACT AGREED ORDER */}
+        <nav className="flex-1 w-full flex flex-col gap-1 py-3 px-3 overflow-y-auto no-scrollbar">
           {primaryNavItems.map((item) => {
             const Icon = item.icon
             const isActive = isHome
               ? activeSection === item.sectionId
               : router.pathname === item.href || (item.href === '/blog' && router.pathname.startsWith('/blog'))
 
+            if (sidebarCollapsed) {
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`relative group h-[44px] w-[44px] mx-auto rounded-xl flex items-center justify-center transition-colors ${
+                    isActive
+                      ? 'bg-blue-50 text-[#2563EB] font-bold shadow-2xs'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                  }`}
+                  title={item.label}
+                >
+                  <Icon className="w-[18px] h-[18px]" width={18} height={18} />
+                  {/* Collapsed Tooltip */}
+                  <div className="absolute left-full ml-2.5 px-2.5 py-1 rounded-md bg-slate-900 text-white text-[11px] font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity shadow-md z-50">
+                    {item.label}
+                  </div>
+                </Link>
+              )
+            }
+
             return (
               <Link
                 key={item.label}
                 href={item.href}
-                className={`relative group rounded-xl transition-all duration-200 flex items-center ${
-                  sidebarCollapsed
-                    ? 'w-12 h-11 justify-center mx-auto'
-                    : 'w-full px-3 py-2 gap-3'
-                } ${
+                className={`relative h-[44px] w-full rounded-xl transition-all duration-150 flex items-center gap-3 pr-3 text-[13px] ${
                   isActive
-                    ? 'bg-blue-50/90 text-[#2563EB] font-bold shadow-2xs'
-                    : 'text-[#555B66] hover:text-[#111318] hover:bg-slate-50'
+                    ? 'bg-blue-50/90 text-[#2563EB] font-semibold border-l-[3px] border-[#2563EB] pl-2.5 shadow-2xs'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50/80 pl-3 font-medium'
                 }`}
-                title={sidebarCollapsed ? item.label : undefined}
               >
-                {/* Active Indicator Bar */}
-                {isActive && (
-                  <span className="absolute left-0 top-2 bottom-2 w-1 bg-[#2563EB] rounded-r-full" />
-                )}
-
-                <Icon
-                  className={`w-4.5 h-4.5 flex-shrink-0 transition-transform group-hover:scale-110 ${
-                    isActive ? 'text-[#2563EB]' : 'text-slate-600 group-hover:text-slate-900'
-                  }`}
-                />
-
-                {!sidebarCollapsed && (
-                  <span className={`text-[13px] tracking-tight truncate ${isActive ? 'font-bold text-[#2563EB]' : 'font-medium'}`}>
-                    {item.label}
-                  </span>
-                )}
-
-                {/* Collapsed Tooltip */}
-                {sidebarCollapsed && (
-                  <div className="absolute left-full ml-3 px-2.5 py-1 rounded-lg bg-slate-900 text-white text-[11px] font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity shadow-md z-50">
-                    {item.label}
-                  </div>
-                )}
+                <span className="w-5 h-5 flex-shrink-0 flex items-center justify-center text-current">
+                  <Icon className="w-[18px] h-[18px]" width={18} height={18} />
+                </span>
+                <span className="truncate">{item.label}</span>
               </Link>
             )
           })}
         </nav>
 
         {/* Sidebar Bottom: Let's Talk CTA + Collapse Toggle */}
-        <div className="flex flex-col w-full gap-2 pt-3 border-t border-slate-100">
-          {/* Primary Let's Talk Action Button */}
+        <div className="w-full p-3 border-t border-[#E5E7EB] flex flex-col gap-2 bg-white">
           <button
             onClick={onOpenContact}
-            className={`w-full rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white transition-all shadow-xs flex items-center justify-center font-semibold text-xs gap-1.5 ${
-              sidebarCollapsed ? 'h-10' : 'py-2.5 px-3'
+            className={`w-full h-10 rounded-xl bg-[#2563EB] hover:bg-blue-700 text-white font-medium text-xs flex items-center justify-center gap-2 transition-colors shadow-2xs cursor-pointer ${
+              sidebarCollapsed ? 'px-0' : 'px-3'
             }`}
             title="Let's Talk"
             aria-label="Open contact with Vivek"
           >
-            <MessageSquareIcon className="w-4 h-4" />
+            <MessageSquareIcon className="w-4 h-4 flex-shrink-0" width={16} height={16} />
             {!sidebarCollapsed && <span>Let&apos;s Talk</span>}
           </button>
 
-          {/* Quick Search & Collapse Controls */}
-          <div className={`flex items-center gap-1.5 ${sidebarCollapsed ? 'flex-col justify-center' : 'justify-between px-1'}`}>
+          {onToggleSidebar && (
             <button
-              onClick={onOpenSearch}
-              className="p-1.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors flex items-center gap-1 text-[11px]"
-              title="Search (Hotkey: /)"
-              aria-label="Search portfolio"
+              onClick={onToggleSidebar}
+              className={`flex items-center justify-center py-1 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer ${
+                sidebarCollapsed ? 'w-9 h-8 mx-auto' : 'w-full gap-1.5 text-[11px]'
+              }`}
+              title={sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+              aria-label={sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
             >
-              <SearchIcon className="w-3.5 h-3.5" />
-              {!sidebarCollapsed && <span className="font-mono text-[10px] text-slate-400">Search (/)</span>}
+              {sidebarCollapsed ? (
+                <ChevronRightIcon className="w-4 h-4" width={16} height={16} />
+              ) : (
+                <>
+                  <ChevronLeftIcon className="w-3.5 h-3.5" width={14} height={14} />
+                  <span>Collapse sidebar</span>
+                </>
+              )}
             </button>
-
-            {onToggleSidebar && (
-              <button
-                onClick={onToggleSidebar}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
-                title={sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-                aria-label={sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-              >
-                {sidebarCollapsed ? (
-                  <ChevronRightIcon className="w-3.5 h-3.5" />
-                ) : (
-                  <ChevronLeftIcon className="w-3.5 h-3.5" />
-                )}
-              </button>
-            )}
-          </div>
+          )}
         </div>
       </aside>
 
@@ -272,20 +260,20 @@ export default function Navigation({
       {/* 2. DESKTOP TOP UTILITY BAR (Fixed, Adapts to Sidebar) */}
       {/* ==================================================== */}
       <header
-        className={`hidden lg:flex fixed top-0 right-0 z-30 h-14 bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] items-center justify-between px-6 transition-[left] duration-200 ${
-          sidebarCollapsed ? 'left-[72px]' : 'left-[196px]'
+        className={`hidden lg:flex fixed top-0 right-0 z-30 h-16 bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] items-center justify-between px-6 transition-[left] duration-200 ${
+          sidebarCollapsed ? 'left-[72px]' : 'left-[250px]'
         }`}
         aria-label="Desktop Utility Header"
       >
         {/* Search Trigger Bar */}
-        <div className="flex items-center gap-3 w-80">
+        <div className="flex items-center gap-3 w-72">
           <button
             onClick={onOpenSearch}
-            className="w-full flex items-center justify-between px-3.5 py-1.5 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200/80 text-xs text-slate-500 transition-colors cursor-pointer group"
+            className="w-full flex items-center justify-between px-3 py-1.5 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200/90 text-xs text-slate-500 transition-colors cursor-pointer group"
             aria-label="Open search dialog"
           >
             <div className="flex items-center gap-2">
-              <SearchIcon className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-600 transition-colors" />
+              <SearchIcon className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-600 transition-colors" width={14} height={14} />
               <span className="truncate">Search capabilities, work, credentials...</span>
             </div>
             <kbd className="px-1.5 py-0.5 rounded bg-white border border-slate-200 text-[10px] font-mono text-slate-400 font-semibold shadow-2xs">
@@ -297,12 +285,12 @@ export default function Navigation({
         {/* Right Utility Stack */}
         <div className="flex items-center gap-3">
           {/* Live Availability Status Pill */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/70 text-emerald-800 text-[11px] font-mono font-medium">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <div className="hidden xl:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/70 text-emerald-800 text-[11px] font-mono font-medium">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             <span>Open to strategic growth &amp; advisory roles</span>
           </div>
 
-          <div className="h-4 w-px bg-slate-200" />
+          <div className="hidden xl:block h-4 w-px bg-slate-200" />
 
           {/* Social Channels */}
           <div className="flex items-center gap-1 text-slate-500">
@@ -314,7 +302,7 @@ export default function Navigation({
               title="LinkedIn"
               aria-label="LinkedIn"
             >
-              <LinkedInIcon className="w-3.5 h-3.5" />
+              <LinkedInIcon className="w-3.5 h-3.5" width={14} height={14} />
             </a>
             <a
               href={xUrl}
@@ -324,7 +312,7 @@ export default function Navigation({
               title="X (Twitter)"
               aria-label="X Profile"
             >
-              <XIcon className="w-3.5 h-3.5" />
+              <XIcon className="w-3.5 h-3.5" width={14} height={14} />
             </a>
             <a
               href={github}
@@ -334,7 +322,7 @@ export default function Navigation({
               title="GitHub"
               aria-label="GitHub Profile"
             >
-              <GitHubIcon className="w-3.5 h-3.5" />
+              <GitHubIcon className="w-3.5 h-3.5" width={14} height={14} />
             </a>
             <a
               href={whatsappUrl}
@@ -344,7 +332,7 @@ export default function Navigation({
               title="WhatsApp"
               aria-label="WhatsApp Contact"
             >
-              <WhatsAppIcon className="w-3.5 h-3.5" />
+              <WhatsAppIcon className="w-3.5 h-3.5" width={14} height={14} />
             </a>
           </div>
 
@@ -353,19 +341,19 @@ export default function Navigation({
           {/* Resume Link */}
           <Link
             href="/resume"
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 border border-slate-200/80 transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 border border-slate-200 transition-colors"
           >
-            <DocumentIcon className="w-3 h-3 text-slate-500" />
+            <DocumentIcon className="w-3.5 h-3.5 text-slate-500" width={14} height={14} />
             <span>Resume</span>
           </Link>
 
           {/* Primary Let's Talk CTA */}
           <button
             onClick={onOpenContact}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-lg text-xs font-semibold bg-[#2563EB] text-white hover:bg-[#1D4ED8] transition-colors shadow-2xs"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-[#2563EB] text-white hover:bg-blue-700 transition-colors shadow-2xs cursor-pointer"
           >
             <span>Let&apos;s Talk</span>
-            <ArrowRight className="w-3 h-3" />
+            <ArrowRight className="w-3 h-3" width={12} height={12} />
           </button>
         </div>
       </header>

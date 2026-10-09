@@ -4,6 +4,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Utility classes to hide visible scrollbars while preserving scrolling */
+.no-scrollbar::-webkit-scrollbar,
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  height: 0px;
+}
+.no-scrollbar,
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* ==============================================================================
    DESIGN SYSTEM CSS CUSTOM PROPERTIES & 10 DISTINCT THEMES
    ============================================================================== */
