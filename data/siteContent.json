@@ -3,72 +3,51 @@
     {
       "id": "hero",
       "type": "hero",
-      "name": "01 · Hero Section",
+      "name": "01 · Home",
       "enabled": true,
       "order": 0
     },
     {
-      "id": "work",
-      "type": "entrepreneurial",
-      "name": "02 · Selected Work & Ventures",
+      "id": "capabilities",
+      "type": "capabilities",
+      "name": "02 · Capabilities",
       "enabled": true,
       "order": 1
     },
     {
-      "id": "journey",
-      "type": "journey",
-      "name": "03 · My Journey Timeline",
+      "id": "experience",
+      "type": "experience",
+      "name": "03 · Experience",
       "enabled": true,
       "order": 2
     },
     {
-      "id": "what-i-do",
-      "type": "capabilities",
-      "name": "04 · Core Capabilities",
+      "id": "education",
+      "type": "education",
+      "name": "04 · Education",
       "enabled": true,
       "order": 3
     },
     {
-      "id": "tools",
-      "type": "tools",
-      "name": "05 · Tools & Systems",
+      "id": "work",
+      "type": "work",
+      "name": "05 · Work",
       "enabled": true,
       "order": 4
     },
     {
-      "id": "thinking",
-      "type": "thinking",
-      "name": "06 · Latest from the Blog",
+      "id": "blog",
+      "type": "blog",
+      "name": "06 · Blog",
       "enabled": true,
       "order": 5
     },
     {
-      "id": "building",
-      "type": "building",
-      "name": "07 · Where I Am Building",
+      "id": "contact",
+      "type": "contact",
+      "name": "07 · Contact",
       "enabled": true,
       "order": 6
-    },
-    {
-      "id": "experience",
-      "type": "timeline",
-      "name": "08 · Professional Experience",
-      "enabled": true,
-      "order": 7
-    },
-    {
-      "id": "education-certifications",
-      "type": "education-certifications",
-      "name": "09 · Education & Credentials",
-      "enabled": true,
-      "order": 8
-    },
-    {
-      "id": "about-contact",
-      "type": "about-contact",
-      "name": "10 · About & Direct Contact",
-      "enabled": true,
-      "order": 9
     }
   ],
   "whereIAmBuilding": {

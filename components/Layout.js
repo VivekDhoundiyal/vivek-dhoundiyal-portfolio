@@ -14,9 +14,12 @@ export default function Layout({ children, siteData, seoProps }) {
 
   const [searchOpen, setSearchOpen] = useState(false)
   const [contactOpen, setContactOpen] = useState(false)
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
 
   const profile = siteData?.profile || {}
   const modalContact = siteData?.modalContact || {}
+
+  const paddingLeftClass = sidebarCollapsed ? 'lg:pl-[72px]' : 'lg:pl-[196px]'
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#111318] selection:bg-blue-600/10 selection:text-[#111318] font-sans antialiased overflow-x-hidden w-full">
@@ -26,13 +29,15 @@ export default function Layout({ children, siteData, seoProps }) {
         onOpenSearch={() => setSearchOpen(true)}
         onOpenContact={() => setContactOpen(true)}
         profile={profile}
+        sidebarCollapsed={sidebarCollapsed}
+        onToggleSidebar={() => setSidebarCollapsed(!sidebarCollapsed)}
       />
 
-      <main className="flex-1 w-full pt-14 lg:pt-16 lg:pl-20 pb-20 sm:pb-24 lg:pb-0 overflow-x-hidden">
+      <main className={`flex-1 w-full pt-14 lg:pt-16 ${paddingLeftClass} pb-20 sm:pb-24 lg:pb-0 overflow-x-hidden transition-[padding] duration-200`}>
         {children}
       </main>
 
-      <div className="lg:pl-20 pb-16 lg:pb-0">
+      <div className={`${paddingLeftClass} pb-16 lg:pb-0 transition-[padding] duration-200`}>
         <Footer profile={profile} onOpenContact={() => setContactOpen(true)} />
       </div>
 

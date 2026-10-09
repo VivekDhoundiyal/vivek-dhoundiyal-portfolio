@@ -17,16 +17,13 @@ import SkillsSection from '../components/SkillsSection'
 import { useScrollReveal } from '../lib/useScrollReveal'
 
 const DEFAULT_SECTIONS = [
-  { id: 'hero', type: 'hero', name: 'Hero Section', enabled: true },
-  { id: 'work', type: 'entrepreneurial', name: 'Selected Work & Ventures', enabled: true },
-  { id: 'journey', type: 'journey', name: 'My Journey', enabled: true },
-  { id: 'what-i-do', type: 'capabilities', name: 'What I Do', enabled: true },
-  { id: 'tools', type: 'tools', name: 'Tools & Systems', enabled: true },
-  { id: 'thinking', type: 'thinking', name: 'Thinking & Writing', enabled: true },
-  { id: 'building', type: 'building', name: 'Where I Am Building', enabled: true },
-  { id: 'experience', type: 'timeline', name: 'Professional Experience Summary', enabled: true },
-  { id: 'education-certifications', type: 'education-certifications', name: 'Education & Certifications', enabled: true },
-  { id: 'about-contact', type: 'about-contact', name: 'About & Contact', enabled: true }
+  { id: 'hero', type: 'hero', name: 'Home', enabled: true },
+  { id: 'capabilities', type: 'capabilities', name: 'Capabilities', enabled: true },
+  { id: 'experience', type: 'experience', name: 'Experience', enabled: true },
+  { id: 'education', type: 'education', name: 'Education', enabled: true },
+  { id: 'work', type: 'work', name: 'Work', enabled: true },
+  { id: 'blog', type: 'blog', name: 'Blog', enabled: true },
+  { id: 'contact', type: 'contact', name: 'Contact', enabled: true }
 ]
 
 export default function Home({ siteData: initialData }) {
@@ -72,15 +69,11 @@ export default function Home({ siteData: initialData }) {
     education,
     contact,
     social,
-    whereIAmBuilding,
-    sections: configuredSections
+    whereIAmBuilding
   } = data || {}
 
-  const activeSections = (configuredSections && configuredSections.length > 0)
-    ? configuredSections.filter(s => s.enabled)
-    : DEFAULT_SECTIONS
-
-  const hasExplicitSkills = activeSections.some(s => s.type === 'skills')
+  // Canonical 7 primary navigation sections in strict order
+  const activeSections = DEFAULT_SECTIONS
 
   const renderSection = (sec) => {
     switch (sec.type) {
@@ -88,36 +81,30 @@ export default function Home({ siteData: initialData }) {
         return <Hero key={sec.id} profile={profile} hero={hero} contact={contact} social={social} />
       case 'capabilities':
         return <WhatIDo key={sec.id} capabilities={capabilities} />
-      case 'entrepreneurial':
-        return <EntrepreneurialExperience key={sec.id} projects={projects} />
-      case 'journey':
-        return <MyJourneyTimeline key={sec.id} />
-      case 'corporate':
-        return <CorporateExperience key={sec.id} corporateExperience={corporateExperience} />
+      case 'experience':
       case 'timeline':
+      case 'corporate':
         return <ExperienceSection key={sec.id} experience={experience} />
+      case 'education':
       case 'education-certifications':
         return <EducationCertificationsSection key={sec.id} education={education} certifications={certifications} />
-      case 'building':
-        return <WhereIAmBuilding key={sec.id} data={whereIAmBuilding} />
+      case 'work':
+      case 'entrepreneurial':
+        return <EntrepreneurialExperience key={sec.id} projects={projects} />
+      case 'blog':
       case 'thinking':
         return <ThinkingNotes key={sec.id} articles={thinking} />
+      case 'contact':
+      case 'about-contact':
+        return <ContactSection key={sec.id} contact={contact} profile={profile} social={social} />
+      case 'journey':
+        return <MyJourneyTimeline key={sec.id} />
+      case 'building':
+        return <WhereIAmBuilding key={sec.id} data={whereIAmBuilding} />
       case 'tools':
-        return (
-          <React.Fragment key={sec.id}>
-            <ToolsSystems tools={tools} />
-            {!hasExplicitSkills && <SkillsSection skills={skills} />}
-          </React.Fragment>
-        )
+        return <ToolsSystems key={sec.id} tools={tools} />
       case 'skills':
         return <SkillsSection key={sec.id} skills={skills} />
-      case 'about-contact':
-        return (
-          <div key={sec.id} id="about-contact" className="space-y-0">
-            <AboutBackground experience={experience} about={about} />
-            <ContactSection contact={contact} profile={profile} social={social} />
-          </div>
-        )
       default:
         return null
     }

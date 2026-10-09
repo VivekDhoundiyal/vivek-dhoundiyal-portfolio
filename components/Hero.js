@@ -345,6 +345,15 @@ export default function Hero({ profile = {}, hero = {} }) {
                   priority
                   className="w-full h-full object-contain pointer-events-none select-none filter contrast-[1.01] brightness-[1.01]"
                 />
+
+                {/* Profile Badge Pill */}
+                <div className="absolute -bottom-3 sm:-bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 whitespace-nowrap">
+                  <div className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-[#E5E7EB] shadow-xs flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+                    <span className="text-xs font-bold text-[#111318]">Vivek Dhoundiyal</span>
+                    <span className="text-[10px] text-[#737984] font-medium hidden sm:inline">· Product Manager &amp; Builder</span>
+                  </div>
+                </div>
               </div>
 
             </div>

@@ -45,16 +45,15 @@ export default function Footer({ profile }) {
               Navigation
             </span>
             <ul className="space-y-2 text-sm text-[#555B66]">
-              <li><Link href="/#what-i-do" className="hover:text-[#2563EB] transition-colors">What I Do</Link></li>
-              <li><Link href="/#work" className="hover:text-[#2563EB] transition-colors">Selected Work &amp; Ventures</Link></li>
-              <li><Link href="/#journey" className="hover:text-[#2563EB] transition-colors">My Journey</Link></li>
-              <li><Link href="/work/careeros" className="hover:text-[#2563EB] transition-colors">CareerOS Case Study</Link></li>
-              <li><Link href="/work/nuvio" className="hover:text-[#2563EB] transition-colors">NUVIO Case Study</Link></li>
-              <li><Link href="/#corporate" className="hover:text-[#2563EB] transition-colors">Corporate Experience</Link></li>
-              <li><Link href="/#experience" className="hover:text-[#2563EB] transition-colors">Executive Timeline</Link></li>
-              <li><Link href="/#building" className="hover:text-[#2563EB] transition-colors">Where I Am Building</Link></li>
+              <li><Link href="/#hero" className="hover:text-[#2563EB] transition-colors">Home</Link></li>
+              <li><Link href="/#capabilities" className="hover:text-[#2563EB] transition-colors">Capabilities</Link></li>
+              <li><Link href="/#experience" className="hover:text-[#2563EB] transition-colors">Experience</Link></li>
+              <li><Link href="/#education" className="hover:text-[#2563EB] transition-colors">Education &amp; Credentials</Link></li>
+              <li><Link href="/#work" className="hover:text-[#2563EB] transition-colors">Featured Work &amp; Ventures</Link></li>
               <li><Link href="/blog" className="hover:text-[#2563EB] transition-colors">Blog &amp; Insights</Link></li>
-              <li><Link href="/#about-contact" className="hover:text-[#2563EB] transition-colors">About Vivek</Link></li>
+              <li><Link href="/#contact" className="hover:text-[#2563EB] transition-colors">Direct Contact</Link></li>
+              <li><Link href="/work/nuvio" className="hover:text-[#2563EB] transition-colors">NUVIO Case Study</Link></li>
+              <li><Link href="/resume" className="hover:text-[#2563EB] transition-colors">Public Resume</Link></li>
             </ul>
           </div>
 

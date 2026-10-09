@@ -13,20 +13,25 @@ import {
   PhoneIcon,
   MailIcon,
   HomeIcon,
-  WorkIcon,
-  JourneyIcon,
-  CapabilitiesIcon,
-  ToolsIcon,
-  BlogIcon,
-  BuildingIcon,
-  ExperienceIcon,
+  TargetIcon,
+  BriefcaseIcon,
   EducationIcon,
-  AboutIcon,
+  WorkIcon,
+  BlogIcon,
+  MessageSquareIcon,
   MoreHorizontalIcon,
-  DocumentIcon
+  DocumentIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon
 } from './Icons'
 
-export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
+export default function Navigation({
+  onOpenSearch,
+  onOpenContact,
+  profile,
+  sidebarCollapsed = false,
+  onToggleSidebar
+}) {
   const [scrolled, setScrolled] = useState(false)
   const [moreDrawerOpen, setMoreDrawerOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
@@ -42,15 +47,12 @@ export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
       if (isHome) {
         const sections = [
           'hero',
-          'work',
-          'journey',
-          'what-i-do',
-          'tools',
-          'thinking',
-          'building',
+          'capabilities',
           'experience',
-          'education-certifications',
-          'about-contact'
+          'education',
+          'work',
+          'blog',
+          'contact'
         ]
         const scrollPosition = window.scrollY + 180
 
@@ -107,36 +109,30 @@ export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
   const github = profile?.github || 'https://github.com/VivekDhoundiyal'
   const whatsappUrl = 'https://wa.me/917503016766?text=Hi%20Vivek%2C%20I%20found%20your%20website%20and%20would%20like%20to%20connect.'
 
-  // Rail navigation items (Desktop Sidebar)
-  const railNavItems = [
+  // EXACTLY 7 PRIMARY NAVIGATION DESTINATIONS IN AGREED ORDER
+  const primaryNavItems = [
     { label: 'Home', href: '/#hero', sectionId: 'hero', icon: HomeIcon },
+    { label: 'Capabilities', href: '/#capabilities', sectionId: 'capabilities', icon: TargetIcon },
+    { label: 'Experience', href: '/#experience', sectionId: 'experience', icon: BriefcaseIcon },
+    { label: 'Education', href: '/#education', sectionId: 'education', icon: EducationIcon },
     { label: 'Work', href: '/#work', sectionId: 'work', icon: WorkIcon },
-    { label: 'Journey', href: '/#journey', sectionId: 'journey', icon: JourneyIcon },
-    { label: 'Skills', href: '/#what-i-do', sectionId: 'what-i-do', icon: CapabilitiesIcon },
-    { label: 'Tools', href: '/#tools', sectionId: 'tools', icon: ToolsIcon },
-    { label: 'Blog', href: '/blog', sectionId: 'thinking', icon: BlogIcon },
-    { label: 'Build', href: '/#building', sectionId: 'building', icon: BuildingIcon },
-    { label: 'Exp', href: '/#experience', sectionId: 'experience', icon: ExperienceIcon },
-    { label: 'Degree', href: '/#education-certifications', sectionId: 'education-certifications', icon: EducationIcon },
-    { label: 'About', href: '/#about-contact', sectionId: 'about-contact', icon: AboutIcon }
+    { label: 'Blog', href: '/blog', sectionId: 'blog', icon: BlogIcon },
+    { label: 'Contact', href: '/#contact', sectionId: 'contact', icon: MessageSquareIcon }
   ]
 
-  // Mobile Bottom Bar primary 4 destinations + More
+  // Mobile Bottom Bar: Exactly 4 visible destinations + More
   const mobileBottomItems = [
     { label: 'Home', href: '/#hero', sectionId: 'hero', icon: HomeIcon },
-    { label: 'Work', href: '/#work', sectionId: 'work', icon: WorkIcon },
-    { label: 'Blog', href: '/blog', sectionId: 'thinking', icon: BlogIcon },
-    { label: 'Building', href: '/#building', sectionId: 'building', icon: BuildingIcon }
+    { label: 'Capabilities', href: '/#capabilities', sectionId: 'capabilities', icon: TargetIcon },
+    { label: 'Experience', href: '/#experience', sectionId: 'experience', icon: BriefcaseIcon },
+    { label: 'Work', href: '/#work', sectionId: 'work', icon: WorkIcon }
   ]
 
-  // Secondary items in the "More" bottom sheet
+  // Secondary items in the "More" bottom sheet (in agreed relative order: Education, Blog, Contact)
   const moreSheetItems = [
-    { label: 'My Journey', href: '/#journey', desc: 'Interactive career timeline', icon: JourneyIcon },
-    { label: 'Core Capabilities', href: '/#what-i-do', desc: 'Revenue, partnerships & ops', icon: CapabilitiesIcon },
-    { label: 'Tools I Use', href: '/#tools', desc: 'AI, workflows & software stack', icon: ToolsIcon },
-    { label: 'Experience', href: '/#experience', desc: 'Commercial & corporate roles', icon: ExperienceIcon },
-    { label: 'Education & Credentials', href: '/#education-certifications', desc: 'B.Tech & Google PM certification', icon: EducationIcon },
-    { label: 'About Me', href: '/#about-contact', desc: 'Operator background & principles', icon: AboutIcon },
+    { label: 'Education', href: '/#education', desc: 'B.Tech & Google PM certification', icon: EducationIcon },
+    { label: 'Blog', href: '/blog', desc: 'Ideas, insights and writing', icon: BlogIcon },
+    { label: 'Contact', href: '/#contact', desc: 'Connect, collaborate or discuss', icon: MessageSquareIcon },
     { label: 'NUVIO Case Study', href: '/work/nuvio', desc: 'Private PDF workspace teardown', icon: WorkIcon },
     { label: 'Public Resume', href: '/resume', desc: 'Inspect full verified CV', icon: DocumentIcon }
   ]
@@ -144,26 +140,41 @@ export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
   return (
     <>
       {/* ==================================================== */}
-      {/* 1. DESKTOP LEFT APP RAIL (Fixed, 80px / w-20)        */}
+      {/* 1. DESKTOP LEFT APP SIDEBAR (196px Expanded / 72px Collapsed) */}
       {/* ==================================================== */}
       <aside
-        className="hidden lg:flex fixed top-0 left-0 bottom-0 z-40 w-20 flex-col items-center justify-between bg-white border-r border-[#E5E7EB] py-3.5 select-none shadow-[1px_0_4px_rgba(0,0,0,0.02)]"
-        aria-label="App Navigation Rail"
+        className={`hidden lg:flex fixed top-0 left-0 bottom-0 z-40 flex-col justify-between bg-white border-r border-[#E5E7EB] py-4 select-none shadow-[1px_0_4px_rgba(0,0,0,0.02)] transition-[width] duration-200 ${
+          sidebarCollapsed ? 'w-[72px] items-center px-2' : 'w-[196px] px-3.5'
+        }`}
+        aria-label="Desktop Application Sidebar"
       >
-        {/* Rail Top: VD Brand Mark Monogram */}
-        <div className="flex flex-col items-center">
-          <Link
-            href="/#hero"
-            className="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] text-white font-extrabold text-sm flex items-center justify-center shadow-sm hover:scale-105 hover:shadow-md transition-all group"
-            title="Vivek Dhoundiyal — Home"
-          >
-            <span className="tracking-tighter font-mono">VD</span>
-          </Link>
+        {/* Sidebar Top: Brand Mark + Name */}
+        <div className="flex flex-col w-full">
+          <div className={`flex items-center gap-2.5 pb-3 border-b border-slate-100 ${sidebarCollapsed ? 'justify-center' : 'px-1'}`}>
+            <Link
+              href="/#hero"
+              className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] text-white font-extrabold text-sm flex items-center justify-center shadow-sm hover:scale-105 hover:shadow-md transition-all flex-shrink-0"
+              title="Vivek Dhoundiyal — Home"
+            >
+              <span className="tracking-tighter font-mono">VD</span>
+            </Link>
+
+            {!sidebarCollapsed && (
+              <div className="overflow-hidden">
+                <div className="text-xs font-bold text-[#111318] truncate leading-tight">
+                  Vivek Dhoundiyal
+                </div>
+                <div className="text-[10px] text-[#737984] font-medium truncate leading-tight">
+                  Product &amp; Builder
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
-        {/* Rail Center: Navigation Icon Stack */}
-        <nav className="flex flex-col items-center gap-1 my-auto overflow-y-auto no-scrollbar py-2 max-h-[calc(100vh-170px)]">
-          {railNavItems.map((item) => {
+        {/* Sidebar Center: Navigation Links in EXACT AGREED ORDER */}
+        <nav className="flex flex-col w-full gap-1 my-auto overflow-y-auto no-scrollbar py-2">
+          {primaryNavItems.map((item) => {
             const Icon = item.icon
             const isActive = isHome
               ? activeSection === item.sectionId
@@ -173,239 +184,249 @@ export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
               <Link
                 key={item.label}
                 href={item.href}
-                className={`relative group w-14 py-1.5 px-1 rounded-xl flex flex-col items-center justify-center transition-all duration-200 ${
+                className={`relative group rounded-xl transition-all duration-200 flex items-center ${
+                  sidebarCollapsed
+                    ? 'w-12 h-11 justify-center mx-auto'
+                    : 'w-full px-3 py-2 gap-3'
+                } ${
                   isActive
                     ? 'bg-blue-50/90 text-[#2563EB] font-bold shadow-2xs'
                     : 'text-[#555B66] hover:text-[#111318] hover:bg-slate-50'
                 }`}
-                title={item.label}
+                title={sidebarCollapsed ? item.label : undefined}
               >
-                {/* Active Indicator Bar (Left Edge) */}
+                {/* Active Indicator Bar */}
                 {isActive && (
                   <span className="absolute left-0 top-2 bottom-2 w-1 bg-[#2563EB] rounded-r-full" />
                 )}
 
-                <Icon className={`w-4 h-4 transition-transform group-hover:scale-110 ${isActive ? 'text-[#2563EB]' : 'text-slate-600 group-hover:text-slate-900'}`} />
-                <span className={`text-[9.5px] tracking-tight leading-tight mt-0.5 truncate max-w-full ${isActive ? 'font-bold text-[#2563EB]' : 'font-medium'}`}>
-                  {item.label}
-                </span>
+                <Icon
+                  className={`w-4.5 h-4.5 flex-shrink-0 transition-transform group-hover:scale-110 ${
+                    isActive ? 'text-[#2563EB]' : 'text-slate-600 group-hover:text-slate-900'
+                  }`}
+                />
 
-                {/* Hover Tooltip (App Shell Style) */}
-                <div className="absolute left-full ml-2 px-2.5 py-1 rounded-lg bg-slate-900 text-white text-[11px] font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity shadow-md z-50">
-                  {item.label}
-                </div>
+                {!sidebarCollapsed && (
+                  <span className={`text-[13px] tracking-tight truncate ${isActive ? 'font-bold text-[#2563EB]' : 'font-medium'}`}>
+                    {item.label}
+                  </span>
+                )}
+
+                {/* Collapsed Tooltip */}
+                {sidebarCollapsed && (
+                  <div className="absolute left-full ml-3 px-2.5 py-1 rounded-lg bg-slate-900 text-white text-[11px] font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity shadow-md z-50">
+                    {item.label}
+                  </div>
+                )}
               </Link>
             )
           })}
         </nav>
 
-        {/* Rail Bottom: Search + Profile Thumbnail + Let's Talk Trigger */}
-        <div className="flex flex-col items-center gap-2 pt-2 border-t border-slate-100 w-full px-2">
-          {/* Search Trigger */}
-          <button
-            onClick={onOpenSearch}
-            className="w-10 h-10 rounded-xl bg-slate-50 hover:bg-blue-50 text-slate-600 hover:text-[#2563EB] border border-slate-200/80 flex items-center justify-center transition-colors shadow-2xs group relative"
-            title="Search (Hotkey: /)"
-            aria-label="Search portfolio"
-          >
-            <SearchIcon className="w-4 h-4" />
-            <span className="absolute left-full ml-2 px-2 py-0.5 rounded bg-slate-900 text-white text-[10px] font-mono opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity shadow-sm z-50 whitespace-nowrap">
-              Search (/)
-            </span>
-          </button>
-
-          {/* Profile Thumbnail with Online Indicator */}
+        {/* Sidebar Bottom: Let's Talk CTA + Collapse Toggle */}
+        <div className="flex flex-col w-full gap-2 pt-3 border-t border-slate-100">
+          {/* Primary Let's Talk Action Button */}
           <button
             onClick={onOpenContact}
-            className="relative w-10 h-10 rounded-full ring-2 ring-blue-500/30 hover:ring-[#2563EB] transition-all p-0.5 group"
-            title="Vivek Dhoundiyal — Open contact"
+            className={`w-full rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white transition-all shadow-xs flex items-center justify-center font-semibold text-xs gap-1.5 ${
+              sidebarCollapsed ? 'h-10' : 'py-2.5 px-3'
+            }`}
+            title="Let's Talk"
             aria-label="Open contact with Vivek"
           >
-            <div className="w-full h-full rounded-full overflow-hidden bg-slate-100 relative">
-              <Image
-                src="/images/vivek-portrait.png"
-                alt="Vivek Dhoundiyal thumbnail"
-                fill
-                sizes="40px"
-                className="object-cover"
-              />
-            </div>
-            {/* Green Online Dot */}
-            <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-white animate-pulse" />
+            <MessageSquareIcon className="w-4 h-4" />
+            {!sidebarCollapsed && <span>Let&apos;s Talk</span>}
           </button>
+
+          {/* Quick Search & Collapse Controls */}
+          <div className={`flex items-center gap-1.5 ${sidebarCollapsed ? 'flex-col justify-center' : 'justify-between px-1'}`}>
+            <button
+              onClick={onOpenSearch}
+              className="p-1.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors flex items-center gap-1 text-[11px]"
+              title="Search (Hotkey: /)"
+              aria-label="Search portfolio"
+            >
+              <SearchIcon className="w-3.5 h-3.5" />
+              {!sidebarCollapsed && <span className="font-mono text-[10px] text-slate-400">Search (/)</span>}
+            </button>
+
+            {onToggleSidebar && (
+              <button
+                onClick={onToggleSidebar}
+                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+                title={sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+                aria-label={sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+              >
+                {sidebarCollapsed ? (
+                  <ChevronRightIcon className="w-3.5 h-3.5" />
+                ) : (
+                  <ChevronLeftIcon className="w-3.5 h-3.5" />
+                )}
+              </button>
+            )}
+          </div>
         </div>
       </aside>
 
       {/* ==================================================== */}
-      {/* 2. DESKTOP TOP UTILITY BAR (Fixed, Left-20 to Right-0)*/}
+      {/* 2. DESKTOP TOP UTILITY BAR (Fixed, Adapts to Sidebar) */}
       {/* ==================================================== */}
       <header
-        className={`hidden lg:flex fixed top-0 left-20 right-0 h-16 z-30 px-6 items-center justify-between border-b transition-all duration-300 ${
-          scrolled
-            ? 'bg-white/92 backdrop-blur-xl border-[#E5E7EB] shadow-xs'
-            : 'bg-white/75 backdrop-blur-md border-[#E5E7EB]/60'
+        className={`hidden lg:flex fixed top-0 right-0 z-30 h-14 bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] items-center justify-between px-6 transition-[left] duration-200 ${
+          sidebarCollapsed ? 'left-[72px]' : 'left-[196px]'
         }`}
         aria-label="Desktop Utility Header"
       >
-        {/* Left: Interactive App Search Trigger */}
-        <div className="flex items-center gap-3">
+        {/* Search Trigger Bar */}
+        <div className="flex items-center gap-3 w-80">
           <button
             onClick={onOpenSearch}
-            className="flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200 text-xs text-slate-500 hover:text-slate-900 shadow-2xs transition-colors cursor-pointer group"
+            className="w-full flex items-center justify-between px-3.5 py-1.5 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200/80 text-xs text-slate-500 transition-colors cursor-pointer group"
+            aria-label="Open search dialog"
           >
-            <SearchIcon className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#2563EB]" />
-            <span className="font-medium text-[11.5px]">Search projects, tools, insights, experience...</span>
-            <kbd className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-white border border-slate-200 text-slate-400 group-hover:text-slate-600">
+            <div className="flex items-center gap-2">
+              <SearchIcon className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-600 transition-colors" />
+              <span className="truncate">Search capabilities, work, credentials...</span>
+            </div>
+            <kbd className="px-1.5 py-0.5 rounded bg-white border border-slate-200 text-[10px] font-mono text-slate-400 font-semibold shadow-2xs">
               /
             </kbd>
           </button>
         </div>
 
-        {/* Center / Right: Availability Badge + Socials + CTAs */}
-        <div className="flex items-center gap-3 sm:gap-4">
-          
-          {/* Availability Pill */}
-          <div className="hidden xl:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/80 text-xs font-mono text-emerald-800">
+        {/* Right Utility Stack */}
+        <div className="flex items-center gap-3">
+          {/* Live Availability Status Pill */}
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/70 text-emerald-800 text-[11px] font-mono font-medium">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="font-medium">Open to strategic growth &amp; advisory roles</span>
+            <span>Open to strategic growth &amp; advisory roles</span>
           </div>
 
-          {/* Social Links */}
-          <div className="flex items-center gap-1 border-l border-slate-200/80 pl-3">
+          <div className="h-4 w-px bg-slate-200" />
+
+          {/* Social Channels */}
+          <div className="flex items-center gap-1 text-slate-500">
             <a
               href={linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl text-slate-500 hover:text-[#2563EB] hover:bg-blue-50/60 transition-colors"
-              title="LinkedIn Profile"
-              aria-label="LinkedIn Profile"
+              className="p-1.5 rounded-lg hover:text-[#2563EB] hover:bg-slate-50 transition-colors"
+              title="LinkedIn"
+              aria-label="LinkedIn"
             >
-              <LinkedInIcon className="w-4 h-4" />
+              <LinkedInIcon className="w-3.5 h-3.5" />
             </a>
-
             <a
               href={xUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+              className="p-1.5 rounded-lg hover:text-slate-900 hover:bg-slate-50 transition-colors"
               title="X (Twitter)"
-              aria-label="X (Twitter)"
+              aria-label="X Profile"
             >
-              <XIcon className="w-4 h-4" />
+              <XIcon className="w-3.5 h-3.5" />
             </a>
-
             <a
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+              className="p-1.5 rounded-lg hover:text-slate-900 hover:bg-slate-50 transition-colors"
               title="GitHub"
-              aria-label="GitHub"
+              aria-label="GitHub Profile"
             >
-              <GitHubIcon className="w-4 h-4" />
+              <GitHubIcon className="w-3.5 h-3.5" />
             </a>
-
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 transition-colors"
-              title="WhatsApp Direct"
-              aria-label="WhatsApp Direct"
+              className="p-1.5 rounded-lg hover:text-emerald-600 hover:bg-slate-50 transition-colors"
+              title="WhatsApp"
+              aria-label="WhatsApp Contact"
             >
-              <WhatsAppIcon className="w-4 h-4" />
+              <WhatsAppIcon className="w-3.5 h-3.5" />
             </a>
           </div>
 
-          {/* Resume Quick Link */}
+          <div className="h-4 w-px bg-slate-200" />
+
+          {/* Resume Link */}
           <Link
             href="/resume"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold text-[#111318] hover:text-[#2563EB] bg-white hover:bg-slate-50 border border-[#E5E7EB] shadow-2xs transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 border border-slate-200/80 transition-colors"
           >
-            <DocumentIcon className="w-3.5 h-3.5 text-slate-500" />
+            <DocumentIcon className="w-3 h-3 text-slate-500" />
             <span>Resume</span>
           </Link>
 
-          {/* Primary "LET'S TALK" Pill Button */}
+          {/* Primary Let's Talk CTA */}
           <button
             onClick={onOpenContact}
-            className="inline-flex items-center justify-center gap-2 px-5 py-2 rounded-full text-xs font-semibold tracking-normal bg-[#2563EB] hover:bg-[#1D4ED8] text-white shadow-xs hover:shadow-sm transition-all duration-200 cursor-pointer whitespace-nowrap"
-            aria-label="Let's Talk — Open contact dialog"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-lg text-xs font-semibold bg-[#2563EB] text-white hover:bg-[#1D4ED8] transition-colors shadow-2xs"
           >
-            <span>Let's Talk</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <span>Let&apos;s Talk</span>
+            <ArrowRight className="w-3 h-3" />
           </button>
         </div>
       </header>
 
       {/* ==================================================== */}
-      {/* 3. MOBILE TOP HEADER (Fixed, 56px / h-14)            */}
+      {/* 3. MOBILE COMPACT TOP APP BAR                        */}
       {/* ==================================================== */}
       <header
-        className={`lg:hidden fixed top-0 left-0 right-0 h-14 z-40 px-4 flex items-center justify-between border-b transition-all duration-300 ${
-          scrolled
-            ? 'bg-white/95 backdrop-blur-xl border-[#E5E7EB] shadow-xs'
-            : 'bg-white/85 backdrop-blur-md border-[#E5E7EB]/70'
-        }`}
-        aria-label="Mobile Header"
+        className="lg:hidden fixed top-0 left-0 right-0 z-40 h-14 bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] flex items-center justify-between px-4"
+        aria-label="Mobile Application Top Bar"
       >
-        {/* Left: VD Monogram + Name */}
         <Link href="/#hero" className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] text-white font-mono font-bold text-xs flex items-center justify-center shadow-2xs">
-            VD
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] text-white font-extrabold text-xs flex items-center justify-center shadow-xs">
+            <span className="font-mono">VD</span>
           </div>
-          <div className="flex flex-col">
-            <span className="text-sm font-bold tracking-tight text-[#111318] leading-tight">
-              Vivek Dhoundiyal
-            </span>
-            <span className="text-[10px] text-[#737984] font-medium leading-none">
-              Business · Growth · Partnerships
-            </span>
+          <div>
+            <div className="text-xs font-bold text-[#111318] leading-tight">Vivek Dhoundiyal</div>
+            <div className="text-[10px] text-[#737984] leading-tight font-medium">Business · Growth · Partnerships</div>
           </div>
         </Link>
 
-        {/* Right: Search + Let's Talk CTA */}
         <div className="flex items-center gap-2">
           <button
             onClick={onOpenSearch}
-            className="p-2 rounded-xl text-slate-600 hover:text-slate-900 bg-slate-50 border border-slate-200 shadow-2xs transition-colors"
-            aria-label="Search"
+            className="w-8 h-8 rounded-lg bg-slate-50 border border-slate-200/80 flex items-center justify-center text-slate-600 hover:text-slate-900 transition-colors"
+            aria-label="Open search"
           >
-            <SearchIcon className="w-4 h-4" />
+            <SearchIcon className="w-3.5 h-3.5" />
           </button>
 
           <button
             onClick={onOpenContact}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#2563EB] text-white hover:bg-blue-700 shadow-2xs transition-colors cursor-pointer"
+            className="px-3 py-1 rounded-lg bg-[#2563EB] text-white text-xs font-semibold hover:bg-[#1D4ED8] transition-colors"
           >
-            <span>Let's Talk</span>
+            Let&apos;s Talk
           </button>
         </div>
       </header>
 
       {/* ==================================================== */}
-      {/* 4. MOBILE BOTTOM NAVIGATION BAR (Fixed, 64px / h-16)  */}
+      {/* 4. MOBILE FIXED BOTTOM NAVIGATION (5 VISIBLE ITEMS)  */}
+      {/* Home, Capabilities, Experience, Work, More           */}
       {/* ==================================================== */}
       <nav
-        className="lg:hidden fixed bottom-0 left-0 right-0 h-16 z-40 bg-white/95 backdrop-blur-xl border-t border-[#E5E7EB] px-2 flex items-center justify-around shadow-lg pb-safe select-none"
+        className="lg:hidden fixed bottom-0 left-0 right-0 z-40 h-16 bg-white/95 backdrop-blur-md border-t border-[#E5E7EB] grid grid-cols-5 items-center px-1 shadow-[0_-2px_10px_rgba(0,0,0,0.03)]"
         aria-label="Mobile Bottom Navigation"
       >
         {mobileBottomItems.map((item) => {
           const Icon = item.icon
-          const isActive = isHome
-            ? activeSection === item.sectionId
-            : router.pathname === item.href || (item.href === '/blog' && router.pathname.startsWith('/blog'))
+          const isActive = isHome ? activeSection === item.sectionId : false
 
           return (
             <Link
               key={item.label}
               href={item.href}
-              className={`flex-1 py-1 flex flex-col items-center justify-center transition-colors relative ${
-                isActive ? 'text-[#2563EB]' : 'text-slate-500 hover:text-slate-900'
+              className={`flex flex-col items-center justify-center py-1 transition-colors ${
+                isActive ? 'text-[#2563EB]' : 'text-[#737984] hover:text-[#111318]'
               }`}
             >
-              <Icon className="w-5 h-5 transition-transform active:scale-95" />
-              <span className={`text-[10.5px] tracking-tight mt-0.5 ${isActive ? 'font-bold' : 'font-medium'}`}>
+              <Icon className="w-5 h-5 mb-0.5" />
+              <span className={`text-[10px] tracking-tight ${isActive ? 'font-bold' : 'font-medium'}`}>
                 {item.label}
               </span>
               {isActive && (
@@ -415,65 +436,58 @@ export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
           )
         })}
 
-        {/* 5th Action: "More" Menu Button (opens bottom sheet drawer) */}
+        {/* 5th Mobile Tab: More (Overflow Sheet) */}
         <button
           onClick={() => setMoreDrawerOpen(true)}
-          className={`flex-1 py-1 flex flex-col items-center justify-center transition-colors ${
-            moreDrawerOpen ? 'text-[#2563EB]' : 'text-slate-500 hover:text-slate-900'
+          className={`flex flex-col items-center justify-center py-1 transition-colors ${
+            moreDrawerOpen ? 'text-[#2563EB]' : 'text-[#737984] hover:text-[#111318]'
           }`}
           aria-label="Open portfolio more menu"
         >
-          <MoreHorizontalIcon className="w-5 h-5" />
-          <span className="text-[10.5px] tracking-tight font-medium mt-0.5">
-            More
-          </span>
+          <MoreHorizontalIcon className="w-5 h-5 mb-0.5" />
+          <span className="text-[10px] font-medium tracking-tight">More</span>
         </button>
       </nav>
 
       {/* ==================================================== */}
-      {/* 5. SLIDE-UP "MORE" BOTTOM SHEET / DRAWER (Mobile)    */}
+      {/* 5. MOBILE "MORE" SLIDE-UP DRAWER SHEET               */}
+      {/* Lists Education, Blog, Contact in agreed relative order*/}
       {/* ==================================================== */}
       {moreDrawerOpen && (
         <div
-          className="lg:hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex flex-col justify-end animate-fadeIn"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Explore Portfolio Navigation"
+          className="fixed inset-0 z-50 lg:hidden flex flex-col justify-end bg-black/50 backdrop-blur-xs animate-in fade-in duration-200"
           onClick={() => setMoreDrawerOpen(false)}
         >
           <div
-            className="bg-white rounded-t-3xl border-t border-slate-200 p-6 max-h-[85vh] overflow-y-auto space-y-6 shadow-2xl animate-scale-in"
+            className="bg-white rounded-t-3xl max-h-[85vh] overflow-y-auto p-5 space-y-5 shadow-2xl animate-in slide-in-from-bottom duration-300"
             onClick={(e) => e.stopPropagation()}
+            aria-label="Explore Portfolio Navigation"
           >
-            {/* Grabber Handle */}
-            <div className="w-12 h-1.5 rounded-full bg-slate-300 mx-auto" />
+            {/* Drawer Drag Pill & Header */}
+            <div className="flex flex-col items-center space-y-3">
+              <div className="w-12 h-1.5 bg-slate-200 rounded-full" />
+              <div className="w-full flex items-center justify-between">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-xl bg-[#2563EB] text-white font-extrabold text-xs flex items-center justify-center">
+                    VD
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-bold text-[#111318]">Explore Portfolio</h3>
+                    <p className="text-[11px] text-[#737984]">Education, Blog &amp; Direct Contact</p>
+                  </div>
+                </div>
 
-            {/* Header */}
-            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-              <div className="flex items-center gap-2.5">
-                <div className="w-7 h-7 rounded-lg bg-[#2563EB] text-white font-mono font-bold text-xs flex items-center justify-center">
-                  VD
-                </div>
-                <div>
-                  <h3 className="text-base font-bold text-[#111318]">
-                    Explore Portfolio
-                  </h3>
-                  <span className="text-[11px] text-[#737984]">
-                    Interactive app index &amp; contact
-                  </span>
-                </div>
+                <button
+                  onClick={() => setMoreDrawerOpen(false)}
+                  className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500"
+                  aria-label="Close menu"
+                >
+                  <CloseIcon className="w-4 h-4" />
+                </button>
               </div>
-
-              <button
-                onClick={() => setMoreDrawerOpen(false)}
-                className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors"
-                aria-label="Close menu"
-              >
-                <CloseIcon className="w-4 h-4" />
-              </button>
             </div>
 
-            {/* Grid of Navigation Destinations */}
+            {/* Navigation Grid (Education, Blog, Contact, Case Study, Resume) */}
             <div className="grid grid-cols-2 gap-2.5">
               {moreSheetItems.map((item) => {
                 const Icon = item.icon
@@ -482,81 +496,95 @@ export default function Navigation({ onOpenSearch, onOpenContact, profile }) {
                     key={item.label}
                     href={item.href}
                     onClick={() => setMoreDrawerOpen(false)}
-                    className="p-3 rounded-2xl bg-[#FAFAF8] hover:bg-blue-50/60 border border-[#E5E7EB] hover:border-blue-200 transition-all flex flex-col space-y-1 group"
+                    className="p-3 rounded-2xl bg-slate-50 hover:bg-blue-50/70 border border-slate-200/70 hover:border-blue-200 transition-all flex flex-col justify-between group"
                   >
-                    <div className="flex items-center justify-between">
-                      <div className="w-7 h-7 rounded-xl bg-white border border-[#E5E7EB] flex items-center justify-center text-[#2563EB] shadow-2xs group-hover:scale-105 transition-transform">
-                        <Icon className="w-3.5 h-3.5" />
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="w-8 h-8 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#2563EB]">
+                        <Icon className="w-4 h-4" />
                       </div>
-                      <ArrowRight className="w-3 h-3 text-slate-300 group-hover:text-[#2563EB] group-hover:translate-x-0.5 transition-all" />
+                      <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#2563EB] transition-colors" />
                     </div>
-                    <span className="text-xs font-bold text-[#111318] group-hover:text-[#2563EB] transition-colors pt-1">
-                      {item.label}
-                    </span>
-                    <span className="text-[10.5px] text-[#737984] leading-tight line-clamp-1">
-                      {item.desc}
-                    </span>
+                    <div>
+                      <div className="text-xs font-bold text-[#111318] group-hover:text-[#2563EB] transition-colors">
+                        {item.label}
+                      </div>
+                      <div className="text-[10px] text-[#737984] truncate">
+                        {item.desc}
+                      </div>
+                    </div>
                   </Link>
                 )
               })}
             </div>
 
             {/* Direct Communication Channels */}
-            <div className="space-y-2 pt-2 border-t border-slate-100">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-[#737984] font-bold block">
+            <div className="pt-2 border-t border-slate-100 space-y-2.5">
+              <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#737984] block font-semibold">
                 Direct Channels
               </span>
 
-              <div className="grid grid-cols-2 gap-2 text-xs font-mono">
+              <div className="grid grid-cols-2 gap-2">
                 <a
                   href={`tel:${cleanPhone}`}
-                  className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 hover:bg-slate-100 flex items-center gap-2 transition-colors"
+                  className="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs font-medium text-slate-800 hover:bg-slate-100 transition-colors"
                 >
-                  <PhoneIcon className="w-3.5 h-3.5 text-amber-500" />
-                  <span className="truncate">{phone}</span>
+                  <PhoneIcon className="w-3.5 h-3.5 text-amber-600" />
+                  <span>{phone}</span>
                 </a>
 
                 <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 hover:bg-emerald-100 flex items-center gap-2 transition-colors"
+                  className="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs font-medium text-emerald-800 hover:bg-emerald-100 transition-colors"
                 >
                   <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-600" />
                   <span>WhatsApp</span>
                 </a>
               </div>
-            </div>
 
-            {/* Socials & Primary CTA */}
-            <div className="pt-2 border-t border-slate-100 flex flex-col space-y-3">
-              <div className="flex items-center justify-center gap-6 text-slate-500 py-1">
-                <a href={linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-[#2563EB]" aria-label="LinkedIn">
-                  <LinkedInIcon className="w-5 h-5" />
+              {/* Social Channels Row */}
+              <div className="flex items-center justify-around pt-1 text-slate-500">
+                <a
+                  href={linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 hover:text-[#2563EB]"
+                  title="LinkedIn"
+                  aria-label="LinkedIn"
+                >
+                  <LinkedInIcon className="w-4 h-4" />
                 </a>
-                <a href={xUrl} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900" aria-label="X">
-                  <XIcon className="w-5 h-5" />
+                <a
+                  href={xUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 hover:text-slate-900"
+                  title="X (Twitter)"
+                  aria-label="X Profile"
+                >
+                  <XIcon className="w-4 h-4" />
                 </a>
-                <a href={github} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900" aria-label="GitHub">
-                  <GitHubIcon className="w-5 h-5" />
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 hover:text-slate-900"
+                  title="GitHub"
+                  aria-label="GitHub Profile"
+                >
+                  <GitHubIcon className="w-4 h-4" />
                 </a>
-                <a href={`mailto:${email}`} className="hover:text-[#2563EB]" aria-label="Email">
-                  <MailIcon className="w-5 h-5" />
+                <a
+                  href={`mailto:${email}`}
+                  className="p-2 hover:text-blue-600"
+                  title="Email"
+                  aria-label="Email"
+                >
+                  <MailIcon className="w-4 h-4" />
                 </a>
               </div>
-
-              <button
-                onClick={() => {
-                  setMoreDrawerOpen(false)
-                  onOpenContact()
-                }}
-                className="w-full py-3 rounded-2xl bg-[#2563EB] hover:bg-blue-700 text-white font-semibold text-xs flex items-center justify-center gap-2 shadow-sm transition-colors cursor-pointer"
-              >
-                <span>Let's Talk — Open Contact</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
             </div>
-
           </div>
         </div>
       )}

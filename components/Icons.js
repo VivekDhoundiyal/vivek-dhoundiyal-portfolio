@@ -261,3 +261,60 @@ export function MoreHorizontalIcon({ className = "w-5 h-5", ...props }) {
   )
 }
 
+export function BriefcaseIcon({ className = "w-5 h-5", ...props }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
+    </svg>
+  )
+}
+
+export function MessageSquareIcon({ className = "w-5 h-5", ...props }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a.75.75 0 01-.874-.925 4.48 4.48 0 00.64-2.187C3.763 16.48 3 14.364 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+    </svg>
+  )
+}
+
+export function HandshakeIcon({ className = "w-5 h-5", ...props }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7 11.5V14m0-2.5l5.5-5.5a2.121 2.121 0 013 3L11 13.5m-4-2H4.5A2.5 2.5 0 002 14v1m15-4.5V14m0-2.5l-5.5-5.5a2.121 2.121 0 00-3 3L13 13.5m4-2h2.5A2.5 2.5 0 0122 14v1m-10 4v3m-3-1.5l3 1.5 3-1.5" />
+    </svg>
+  )
+}
+
+export function SparklesIcon({ className = "w-5 h-5", ...props }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
+    </svg>
+  )
+}
+
+export function SlidersIcon({ className = "w-5 h-5", ...props }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+    </svg>
+  )
+}
+
+export function ChevronLeftIcon({ className = "w-4 h-4", ...props }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+    </svg>
+  )
+}
+
+export function ChevronRightIcon({ className = "w-4 h-4", ...props }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+    </svg>
+  )
+}
+

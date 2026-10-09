@@ -1,114 +1,99 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowUpRight, ArrowRight } from './Icons'
+import {
+  ChartIcon,
+  HandshakeIcon,
+  TargetIcon,
+  SparklesIcon,
+  SlidersIcon,
+  ArrowRight
+} from './Icons'
 
 export default function WhatIDo() {
   const capabilities = [
     {
+      id: 'business-growth',
       number: '01',
-      title: 'PRODUCT STRATEGY',
-      subtitle: '0→1 Roadmapping & User Experience',
-      description: 'Translating fuzzy user problems into crisp product specifications, visual wireframes, and prioritized feature backlogs.',
-      flow: ['Discovery', 'Scoping', 'Delivery'],
-      tags: ['0→1 Roadmapping', 'User Research', 'PRD Specs', 'Wireframing'],
-      metric: 'Zero-Bloat Scope',
-      slug: 'revenue-business-development',
-      accent: 'blue',
-      illustration: '/illustrations/innovation-illustration.png',
-      illustrationAlt: 'Product Strategy & Innovation Illustration'
+      title: 'Business Growth',
+      tagline: 'GTM · Sales · Revenue',
+      description: 'Growth strategy, business development, and commercial expansion.',
+      details: 'Building predictable outbound pipelines, ICP qualification, consultative pitching, and repeatable revenue engines.',
+      icon: ChartIcon,
+      color: 'blue',
+      badgeClass: 'bg-blue-50 text-[#2563EB] border-blue-200',
+      iconBg: 'bg-blue-50 text-[#2563EB] border-blue-100',
+      hoverBorder: 'hover:border-[#2563EB]/50'
     },
     {
+      id: 'revenue-partnerships',
       number: '02',
-      title: 'BUSINESS GROWTH',
-      subtitle: 'Commercial Pipeline & Enterprise Deals',
-      description: 'Building predictable outbound pipelines, ICP targeting, consultative solution pitching, and high-ticket enterprise contracts.',
-      flow: ['Pipeline', 'Deals', 'Growth'],
-      tags: ['Enterprise Sales', 'Pipeline Velocity', 'Consultative Selling', 'Deal Closing'],
-      metric: 'Predictable Revenue',
-      slug: 'revenue-business-development',
-      accent: 'indigo',
-      illustration: '/illustrations/analytics-illustration.png',
-      illustrationAlt: 'Analytics & Revenue Dashboard Illustration'
+      title: 'Revenue & Partnerships',
+      tagline: 'Strategic Alliances',
+      description: 'B2B sales, partnerships, GTM, and revenue development.',
+      details: 'Structuring commercial co-distribution alliances, agency account management, and high-trust institutional agreements.',
+      icon: HandshakeIcon,
+      color: 'purple',
+      badgeClass: 'bg-purple-50 text-purple-700 border-purple-200',
+      iconBg: 'bg-purple-50 text-purple-600 border-purple-100',
+      hoverBorder: 'hover:border-purple-400/50'
     },
     {
+      id: 'product-strategy',
       number: '03',
-      title: 'AI WORKFLOWS',
-      subtitle: 'Automation & Productivity Engines',
-      description: 'Designing autonomous multi-modal AI pipelines, custom agent prompts, and event-driven automation to eliminate operational drag.',
-      flow: ['Trigger', 'AI Logic', 'Outcome'],
-      tags: ['Applied AI', 'Automation Workflows', 'Prompt Design', 'Event Triggers'],
-      metric: '10x Speed Multiplier',
-      slug: 'business-operations',
-      accent: 'purple',
-      illustration: '/illustrations/ai-illustration.png',
-      illustrationAlt: 'AI & Workflow Automation Illustration'
+      title: 'Product Strategy',
+      tagline: 'From problem to solution',
+      description: 'Problem discovery, product thinking, prioritization, and execution.',
+      details: 'Translating user pain points into crisp PRDs, scoped milestones, client-side workflows, and zero-bloat product roadmaps.',
+      icon: TargetIcon,
+      color: 'emerald',
+      badgeClass: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+      iconBg: 'bg-emerald-50 text-emerald-600 border-emerald-100',
+      hoverBorder: 'hover:border-emerald-400/50'
     },
     {
+      id: 'ai-automation',
       number: '04',
-      title: 'OPERATIONS',
-      subtitle: 'SOPs, SLAs & Unit Economics',
-      description: 'Engineering disciplined standard operating procedures, vendor accountability, SLA governance, and unit margin rigor.',
-      flow: ['Process', 'Systems', 'Repeatability'],
-      tags: ['SOP Playbooks', 'Unit Economics', 'SLA Governance', 'Vendor Audits'],
-      metric: 'Zero-Decay Systems',
-      slug: 'business-operations',
-      accent: 'emerald',
-      illustration: '/illustrations/operations-illustration.png',
-      illustrationAlt: 'Systems & Operations Illustration'
+      title: 'AI & Automation',
+      tagline: 'Smarter workflows',
+      description: 'AI-assisted workflows, intelligent systems, and process automation.',
+      details: 'Deploying agentic prompting, document automation loops, and trigger-based systems to eliminate operational drag.',
+      icon: SparklesIcon,
+      color: 'amber',
+      badgeClass: 'bg-amber-50 text-amber-700 border-amber-200',
+      iconBg: 'bg-amber-50 text-amber-600 border-amber-100',
+      hoverBorder: 'hover:border-amber-400/50'
+    },
+    {
+      id: 'operations-execution',
+      number: '05',
+      title: 'Operations & Execution',
+      tagline: 'Execution & Systems',
+      description: 'Process improvement, operating systems, and cross-functional execution.',
+      details: 'Designing strict standard operating procedures, vendor SLA accountability, unit economics governance, and logistics cadences.',
+      icon: SlidersIcon,
+      color: 'rose',
+      badgeClass: 'bg-rose-50 text-rose-700 border-rose-200',
+      iconBg: 'bg-rose-50 text-rose-600 border-rose-100',
+      hoverBorder: 'hover:border-rose-400/50'
     }
   ]
 
-  const accentStyles = {
-    blue: {
-      text: 'text-[#2563EB]',
-      badge: 'bg-blue-50 text-[#2563EB] border-blue-200',
-      borderHover: 'hover:border-[#2563EB]/50',
-      flowBg: 'bg-blue-50/70 border-blue-100 text-[#111318]',
-      flowActive: 'bg-[#2563EB] text-white',
-      arrow: 'text-[#2563EB]'
-    },
-    indigo: {
-      text: 'text-indigo-600',
-      badge: 'bg-indigo-50 text-indigo-700 border-indigo-200',
-      borderHover: 'hover:border-indigo-400/50',
-      flowBg: 'bg-indigo-50/70 border-indigo-100 text-[#111318]',
-      flowActive: 'bg-indigo-600 text-white',
-      arrow: 'text-indigo-600'
-    },
-    purple: {
-      text: 'text-purple-600',
-      badge: 'bg-purple-50 text-purple-700 border-purple-200',
-      borderHover: 'hover:border-purple-400/50',
-      flowBg: 'bg-purple-50/70 border-purple-100 text-[#111318]',
-      flowActive: 'bg-purple-600 text-white',
-      arrow: 'text-purple-600'
-    },
-    emerald: {
-      text: 'text-emerald-600',
-      badge: 'bg-emerald-50 text-emerald-700 border-emerald-200',
-      borderHover: 'hover:border-emerald-400/50',
-      flowBg: 'bg-emerald-50/70 border-emerald-100 text-[#111318]',
-      flowActive: 'bg-emerald-600 text-white',
-      arrow: 'text-emerald-600'
-    }
-  }
-
   return (
-    <section id="what-i-do" className="py-20 sm:py-28 bg-[#FAFAF8] text-[#111318] border-t border-[#E5E7EB] relative scroll-mt-16">
-      <div id="capabilities" className="sr-only" tabIndex={-1} />
-      
+    <section id="capabilities" className="py-20 sm:py-28 bg-[#FAFAF8] text-[#111318] border-t border-[#E5E7EB] relative scroll-mt-16">
+      <div id="what-i-do" className="sr-only" tabIndex={-1} />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
         {/* ==================================================== */}
-        {/* SECTION HEADER: Title + Avatar Growth Chart Callout  */}
+        {/* SECTION HEADER: Title + Supporting Avatar            */}
         {/* ==================================================== */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal-on-scroll">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E5E7EB] shadow-2xs">
               <span className="w-2 h-2 rounded-full bg-[#2563EB]" />
               <span className="text-[10.5px] font-mono uppercase tracking-wider font-semibold text-[#555B66]">
-                03 · CAPABILITY SYSTEM
+                02 · CORE CAPABILITIES
               </span>
             </div>
 
@@ -117,11 +102,11 @@ export default function WhatIDo() {
               <span className="text-[#2563EB]">From opportunity to outcome.</span>
             </h2>
             <p className="text-sm sm:text-base text-[#555B66] max-w-lg leading-relaxed font-normal pt-1">
-              A four-pillar operational framework combining front-end commercial velocity with back-end software systems and execution rigor.
+              A five-pillar operational framework blending commercial velocity, product thinking, and system execution rigor.
             </p>
           </div>
 
-          {/* Right Callout: Avatar with Growth Chart */}
+          {/* Right Callout: Supporting Avatar */}
           <div className="flex items-center gap-4 bg-white/95 backdrop-blur-md p-3 sm:p-4 rounded-3xl border border-[#E5E7EB] shadow-xs self-start lg:self-auto hover:border-blue-300 transition-all">
             <div className="relative w-20 h-24 sm:w-24 sm:h-28 flex-shrink-0 animate-float-medium">
               <Image
@@ -134,10 +119,10 @@ export default function WhatIDo() {
             </div>
             <div className="space-y-1 pr-2">
               <span className="text-[10px] font-mono uppercase tracking-wider text-[#2563EB] font-bold block">
-                Growth Velocity
+                Execution Model
               </span>
               <div className="text-xs font-bold text-[#111318]">
-                Opportunity → Scale
+                Opportunity → Delivery
               </div>
               <p className="text-[11px] text-[#737984]">
                 Compounding commercial leverage
@@ -147,96 +132,83 @@ export default function WhatIDo() {
         </div>
 
         {/* ==================================================== */}
-        {/* 4 VISUAL CAPABILITY CARDS GRID                       */}
+        {/* 5 CAPABILITY CARDS GRID (AS IN REFERENCE)            */}
         {/* ==================================================== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {capabilities.map((cap) => {
-            const style = accentStyles[cap.accent]
+            const Icon = cap.icon
             return (
               <div
-                key={cap.number}
-                className={`p-7 rounded-3xl bg-white border border-[#E5E7EB] ${style.borderHover} hover-card-elevate shadow-xs transition-all duration-300 flex flex-col justify-between group space-y-6 reveal-on-scroll`}
+                key={cap.id}
+                className={`p-7 rounded-3xl bg-white border border-[#E5E7EB] ${cap.hoverBorder} hover-card-elevate shadow-xs transition-all duration-300 flex flex-col justify-between group space-y-5 reveal-on-scroll`}
               >
                 <div className="space-y-4">
-                  
-                  {/* Top Bar: Number & Arrow */}
+                  {/* Top Bar: Icon & Tag */}
                   <div className="flex items-center justify-between pb-3 border-b border-[#E5E7EB]">
-                    <span className="text-2xl sm:text-3xl font-extrabold font-mono tracking-tight text-[#111318]/25 group-hover:text-[#111318] transition-colors">
-                      {cap.number}
-                    </span>
+                    <div className={`w-10 h-10 rounded-2xl flex items-center justify-center border ${cap.iconBg}`}>
+                      <Icon className="w-5 h-5" />
+                    </div>
 
-                    <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase ${style.badge}`}>
-                      {cap.metric}
+                    <span className={`px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold border ${cap.badgeClass}`}>
+                      {cap.tagline}
                     </span>
                   </div>
 
-                  {/* Title & Description */}
-                  <div className="space-y-1">
-                    <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#737984] font-semibold block">
-                      {cap.subtitle}
-                    </span>
+                  {/* Title & Short Description */}
+                  <div className="space-y-1.5">
                     <h3 className="text-xl font-bold tracking-tight text-[#111318] group-hover:text-[#2563EB] transition-colors">
                       {cap.title}
                     </h3>
-                    <p className="text-xs text-[#555B66] leading-relaxed pt-1">
+                    <p className="text-xs font-medium text-slate-700 leading-relaxed">
                       {cap.description}
                     </p>
+                    <p className="text-xs text-[#737984] leading-relaxed pt-1">
+                      {cap.details}
+                    </p>
                   </div>
-
-                  {/* Flow Diagram */}
-                  <div className="pt-1">
-                    <span className="text-[9.5px] font-mono uppercase tracking-wider text-[#737984] font-bold block mb-1.5">
-                      Execution Flow
-                    </span>
-                    <div className="flex items-center justify-between gap-1 p-2 rounded-2xl bg-[#FAFAF8] border border-[#E5E7EB]">
-                      {cap.flow.map((step, sIdx) => (
-                        <React.Fragment key={step}>
-                          <div className={`px-2 py-1 rounded-xl text-[10.5px] font-mono font-semibold text-center flex-1 ${
-                            sIdx === cap.flow.length - 1 ? style.flowActive : style.flowBg
-                          }`}>
-                            {step}
-                          </div>
-                          {sIdx < cap.flow.length - 1 && (
-                            <span className={`text-[11px] font-bold ${style.arrow}`}>→</span>
-                          )}
-                        </React.Fragment>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Tags */}
-                  <div className="pt-1">
-                    <div className="flex flex-wrap gap-1.5">
-                      {cap.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#FAFAF8] border border-[#E5E7EB] text-[#555B66]"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
                 </div>
 
-                {/* Footer Action */}
-                <div className="pt-3 border-t border-[#E5E7EB] flex items-center justify-between">
-                  <Link
-                    href={`/capabilities/${cap.slug}`}
-                    className="text-xs font-semibold text-[#2563EB] group-hover:underline flex items-center gap-1.5"
-                  >
-                    <span>View Blueprint</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                  <span className="text-[10px] font-mono text-[#737984]">
-                    Evidence →
+                {/* Card Base */}
+                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <span className="font-mono text-[10px] text-slate-400">
+                    Pillar {cap.number}
+                  </span>
+                  <span className="text-[#2563EB] font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                    <span>Applied Practice</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
-
               </div>
             )
           })}
+
+          {/* 6th Card: Supporting Summary / Integration Callout */}
+          <div className="p-7 rounded-3xl bg-gradient-to-br from-blue-50/50 via-indigo-50/30 to-white border border-blue-100 flex flex-col justify-between space-y-4">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-100/70 text-blue-800 text-[10.5px] font-mono font-semibold">
+                <span>Integrated Mindset</span>
+              </div>
+              <h3 className="text-lg font-bold text-[#111318]">
+                Bridging Commercial &amp; Product
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Operating at the intersection of enterprise business development, product management, and operational systems to deliver measurable outcomes.
+              </p>
+            </div>
+
+            <div className="pt-3 border-t border-blue-100/80 flex items-center justify-between">
+              <span className="text-[11px] font-mono text-[#2563EB] font-bold">
+                5 Pillars Combined
+              </span>
+              <Link
+                href="/resume"
+                className="text-xs font-semibold text-[#111318] hover:text-[#2563EB] flex items-center gap-1"
+              >
+                <span>Read CV</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#2563EB]" />
+              </Link>
+            </div>
+          </div>
         </div>
 
       </div>
