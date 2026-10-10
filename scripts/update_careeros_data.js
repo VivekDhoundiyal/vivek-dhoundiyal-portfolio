@@ -11,7 +11,7 @@ const careerosData = {
     eyebrow: 'CASE STUDY / SYSTEMS ARCHITECTURE',
     title: 'CareerOS: The AI-Powered Career Operating System',
     subtitle: 'A continuous, profile-driven career operating system that shifts the integration burden away from the candidate and transforms job discovery into an automated intelligence engine.',
-    role: 'Product Management & Systems Architecture',
+    role: 'Commercial Strategy & Systems Architecture',
     author: 'Vivek Dhoundiyal',
     status: 'Product Concept & Systems Architecture',
     category: 'Independent Software Product',
@@ -106,7 +106,7 @@ const careerosData = {
       transition: 'Diagnosing the root causes showed that superficial visual polish could not solve underlying data fragmentation.',
       whatThisLayerRepresents: 'Categorization of system breakdowns across four core tiers: Ingestion Fragmentation (unvalidated schema ingestion), Domain Ambiguity (loose entity boundaries), Logic Collisions (competing filter heuristics), and Pipeline Mutation (inconsistent state progression).',
       whyItMatters: 'Treating structural ingestion and domain failures with cosmetic frontend changes creates technical debt while leaving data inaccuracies and pipeline drop-offs unresolved.',
-      productThinking: 'Product managers must address the root systemic causes rather than masking architectural flaws behind polished UI facades.'
+      productThinking: 'Builders and system architects must address the root systemic causes rather than masking architectural flaws behind polished UI facades.'
     },
     {
       pageNumber: 6,
@@ -269,7 +269,7 @@ const careerosData = {
   productThinking: {
     eyebrow: 'FOUNDATIONAL PRINCIPLES',
     heading: 'Product Thinking Behind CareerOS',
-    intro: 'Five architectural and product management principles that guide every decision within CareerOS.',
+    intro: 'Five architectural and systems design principles that guide every decision within CareerOS.',
     principles: [
       {
         num: '01',

@@ -110,7 +110,7 @@ async function runBrowserTests() {
       const title = card.querySelector('h3')?.innerText;
       const subtitle = card.querySelector('p.text-base')?.innerText;
       const desc = card.querySelector('p.text-sm')?.innerText;
-      const tags = Array.from(card.querySelectorAll('.font-mono')).map(el => el.innerText).filter(t => ['AI Product', 'Product Management', 'Systems Architecture'].includes(t));
+      const tags = Array.from(card.querySelectorAll('.font-mono')).map(el => el.innerText).filter(t => ['AI Product', 'Commercial Strategy & Execution', 'Systems Architecture'].includes(t));
       const cta = card.innerText.includes('View Case Study');
       const img = card.querySelector('img');
 

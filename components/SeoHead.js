@@ -1,8 +1,8 @@
 import Head from 'next/head'
 
 export default function SeoHead({
-  title = "Vivek Dhoundiyal | Business Growth, Partnerships & Product Building",
-  description = "Explore Vivek Dhoundiyal’s work across business development, revenue growth, strategic partnerships, operations, and digital product building.",
+  title = "Vivek Dhoundiyal | Business Development, Growth & Partnerships",
+  description = "Explore Vivek Dhoundiyal’s work across business development, revenue growth, strategic partnerships, business operations, and commercial execution.",
   canonical = "https://vivek-dhoundiyal-portfolio.pages.dev",
   ogType = "website",
   ogImage = "/images/vivek-canonical.png",
@@ -17,7 +17,7 @@ export default function SeoHead({
         "@type": "Person",
         "@id": `${canonical}/#person`,
         "name": "Vivek Dhoundiyal",
-        "jobTitle": "Commercial Operator & Digital Product Builder",
+        "jobTitle": "Business Development & Growth Leader",
         "url": canonical,
         "image": `${canonical}/images/vivek-canonical.png`,
         "sameAs": [
@@ -25,7 +25,7 @@ export default function SeoHead({
           "https://x.com/Vivek_Dh_",
           "https://github.com/VivekDhoundiyal"
         ],
-        "description": "B2B sales, revenue growth, and partnerships professional with 8+ years across enterprise sales, operational systems, and practical software product building."
+        "description": "B2B sales, revenue growth, and partnerships professional with 8+ years across enterprise sales, operational systems, and business building."
       },
       {
         "@type": "WebSite",

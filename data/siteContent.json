@@ -200,7 +200,7 @@
       "alt": "CareerOS AI-powered career operating system",
       "tags": [
         "AI Product",
-        "Product Management",
+        "Commercial Strategy & Execution",
         "Commercial Systems"
       ],
       "evidence": [
@@ -237,7 +237,7 @@
       "tags": [
         "Product Strategy",
         "UX",
-        "Product Management",
+        "Commercial Strategy & Execution",
         "Systems Thinking"
       ],
       "evidence": [
@@ -799,8 +799,8 @@
     }
   ],
   "seo": {
-    "siteTitle": "Vivek Dhoundiyal | Business Growth, Partnerships & Product Building",
-    "siteDescription": "Explore Vivek Dhoundiyal’s work across business development, revenue growth, strategic partnerships, operations, and digital product building.",
+    "siteTitle": "Vivek Dhoundiyal | Business Development, Growth & Partnerships",
+    "siteDescription": "Explore Vivek Dhoundiyal’s work across business development, revenue growth, strategic partnerships, business operations, and commercial execution.",
     "canonicalUrl": "https://vivek-dhoundiyal-portfolio.pages.dev",
     "ogImage": "/images/vivek-canonical.png",
     "twitterHandle": "@Vivek_Dh_"
@@ -1235,9 +1235,9 @@
       "eyebrow": "CASE STUDY / OPERATIONAL BLUEPRINT",
       "title": "CareerOS: The AI-Powered Career Operating System",
       "subtitle": "A continuous, profile-driven career operating system that shifts the integration burden away from the candidate and transforms job discovery into an automated intelligence engine.",
-      "role": "Product Management & Product Strategy",
+      "role": "Commercial Strategy & Systems Architecture",
       "author": "Vivek Dhoundiyal",
-      "status": "Product Concept & Product Strategy",
+      "status": "Product Concept & Strategic Blueprint",
       "category": "Independent Software Product",
       "thesis": "A person's career profile should become an active search engine for their career. The system should continuously evaluate opportunities against the user, rather than forcing the user to search through thousands of jobs."
     },
@@ -1332,7 +1332,7 @@
         "transition": "A forensic audit of early prototype iterations revealed critical structural failure modes.",
         "whatThisLayerRepresents": "A forensic decomposition of early prototype failure modes. Rapid feature additions (custom scrapers, reactive filters, un-indexed tags, ad-hoc alerting) without canonical domain schemas created race conditions, duplicate listings, corrupted state transitions, and degraded query performance.",
         "whyItMatters": "Uncontrolled feature velocity without domain boundaries creates compounding architectural fragility, crippling user trust when jobs show incorrect status or outdated requirements.",
-        "productThinking": "Rigorous root-cause analysis is senior PM hygiene. Acknowledging architectural debt early is essential to building high-integrity platforms that scale."
+        "productThinking": "Rigorous root-cause analysis is foundational engineering hygiene. Acknowledging architectural debt early is essential to building high-integrity platforms that scale."
       },
       {
         "pageNumber": 5,
@@ -1346,7 +1346,7 @@
         "transition": "Diagnosing the root causes showed that superficial visual polish could not solve underlying data fragmentation.",
         "whatThisLayerRepresents": "Categorization of system breakdowns across four core tiers: Ingestion Fragmentation (unvalidated data ingestion), Domain Ambiguity (loose entity boundaries), Logic Collisions (competing filter heuristics), and Pipeline Mutation (inconsistent stage progression).",
         "whyItMatters": "Treating structural ingestion and domain failures with cosmetic surface-level changes leaves data inaccuracies and pipeline drop-offs unresolved.",
-        "productThinking": "Product managers must address the root systemic causes rather than masking architectural flaws behind polished UI facades."
+        "productThinking": "Builders and system architects must address the root systemic causes rather than masking architectural flaws behind polished UI facades."
       },
       {
         "pageNumber": 6,
@@ -1395,10 +1395,10 @@
         "id": "architecture-09",
         "chapter": "PRODUCT STRATEGY · QUALITY TRADEOFF",
         "badge": "PRODUCT STRATEGY",
-        "title": "The Core PM Trade-off: Quality Over Volume",
+        "title": "The Core Strategic Trade-off: Quality Over Volume",
         "imageWebp": "/images/careeros/architecture-page-09.webp",
         "imagePng": "/images/careeros/architecture-page-09.png",
-        "alt": "Core PM Strategic Tradeoff Matrix: Quality vs Volume",
+        "alt": "Core Strategic Tradeoff Matrix: Quality vs Volume",
         "transition": "Enforcing strict freshness and normalization required making an explicit strategic trade-off.",
         "whatThisLayerRepresents": "The foundational product trade-off matrix: deliberately rejecting aggregate volume metrics in favor of high-signal precision, data completeness, verified posting dates, and low noise.",
         "whyItMatters": "Vanity metrics prioritize displaying tens of thousands of low-quality jobs. For candidates, noise creates decision paralysis and wasted effort.",
@@ -1477,12 +1477,12 @@
       {
         "pageNumber": 15,
         "id": "architecture-15",
-        "chapter": "EXECUTIVE SYNTHESIS · STRATEGIC PM MATRIX",
+        "chapter": "EXECUTIVE SYNTHESIS · STRATEGIC PRODUCT MATRIX",
         "badge": "EXECUTIVE SYNTHESIS",
-        "title": "The Ultimate PM Synthesis",
+        "title": "The Strategic Systems Synthesis",
         "imageWebp": "/images/careeros/architecture-page-15.webp",
         "imagePng": "/images/careeros/architecture-page-15.png",
-        "alt": "Executive PM Synthesis and Four-Stage Architectural Maturity Model",
+        "alt": "Executive Strategic Synthesis and Four-Stage Architectural Maturity Model",
         "transition": "The case study concludes with an executive synthesis of the product blueprint and strategic trajectory.",
         "whatThisLayerRepresents": "Executive synthesis uniting the four pillars of CareerOS: Systems Thinking (holistic lifecycle), Rigorous Prioritization (quality over volume), Transparent Engineering (zero vanity metrics), and Architectural Longevity (persistent data).",
         "whyItMatters": "Demonstrates end-to-end product mastery: bridging strategic market vision, domain systems, intelligent matching, and product execution into a coherent product asset.",
@@ -1559,7 +1559,7 @@
     "productThinking": {
       "eyebrow": "FOUNDATIONAL PRINCIPLES",
       "heading": "Product Thinking Behind CareerOS",
-      "intro": "Five architectural and product management principles that guide every decision within CareerOS.",
+      "intro": "Five architectural and systems design principles that guide every decision within CareerOS.",
       "principles": [
         {
           "num": "01",
@@ -1771,7 +1771,7 @@
       "badge": "LIVE MVP",
       "statusText": "Actively Evolving",
       "labels": [
-        "Product Management",
+        "Commercial Strategy & Execution",
         "UX Strategy",
         "0→1 Architecture",
         "Document Productivity"
@@ -1922,7 +1922,7 @@
     "productThinking": {
       "eyebrow": "05 · PRODUCT THINKING",
       "headline": "From problem to product.",
-      "supporting": "A deliberate PM decision framework connecting user frustration to production execution.",
+      "supporting": "A deliberate product decision framework connecting user frustration to production execution.",
       "stages": [
         {
           "id": "problem",
@@ -2181,7 +2181,7 @@
       ]
     },
     "learnings": {
-      "eyebrow": "15 · PM LEARNINGS",
+      "eyebrow": "15 · STRATEGIC LEARNINGS",
       "headline": "Four core lessons from building NUVIO.",
       "cards": [
         {

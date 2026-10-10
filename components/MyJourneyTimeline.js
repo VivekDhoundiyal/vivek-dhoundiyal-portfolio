@@ -46,7 +46,7 @@ export default function MyJourneyTimeline() {
       subtitle: 'NUVIO & Applied AI Systems',
       category: 'ACTIVE PRODUCT BUILDING',
       description: 'Architecting NUVIO (private PDF workspace) and CareerOS (AI career operating system) — combining commercial insight with client-side software design.',
-      tags: ['Product Management', 'Local Sandbox', '0→1 Product'],
+      tags: ['Entrepreneurship & Business Building', 'Local Sandbox', '0→1 Product'],
       accent: 'emerald',
       isCurrent: true
     },

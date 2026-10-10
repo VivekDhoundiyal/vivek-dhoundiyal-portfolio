@@ -193,7 +193,7 @@ export default function WhatIDo() {
                 Bridging Commercial &amp; Product
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Operating at the intersection of enterprise business development, product management, and operational systems to deliver measurable outcomes.
+                Operating at the intersection of enterprise business development, commercial strategy, and operational execution to deliver measurable outcomes.
               </p>
             </div>
 

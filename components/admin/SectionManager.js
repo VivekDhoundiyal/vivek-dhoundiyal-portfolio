@@ -6,7 +6,7 @@ const AVAILABLE_TYPES = [
   { type: 'entrepreneurial', name: 'Entrepreneurial Experience', description: 'Founder track record: SettleMyCar, Dark Kitchen, Fixins' },
   { type: 'corporate', name: 'Corporate Experience', description: 'Enterprise sales: CollegeDunia & KreedOn' },
   { type: 'timeline', name: 'Professional Experience Summary', description: 'Chronological timeline and detail narrative' },
-  { type: 'education-certifications', name: 'Education & Certifications', description: 'Manav Rachna degree and Google PM certificate' },
+  { type: 'education-certifications', name: 'Education & Certifications', description: 'Manav Rachna degree and Google Project Management certificate' },
   { type: 'building', name: 'Where I Am Building', description: 'Digital Products, AI & Automation, Business Systems' },
   { type: 'thinking', name: 'Thinking & Writing', description: 'Perspectives on operatorship, AI, and systems' },
   { type: 'tools', name: 'Tools & Capabilities', description: 'Categorized commercial and technical tool stack' },

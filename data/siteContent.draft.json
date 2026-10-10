@@ -3,72 +3,51 @@
     {
       "id": "hero",
       "type": "hero",
-      "name": "01 · Hero Section",
+      "name": "01 · Home",
       "enabled": true,
       "order": 0
     },
     {
-      "id": "what-i-do",
+      "id": "capabilities",
       "type": "capabilities",
-      "name": "02 · What I Do",
+      "name": "02 · Capabilities",
       "enabled": true,
       "order": 1
     },
     {
-      "id": "work",
-      "type": "entrepreneurial",
-      "name": "03 · Entrepreneurial Experience",
+      "id": "experience",
+      "type": "experience",
+      "name": "03 · Experience",
       "enabled": true,
       "order": 2
     },
     {
-      "id": "corporate",
-      "type": "corporate",
-      "name": "04 · Corporate Experience",
+      "id": "education",
+      "type": "education",
+      "name": "04 · Education",
       "enabled": true,
       "order": 3
     },
     {
-      "id": "experience",
-      "type": "timeline",
-      "name": "05 · Professional Experience Summary",
+      "id": "work",
+      "type": "work",
+      "name": "05 · Work",
       "enabled": true,
       "order": 4
     },
     {
-      "id": "education-certifications",
-      "type": "education-certifications",
-      "name": "06 · Education & Certifications",
+      "id": "blog",
+      "type": "blog",
+      "name": "06 · Blog",
       "enabled": true,
       "order": 5
     },
     {
-      "id": "building",
-      "type": "building",
-      "name": "07 · Where I Am Building",
+      "id": "contact",
+      "type": "contact",
+      "name": "07 · Contact",
       "enabled": true,
       "order": 6
-    },
-    {
-      "id": "thinking",
-      "type": "thinking",
-      "name": "08 · Thinking & Writing",
-      "enabled": true,
-      "order": 7
-    },
-    {
-      "id": "tools",
-      "type": "tools",
-      "name": "09 · Tools & Capabilities",
-      "enabled": true,
-      "order": 8
-    },
-    {
-      "id": "about-contact",
-      "type": "about-contact",
-      "name": "10 · About & Direct Contact",
-      "enabled": true,
-      "order": 9
     }
   ],
   "whereIAmBuilding": {
@@ -78,7 +57,7 @@
   },
   "profile": {
     "name": "Vivek Dhoundiyal",
-    "role": "Revenue • Growth • Commercial Operator",
+    "role": "Entrepreneur · Business Development · Growth Leader",
     "location": "India / Remote",
     "availability": "Open for revenue leadership, strategic growth consulting & 0-to-1 ventures",
     "email": "vivekdhoundiyal2901@gmail.com",
@@ -87,9 +66,9 @@
     "linkedin": "https://www.linkedin.com/in/vivekdhoundiyal",
     "x": "https://x.com/Vivek_Dh_",
     "github": "https://github.com/VivekDhoundiyal",
-    "heroEyebrow": "REVENUE • BUSINESS DEVELOPMENT • GROWTH",
-    "heroHeadline": "I build revenue, relationships and businesses.",
-    "heroDescription": "I am a commercial operator and business builder with 8+ years of experience across B2B sales, revenue generation, partnerships, entrepreneurship and commercial operations. Today, I am applying that experience to technology, AI workflows and systems — including CareerOS.",
+    "heroEyebrow": "BUSINESS • GROWTH • PARTNERSHIPS",
+    "heroHeadline": "I build revenue, relationships and scalable businesses.",
+    "heroDescription": "I'm Vivek Dhoundiyal — an entrepreneurial sales, business development and growth professional with 8+ years of experience across enterprise sales, strategic partnerships, revenue operations and scaling businesses from 0→1. I focus on building high-trust commercial relationships, driving repeatable revenue, and executing scalable operations.",
     "portraitImage": "/images/vivek-tech-creator.png",
     "avatarImage": "/images/vivek-tech-creator.png",
     "education": "B.Tech in Mechanical Engineering, Manav Rachna International University (2014–2018)",
@@ -98,22 +77,22 @@
       "Hindi"
     ],
     "experienceYears": "8+ Years",
-    "heroHeadlineAlt": "I help businesses grow and run better.",
+    "heroHeadlineAlt": "I build revenue, relationships and scalable businesses.",
     "milestones": [
       {
         "value": "8+ Years",
         "title": "Sales · Partnerships",
-        "subtitle": "Operations · Entrepreneurship"
+        "subtitle": "Business Development · Revenue"
       },
       {
         "value": "3+ Ventures",
         "title": "Built · Operated · Scaled",
-        "subtitle": "Marketplace, B2B food supply & distribution"
+        "subtitle": "SettleMyCar · Kitchen · Fixins"
       },
       {
-        "value": "Next Chapter",
-        "title": "Product · AI · Systems",
-        "subtitle": "Applying commercial leverage to technology"
+        "value": "Entrepreneurship",
+        "title": "Commercial Growth · Execution",
+        "subtitle": "0→1 Building · Scalable Operations"
       }
     ]
   },
@@ -174,14 +153,14 @@
     "favicon": "/favicon.ico"
   },
   "hero": {
-    "eyebrow": "REVENUE • BUSINESS DEVELOPMENT • GROWTH",
-    "title": "I build revenue, relationships and businesses.",
-    "description": "I am a commercial operator and business builder with 8+ years of experience across B2B sales, revenue generation, partnerships, entrepreneurship and commercial operations. Today, I am applying that experience to technology, AI workflows and systems — including CareerOS.",
+    "eyebrow": "BUSINESS • GROWTH • PARTNERSHIPS",
+    "title": "I build revenue, relationships and scalable businesses.",
+    "description": "I'm Vivek Dhoundiyal — an entrepreneurial sales, business development and growth professional with 8+ years of experience across enterprise sales, strategic partnerships, revenue operations and scaling businesses from 0→1. I focus on building high-trust commercial relationships, driving repeatable revenue, and executing scalable operations.",
     "primaryButtonText": "Explore My Work",
     "primaryButtonUrl": "#work",
     "secondaryButtonText": "View Resume",
     "secondaryButtonUrl": "/resume",
-    "titleAlt": "I help businesses\ngrow and run better."
+    "titleAlt": "I build revenue, relationships and scalable businesses."
   },
   "resumes": [
     {
@@ -190,13 +169,13 @@
       "subtitle": "B2B Sales · Enterprise Development · Revenue Operations · Partnerships",
       "filename": "Vivek_Dhoundiyal_B2B_Sales_Resume.pdf",
       "url": "/resumes/Vivek_Dhoundiyal_B2B_Sales_Resume.pdf",
-      "description": "Detailed record of 8+ years driving commercial revenue, consultative B2B sales cycles, client negotiation, and outbound pipeline architecture.",
+      "description": "Detailed record of 8+ years driving commercial revenue, consultative B2B sales cycles, client negotiation, and outbound pipeline systems.",
       "focusAreas": [
         "Enterprise B2B Sales & Consultative Selling",
         "Lead Generation & Multi-Channel Outbound",
         "Commercial Negotiation & Contract Closing",
         "Key Account Management & Revenue Retention",
-        "CRM Pipeline Architecture (Zoho, Apollo, Lusha)"
+        "CRM Pipeline Systems (Zoho, Apollo, Lusha)"
       ]
     }
   ],
@@ -206,11 +185,11 @@
       "slug": "careeros",
       "title": "CareerOS",
       "subtitle": "The AI-Powered Career Operating System",
-      "projectType": "PRODUCT / SYSTEMS ARCHITECTURE",
-      "category": "Product / Systems Architecture",
-      "role": "Product & Systems Architect",
+      "projectType": "COMMERCIAL PRODUCT & OPERATIONS SYSTEM",
+      "category": "Product Concept & Commercial Strategy",
+      "role": "Product Creator & Commercial Operator",
       "year": "2024–2026",
-      "status": "Featured Architecture",
+      "status": "Featured Product",
       "statusType": "active",
       "featured": true,
       "tagline": "The AI-Powered Career Operating System",
@@ -218,15 +197,15 @@
       "summary": "An AI-powered career operating system that turns a candidate's profile into an active search engine for relevant opportunities.",
       "image": "/images/careeros/careeros-operating-system-infographic.webp",
       "imagePng": "/images/careeros/careeros-operating-system-infographic.png",
-      "alt": "CareerOS AI-powered career operating system architecture",
+      "alt": "CareerOS AI-powered career operating system",
       "tags": [
         "AI Product",
-        "Product Management",
-        "Systems Architecture"
+        "Commercial Strategy & Execution",
+        "Commercial Systems"
       ],
       "evidence": [
         {
-          "label": "Architecture",
+          "label": "Product Blueprint",
           "value": "10-Stage Pipeline",
           "sub": "closed-loop flow"
         },
@@ -234,6 +213,43 @@
           "label": "Matching Model",
           "value": "7-Dimensional",
           "sub": "profile-aware AI"
+        }
+      ]
+    },
+    {
+      "id": "nuvio",
+      "slug": "nuvio",
+      "title": "NUVIO",
+      "subtitle": "Private PDF Editing, Reimagined",
+      "projectType": "ACTIVE BUILD · PRODUCT IN PROGRESS",
+      "category": "Client-Side Workspace & Document Integrity",
+      "role": "Product Strategy & Systems Thinking",
+      "year": "2026",
+      "status": "BUILDING",
+      "statusType": "active",
+      "featured": false,
+      "tagline": "Private PDF editing, reimagined around privacy and simplicity.",
+      "description": "A browser-based PDF workspace designed to keep sensitive documents on the user's device while making editing feel as simple as a modern productivity app.",
+      "summary": "A browser-based PDF workspace designed to keep sensitive documents on the user's device while making editing feel as simple as a modern productivity app.",
+      "image": "/illustrations/nuvio-hero-illustration.svg",
+      "imagePng": "/illustrations/nuvio-hero-illustration.svg",
+      "alt": "NUVIO Private PDF Workspace Interface Illustration",
+      "tags": [
+        "Product Strategy",
+        "UX",
+        "Commercial Strategy & Execution",
+        "Systems Thinking"
+      ],
+      "evidence": [
+        {
+          "label": "Architecture",
+          "value": "100% Client-Side",
+          "sub": "zero server uploads"
+        },
+        {
+          "label": "Document Model",
+          "value": "Single Source of Truth",
+          "sub": "deterministic export"
         }
       ]
     },
@@ -347,7 +363,7 @@
       "id": "supersurge",
       "slug": "supersurge",
       "title": "SuperSurge Consulting",
-      "projectType": "REVENUE ARCHITECTURE · CONSULTING",
+      "projectType": "REVENUE OPERATIONS · CONSULTING",
       "category": "Growth / Commercial",
       "role": "Growth & Revenue Consultant",
       "year": "Oct 2024 – Present",
@@ -355,7 +371,7 @@
       "statusType": "active",
       "featured": false,
       "tagline": "Outbound pipeline design, revenue operations, and commercial growth advisory.",
-      "summary": "Advising B2B startups and commercial ventures on go-to-market structure, ICP segmentation, multichannel outbound architecture, and conversion funnel optimization.",
+      "summary": "Advising B2B startups and commercial ventures on go-to-market structure, ICP segmentation, multichannel outbound strategy, and conversion funnel optimization.",
       "evidence": [
         {
           "label": "Tenure",
@@ -411,7 +427,7 @@
   "experience": {
     "headline": "A builder with deep commercial and operating foundations.",
     "subhead": "The verified trajectory: Engineering → Entrepreneurship → 0→1 Building → B2B Sales & Growth → Operations → Product.",
-    "intro": "I began with an engineering background where I learned system constraints, logic, and debugging. Moving into entrepreneurship and commercial roles, I learned how businesses actually acquire customers, negotiate terms, manage cash flows, and build repeatable operational machines.",
+    "intro": "I began with an engineering background where I learned system constraints, logic, and root-cause troubleshooting. Moving into entrepreneurship and commercial roles, I learned how businesses actually acquire customers, negotiate terms, manage cash flows, and build repeatable operational machines.",
     "nodes": [
       {
         "id": "corporate-collegedunia",
@@ -459,8 +475,8 @@
         "role": "Growth & Revenue Consultant",
         "period": "Oct 2024 – Present",
         "location": "India / Remote",
-        "badge": "Consulting · GTM Architecture",
-        "summary": "Advising B2B ventures on go-to-market architecture, ICP definition, outbound engines, and revenue operations.",
+        "badge": "Consulting · GTM Strategy",
+        "summary": "Advising B2B ventures on go-to-market strategy, ICP definition, outbound engines, and revenue operations.",
         "scope": "Outbound sales process auditing, multi-channel email/LinkedIn cadences, and CRM pipeline restructuring.",
         "link": "/experience/supersurge",
         "takeaway": "Revenue is an engineering problem: when you constrain inputs to high-intent signals and repeatable cadences, pipeline growth becomes deterministic."
@@ -515,7 +531,7 @@
       "tagline": "Rapid modular execution & delivery cadence",
       "question": "How fast can we put a real mechanism into user hands?",
       "lookFor": "Execution drag, manual edge cases, speed to first feedback loop.",
-      "produce": "Working system, operational SOPs, telemetry instrumentation.",
+      "produce": "Working system, operational SOPs, performance analytics.",
       "relatedWork": "Dark Kitchen"
     },
     {
@@ -539,20 +555,44 @@
       "tagline": "Architecting a unified system for career progression — centralizing opportunity discovery, intelligent positioning artifacts, application pipeline tracking, and interview preparation workflows.",
       "description": "An AI-powered career operating system I am building to streamline opportunity discovery, eliminate pipeline fragmentation, and accelerate professional growth.",
       "currentObjective": "Engineering core opportunity indexing and state-machine pipeline tracking modules locally.",
-      "whatIsBeingBuilt": "Full-stack interface with local state management, structured candidate profile generators, and opportunity ranking algorithms.",
+      "whatIsBeingBuilt": "End-to-end user workspace with structured candidate profile generators, and opportunity ranking algorithms.",
       "technology": [
-        "Next.js",
-        "React",
-        "Tailwind CSS",
-        "Node.js",
-        "Local Storage APIs"
+        "Product Strategy",
+        "Applied AI",
+        "Data Automation",
+        "Modern Web Technologies",
+        "Local Storage"
       ],
       "progress": "Opportunity Discovery & Pipeline Tracking modules engineered in local build.",
-      "milestone": "Active local architecture & engineering (zero fabricated metrics)",
+      "milestone": "Active product development & execution (zero fabricated metrics)",
       "link": "#building",
       "lastUpdated": "September 2026",
       "highlight": true,
       "badge": "Active Build"
+    },
+    {
+      "id": "nuvio",
+      "title": "NUVIO",
+      "category": "Independent Software Product",
+      "status": "BUILDING",
+      "focus": "Private Client-Side PDF Workspace",
+      "tagline": "Reimagining PDF workflows around privacy, simplicity, and control — keeping sensitive documents on the user's device.",
+      "description": "An active product exploration designing a client-side PDF workspace that unifies editing, annotation, and assembly without sending documents to external servers.",
+      "currentObjective": "Designing canonical document state synchronization and local coordinate translation algorithms.",
+      "whatIsBeingBuilt": "Interactive client-side editor with local document state management, direct visual editing canvas, and deterministic PDF export.",
+      "technology": [
+        "Product Strategy",
+        "Client-Side Architecture",
+        "UX Design",
+        "Document Modeling",
+        "Local Sandbox"
+      ],
+      "progress": "Core visual editor hypothesis & coordinate translation model in active exploration.",
+      "milestone": "Active product exploration & MVP design (zero fabricated metrics)",
+      "link": "/work/nuvio",
+      "lastUpdated": "October 2026",
+      "highlight": false,
+      "badge": "Building"
     }
   ],
   "tools": [
@@ -560,7 +600,7 @@
       "id": "chatgpt",
       "name": "ChatGPT",
       "category": "AI",
-      "desc": "Synthetic customer scenario modeling, prompt engineering & conversational synthesis"
+      "desc": "Synthetic scenario modeling, prompt engineering & conversational analysis"
     },
     {
       "id": "claude",
@@ -575,76 +615,40 @@
       "desc": "Multimodal analysis, large-context document processing & research extraction"
     },
     {
-      "id": "cursor",
-      "name": "Cursor",
-      "category": "AI",
-      "desc": "AI-native code engineering, rapid prototyping & interface building"
-    },
-    {
       "id": "perplexity",
       "name": "Perplexity",
       "category": "Research",
-      "desc": "Real-time market discovery, competitor intelligence & verified industry research"
+      "desc": "AI-powered real-time research, competitor analysis & verified industry discovery"
     },
     {
-      "id": "apollo",
-      "name": "Apollo",
-      "category": "Research",
-      "desc": "B2B prospect intelligence, verified account mapping & outbound intent triggers"
+      "id": "openai-codex",
+      "name": "OpenAI Codex",
+      "category": "Product Development",
+      "desc": "AI-assisted software development and code workflows"
     },
     {
-      "id": "lusha",
-      "name": "Lusha",
-      "category": "Research",
-      "desc": "Verified decision-maker contact data & enterprise account enrichment"
+      "id": "claude-code",
+      "name": "Claude Code",
+      "category": "Product Development",
+      "desc": "Agentic terminal execution, product refactoring & automated development workflows"
     },
     {
-      "id": "hubspot",
-      "name": "HubSpot",
-      "category": "CRM",
-      "desc": "Inbound marketing, deal pipeline tracking, contact lifecycle stages & automated sequences"
+      "id": "antigravity",
+      "name": "Antigravity",
+      "category": "Product Development",
+      "desc": "AI-assisted application building and end-to-end system development workflows"
     },
     {
-      "id": "zoho-crm",
-      "name": "Zoho CRM",
-      "category": "CRM",
-      "desc": "Pipeline management, lead status machines & revenue forecasting"
+      "id": "stitch",
+      "name": "Stitch",
+      "category": "Product Development",
+      "desc": "AI-assisted interface design, interactive prototyping & UX product workflows"
     },
     {
-      "id": "stripe",
-      "name": "Stripe",
-      "category": "CRM",
-      "desc": "Commercial billing infrastructure, checkout flows, recurring billing & invoices"
-    },
-    {
-      "id": "n8n",
-      "name": "n8n",
-      "category": "Automation",
-      "desc": "Self-hosted workflow automations, custom webhooks & API connectors"
-    },
-    {
-      "id": "make",
-      "name": "Make",
-      "category": "Automation",
-      "desc": "Visual multi-app integration routers & event-triggered pipelines"
-    },
-    {
-      "id": "zapier",
-      "name": "Zapier",
-      "category": "Automation",
-      "desc": "Rapid connector pipelines for zero-to-one prototype validation"
-    },
-    {
-      "id": "notion",
-      "name": "Notion",
-      "category": "Productivity",
-      "desc": "Operating playbooks, project documentation, PRDs & company knowledge architecture"
-    },
-    {
-      "id": "linear",
-      "name": "Linear",
-      "category": "Productivity",
-      "desc": "High-velocity issue tracking, sprint cadences & milestone execution"
+      "id": "python",
+      "name": "Python",
+      "category": "Product Development",
+      "desc": "Data transformation scripts, web scrapers & automated ETL utilities"
     },
     {
       "id": "clickup",
@@ -653,102 +657,151 @@
       "desc": "Operational workflow tracking, resource coordination & task maps"
     },
     {
+      "id": "notion",
+      "name": "Notion",
+      "category": "Productivity",
+      "desc": "Operating playbooks, project documentation, PRDs & company knowledge systems"
+    },
+    {
       "id": "google-workspace",
       "name": "Google Workspace",
       "category": "Productivity",
-      "desc": "Executive memos, financial modeling, spreadsheets & shared collaboration"
+      "desc": "Executive memos, shared spreadsheets, docs & team collaboration"
     },
     {
-      "id": "monday",
-      "name": "Monday.com",
+      "id": "microsoft-word",
+      "name": "Microsoft Word",
       "category": "Productivity",
-      "desc": "Cross-functional operational boards, project tracking & resource management"
+      "desc": "Executive documentation, client proposals and business agreements"
     },
     {
-      "id": "python",
-      "name": "Python",
-      "category": "Development",
-      "desc": "Data transformation scripts, web scrapers & automated ETL utilities"
+      "id": "microsoft-powerpoint",
+      "name": "Microsoft PowerPoint",
+      "category": "Productivity",
+      "desc": "Client pitch decks, board presentations and commercial communication"
     },
     {
-      "id": "figma",
-      "name": "Figma",
-      "category": "Development",
-      "desc": "Design systems, interactive prototypes & high-fidelity wireframing"
-    },
-    {
-      "id": "webflow",
-      "name": "Webflow",
-      "category": "Development",
-      "desc": "Landing pages, rapid commercial test sites & editorial publishing"
-    },
-    {
-      "id": "posthog",
-      "name": "PostHog",
+      "id": "microsoft-excel",
+      "name": "Microsoft Excel",
       "category": "Analytics",
-      "desc": "Product analytics, event tracking, user journeys & session telemetry"
+      "desc": "Business analysis, financial modeling, unit economic spreadsheets & reporting"
+    },
+    {
+      "id": "zoho-crm",
+      "name": "Zoho CRM",
+      "category": "CRM",
+      "desc": "Pipeline management, lead status machines & revenue forecasting"
+    },
+    {
+      "id": "hubspot",
+      "name": "HubSpot",
+      "category": "CRM",
+      "desc": "Inbound marketing, deal pipeline tracking, contact lifecycle stages & automated sequences"
+    },
+    {
+      "id": "zapier",
+      "name": "Zapier",
+      "category": "Automation",
+      "desc": "Rapid connector pipelines and automated webhooks for 0→1 validation"
+    },
+    {
+      "id": "make",
+      "name": "Make",
+      "category": "Automation",
+      "desc": "Visual multi-app integration routers & event-triggered data pipelines"
     },
     {
       "id": "slack",
       "name": "Slack",
       "category": "Communication",
       "desc": "Async team coordination, real-time alert webhooks & integration hubs"
-    },
-    {
-      "id": "loom",
-      "name": "Loom",
-      "category": "Communication",
-      "desc": "Async video walkthroughs, design critiques & asynchronous team updates"
     }
   ],
   "thinking": [
     {
-      "id": "operator-to-product",
-      "slug": "operator-to-product",
-      "title": "From Operator to Product: Bridging the Commercial-Engineering Gap",
-      "category": "PRODUCT",
-      "date": "2026-08-12",
-      "readingTime": "5 min read",
-      "excerpt": "Why the most effective product builders think like business operators first, and how commercial realities shape superior software architecture.",
+      "id": "how-to-build-a-predictable-sales-pipeline",
+      "slug": "how-to-build-a-predictable-sales-pipeline",
+      "title": "How to Build a Predictable B2B Sales Pipeline from Scratch",
+      "category": "Sales Strategy",
+      "date": "2026-09-15",
+      "readingTime": "7 min read",
+      "excerpt": "A practitioner's blueprint for ICP definition, multi-channel outbound sequencing, and qualification frameworks that build repeatable enterprise revenue.",
       "tags": [
-        "Product Thinking",
-        "Commercial Strategy",
-        "Unit Economics"
+        "Sales Strategy",
+        "Pipeline Management",
+        "B2B Sales",
+        "Lead Generation",
+        "Deal Execution"
       ]
     },
     {
-      "id": "systems-that-outlive-builders",
-      "slug": "systems-that-outlive-builders",
-      "title": "Designing Systems That Outlive Their Builders",
-      "category": "SYSTEMS",
+      "id": "strategic-partnerships-gtm-playbook",
+      "slug": "strategic-partnerships-gtm-playbook",
+      "title": "The Strategic Partnerships Playbook: Unlocking Non-Linear Growth",
+      "category": "Partnerships",
+      "date": "2026-08-20",
+      "readingTime": "6 min read",
+      "excerpt": "How to structure high-trust commercial distribution agreements, co-marketing alliances, and mutual-upside channel partnerships that lower CAC and scale distribution.",
+      "tags": [
+        "Partnerships",
+        "GTM Strategy",
+        "Market Expansion",
+        "Distribution",
+        "Commercial Strategy"
+      ]
+    },
+    {
+      "id": "scaling-business-operations-0-to-1",
+      "slug": "scaling-business-operations-0-to-1",
+      "title": "Scaling Business Operations: From Chaos to Predictable Execution",
+      "category": "Business Operations",
       "date": "2026-07-28",
       "readingTime": "6 min read",
-      "excerpt": "How to structure documentation, operating playbooks, and automated workflows so businesses execute with high velocity without depending on heroics.",
+      "excerpt": "Tactical operational lessons from running early-stage ventures: process decomposition, unit economics governance, and building repeatable business systems.",
       "tags": [
         "Operations",
-        "System Architecture",
-        "Scalability"
+        "Entrepreneurship",
+        "Execution",
+        "Unit Economics",
+        "Process Improvement"
       ]
     },
     {
-      "id": "ai-commercial-loop",
-      "slug": "ai-product-loop",
-      "title": "AI in the Commercial Loop: Augmentation Over Automation",
-      "category": "AI",
+      "id": "commercial-discipline-in-modern-business",
+      "slug": "commercial-discipline-in-modern-business",
+      "title": "Commercial Discipline in Modern Business: Aligning Sales and Operations",
+      "category": "Revenue Growth",
       "date": "2026-06-19",
-      "readingTime": "7 min read",
-      "excerpt": "Why full automation often breaks trust in professional workflows, and how to design human-in-the-loop AI interfaces that operators actually rely on.",
+      "readingTime": "5 min read",
+      "excerpt": "Why sustainable growth requires tight alignment between commercial commitments and operational fulfillment, and how operators bridge the gap.",
       "tags": [
-        "Artificial Intelligence",
-        "Workflows",
-        "Agentic Systems"
+        "Commercial Strategy",
+        "Revenue Growth",
+        "Operations",
+        "Leadership",
+        "Account Management"
+      ]
+    },
+    {
+      "id": "operator-to-product",
+      "slug": "operator-to-product",
+      "title": "Bridging Commercial Strategy and Software Execution: An Operator's Blueprint",
+      "category": "Commercial Strategy",
+      "date": "2026-08-12",
+      "readingTime": "5 min read",
+      "excerpt": "Why the most effective commercial leaders and builders ground software in business reality, unit economics, and operational scalability.",
+      "tags": [
+        "Commercial Strategy",
+        "Business Operations",
+        "Unit Economics",
+        "Execution"
       ]
     }
   ],
   "seo": {
-    "siteTitle": "Vivek Dhoundiyal — Builder · Systems · Growth",
-    "siteDescription": "I build products, businesses and systems. 8+ years across entrepreneurship, commercial growth, operations and software.",
-    "canonicalUrl": "https://vivekdhoundiyal.com",
+    "siteTitle": "Vivek Dhoundiyal | Business Development, Growth & Partnerships",
+    "siteDescription": "Explore Vivek Dhoundiyal’s work across business development, revenue growth, strategic partnerships, business operations, and commercial execution.",
+    "canonicalUrl": "https://vivek-dhoundiyal-portfolio.pages.dev",
     "ogImage": "/images/vivek-canonical.png",
     "twitterHandle": "@Vivek_Dh_"
   },
@@ -806,7 +859,7 @@
       {
         "value": "8+ Years",
         "label": "Commercial Execution",
-        "sub": "B2B sales, revenue architecture & deal closing"
+        "sub": "B2B sales, revenue operations & deal closing"
       },
       {
         "value": "3+ Ventures",
@@ -836,7 +889,7 @@
       "slug": "revenue-business-development",
       "title": "Revenue & Business Development",
       "tag": "Commercial Execution",
-      "headline": "Consultative pipeline architecture, enterprise deal closing and recurring revenue systems.",
+      "headline": "Consultative pipeline systems, enterprise deal closing and recurring revenue systems.",
       "summary": "I build predictable commercial revenue engines. From initial ICP identification and outbound research to multi-stakeholder consultative pitching and contract negotiation, I focus on commercial durability rather than empty volume.",
       "approach": "Revenue is an engineering problem. When you define clear ICP boundaries, map buyer incentives, and automate context-rich research dossiers, sales cycles shorten and conversion rates compound.",
       "problemsSolved": [
@@ -962,7 +1015,7 @@
       "id": "business-operations",
       "slug": "business-operations",
       "title": "Business & Operations",
-      "tag": "System Design",
+      "tag": "Operations & Scale",
       "headline": "Unit economics, ground-level logistics, working capital governance, and repeatable operating machines.",
       "summary": "I build and run physical and digital operational systems. From morning farm-to-kitchen fresh supply deliveries to multi-point automotive workshop repair logistics, I design systems that eliminate friction and protect cash flow.",
       "approach": "Operations is about turning uncertainty into predictable routines. By breaking down complex workflows into deterministic checkpoints and clear SLAs, businesses scale without chaotic fire-fighting.",
@@ -990,8 +1043,8 @@
         },
         {
           "step": "04",
-          "name": "Automation & Exception Routing",
-          "desc": "Automate routine notifications via webhooks and flag anomalies immediately to operators."
+          "name": "Automation & Exception Management",
+          "desc": "Automate routine notifications and flag anomalies immediately to operational leads."
         }
       ],
       "relevantExperience": [
@@ -1061,7 +1114,7 @@
       "period": "Dec 2023 – Oct 2024",
       "location": "India",
       "badge": "Media Sales & Sponsorships",
-      "tagline": "Brand sponsorships, sports media monetization, and commercial campaign architecture.",
+      "tagline": "Brand sponsorships, sports media monetization, and commercial campaign execution.",
       "summary": "Spearheaded B2B brand partnerships and media sponsorship deals, translating sports audience attention into high-impact commercial campaigns for consumer brands, corporate sponsors, and advertising agencies.",
       "context": "Digital sports media monetization requires bridging the gap between raw viewer attention and tangible corporate brand objectives, brand awareness, and lead generation.",
       "responsibilities": [
@@ -1090,11 +1143,11 @@
       "period": "Oct 2024 – Present",
       "location": "India / Remote",
       "badge": "Active Advisory",
-      "tagline": "GTM outbound architecture, revenue operations, and pipeline engineering for B2B ventures.",
+      "tagline": "GTM outbound systems, revenue operations, and pipeline development for B2B ventures.",
       "summary": "Advising B2B founders and commercial teams on go-to-market structure, ICP segmentation, multichannel outbound engine design, and conversion optimization.",
       "context": "Early and growth-stage B2B ventures often burn capital on unfocused outbound campaigns that yield low response rates, unqualified discovery calls, and bloated sales cycles.",
       "responsibilities": [
-        "Audit existing commercial sales pipelines, messaging frameworks, and lead routing mechanics",
+        "Audit existing commercial sales pipelines, messaging frameworks, and lead distribution mechanisms",
         "Design targeted ICP criteria using verified intent data, tech-stack signals, and hiring triggers",
         "Build automated multi-touch outbound cadences combining email, LinkedIn, and direct research dossiers",
         "Implement CRM operational workflows in Zoho and Apollo with strict SLA benchmarks"
@@ -1106,7 +1159,7 @@
         "GTM Strategy",
         "Revenue Operations",
         "Outbound Pipeline Engineering",
-        "ICP Architecture",
+        "ICP Strategy",
         "CRM Optimization"
       ],
       "lessons": "High-performing revenue teams succeed not through volume, but through extreme precision in prospect selection and context-rich positioning."
@@ -1156,7 +1209,7 @@
   "buildingToward": {
     "eyebrow": "STRATEGIC FOCUS",
     "title": "Where I am Building",
-    "narrative": "My foundation began in engineering and evolved through 8+ years of 0→1 entrepreneurship, enterprise B2B sales, revenue architecture, and commercial operations. Today, I am channeling that commercial leverage into technology, automated business systems, AI workflows, and digital products.",
+    "narrative": "My foundation began in engineering and evolved through 8+ years of 0→1 entrepreneurship, enterprise B2B sales, revenue operations, and commercial execution. Today, I am channeling that commercial leverage into technology, automated business systems, AI workflows, and digital products.",
     "focusAreas": [
       {
         "title": "Independent Software Products",
@@ -1164,7 +1217,7 @@
       },
       {
         "title": "AI & Agentic Workflows",
-        "desc": "Deploying LLM prompt chaining, webhook automations (n8n, Make), and deterministic schemas to eliminate commercial drag."
+        "desc": "Deploying intelligent prompt chaining, workflow automations (n8n, Make), and structured operational templates to eliminate commercial drag."
       },
       {
         "title": "Scalable Business Systems",
@@ -1175,16 +1228,16 @@
   "careeros": {
     "seo": {
       "title": "CareerOS: The AI-Powered Career Operating System — Product Case Study | Vivek Dhoundiyal",
-      "description": "Comprehensive product case study and systems architecture for CareerOS: inverting job discovery into an active, profile-driven intelligence engine.",
+      "description": "Comprehensive product case study and operational blueprint for CareerOS: inverting job discovery into an active, profile-driven intelligence engine.",
       "canonical": "https://vivekdhoundiyal.com/work/careeros"
     },
     "hero": {
-      "eyebrow": "CASE STUDY / SYSTEMS ARCHITECTURE",
+      "eyebrow": "CASE STUDY / OPERATIONAL BLUEPRINT",
       "title": "CareerOS: The AI-Powered Career Operating System",
       "subtitle": "A continuous, profile-driven career operating system that shifts the integration burden away from the candidate and transforms job discovery into an automated intelligence engine.",
-      "role": "Product Management & Systems Architecture",
+      "role": "Commercial Strategy & Systems Architecture",
       "author": "Vivek Dhoundiyal",
-      "status": "Product Concept & Systems Architecture",
+      "status": "Product Concept & Strategic Blueprint",
       "category": "Independent Software Product",
       "thesis": "A person's career profile should become an active search engine for their career. The system should continuously evaluate opportunities against the user, rather than forcing the user to search through thousands of jobs."
     },
@@ -1221,8 +1274,8 @@
     },
     "transition": {
       "heading": "Inside CareerOS",
-      "lead": "The operating-system view explains the product at a high level. The architecture below shows how that idea becomes a real product system.",
-      "body": "The following architecture sections present the core system models, forensic failure-mode analyses, domain normalization schemas, query engines, and engineering standards formulated during system discovery. Each chapter illustrates a foundational layer of the end-to-end product architecture."
+      "lead": "The operating-system view explains the product at a high level. The product blueprint below shows how that idea becomes a real product system.",
+      "body": "The following blueprint sections present the core system models, forensic failure-mode analyses, domain normalization schemas, query engines, and engineering standards formulated during system discovery. Each chapter illustrates a foundational layer of the end-to-end product architecture."
     },
     "architecturePages": [
       {
@@ -1256,8 +1309,8 @@
       {
         "pageNumber": 3,
         "id": "architecture-03",
-        "chapter": "DOMAIN MODEL · PERSISTENT ARCHITECTURE",
-        "badge": "DOMAIN ARCHITECTURE",
+        "chapter": "DOMAIN MODEL · PERSISTENT FRAMEWORK",
+        "badge": "DOMAIN FRAMEWORK",
         "title": "Evolving from Temporary Job Cards to a Persistent Intelligence System",
         "imageWebp": "/images/careeros/architecture-page-03.webp",
         "imagePng": "/images/careeros/architecture-page-03.png",
@@ -1279,7 +1332,7 @@
         "transition": "A forensic audit of early prototype iterations revealed critical structural failure modes.",
         "whatThisLayerRepresents": "A forensic decomposition of early prototype failure modes. Rapid feature additions (custom scrapers, reactive filters, un-indexed tags, ad-hoc alerting) without canonical domain schemas created race conditions, duplicate listings, corrupted state transitions, and degraded query performance.",
         "whyItMatters": "Uncontrolled feature velocity without domain boundaries creates compounding architectural fragility, crippling user trust when jobs show incorrect status or outdated requirements.",
-        "productThinking": "Rigorous root-cause analysis is senior PM hygiene. Acknowledging architectural debt early is essential to building high-integrity platforms that scale."
+        "productThinking": "Rigorous root-cause analysis is foundational engineering hygiene. Acknowledging architectural debt early is essential to building high-integrity platforms that scale."
       },
       {
         "pageNumber": 5,
@@ -1291,9 +1344,9 @@
         "imagePng": "/images/careeros/architecture-page-05.png",
         "alt": "Root Cause Diagnosis Across Ingestion, Domain, Logic, and Pipeline",
         "transition": "Diagnosing the root causes showed that superficial visual polish could not solve underlying data fragmentation.",
-        "whatThisLayerRepresents": "Categorization of system breakdowns across four core tiers: Ingestion Fragmentation (unvalidated schema ingestion), Domain Ambiguity (loose entity boundaries), Logic Collisions (competing filter heuristics), and Pipeline Mutation (inconsistent state progression).",
-        "whyItMatters": "Treating structural ingestion and domain failures with cosmetic frontend changes creates technical debt while leaving data inaccuracies and pipeline drop-offs unresolved.",
-        "productThinking": "Product managers must address the root systemic causes rather than masking architectural flaws behind polished UI facades."
+        "whatThisLayerRepresents": "Categorization of system breakdowns across four core tiers: Ingestion Fragmentation (unvalidated data ingestion), Domain Ambiguity (loose entity boundaries), Logic Collisions (competing filter heuristics), and Pipeline Mutation (inconsistent stage progression).",
+        "whyItMatters": "Treating structural ingestion and domain failures with cosmetic surface-level changes leaves data inaccuracies and pipeline drop-offs unresolved.",
+        "productThinking": "Builders and system architects must address the root systemic causes rather than masking architectural flaws behind polished UI facades."
       },
       {
         "pageNumber": 6,
@@ -1319,21 +1372,21 @@
         "imagePng": "/images/careeros/architecture-page-07.png",
         "alt": "Canonical Entity Normalization Engine",
         "transition": "With query algebra established, incoming unstandardized job metadata required strict entity normalization.",
-        "whatThisLayerRepresents": "The multi-tiered normalization schema that maps raw text inputs from hundreds of ATS platforms into canonical domain models (e.g., mapping \"Staff PM\", \"Lead Product Owner\", \"Group PM\" into standardized role archetypes and location bands).",
+        "whatThisLayerRepresents": "The multi-tiered normalization framework that maps raw text inputs from hundreds of ATS platforms into canonical domain models (e.g., mapping \"Staff PM\", \"Lead Product Owner\", \"Group PM\" into standardized role archetypes and location bands).",
         "whyItMatters": "ATS nomenclature varies wildly across companies. Without normalization, candidates miss critical opportunities simply due to divergent naming conventions.",
         "productThinking": "Taxonomy is core product infrastructure. Normalizing disparate terminology enables accurate cross-platform comparisons and automated matchmaking."
       },
       {
         "pageNumber": 8,
         "id": "architecture-08",
-        "chapter": "DATA INTEGRITY · TELEMETRY & FRESHNESS",
+        "chapter": "DATA INTEGRITY · REAL-TIME VERIFICATION & FRESHNESS",
         "badge": "DATA INTEGRITY",
-        "title": "Enforcing a Strict Freshness Mandate and True Telemetry",
+        "title": "Enforcing a Strict Freshness Mandate and Live Verification",
         "imageWebp": "/images/careeros/architecture-page-08.webp",
         "imagePng": "/images/careeros/architecture-page-08.png",
-        "alt": "Strict Freshness Mandate and Real-Time Telemetry Specification",
+        "alt": "Strict Freshness Mandate and Real-Time Verification Specification",
         "transition": "Beyond taxonomy, stale data undermines trust, necessitating a strict operational freshness mandate.",
-        "whatThisLayerRepresents": "The strict operational SLA: listings older than 7 days from first verification are flagged for re-validation; unverified postings are purged. Real-time telemetry tracks API response latency, worker extraction health, and URL dead-link rates.",
+        "whatThisLayerRepresents": "The strict operational SLA: listings older than 7 days from first verification are flagged for re-validation; unverified postings are purged. Real-time monitoring tracks service latency, extraction health, and URL dead-link rates.",
         "whyItMatters": "Ghost jobs and zombie listings on legacy job boards consume candidate energy on opportunities that have already closed or been filled weeks prior.",
         "productThinking": "Freshness is an uncompromisable product contract. A smaller, verified catalog of active opportunities creates far higher utility than millions of stale records."
       },
@@ -1342,28 +1395,28 @@
         "id": "architecture-09",
         "chapter": "PRODUCT STRATEGY · QUALITY TRADEOFF",
         "badge": "PRODUCT STRATEGY",
-        "title": "The Core PM Trade-off: Quality Over Volume",
+        "title": "The Core Strategic Trade-off: Quality Over Volume",
         "imageWebp": "/images/careeros/architecture-page-09.webp",
         "imagePng": "/images/careeros/architecture-page-09.png",
-        "alt": "Core PM Strategic Tradeoff Matrix: Quality vs Volume",
+        "alt": "Core Strategic Tradeoff Matrix: Quality vs Volume",
         "transition": "Enforcing strict freshness and normalization required making an explicit strategic trade-off.",
-        "whatThisLayerRepresents": "The foundational product trade-off matrix: deliberately rejecting aggregate volume metrics in favor of high-signal precision, schema completeness, verified posting dates, and low noise.",
+        "whatThisLayerRepresents": "The foundational product trade-off matrix: deliberately rejecting aggregate volume metrics in favor of high-signal precision, data completeness, verified posting dates, and low noise.",
         "whyItMatters": "Vanity metrics prioritize displaying tens of thousands of low-quality jobs. For candidates, noise creates decision paralysis and wasted effort.",
         "productThinking": "High-conviction product positioning: CareerOS is engineered for the candidate seeking 10 exceptional, verified matches rather than 500 dubious listings."
       },
       {
         "pageNumber": 10,
         "id": "architecture-10",
-        "chapter": "PIPELINE ARCHITECTURE · CONSOLIDATED FLOW",
-        "badge": "PIPELINE ARCHITECTURE",
-        "title": "The Rebuilt Architecture: A Single, Consolidated Pipeline",
+        "chapter": "OPERATIONAL PIPELINE · CONSOLIDATED FLOW",
+        "badge": "OPERATIONAL PIPELINE",
+        "title": "The Rebuilt Pipeline: A Single, Consolidated Operational Flow",
         "imageWebp": "/images/careeros/architecture-page-10.webp",
         "imagePng": "/images/careeros/architecture-page-10.png",
-        "alt": "Unified End-to-End Pipeline Architecture",
+        "alt": "Unified End-to-End Operational Pipeline",
         "transition": "With strategic trade-offs defined, we engineered the consolidated end-to-end processing pipeline.",
-        "whatThisLayerRepresents": "The unified system architecture: Raw multi-source ingestion → Canonical entity normalization → Freshness validation engine → Profile vector matching → Stateful application tracking.",
+        "whatThisLayerRepresents": "The unified operational workflow: Raw multi-source ingestion → Canonical entity normalization → Freshness validation engine → Profile semantic matching → Active application tracking.",
         "whyItMatters": "A single, observable pipeline prevents split-brain state, eliminates race conditions, and guarantees consistent data flow from external job boards into candidate tracking.",
-        "productThinking": "Clean architecture enables sustainable iteration. Consolidating fragmented micro-scripts into a unified pipeline dramatically lowers maintenance overhead."
+        "productThinking": "Clean system design enables sustainable iteration. Consolidating fragmented micro-scripts into a unified pipeline dramatically lowers maintenance overhead."
       },
       {
         "pageNumber": 11,
@@ -1373,7 +1426,7 @@
         "title": "Moving Beyond Keywords: The Matching Engine Paradigm",
         "imageWebp": "/images/careeros/architecture-page-11.webp",
         "imagePng": "/images/careeros/architecture-page-11.png",
-        "alt": "Seven-Dimensional Matching Engine Architecture",
+        "alt": "Seven-Dimensional Matching Engine Blueprint",
         "transition": "With clean data flowing through the pipeline, we rebuilt the core intelligence: the 7-dimensional matching engine.",
         "whatThisLayerRepresents": "The multi-dimensional matching engine evaluating 7 orthogonal vectors: Domain Skills, Scope & Seniority, Strategic Alignment, Working Modality, Cultural Attributes, Compensation Bracket, and Growth Trajectory.",
         "whyItMatters": "Naive keyword searches match irrelevant jobs containing identical words while missing deeply relevant roles with slightly different titles.",
@@ -1382,7 +1435,7 @@
       {
         "pageNumber": 12,
         "id": "architecture-12",
-        "chapter": "INTERFACE SPECIFICATION · UX ARCHITECTURE",
+        "chapter": "INTERFACE SPECIFICATION · UX DESIGN",
         "badge": "INTERFACE SPECIFICATION",
         "title": "UX Direction: High Information Density, Low Cognitive Load",
         "imageWebp": "/images/careeros/architecture-page-12.webp",
@@ -1403,7 +1456,7 @@
         "imagePng": "/images/careeros/architecture-page-13.png",
         "alt": "Definition of Done (DoD) Engineering Governance Framework",
         "transition": "To sustain system integrity, engineering releases must adhere to a strict Definition of Done.",
-        "whatThisLayerRepresents": "Engineering governance framework mandating that every deployed feature passes schema validation, automated freshness verification, unit test coverage, and end-to-end pipeline integration before release.",
+        "whatThisLayerRepresents": "Product governance framework mandating that every released feature passes data validation, automated freshness verification, rigorous quality checks, and end-to-end workflow integration before release.",
         "whyItMatters": "Without rigorous release gates, edge cases in web extraction and data parsing quickly corrupt downstream candidate tracking states.",
         "productThinking": "Operational discipline as product strategy. Reliability is a non-negotiable feature that compounds user trust over time."
       },
@@ -1417,22 +1470,22 @@
         "imagePng": "/images/careeros/architecture-page-14.png",
         "alt": "Sequenced Product Execution Roadmap",
         "transition": "Governed by this standard, the implementation roadmap phases technical stability ahead of feature expansion.",
-        "whatThisLayerRepresents": "The phased execution roadmap prioritizing core architecture, data integrity, and matching precision in Phase 1 before expanding to advanced automation, interview copilots, and multi-tenant capabilities in Phase 2 & 3.",
+        "whatThisLayerRepresents": "The phased execution roadmap prioritizing core systems, data integrity, and matching precision in Phase 1 before expanding to advanced automation, interview copilots, and multi-tenant capabilities in Phase 2 & 3.",
         "whyItMatters": "Premature feature expansion on unstable foundations leads to technical collapse. Solidifying core domain mechanics ensures future capabilities scale effortlessly.",
         "productThinking": "Sequencing is the essence of product leadership: knowing what not to build yet is as important as knowing what to build first."
       },
       {
         "pageNumber": 15,
         "id": "architecture-15",
-        "chapter": "EXECUTIVE SYNTHESIS · STRATEGIC PM MATRIX",
+        "chapter": "EXECUTIVE SYNTHESIS · STRATEGIC PRODUCT MATRIX",
         "badge": "EXECUTIVE SYNTHESIS",
-        "title": "The Ultimate PM Synthesis",
+        "title": "The Strategic Systems Synthesis",
         "imageWebp": "/images/careeros/architecture-page-15.webp",
         "imagePng": "/images/careeros/architecture-page-15.png",
-        "alt": "Executive PM Synthesis and Four-Stage Architectural Maturity Model",
-        "transition": "The case study concludes with an executive synthesis of the systems architecture and product trajectory.",
+        "alt": "Executive Strategic Synthesis and Four-Stage Architectural Maturity Model",
+        "transition": "The case study concludes with an executive synthesis of the product blueprint and strategic trajectory.",
         "whatThisLayerRepresents": "Executive synthesis uniting the four pillars of CareerOS: Systems Thinking (holistic lifecycle), Rigorous Prioritization (quality over volume), Transparent Engineering (zero vanity metrics), and Architectural Longevity (persistent data).",
-        "whyItMatters": "Demonstrates end-to-end product mastery: bridging strategic market vision, domain architecture, algorithmic matching, and technical execution into a coherent product asset.",
+        "whyItMatters": "Demonstrates end-to-end product mastery: bridging strategic market vision, domain systems, intelligent matching, and product execution into a coherent product asset.",
         "productThinking": "True product leadership balances vision with architectural rigor. CareerOS proves how systems thinking transforms broken, fragmented experiences into elegant, high-impact software."
       }
     ],
@@ -1506,7 +1559,7 @@
     "productThinking": {
       "eyebrow": "FOUNDATIONAL PRINCIPLES",
       "heading": "Product Thinking Behind CareerOS",
-      "intro": "Five architectural and product management principles that guide every decision within CareerOS.",
+      "intro": "Five architectural and systems design principles that guide every decision within CareerOS.",
       "principles": [
         {
           "num": "01",
@@ -1517,7 +1570,7 @@
         {
           "num": "02",
           "title": "Profile as an Active Search Engine",
-          "status": "Architecture Shift",
+          "status": "Strategic Shift",
           "concept": "Instead of forcing candidates to query thousands of noisy listings repeatedly, candidate credentials, preferences, and trajectory act as an autonomous engine pulling and scoring incoming opportunities."
         },
         {
@@ -1535,7 +1588,7 @@
         {
           "num": "05",
           "title": "Explainable AI Over Black-Box Magic",
-          "status": "Trust Vector",
+          "status": "Trust Foundation",
           "concept": "High-stakes career decisions require absolute transparency. Every algorithmic recommendation must expose the exact criteria, data points, and trade-offs that produced the match score."
         }
       ]
@@ -1543,13 +1596,13 @@
     "currentState": {
       "eyebrow": "SYSTEM INVENTORY",
       "heading": "Current State & Demonstration",
-      "intro": "CareerOS is a professional product architecture and engineering laboratory. Credibility matters more than vanity metrics; here is the transparent breakdown of what is built versus what is planned.",
+      "intro": "CareerOS is a professional product development and innovation laboratory. Credibility matters more than vanity metrics; here is the transparent breakdown of what is built versus what is planned.",
       "columns": [
         {
           "status": "Implemented",
           "badgeColor": "emerald",
           "items": [
-            "End-to-end product architecture and systems specification",
+            "End-to-end product strategy and systems specification",
             "Canonical domain schemas for Opportunities, Roles, and Geography",
             "Local state machine for application lifecycle tracking",
             "Normalized query logic (OR within dimensions, AND across dimensions)"
@@ -1572,7 +1625,7 @@
             "Automated source registry worker execution queue",
             "Strict 7-day posting date freshness validator",
             "Multi-source deduplication and URL liveness check",
-            "Local JSON AST layout and positioning engine"
+            "Local visual document layout and positioning engine"
           ]
         },
         {
@@ -1581,7 +1634,7 @@
           "items": [
             "Multi-tenant cloud synchronization and user collaboration",
             "LLM-assisted interview transcript synthesis and objection handling",
-            "Direct ATS webhook dispatch integrations",
+            "Direct ATS automated dispatch integrations",
             "Predictive career progression modeling"
           ]
         }
@@ -1602,7 +1655,7 @@
           "primary": true
         },
         {
-          "label": "Explore Architecture",
+          "label": "Explore Blueprint",
           "href": "#architecture-01",
           "secondary": true
         },
@@ -1612,6 +1665,552 @@
           "external": true
         }
       ]
+    }
+  },
+  "skills": {
+    "headline": "Professional Skills & Capabilities",
+    "subhead": "What I actually do — commercial growth, enterprise sales, strategic partnerships, operations, and scalable execution.",
+    "intro": "I work across commercial sales strategy, business development, revenue generation, partnerships, and operations — applying hands-on execution and modern tools to drive measurable business outcomes.",
+    "domains": [
+      {
+        "id": "sales-strategy",
+        "title": "Sales Strategy & Enterprise Deals",
+        "tag": "Enterprise Sales",
+        "summary": "Enterprise consultative sales, institutional partnerships, pipeline management, and deal execution.",
+        "skills": [
+          "Sales Strategy",
+          "Enterprise Sales",
+          "Revenue Generation",
+          "Deal Execution",
+          "Pipeline Management",
+          "Account Management"
+        ]
+      },
+      {
+        "id": "bizdev-partnerships",
+        "title": "Business Development & Partnerships",
+        "tag": "Strategic Alliances",
+        "summary": "Strategic partnerships, co-distribution channels, commercial negotiation, and market expansion.",
+        "skills": [
+          "Business Development",
+          "Strategic Partnerships",
+          "Negotiation",
+          "Market Expansion",
+          "Client Relationships",
+          "Distribution Channels"
+        ]
+      },
+      {
+        "id": "growth-gtm",
+        "title": "Revenue & Go-To-Market",
+        "tag": "GTM Strategy",
+        "summary": "Go-to-market strategy, outbound prospecting strategy, lead generation, and commercial growth.",
+        "skills": [
+          "Go-To-Market Strategy",
+          "Commercial Strategy",
+          "Growth Strategy",
+          "Lead Generation",
+          "Revenue Operations",
+          "Market Research"
+        ]
+      },
+      {
+        "id": "entrepreneurship",
+        "title": "Entrepreneurship & 0→1 Building",
+        "tag": "0→1 Execution",
+        "summary": "Rapid business validation, hands-on commercial execution, and scaling from zero to sustainable revenue.",
+        "skills": [
+          "Entrepreneurship",
+          "Founder/Business Execution",
+          "Commercial Execution",
+          "0→1 Building",
+          "Business Validation",
+          "Unit Economics"
+        ]
+      },
+      {
+        "id": "operations-process",
+        "title": "Operations & Process Improvement",
+        "tag": "Execution & Scale",
+        "summary": "Business operations, process improvement, workflow optimization, and building repeatable business systems.",
+        "skills": [
+          "Business Operations",
+          "Process Improvement",
+          "Workflow Optimization",
+          "Execution",
+          "Cross-functional Coordination",
+          "SLA Governance"
+        ]
+      },
+      {
+        "id": "modern-leverage",
+        "title": "Commercial Strategy & Modern Tooling",
+        "tag": "Modern Leverage",
+        "summary": "AI-assisted workflows, market intelligence, automation tooling, and data-driven commercial decision making.",
+        "skills": [
+          "Commercial Strategy",
+          "AI-assisted Workflows",
+          "Market Intelligence",
+          "Workflow Automation",
+          "CRM Optimization",
+          "Data Analysis"
+        ]
+      }
+    ]
+  },
+  "nuvio": {
+    "seo": {
+      "title": "NUVIO: Private PDF Editing, Reimagined — Product Case Study | Vivek Dhoundiyal",
+      "description": "A deep dive into NUVIO: product thinking, UX strategy, canonical document modeling, and client-side privacy architecture for PDF editing.",
+      "canonical": "https://vivekdhoundiyal.com/work/nuvio"
+    },
+    "hero": {
+      "headline": "NUVIO",
+      "subheadline": "Reimagining PDF workflows around privacy, simplicity and control.",
+      "supportingText": "A privacy-first PDF workspace designed to make everyday document work simpler while keeping files on the user's device.",
+      "badge": "LIVE MVP",
+      "statusText": "Actively Evolving",
+      "labels": [
+        "Commercial Strategy & Execution",
+        "UX Strategy",
+        "0→1 Architecture",
+        "Document Productivity"
+      ]
+    },
+    "problem": {
+      "eyebrow": "01 · THE PROBLEM",
+      "headline": "The PDF problem isn't PDFs.",
+      "subheadline": "It's fragmented workflows, complexity and trust.",
+      "supporting": "Working with documents today forces users across dozens of disconnected single-purpose web utilities.",
+      "cards": [
+        {
+          "num": "01",
+          "title": "FRAGMENTED",
+          "desc": "Different tools for different PDF tasks. Converting, signing, and editing live in disconnected silos."
+        },
+        {
+          "num": "02",
+          "title": "COMPLEX",
+          "desc": "Upload → process → download → repeat. Each minor adjustment demands a full download cycle."
+        },
+        {
+          "num": "03",
+          "title": "TRUST",
+          "desc": "Sensitive documents often leave the user's device, creating continuous data anxiety."
+        }
+      ],
+      "flow": [
+        {
+          "label": "PDF",
+          "note": "Source document"
+        },
+        {
+          "label": "Website 1",
+          "note": "Tool hopping"
+        },
+        {
+          "label": "Download",
+          "note": "Context break"
+        },
+        {
+          "label": "Website 2",
+          "note": "Another conversion"
+        },
+        {
+          "label": "Final PDF",
+          "note": "Friction at every step"
+        }
+      ]
+    },
+    "opportunity": {
+      "eyebrow": "02 · THE PRODUCT OPPORTUNITY",
+      "headline": "What if working with PDFs felt like using a modern productivity app?",
+      "supporting": "Moving from disjointed utility hopping to a fluid, continuous editing lifecycle.",
+      "steps": [
+        {
+          "step": "01",
+          "name": "OPEN",
+          "desc": "Instant local ingestion straight into memory without upload wait."
+        },
+        {
+          "step": "02",
+          "name": "EDIT",
+          "desc": "In-place typographical edits, signatures, and markups without tool hopping."
+        },
+        {
+          "step": "03",
+          "name": "VALIDATE",
+          "desc": "Real-time preview synchronized deterministically with the document model."
+        },
+        {
+          "step": "04",
+          "name": "EXPORT",
+          "desc": "Clean, high-fidelity vector output generated locally without server latency."
+        }
+      ]
+    },
+    "capabilities": {
+      "eyebrow": "03 · WHAT NUVIO DOES",
+      "headline": "One unified workspace. Seven document capabilities.",
+      "supporting": "Consolidating essential document operations into one intuitive interface.",
+      "items": [
+        {
+          "id": "edit",
+          "title": "EDIT",
+          "desc": "Change content directly inside the document.",
+          "img": "/images/nuvio/extracted/nuvio-edit-canvas.png"
+        },
+        {
+          "id": "merge",
+          "title": "MERGE",
+          "desc": "Bring multiple PDFs together.",
+          "img": "/images/nuvio/extracted/nuvio-merge-flow.png"
+        },
+        {
+          "id": "convert",
+          "title": "CONVERT",
+          "desc": "Move documents into editable formats.",
+          "img": "/images/nuvio/extracted/nuvio-convert-flow.png"
+        },
+        {
+          "id": "compress",
+          "title": "COMPRESS",
+          "desc": "Reduce file size without another tool.",
+          "img": "/images/nuvio/extracted/nuvio-compress-flow.png"
+        },
+        {
+          "id": "annotate",
+          "title": "ANNOTATE",
+          "desc": "Add highlights, marks, and notes.",
+          "img": "/images/nuvio/extracted/nuvio-stylus-pen.png"
+        },
+        {
+          "id": "sign",
+          "title": "SIGN",
+          "desc": "Place verifiable signatures directly.",
+          "img": "/images/nuvio/extracted/nuvio-sign-badge.png"
+        },
+        {
+          "id": "organize",
+          "title": "ORGANIZE",
+          "desc": "Reorder, rotate, and extract pages.",
+          "img": "/images/nuvio/extracted/nuvio-organize-flow.png"
+        }
+      ]
+    },
+    "privacy": {
+      "eyebrow": "04 · PRIVACY BY DESIGN",
+      "headline": "Privacy isn't a setting. It's part of the product.",
+      "subheadline": "NUVIO is designed around client-side document processing, reducing the need to send sensitive files to a server.",
+      "diagram": "/images/nuvio/nuvio-privacy-diagram.png",
+      "shieldImg": "/images/nuvio/extracted/nuvio-privacy-shield.png",
+      "traditionalFlow": [
+        "PDF",
+        "Upload",
+        "External Server",
+        "Process",
+        "Download"
+      ],
+      "nuvioFlow": [
+        "PDF",
+        "Browser",
+        "Process locally",
+        "Export"
+      ],
+      "disclaimer": "NUVIO processes documents locally inside the browser session. Files remain on the device rather than uploading to remote servers."
+    },
+    "productThinking": {
+      "eyebrow": "05 · PRODUCT THINKING",
+      "headline": "From problem to product.",
+      "supporting": "A deliberate product decision framework connecting user frustration to production execution.",
+      "stages": [
+        {
+          "id": "problem",
+          "title": "PROBLEM",
+          "desc": "PDF workflows are fragmented and force users onto untrusted servers."
+        },
+        {
+          "id": "hypothesis",
+          "title": "HYPOTHESIS",
+          "desc": "One workspace + local processing = simpler, more trustworthy workflow."
+        },
+        {
+          "id": "mvp",
+          "title": "MVP",
+          "desc": "Prioritize the highest-value document tasks — direct in-place editing first."
+        },
+        {
+          "id": "iteration",
+          "title": "ITERATE",
+          "desc": "Build → test → diagnose → improve based on real-world document edge cases."
+        }
+      ]
+    },
+    "prioritization": {
+      "eyebrow": "06 · MVP PRIORITIZATION",
+      "headline": "Scoping for defensibility, not easy vanity features.",
+      "supporting": "Why we built the hardest core editor first instead of quick utility wrappers.",
+      "tiers": [
+        {
+          "tier": "P0",
+          "name": "CORE EDITOR",
+          "priority": "Foundational Defensibility",
+          "items": [
+            "Document Ingestion",
+            "Canvas Rendering",
+            "In-Place Text Editing",
+            "Local Vector Export"
+          ],
+          "rationale": "The hardest technical moat. Solving in-place visual text editing unlocks every downstream utility."
+        },
+        {
+          "tier": "P1",
+          "name": "PRODUCTIVITY",
+          "priority": "High Daily Utility",
+          "items": [
+            "Document Merge",
+            "Format Conversion",
+            "File Compression",
+            "Digital Signatures"
+          ],
+          "rationale": "Essential document operations that become straightforward transformations once document state is stable."
+        },
+        {
+          "tier": "P2",
+          "name": "SUPPORT",
+          "priority": "User Onboarding",
+          "items": [
+            "NUVIO Guides",
+            "Workflow Playbooks",
+            "Document Templates"
+          ],
+          "rationale": "Pre-configured templates and educational guides to accelerate day-one utility.",
+          "img": "/images/nuvio/extracted/nuvio-guides-card.png"
+        }
+      ]
+    },
+    "hardProblem": {
+      "eyebrow": "07 · THE HARD PRODUCT PROBLEM",
+      "headline": "Making a PDF editor that actually edits PDFs.",
+      "subheadline": "The superficial overlay trap versus authentic document mutation.",
+      "leftTitle": "LOOKS EDITED (Superficial Overlay)",
+      "leftFlow": [
+        "PDF",
+        "Visual overlay",
+        "User sees edit"
+      ],
+      "leftVerdict": "Preview looks edited on screen, but changes fail upon export. Text search breaks and layers desync.",
+      "rightTitle": "ACTUALLY EDITED (Canonical State)",
+      "rightFlow": [
+        "PDF",
+        "Document state",
+        "Editor",
+        "Exported PDF",
+        "Edit persists"
+      ],
+      "rightVerdict": "The edit is written directly into the document structure. Searchable, selectable, and mathematically identical across viewers.",
+      "callouts": [
+        "Preview ≠ Product",
+        "The exported document must contain the edit."
+      ]
+    },
+    "documentModel": {
+      "eyebrow": "08 · CANONICAL DOCUMENT MODEL",
+      "headline": "One document state powers both editing and export.",
+      "subheadline": "A single source of truth ensuring what you see in the workspace is exactly what appears in the exported file.",
+      "rationale": [
+        "Eliminates phantom edits where visual markup desyncs from the file",
+        "Guarantees exact coordinate fidelity across display viewports and zoom levels",
+        "Preserves original document metadata, layers, and embedded font structures"
+      ]
+    },
+    "productObjects": {
+      "eyebrow": "09 · PRODUCT OBJECTS",
+      "headline": "Six atomic primitives that make up the editing canvas.",
+      "supporting": "Every annotation, edit, and markup is modeled as a deterministic document object.",
+      "items": [
+        {
+          "name": "TEXT",
+          "desc": "In-place typographical edits preserving exact font styling and bounding boxes."
+        },
+        {
+          "name": "IMAGE",
+          "desc": "Embedded vector and raster graphics with non-destructive aspect scaling."
+        },
+        {
+          "name": "SIGNATURE",
+          "desc": "Vector signature placement with transparent backgrounds and pressure smoothing."
+        },
+        {
+          "name": "STAMP",
+          "desc": "Status markers (Approved, Confidential, Draft) with customizable tint and angle."
+        },
+        {
+          "name": "WATERMARK",
+          "desc": "Background opacity layers protecting sensitive distribution copies."
+        },
+        {
+          "name": "SHAPE",
+          "desc": "Rectangles, callout clouds, and highlight markers for structured redlining."
+        }
+      ]
+    },
+    "challenges": {
+      "eyebrow": "10 · REAL PRODUCT CHALLENGES",
+      "headline": "Four real-world problems that emerged during development.",
+      "supporting": "Building client-side document software requires solving four distinct challenges.",
+      "items": [
+        {
+          "num": "01",
+          "title": "PDF EDITING",
+          "desc": "Existing PDF content is fundamentally harder to modify than a normal document. PDFs are Cartesian coordinate placements, not reflowable paragraphs."
+        },
+        {
+          "num": "02",
+          "title": "PREVIEW → EXPORT",
+          "desc": "What users see must survive export. Text sizing, line breaks, and object positions must match at 100% precision."
+        },
+        {
+          "num": "03",
+          "title": "PERFORMANCE",
+          "desc": "Document processing needs to remain usable in the browser. Handling multi-page files without memory spikes."
+        },
+        {
+          "num": "04",
+          "title": "PRODUCTION",
+          "desc": "Real-world deployment exposed issues that required diagnosis beyond the initial error message."
+        }
+      ]
+    },
+    "loadingIncident": {
+      "eyebrow": "11 · PDF LOADING INCIDENT",
+      "headline": "Debugging in production: When \"Failed to load PDF\" isn't the whole story.",
+      "subheadline": "How structured investigation uncovered the real root cause behind a deceptive error message.",
+      "steps": [
+        {
+          "stage": "USER SEES",
+          "text": "Error banner: \"Failed to load PDF\". The document opened fine in desktop viewers but stalled in the web workspace."
+        },
+        {
+          "stage": "ASSUMPTION",
+          "text": "Initial hypothesis: \"Maybe the PDF is password protected, corrupt, or exceeds size limits.\""
+        },
+        {
+          "stage": "INVESTIGATION",
+          "text": "Trace the document loading pipeline step-by-step to identify where execution halted."
+        },
+        {
+          "stage": "RESOLUTION",
+          "text": "The actual loading issue was an asynchronous asset initialization timing mismatch in the local sandbox — identified and resolved."
+        }
+      ],
+      "takeaway": "An error message is a clue, not always the root cause."
+    },
+    "shippingQualityLoop": {
+      "eyebrow": "12 · SHIPPING & QUALITY LOOP",
+      "headline": "Shipping is part of the product.",
+      "subheadline": "Production verification uncovered routing and document-loading issues that required architectural fixes.",
+      "loop": [
+        "BUILD",
+        "VERIFY",
+        "DIAGNOSE",
+        "FIX",
+        "RE-TEST"
+      ],
+      "note": "Every change to the document parsing pipeline is verified against diverse PDF standards before deployment."
+    },
+    "outcome": {
+      "eyebrow": "13 · OUTCOME & STATUS",
+      "headline": "From disjointed PDF utilities to a privacy-first document workspace.",
+      "subheadline": "NUVIO evolved from a collection of PDF utilities into a defined privacy-first document workspace.",
+      "status": "LIVE MVP · Actively evolving",
+      "pillars": [
+        {
+          "title": "Unified PDF Workflow",
+          "desc": "One workspace replacing fragmented multi-tab utility hopping."
+        },
+        {
+          "title": "Client-Side Processing",
+          "desc": "100% in-browser document sandbox with zero external server upload."
+        },
+        {
+          "title": "Visual In-Place Editing",
+          "desc": "Direct typographical modification synchronized with export."
+        },
+        {
+          "title": "Production MVP",
+          "desc": "Usable, verifiable document pipeline running in real environments."
+        }
+      ]
+    },
+    "roadmap": {
+      "eyebrow": "14 · PRODUCT ROADMAP",
+      "headline": "Where NUVIO is going next.",
+      "subheadline": "Clear demarcation between what is live today, what is actively being built, and future research.",
+      "columns": [
+        {
+          "horizon": "NOW",
+          "badge": "LIVE MVP · Built",
+          "items": [
+            "Core PDF workflow (Open, Edit, Validate, Export)",
+            "In-place text modifications & annotations",
+            "Document merge, split, and compression",
+            "100% Client-side local processing"
+          ]
+        },
+        {
+          "horizon": "NEXT",
+          "badge": "IN PROGRESS · Active Sprint",
+          "items": [
+            "Better multi-page visual drag-and-drop organize",
+            "Expanded typography controls & font matching",
+            "Form field fill-and-sign workflows",
+            "Undo/redo historical timeline state"
+          ]
+        },
+        {
+          "horizon": "FUTURE",
+          "badge": "EXPLORATION · Conceptual Horizon",
+          "items": [
+            "On-device local AI document summarization",
+            "Smart automated redaction of sensitive data",
+            "Offline Optical Character Recognition (OCR)",
+            "Intelligent multi-document comparison & diffing"
+          ]
+        }
+      ]
+    },
+    "learnings": {
+      "eyebrow": "15 · STRATEGIC LEARNINGS",
+      "headline": "Four core lessons from building NUVIO.",
+      "cards": [
+        {
+          "num": "01",
+          "title": "Architecture can be a product decision.",
+          "desc": "Choosing client-side processing was not just a technical choice — it became the primary value proposition, delivering speed and privacy without recurring server costs."
+        },
+        {
+          "num": "02",
+          "title": "Export is part of the editing experience.",
+          "desc": "If the exported document does not match the workspace canvas down to the millimeter, the editor has failed — regardless of how sleek the UI appears."
+        },
+        {
+          "num": "03",
+          "title": "Error messages are clues, not always root causes.",
+          "desc": "Surface errors often mask asynchronous timing discrepancies or format nuances. Diagnosing the entire pipeline is essential for durable reliability."
+        },
+        {
+          "num": "04",
+          "title": "Good UX hides complexity without hiding capability.",
+          "desc": "The PDF format has three decades of geometric quirks. A good product insulates the user from coordinates and matrix math while giving them total creative control."
+        }
+      ]
+    },
+    "cta": {
+      "badge": "LIVE MVP · Actively Evolving",
+      "heading": "Complex technology. Simple experience.",
+      "subheading": "NUVIO is currently being designed and built as an independent product exploration.",
+      "backLink": "/#work"
     }
   }
 }

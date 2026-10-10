@@ -125,7 +125,7 @@ export default function Navigation({
 
   // Secondary items in the "More" bottom sheet (in agreed relative order: Education, Blog, Contact, Case Study, Resume)
   const moreSheetItems = [
-    { label: 'Education', href: '/#education', desc: 'B.Tech & Google PM certification', icon: EducationIcon },
+    { label: 'Education', href: '/#education', desc: 'B.Tech & Google Project Management Certification', icon: EducationIcon },
     { label: 'Blog', href: '/blog', desc: 'Ideas, insights and writing', icon: BlogIcon },
     { label: 'Contact', href: '/#contact', desc: 'Connect, collaborate or discuss', icon: MessageSquareIcon },
     { label: 'NUVIO Case Study', href: '/work/nuvio', desc: 'Private PDF workspace teardown', icon: WorkIcon },
@@ -159,7 +159,7 @@ export default function Navigation({
                 Vivek Dhoundiyal
               </span>
               <span className="hidden sm:block text-[10px] text-[#737984] font-medium truncate">
-                Business · Growth · Product
+                Business · Growth · Partnerships
               </span>
             </div>
           </Link>

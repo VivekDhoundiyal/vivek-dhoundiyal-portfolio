@@ -339,7 +339,7 @@ export default function Hero({ profile = {}, hero = {} }) {
               <div className="relative w-full aspect-square max-h-[370px] sm:max-h-[410px] lg:max-h-[400px] xl:max-h-[450px] 2xl:max-h-[490px] flex items-center justify-center z-10 animate-hero-character-breathe will-change-transform">
                 <Image
                   src={portrait}
-                  alt="Vivek Dhoundiyal — Commercial Operator & Builder"
+                  alt="Vivek Dhoundiyal — Business, Growth & Partnerships"
                   width={1254}
                   height={1254}
                   priority
@@ -351,7 +351,7 @@ export default function Hero({ profile = {}, hero = {} }) {
                   <div className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-[#E5E7EB] shadow-xs flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
                     <span className="text-xs font-bold text-[#111318]">Vivek Dhoundiyal</span>
-                    <span className="text-[10px] text-[#737984] font-medium hidden sm:inline">· Product Manager &amp; Builder</span>
+                    <span className="text-[10px] text-[#737984] font-medium hidden sm:inline">· Business, Growth &amp; Partnerships</span>
                   </div>
                 </div>
               </div>

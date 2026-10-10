@@ -94,7 +94,7 @@ export default function CareerOSCaseStudy({ siteData }) {
               </div>
               <div>
                 <span className="text-[#737984] uppercase mr-1.5">Discipline:</span>
-                <span className="text-[#111318] font-semibold">{hero.role || 'Product Management & Systems Architecture'}</span>
+                <span className="text-[#111318] font-semibold">{hero.role || 'Commercial Strategy & Systems Architecture'}</span>
               </div>
             </div>
 
@@ -422,7 +422,7 @@ export default function CareerOSCaseStudy({ siteData }) {
             </h2>
 
             <p className="text-base sm:text-lg text-[#555B66] max-w-3xl leading-relaxed">
-              {productThinking.intro || 'Five architectural and product management principles that guide every decision within CareerOS.'}
+              {productThinking.intro || 'Five architectural and systems design principles that guide every decision within CareerOS.'}
             </p>
           </div>
 

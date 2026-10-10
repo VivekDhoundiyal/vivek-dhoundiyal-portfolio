@@ -128,8 +128,8 @@ export async function getStaticProps() {
     props: {
       siteData,
       seoProps: {
-        title: seo.siteTitle || "Vivek Dhoundiyal | Business Growth, Partnerships & Product Building",
-        description: seo.siteDescription || "Explore Vivek Dhoundiyal’s work across business development, revenue growth, strategic partnerships, operations, and digital product building.",
+        title: seo.siteTitle || "Vivek Dhoundiyal | Business Development, Growth & Partnerships",
+        description: seo.siteDescription || "Explore Vivek Dhoundiyal’s work across business development, revenue growth, strategic partnerships, business operations, and commercial execution.",
         canonical: seo.canonicalUrl || "https://vivek-dhoundiyal-portfolio.pages.dev",
       }
     }

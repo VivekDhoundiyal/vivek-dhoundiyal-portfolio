@@ -71,10 +71,10 @@ export default function NuvioCaseStudy({ siteData }) {
 
           {/* Hero Header + Layered Visual Stage */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-            {/* Left Column: Typography & PM Framing */}
+            {/* Left Column: Typography & Strategic Framing */}
             <div className="lg:col-span-6 space-y-6">
               <div className="flex flex-wrap items-center gap-2">
-                {(hero.labels || ['Product Management', 'UX Strategy', '0→1 Architecture', 'Document Productivity']).map((label) => (
+                {(hero.labels || ['Commercial Strategy & Execution', 'UX Strategy', '0→1 Architecture', 'Document Productivity']).map((label) => (
                   <span
                     key={label}
                     className="px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-blue-50 text-[#2563EB] border border-blue-200"
@@ -202,7 +202,7 @@ export default function NuvioCaseStudy({ siteData }) {
               <span className="text-slate-300">·</span>
               <a href="#privacy" className="hover:text-[#2563EB] whitespace-nowrap px-2 py-1 rounded-lg hover:bg-slate-50 transition-colors">04 Privacy by Design</a>
               <span className="text-slate-300">·</span>
-              <a href="#pm-thinking" className="hover:text-[#2563EB] whitespace-nowrap px-2 py-1 rounded-lg hover:bg-slate-50 transition-colors">05 PM Thinking</a>
+              <a href="#pm-thinking" className="hover:text-[#2563EB] whitespace-nowrap px-2 py-1 rounded-lg hover:bg-slate-50 transition-colors">05 Product Thinking</a>
               <span className="text-slate-300">·</span>
               <a href="#prioritization" className="hover:text-[#2563EB] whitespace-nowrap px-2 py-1 rounded-lg hover:bg-slate-50 transition-colors">06 Prioritization</a>
               <span className="text-slate-300">·</span>
@@ -216,7 +216,7 @@ export default function NuvioCaseStudy({ siteData }) {
               <span className="text-slate-300">·</span>
               <a href="#roadmap" className="hover:text-[#2563EB] whitespace-nowrap px-2 py-1 rounded-lg hover:bg-slate-50 transition-colors">11 Roadmap</a>
               <span className="text-slate-300">·</span>
-              <a href="#learnings" className="hover:text-[#2563EB] whitespace-nowrap px-2 py-1 rounded-lg hover:bg-slate-50 transition-colors">12 PM Learnings</a>
+              <a href="#learnings" className="hover:text-[#2563EB] whitespace-nowrap px-2 py-1 rounded-lg hover:bg-slate-50 transition-colors">12 Product Learnings</a>
             </div>
           </div>
         </section>
@@ -613,7 +613,7 @@ export default function NuvioCaseStudy({ siteData }) {
         </section>
 
         {/* ==============================================================================
-            SECTION 06: PRODUCT THINKING (PM DECISION FRAMEWORK)
+            SECTION 06: PRODUCT THINKING (DECISION FRAMEWORK)
             ============================================================================== */}
         <section id="pm-thinking" className="space-y-8 scroll-mt-20">
           <div className="space-y-3">
@@ -624,7 +624,7 @@ export default function NuvioCaseStudy({ siteData }) {
               {productThinking.headline || 'From problem to product.'}
             </h2>
             <p className="text-sm sm:text-base text-[#555B66] max-w-2xl font-normal">
-              {productThinking.supporting || 'A deliberate PM decision framework connecting user frustration to production execution.'}
+              {productThinking.supporting || 'A deliberate product decision framework connecting user frustration to production execution.'}
             </p>
           </div>
 
@@ -704,7 +704,7 @@ export default function NuvioCaseStudy({ siteData }) {
               </div>
 
               <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-[#555B66] font-medium">
-                💡 <strong className="text-[#111318]">PM Takeaway:</strong> Superficial utilities have low defensibility. Conquering the in-place editor solves the foundational hard problem.
+                💡 <strong className="text-[#111318]">Key Strategic Takeaway:</strong> Superficial utilities have low defensibility. Conquering the in-place editor solves the foundational hard problem.
               </div>
             </div>
 
@@ -843,7 +843,7 @@ export default function NuvioCaseStudy({ siteData }) {
           {/* Highlight Callouts Banner */}
           <div className="p-6 sm:p-8 rounded-3xl bg-[#111318] text-white shadow-md flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-1">
-              <span className="text-xs font-mono uppercase tracking-wider text-blue-400 font-bold">THE PM PRINCIPLE</span>
+              <span className="text-xs font-mono uppercase tracking-wider text-blue-400 font-bold">THE CORE PRINCIPLE</span>
               <div className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
                 Preview ≠ Product
               </div>
@@ -1055,7 +1055,7 @@ export default function NuvioCaseStudy({ siteData }) {
         </section>
 
         {/* ==============================================================================
-            SECTION 12: PDF LOADING INCIDENT (A PM RETROSPECTIVE)
+            SECTION 12: PDF LOADING INCIDENT (AN OPERATIONAL RETROSPECTIVE)
             ============================================================================== */}
         <section id="incident" className="space-y-8 scroll-mt-20">
           <div className="space-y-3">
@@ -1114,10 +1114,10 @@ export default function NuvioCaseStudy({ siteData }) {
               </p>
             </div>
 
-            {/* Key PM Takeaway Quote */}
+            {/* Key Engineering Takeaway Quote */}
             <div className="p-5 rounded-2xl bg-amber-50 border border-amber-300 text-amber-900 flex items-center justify-between gap-4">
               <span className="text-xs sm:text-sm font-semibold">
-                💡 <strong className="text-amber-950">Core PM Takeaway: </strong>
+                💡 <strong className="text-amber-950">Core Takeaway: </strong>
                 "{loadingIncident.takeaway || 'An error message is a clue, not always the root cause.'}"
               </span>
               <span className="text-xs font-mono font-bold text-amber-800 bg-white px-2.5 py-1 rounded-full border border-amber-300 whitespace-nowrap">
@@ -1320,12 +1320,12 @@ export default function NuvioCaseStudy({ siteData }) {
         </section>
 
         {/* ==============================================================================
-            SECTION 16: PM LEARNINGS (4 LARGE EDITORIAL STATEMENTS)
+            SECTION 16: STRATEGIC LEARNINGS (4 LARGE EDITORIAL STATEMENTS)
             ============================================================================== */}
         <section id="learnings" className="space-y-8 scroll-mt-20">
           <div className="space-y-3">
             <span className="text-xs font-mono font-bold tracking-wider uppercase text-[#2563EB] bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">
-              {learnings.eyebrow || '15 · PM LEARNINGS'}
+              {learnings.eyebrow || '15 · STRATEGIC LEARNINGS'}
             </span>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#111318]">
               {learnings.headline || 'Four core lessons from building NUVIO.'}

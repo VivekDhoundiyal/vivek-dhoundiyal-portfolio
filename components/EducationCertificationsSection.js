@@ -114,7 +114,7 @@ export default function EducationCertificationsSection({ education = {}, certifi
                 Verified Credentials
               </span>
               <div className="text-xs font-bold text-[#111318]">
-                B.Tech + Google PM
+                B.Tech + Google Project Management
               </div>
               <p className="text-[11px] text-[#737984]">
                 Engineering foundation &amp; agile leadership
@@ -163,7 +163,7 @@ export default function EducationCertificationsSection({ education = {}, certifi
         </div>
 
         {/* ==================================================== */}
-        {/* CARD 2: GOOGLE PM PROFESSIONAL CERTIFICATE CARD     */}
+        {/* CARD 2: GOOGLE PROJECT MANAGEMENT PROFESSIONAL CERTIFICATE CARD */}
         {/* ==================================================== */}
         <div className="rounded-3xl bg-white border border-[#E5E7EB] shadow-xs hover:border-[#2563EB]/40 transition-all duration-300 p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
           <div className="space-y-2.5 max-w-xl">
