@@ -1,5 +1,4 @@
 import React from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
 import { getCapabilities, getCapabilityBySlug } from '../../lib/content'
 import { ArrowRight, ArrowUpRight, CheckIcon } from '../../components/Icons'
@@ -12,11 +11,6 @@ export default function CapabilityPage({ capability, allCapabilities }) {
 
   return (
     <div className="py-12 sm:py-20 min-h-screen bg-[#FAFAF8] text-[#111318]">
-      <Head>
-        <title>{capability.title} — Commercial Discipline & Methodology | Vivek Dhoundiyal</title>
-        <meta name="description" content={capability.headline || capability.summary} />
-      </Head>
-
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Top Back Navigation */}
@@ -207,7 +201,12 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       capability,
-      allCapabilities
+      allCapabilities,
+      seoProps: {
+        title: `${capability.title} — Commercial Discipline & Methodology | Vivek Dhoundiyal`,
+        description: capability.headline || capability.summary,
+        canonical: `https://vivek-dhoundiyal-portfolio.pages.dev/capabilities/${capability.slug}/`,
+      }
     }
   }
 }

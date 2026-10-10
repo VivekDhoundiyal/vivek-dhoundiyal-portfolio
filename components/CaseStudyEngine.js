@@ -1,5 +1,4 @@
 import React from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
 import { ArrowRight, ArrowUpRight, CheckIcon } from './Icons'
 import { useScrollReveal } from '../lib/useScrollReveal'
@@ -29,11 +28,6 @@ export default function CaseStudyEngine({
 
   return (
     <div className="py-12 sm:py-20 min-h-screen bg-[#FAFAF8] text-[#111318] selection:bg-blue-100 selection:text-blue-900">
-      <Head>
-        <title>{item.title || item.company} — Case Study & Evidence | Vivek Dhoundiyal</title>
-        <meta name="description" content={item.summary || item.tagline || item.headline} />
-      </Head>
-
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Navigation Breadcrumb */}

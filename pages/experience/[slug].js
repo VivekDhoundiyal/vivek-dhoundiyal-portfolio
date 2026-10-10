@@ -49,7 +49,7 @@ export async function getStaticProps({ params }) {
       seoProps: {
         title: `${experience.role} at ${experience.company} | Vivek Dhoundiyal`,
         description: experience.tagline || experience.summary,
-        canonical: `https://vivekdhoundiyal.com/experience/${experience.slug}`,
+        canonical: `https://vivek-dhoundiyal-portfolio.pages.dev/experience/${experience.slug}/`,
       }
     }
   }

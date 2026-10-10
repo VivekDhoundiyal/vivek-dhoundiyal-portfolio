@@ -16,7 +16,7 @@ export async function getStaticProps() {
       seoProps: {
         title: hiresway.seo?.title || 'Hiresway: The AI-Powered Career Platform — Case Study | Vivek Dhoundiyal',
         description: hiresway.seo?.description || 'Comprehensive case study and operational blueprint for Hiresway: inverting job discovery into an active, profile-driven intelligence engine.',
-        canonical: 'https://vivek-dhoundiyal-portfolio.pages.dev/work/hiresway',
+        canonical: 'https://vivek-dhoundiyal-portfolio.pages.dev/work/hiresway/',
       }
     }
   }

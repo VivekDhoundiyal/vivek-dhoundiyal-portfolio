@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /admin
+Disallow: /admin/
 Disallow: /api/
 
 Sitemap: https://vivek-dhoundiyal-portfolio.pages.dev/sitemap.xml

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
 import { ArrowRight, ArrowUpRight, CheckIcon } from '../Icons'
 import { useScrollReveal } from '../../lib/useScrollReveal'
@@ -34,12 +33,6 @@ export default function HireswayCaseStudy({ siteData }) {
 
   return (
     <div className="py-12 sm:py-20 min-h-screen bg-[#FAFAF8] text-[#111318] selection:bg-blue-100 selection:text-blue-900">
-      <Head>
-        <title>{hiresway.seo?.title || 'Hiresway: The AI-Powered Career Platform — Case Study | Vivek Dhoundiyal'}</title>
-        <meta name="description" content={hiresway.seo?.description || 'Comprehensive product case study and systems architecture for Hiresway: inverting job discovery into an active, profile-driven intelligence engine.'} />
-        {hiresway.seo?.canonical && <link rel="canonical" href={hiresway.seo.canonical} />}
-      </Head>
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24">
         
         {/* ==============================================================================

@@ -77,7 +77,7 @@ export async function getStaticProps() {
       seoProps: {
         title: "Entrepreneurial Experience & Systems — Vivek Dhoundiyal",
         description: "Case studies and product breakdowns by Vivek Dhoundiyal.",
-        canonical: "https://vivekdhoundiyal.com/projects",
+        canonical: "https://vivek-dhoundiyal-portfolio.pages.dev/projects/",
       }
     }
   }

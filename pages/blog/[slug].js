@@ -1,5 +1,4 @@
 import React from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote'
@@ -7,6 +6,27 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { getAllPosts, getPostSource } from '../../lib/posts'
 import { getSiteContent } from '../../lib/content'
 import { ArrowRight, ArrowUpRight } from '../../components/Icons'
+
+const mdxComponents = {
+  h1: (props) => (
+    <h2
+      className="text-2xl sm:text-3xl font-bold tracking-tight text-[#111318] mt-10 mb-4"
+      {...props}
+    />
+  ),
+  h2: (props) => (
+    <h2
+      className="text-xl sm:text-2xl font-bold tracking-tight text-[#111318] mt-8 mb-3"
+      {...props}
+    />
+  ),
+  h3: (props) => (
+    <h3
+      className="text-lg sm:text-xl font-semibold tracking-tight text-[#111318] mt-6 mb-2"
+      {...props}
+    />
+  ),
+}
 
 export default function BlogPostPage({ source, meta, siteData, allPosts = [] }) {
   if (!meta) return null
@@ -71,45 +91,8 @@ export default function BlogPostPage({ source, meta, siteData, allPosts = [] }) 
   const relatedPosts = allPosts.filter(p => p.slug !== meta.slug).slice(0, 2)
 
   return (
-    <>
-      <Head>
-        <title>{meta.title} | Vivek Dhoundiyal</title>
-        <meta name="description" content={meta.excerpt || `${meta.title} — Commercial insights by Vivek Dhoundiyal`} />
-        <link rel="canonical" href={canonicalUrl} />
-
-        {/* Open Graph */}
-        <meta property="og:title" content={`${meta.title} | Vivek Dhoundiyal`} />
-        <meta property="og:description" content={meta.excerpt || meta.title} />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content={ogImage} />
-        {meta.date && <meta property="article:published_time" content={meta.date} />}
-        <meta property="article:author" content="Vivek Dhoundiyal" />
-        {meta.category && <meta property="article:section" content={meta.category} />}
-        {meta.tags && meta.tags.map(t => (
-          <meta key={t} property="article:tag" content={t} />
-        ))}
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${meta.title} | Vivek Dhoundiyal`} />
-        <meta name="twitter:description" content={meta.excerpt || meta.title} />
-        <meta name="twitter:image" content={ogImage} />
-        <meta name="twitter:creator" content="@Vivek_Dh_" />
-
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        />
-      </Head>
-
-      <main className="py-12 sm:py-20 bg-[#FAFAF8] text-[#111318] min-h-screen">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+    <main className="py-12 sm:py-20 bg-[#FAFAF8] text-[#111318] min-h-screen">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
           {/* Breadcrumb Navigation */}
           <nav aria-label="Breadcrumbs" className="flex items-center gap-2 text-xs font-mono text-[#555B66]">
@@ -158,7 +141,7 @@ export default function BlogPostPage({ source, meta, siteData, allPosts = [] }) 
 
           {/* Article Content Body */}
           <article className="prose prose-slate max-w-none text-base sm:text-lg leading-relaxed space-y-6 text-[#111318]">
-            <MDXRemote {...source} />
+            <MDXRemote {...source} components={mdxComponents} />
           </article>
 
           {/* Author Bio Signature Box */}
@@ -237,7 +220,6 @@ export default function BlogPostPage({ source, meta, siteData, allPosts = [] }) 
 
         </div>
       </main>
-    </>
   )
 }
 
@@ -269,9 +251,14 @@ export async function getStaticProps({ params }) {
       seoProps: {
         title: `${post.meta.title} | Vivek Dhoundiyal`,
         description: post.meta.excerpt || "Article by Vivek Dhoundiyal",
-        canonical: `https://vivek-dhoundiyal-portfolio.pages.dev/blog/${params.slug}`,
+        canonical: `https://vivek-dhoundiyal-portfolio.pages.dev/blog/${params.slug}/`,
         ogType: "article",
         article: post.meta,
+        breadcrumbs: [
+          { name: "Home", url: "https://vivek-dhoundiyal-portfolio.pages.dev/" },
+          { name: "Blog", url: "https://vivek-dhoundiyal-portfolio.pages.dev/blog/" },
+          { name: post.meta.title, url: `https://vivek-dhoundiyal-portfolio.pages.dev/blog/${params.slug}/` }
+        ]
       }
     }
   }

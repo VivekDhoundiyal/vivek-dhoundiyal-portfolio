@@ -16,7 +16,7 @@ export async function getStaticProps() {
       seoProps: {
         title: nuvio.seo?.title || 'NUVIO: Private PDF Editing, Reimagined — Product Case Study | Vivek Dhoundiyal',
         description: nuvio.seo?.description || 'Comprehensive product case study for NUVIO: private client-side PDF editing workspace.',
-        canonical: nuvio.seo?.canonical || 'https://vivekdhoundiyal.com/nuvio',
+        canonical: 'https://vivek-dhoundiyal-portfolio.pages.dev/work/nuvio/',
       }
     }
   }

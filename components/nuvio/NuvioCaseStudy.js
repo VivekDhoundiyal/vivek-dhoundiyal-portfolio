@@ -1,5 +1,4 @@
 import React, { useState, Fragment } from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -36,15 +35,6 @@ export default function NuvioCaseStudy({ siteData }) {
 
   return (
     <div className="py-10 sm:py-16 min-h-screen bg-[#FAFAF8] text-[#111318] selection:bg-blue-100 selection:text-blue-900">
-      <Head>
-        <title>{nuvio.seo?.title || 'NUVIO: Private PDF Editing, Reimagined — Product Case Study | Vivek Dhoundiyal'}</title>
-        <meta
-          name="description"
-          content={nuvio.seo?.description || 'A deep dive into NUVIO: product thinking, UX strategy, canonical document modeling, and client-side privacy architecture for PDF editing.'}
-        />
-        {nuvio.seo?.canonical && <link rel="canonical" href={nuvio.seo.canonical} />}
-      </Head>
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24">
 
         {/* ==============================================================================

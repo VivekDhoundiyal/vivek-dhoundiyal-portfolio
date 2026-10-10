@@ -1,5 +1,4 @@
 import React from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
 import { getSiteContent } from '../lib/content'
 import { ArrowUpRight } from '../components/Icons'
@@ -10,11 +9,6 @@ export default function ExperiencePage({ siteData }) {
 
   return (
     <div className="py-12 sm:py-20 min-h-screen bg-[#FAFAF8] text-[#111318]">
-      <Head>
-        <title>Professional Experience & Trajectory — Vivek Dhoundiyal</title>
-        <meta name="description" content="Verified professional career trajectory of Vivek Dhoundiyal across revenue consulting, enterprise sales, and 0-to-1 venture building." />
-      </Head>
-
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Top Breadcrumb */}
@@ -139,8 +133,9 @@ export async function getStaticProps() {
     props: {
       siteData,
       seoProps: {
-        title: "Professional Experience — Vivek Dhoundiyal",
+        title: "Professional Experience & Trajectory — Vivek Dhoundiyal",
         description: "Verified professional career trajectory of Vivek Dhoundiyal across revenue consulting, enterprise sales, and 0-to-1 venture building.",
+        canonical: "https://vivek-dhoundiyal-portfolio.pages.dev/experience/",
       }
     }
   }

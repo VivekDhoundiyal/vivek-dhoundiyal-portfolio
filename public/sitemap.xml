@@ -7,128 +7,121 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/projects</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/projects/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/experience</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/experience/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/resume</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/resume/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/contact</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/contact/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Featured Work & Dedicated Case Studies -->
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/work/nuvio</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/work/nuvio/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/work/careeros</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/work/hiresway/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/work/settlemycar</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/work/settlemycar/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/work/dark-kitchen</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/work/dark-kitchen/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/work/fixins</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/work/fixins/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <!-- Capability Deep-Dives -->
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/capabilities/revenue-business-development</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/capabilities/revenue-business-development/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/capabilities/partnerships-growth</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/capabilities/partnerships-growth/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/capabilities/business-operations</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/capabilities/business-operations/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Corporate Experience Pages -->
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/experience/collegedunia</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/experience/collegedunia/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/experience/kreedon</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/experience/kreedon/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Blog Index & Articles -->
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/blog</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/blog/how-to-build-a-predictable-sales-pipeline</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/blog/how-to-build-a-predictable-sales-pipeline/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/blog/strategic-partnerships-gtm-playbook</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/blog/strategic-partnerships-gtm-playbook/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/blog/operator-to-product</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/blog/operator-to-product/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/blog/scaling-business-operations-0-to-1</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/blog/scaling-business-operations-0-to-1/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/blog/systems-that-outlive-builders</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/blog/systems-that-outlive-builders/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/blog/ai-product-loop</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/blog/ai-product-loop/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/blog/commercial-discipline-in-modern-business</loc>
+    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/blog/commercial-discipline-in-modern-business/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Thinking Articles (Canonical Aliases) -->
-  <url>
-    <loc>https://vivek-dhoundiyal-portfolio.pages.dev/thinking</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>

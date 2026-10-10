@@ -166,7 +166,7 @@ export async function getStaticProps() {
       seoProps: {
         title: "Contact Vivek Dhoundiyal — Revenue, Business Development & Commercial Builder",
         description: "Get in touch with Vivek Dhoundiyal for commercial leadership, B2B sales advisory, partnerships, and ventures.",
-        canonical: "https://vivekdhoundiyal.com/contact",
+        canonical: "https://vivek-dhoundiyal-portfolio.pages.dev/contact/",
       }
     }
   }

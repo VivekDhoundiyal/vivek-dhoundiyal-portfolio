@@ -50,7 +50,7 @@ export async function getStaticProps({ params }) {
       seoProps: {
         title: `${project.title} — Case Study | Vivek Dhoundiyal`,
         description: project.summary || project.tagline,
-        canonical: `https://vivekdhoundiyal.com/work/${project.slug}`,
+        canonical: `https://vivek-dhoundiyal-portfolio.pages.dev/work/${project.slug}/`,
       }
     }
   }

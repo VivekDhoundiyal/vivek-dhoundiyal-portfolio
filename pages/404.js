@@ -1,16 +1,10 @@
 import React from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
 import { ArrowRight } from '../components/Icons'
 
 export default function Custom404() {
   return (
     <div className="min-h-[75vh] flex items-center justify-center py-20 px-4 bg-[#FAFAF8] text-[#111318]">
-      <Head>
-        <title>404 — Page Not Found | Vivek Dhoundiyal</title>
-        <meta name="robots" content="noindex, nofollow" />
-      </Head>
-
       <div className="max-w-md w-full text-center space-y-6">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-xs uppercase tracking-widest text-blue-600 font-semibold">
           <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
@@ -44,4 +38,17 @@ export default function Custom404() {
       </div>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      seoProps: {
+        title: "404 — Page Not Found | Vivek Dhoundiyal",
+        description: "The page you are looking for does not exist.",
+        noIndex: true,
+        canonical: null
+      }
+    }
+  }
 }

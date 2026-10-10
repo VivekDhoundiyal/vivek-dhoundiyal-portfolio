@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import { getSiteContent } from '../../lib/content'
@@ -71,48 +70,8 @@ export default function BlogIndex({ siteData, posts }) {
   }
 
   return (
-    <>
-      <Head>
-        <title>Blog & Commercial Insights | Vivek Dhoundiyal</title>
-        <meta
-          name="description"
-          content="Essays, playbooks, and tactical frameworks on B2B sales strategy, enterprise partnerships, revenue operations, and 0→1 business building by Vivek Dhoundiyal."
-        />
-        <link rel="canonical" href={canonicalUrl} />
-
-        {/* Open Graph */}
-        <meta property="og:title" content="Blog & Commercial Insights | Vivek Dhoundiyal" />
-        <meta
-          property="og:description"
-          content="Essays and playbooks on B2B sales strategy, enterprise partnerships, revenue operations, and 0→1 business building."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content={ogImage} />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Blog & Commercial Insights | Vivek Dhoundiyal" />
-        <meta
-          name="twitter:description"
-          content="Essays and playbooks on B2B sales strategy, enterprise partnerships, revenue operations, and 0→1 business building."
-        />
-        <meta name="twitter:image" content={ogImage} />
-        <meta name="twitter:creator" content="@Vivek_Dh_" />
-
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
-        />
-      </Head>
-
-      <main className="py-16 sm:py-24 bg-[#FAFAF8] text-[#111318] min-h-screen">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <main className="py-16 sm:py-24 bg-[#FAFAF8] text-[#111318] min-h-screen">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           {/* Header */}
           <header className="space-y-4">
@@ -263,7 +222,6 @@ export default function BlogIndex({ siteData, posts }) {
 
         </div>
       </main>
-    </>
   )
 }
 
@@ -278,7 +236,11 @@ export async function getStaticProps() {
       seoProps: {
         title: "Blog & Commercial Insights | Vivek Dhoundiyal",
         description: "Essays, playbooks, and tactical frameworks on B2B sales strategy, enterprise partnerships, revenue operations, and 0→1 business building by Vivek Dhoundiyal.",
-        canonical: "https://vivek-dhoundiyal-portfolio.pages.dev/blog"
+        canonical: "https://vivek-dhoundiyal-portfolio.pages.dev/blog/",
+        breadcrumbs: [
+          { name: "Home", url: "https://vivek-dhoundiyal-portfolio.pages.dev/" },
+          { name: "Blog", url: "https://vivek-dhoundiyal-portfolio.pages.dev/blog/" }
+        ]
       }
     }
   }

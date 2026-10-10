@@ -1,5 +1,4 @@
 import React from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
 import { getSiteContent } from '../lib/content'
 import { DownloadIcon, ArrowUpRight, CheckIcon } from '../components/Icons'
@@ -25,11 +24,6 @@ export default function ResumePage({ siteData }) {
 
   return (
     <div className="py-12 sm:py-20 min-h-screen bg-[#FAFAF8] text-[#111318]">
-      <Head>
-        <title>B2B Sales & Business Development Resume — Vivek Dhoundiyal</title>
-        <meta name="description" content="Verified B2B Sales and Business Development resume of Vivek Dhoundiyal. 8+ years driving commercial revenue, consultative sales, and partnerships." />
-      </Head>
-
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Top Breadcrumb & Action Bar */}
@@ -212,7 +206,12 @@ export async function getStaticProps() {
   const siteData = getSiteContent()
   return {
     props: {
-      siteData
+      siteData,
+      seoProps: {
+        title: "B2B Sales & Business Development Resume — Vivek Dhoundiyal",
+        description: "Verified B2B Sales and Business Development resume of Vivek Dhoundiyal. 8+ years driving commercial revenue, consultative sales, and partnerships.",
+        canonical: "https://vivek-dhoundiyal-portfolio.pages.dev/resume/",
+      }
     }
   }
 }
