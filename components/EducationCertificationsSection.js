@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { getToolBrandLogo } from './BrandLogos'
 
 function CheckCircleIcon({ className = "w-4 h-4", ...props }) {
   return (
@@ -36,7 +35,6 @@ function GraduationCapIcon({ className = "w-7 h-7", ...props }) {
 
 export default function EducationCertificationsSection({ education = {}, certifications = [] }) {
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [activeToolTab, setActiveToolTab] = useState('All')
 
   const googleCert = (certifications && certifications.length > 0)
     ? certifications[0]
@@ -53,58 +51,6 @@ export default function EducationCertificationsSection({ education = {}, certifi
 
   const certImage = googleCert.image || '/images/google-project-management-certificate.png'
   const certVerifyUrl = googleCert.credentialUrl || 'https://coursera.org/verify/professional-cert/3QGWMKPNG7ZR'
-
-  // Tool categories grouped by practical use
-  const toolGroups = [
-    {
-      group: 'AI & Reasoning',
-      tools: [
-        { id: 'chatgpt', name: 'ChatGPT' },
-        { id: 'claude', name: 'Claude' },
-        { id: 'gemini', name: 'Gemini' },
-        { id: 'perplexity', name: 'Perplexity' },
-        { id: 'claude-code', name: 'Cursor / Claude Code' }
-      ]
-    },
-    {
-      group: 'Sales & CRM',
-      tools: [
-        { id: 'hubspot', name: 'HubSpot' },
-        { id: 'zoho-crm', name: 'Zoho CRM' },
-        { id: 'linkedin', name: 'LinkedIn Sales Nav' },
-        { id: 'apollo', name: 'Apollo.io' }
-      ]
-    },
-    {
-      group: 'Automation & Ops',
-      tools: [
-        { id: 'make', name: 'Make' },
-        { id: 'zapier', name: 'Zapier' },
-        { id: 'n8n', name: 'n8n' },
-        { id: 'airtable', name: 'Airtable' }
-      ]
-    },
-    {
-      group: 'Productivity & Design',
-      tools: [
-        { id: 'notion', name: 'Notion' },
-        { id: 'clickup', name: 'ClickUp' },
-        { id: 'figma', name: 'Figma' },
-        { id: 'slack', name: 'Slack' },
-        { id: 'google-workspace', name: 'Google Workspace' }
-      ]
-    },
-    {
-      group: 'Systems & Analytics',
-      tools: [
-        { id: 'python', name: 'Python' },
-        { id: 'web-systems', name: 'Web Applications' },
-        { id: 'design-systems', name: 'Design Systems' },
-        { id: 'analytics', name: 'Google Analytics 4' },
-        { id: 'microsoft-excel', name: 'Advanced Excel' }
-      ]
-    }
-  ]
 
   // ESC handler for certificate modal
   useEffect(() => {
@@ -265,67 +211,6 @@ export default function EducationCertificationsSection({ education = {}, certifi
           </div>
         </div>
 
-        {/* ==================================================== */}
-        {/* SUBSECTION 3: TOOLS & TECHNOLOGIES STACK             */}
-        {/* Grouped by practical use: AI, Sales, Automation, etc */}
-        {/* ==================================================== */}
-        <div className="rounded-3xl bg-white border border-[#E5E7EB] p-6 sm:p-9 shadow-xs space-y-8">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#2563EB]" />
-                <h3 className="text-xl font-bold text-[#111318]">
-                  Tools &amp; Operating Systems
-                </h3>
-              </div>
-              <p className="text-xs text-[#737984] pt-0.5">
-                Software stack grouped by practical commercial and engineering utility.
-              </p>
-            </div>
-
-            {/* Speech bubble avatar callout */}
-            <div className="flex items-center gap-3 bg-blue-50/70 border border-blue-200/80 px-3.5 py-2 rounded-2xl">
-              <div className="relative w-8 h-10 flex-shrink-0">
-                <Image
-                  src="/images/avatars/avatar-laptop-thumbsup.png"
-                  alt="Vivek thumbs up with laptop"
-                  width={298}
-                  height={435}
-                  className="object-contain w-full h-full"
-                />
-              </div>
-              <span className="text-xs font-medium text-blue-900">
-                Tools that help me build faster ⚡
-              </span>
-            </div>
-          </div>
-
-          {/* 5 Group Columns Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
-            {toolGroups.map((tg) => (
-              <div
-                key={tg.group}
-                className="p-4 rounded-2xl bg-[#FAFAF8] border border-slate-200/70 space-y-3"
-              >
-                <div className="text-xs font-bold text-[#111318] border-b border-slate-200 pb-2 flex items-center justify-between">
-                  <span>{tg.group}</span>
-                  <span className="text-[10px] font-mono text-[#737984]">{tg.tools.length}</span>
-                </div>
-
-                <div className="space-y-1.5">
-                  {tg.tools.map((tool) => (
-                    <div
-                      key={tool.id}
-                      className="px-2.5 py-1.5 rounded-lg bg-white border border-slate-200/60 text-xs font-medium text-slate-700 shadow-2xs hover:border-blue-300 transition-colors flex items-center justify-between"
-                    >
-                      <span className="truncate">{tool.name}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
       </div>
 

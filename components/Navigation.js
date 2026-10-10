@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
 import {
   LinkedInIcon,
@@ -20,17 +19,13 @@ import {
   BlogIcon,
   MessageSquareIcon,
   MoreHorizontalIcon,
-  DocumentIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon
+  DocumentIcon
 } from './Icons'
 
 export default function Navigation({
   onOpenSearch,
   onOpenContact,
-  profile,
-  sidebarCollapsed = false,
-  onToggleSidebar
+  profile
 }) {
   const [scrolled, setScrolled] = useState(false)
   const [moreDrawerOpen, setMoreDrawerOpen] = useState(false)
@@ -109,7 +104,7 @@ export default function Navigation({
   const github = profile?.github || 'https://github.com/VivekDhoundiyal'
   const whatsappUrl = 'https://wa.me/917503016766?text=Hi%20Vivek%2C%20I%20found%20your%20website%20and%20would%20like%20to%20connect.'
 
-  // EXACTLY 7 PRIMARY NAVIGATION DESTINATIONS IN AGREED ORDER
+  // EXACTLY 7 PRIMARY NAVIGATION DESTINATIONS IN STRICT CANONICAL ORDER
   const primaryNavItems = [
     { label: 'Home', href: '/#hero', sectionId: 'hero', icon: HomeIcon },
     { label: 'Capabilities', href: '/#capabilities', sectionId: 'capabilities', icon: TargetIcon },
@@ -128,7 +123,7 @@ export default function Navigation({
     { label: 'Work', href: '/#work', sectionId: 'work', icon: WorkIcon }
   ]
 
-  // Secondary items in the "More" bottom sheet (in agreed relative order: Education, Blog, Contact)
+  // Secondary items in the "More" bottom sheet (in agreed relative order: Education, Blog, Contact, Case Study, Resume)
   const moreSheetItems = [
     { label: 'Education', href: '/#education', desc: 'B.Tech & Google PM certification', icon: EducationIcon },
     { label: 'Blog', href: '/blog', desc: 'Ideas, insights and writing', icon: BlogIcon },
@@ -140,251 +135,136 @@ export default function Navigation({
   return (
     <>
       {/* ==================================================== */}
-      {/* 1. DESKTOP LEFT APP SIDEBAR (204px Expanded / 60px Collapsed) */}
+      {/* 1. SLIM STICKY TOP HEADER (DESKTOP & MOBILE)        */}
       {/* ==================================================== */}
-      <aside
-        className={`hidden lg:flex fixed top-0 left-0 bottom-0 z-40 flex-col justify-between bg-white border-r border-[#E5E7EB] select-none shadow-[1px_0_4px_rgba(0,0,0,0.02)] transition-[width] duration-200 ${
-          sidebarCollapsed ? 'w-[60px] items-center' : 'w-[204px]'
+      <header
+        className={`sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] transition-shadow duration-200 ${
+          scrolled ? 'shadow-xs' : ''
         }`}
-        aria-label="App Navigation Rail"
+        aria-label="Portfolio Main Navigation"
       >
-        {/* Sidebar Top: Brand Mark + Name (56px) */}
-        <div className="w-full h-14 border-b border-[#E5E7EB] flex items-center px-3.5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-3 sm:gap-4">
+          
+          {/* Left: Brand mark & Name */}
           <Link
             href="/#hero"
-            className={`flex items-center gap-2.5 w-full group ${sidebarCollapsed ? 'justify-center' : ''}`}
+            className="flex items-center gap-2.5 flex-shrink-0 group focus:outline-none"
             title="Vivek Dhoundiyal — Home"
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] text-white font-extrabold text-xs flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform flex-shrink-0">
-              <span className="tracking-tighter font-mono">VD</span>
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] text-white font-extrabold text-xs sm:text-sm flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform font-mono flex-shrink-0">
+              VD
             </div>
-
-            {!sidebarCollapsed && (
-              <div className="overflow-hidden leading-tight">
-                <div className="text-[12.5px] font-bold text-[#111318] truncate">
-                  Vivek Dhoundiyal
-                </div>
-                <div className="text-[10.5px] text-[#737984] font-normal truncate">
-                  Commercial Operator
-                </div>
-              </div>
-            )}
+            <div className="flex flex-col leading-tight overflow-hidden">
+              <span className="text-xs sm:text-[13px] font-bold text-[#111318] group-hover:text-[#2563EB] transition-colors truncate">
+                Vivek Dhoundiyal
+              </span>
+              <span className="hidden sm:block text-[10px] text-[#737984] font-medium truncate">
+                Business · Growth · Product
+              </span>
+            </div>
           </Link>
-        </div>
 
-        {/* Sidebar Center: 7 Navigation Links in EXACT AGREED ORDER */}
-        <nav className="flex-1 w-full flex flex-col gap-0.5 py-2.5 px-2.5 overflow-y-auto no-scrollbar">
-          {primaryNavItems.map((item) => {
-            const Icon = item.icon
-            const isActive = isHome
-              ? activeSection === item.sectionId
-              : router.pathname === item.href || (item.href === '/blog' && router.pathname.startsWith('/blog'))
+          {/* Center: Desktop Navigation Links (Canonical 7 items in strict order) */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5" aria-label="Primary Navigation">
+            {primaryNavItems.map((item) => {
+              const Icon = item.icon
+              const isActive = isHome
+                ? activeSection === item.sectionId
+                : router.pathname === item.href || (item.href === '/blog' && router.pathname.startsWith('/blog'))
 
-            if (sidebarCollapsed) {
               return (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`relative group h-[38px] w-[38px] mx-auto rounded-lg flex items-center justify-center transition-colors ${
+                  className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium transition-all ${
                     isActive
-                      ? 'bg-blue-50 text-[#2563EB] font-bold shadow-2xs'
+                      ? 'bg-blue-50 text-[#2563EB] font-semibold shadow-2xs'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                   }`}
-                  title={item.label}
                 >
-                  <Icon className="w-4 h-4" width={16} height={16} />
-                  {/* Collapsed Tooltip */}
-                  <div className="absolute left-full ml-2.5 px-2.5 py-1 rounded-md bg-slate-900 text-white text-[11px] font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity shadow-md z-50">
-                    {item.label}
-                  </div>
+                  <Icon className="w-3.5 h-3.5 flex-shrink-0 text-current" width={14} height={14} />
+                  <span>{item.label}</span>
                 </Link>
               )
-            }
+            })}
+          </nav>
 
-            return (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={`relative h-[38px] w-full rounded-lg transition-all duration-150 flex items-center gap-2.5 pr-2.5 text-[12.5px] ${
-                  isActive
-                    ? 'bg-blue-50/90 text-[#2563EB] font-semibold border-l-[3px] border-[#2563EB] pl-2 shadow-2xs'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50/80 pl-2.5 font-medium'
-                }`}
-              >
-                <span className="w-4 h-4 flex-shrink-0 flex items-center justify-center text-current">
-                  <Icon className="w-4 h-4" width={16} height={16} />
-                </span>
-                <span className="truncate">{item.label}</span>
-              </Link>
-            )
-          })}
-        </nav>
-
-        {/* Sidebar Bottom: Let's Talk CTA + Collapse Toggle */}
-        <div className="w-full p-2.5 border-t border-[#E5E7EB] flex flex-col gap-1.5 bg-white">
-          <button
-            onClick={onOpenContact}
-            className={`w-full h-8 rounded-lg bg-[#2563EB] hover:bg-blue-700 text-white font-medium text-xs flex items-center justify-center gap-1.5 transition-colors shadow-2xs cursor-pointer ${
-              sidebarCollapsed ? 'px-0' : 'px-2.5'
-            }`}
-            title="Let's Talk"
-            aria-label="Open contact with Vivek"
-          >
-            <MessageSquareIcon className="w-3.5 h-3.5 flex-shrink-0" width={14} height={14} />
-            {!sidebarCollapsed && <span>Let&apos;s Talk</span>}
-          </button>
-
-          {onToggleSidebar && (
+          {/* Right: Utility & Action Stack (Search, Social, Resume, Let's Talk) */}
+          <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
+            {/* Search Trigger */}
             <button
-              onClick={onToggleSidebar}
-              className={`flex items-center justify-center py-1 text-slate-400 hover:text-slate-600 rounded-md hover:bg-slate-100 transition-colors cursor-pointer ${
-                sidebarCollapsed ? 'w-8 h-7 mx-auto' : 'w-full gap-1.5 text-[10.5px]'
-              }`}
-              title={sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-              aria-label={sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+              onClick={onOpenSearch}
+              className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200/90 text-xs text-slate-500 transition-colors cursor-pointer group"
+              aria-label="Open search dialog"
             >
-              {sidebarCollapsed ? (
-                <ChevronRightIcon className="w-3.5 h-3.5" width={14} height={14} />
-              ) : (
-                <>
-                  <ChevronLeftIcon className="w-3 h-3" width={12} height={12} />
-                  <span>Collapse sidebar</span>
-                </>
-              )}
-            </button>
-          )}
-        </div>
-      </aside>
-
-      {/* ==================================================== */}
-      {/* 2. DESKTOP TOP UTILITY BAR (Fixed, Adapts to Sidebar) */}
-      {/* ==================================================== */}
-      <header
-        className={`hidden lg:flex fixed top-0 right-0 z-30 h-14 bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] items-center justify-between px-5 transition-[left] duration-200 ${
-          sidebarCollapsed ? 'left-[60px]' : 'left-[204px]'
-        }`}
-        aria-label="Desktop Utility Header"
-      >
-        {/* Search Trigger Bar */}
-        <div className="flex items-center gap-3 w-56 xl:w-64">
-          <button
-            onClick={onOpenSearch}
-            className="w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200/90 text-xs text-slate-500 transition-colors cursor-pointer group"
-            aria-label="Open search dialog"
-          >
-            <div className="flex items-center gap-2">
               <SearchIcon className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-600 transition-colors" width={14} height={14} />
-              <span className="truncate">Search portfolio...</span>
+              <span className="hidden xl:inline text-xs text-slate-500">Search...</span>
+              <kbd className="hidden sm:inline-block px-1.5 py-0.5 rounded bg-white border border-slate-200 text-[10px] font-mono text-slate-400 font-semibold shadow-2xs">
+                /
+              </kbd>
+            </button>
+
+            {/* Social Channels (Visible xl+) */}
+            <div className="hidden xl:flex items-center gap-1 text-slate-500">
+              <a
+                href={linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-1.5 rounded-md hover:text-[#2563EB] hover:bg-slate-50 transition-colors"
+                title="LinkedIn"
+                aria-label="LinkedIn Profile"
+              >
+                <LinkedInIcon className="w-3.5 h-3.5" width={14} height={14} />
+              </a>
+              <a
+                href={xUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-1.5 rounded-md hover:text-slate-900 hover:bg-slate-50 transition-colors"
+                title="X (Twitter)"
+                aria-label="X Profile"
+              >
+                <XIcon className="w-3.5 h-3.5" width={14} height={14} />
+              </a>
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-1.5 rounded-md hover:text-slate-900 hover:bg-slate-50 transition-colors"
+                title="GitHub"
+                aria-label="GitHub Profile"
+              >
+                <GitHubIcon className="w-3.5 h-3.5" width={14} height={14} />
+              </a>
             </div>
-            <kbd className="px-1.5 py-0.5 rounded bg-white border border-slate-200 text-[10px] font-mono text-slate-400 font-semibold shadow-2xs">
-              /
-            </kbd>
-          </button>
-        </div>
 
-        {/* Right Utility Stack */}
-        <div className="flex items-center gap-2.5">
-          {/* Live Availability Status Pill (2xl only so narrow desktop never squeezes) */}
-          <div className="hidden 2xl:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/70 text-emerald-800 text-[11px] font-mono font-medium">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span>Open to strategic growth &amp; advisory roles</span>
+            <div className="hidden xl:block h-3.5 w-px bg-slate-200" />
+
+            {/* Resume Link */}
+            <Link
+              href="/resume"
+              className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 border border-slate-200 transition-colors"
+            >
+              <DocumentIcon className="w-3.5 h-3.5 text-slate-500" width={14} height={14} />
+              <span>Resume</span>
+            </Link>
+
+            {/* Primary Let's Talk CTA */}
+            <button
+              onClick={onOpenContact}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#2563EB] text-white hover:bg-blue-700 transition-colors shadow-2xs cursor-pointer"
+              aria-label="Open contact dialog"
+            >
+              <MessageSquareIcon className="w-3.5 h-3.5 sm:hidden" width={14} height={14} />
+              <span>Let&apos;s Talk</span>
+              <ArrowRight className="hidden sm:inline-block w-3 h-3" width={12} height={12} />
+            </button>
           </div>
-
-          <div className="hidden 2xl:block h-3.5 w-px bg-slate-200" />
-
-          {/* Social Channels */}
-          <div className="hidden xl:flex items-center gap-1 text-slate-500">
-            <a
-              href={linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-1 rounded-md hover:text-[#2563EB] hover:bg-slate-50 transition-colors"
-              title="LinkedIn"
-              aria-label="LinkedIn"
-            >
-              <LinkedInIcon className="w-3.5 h-3.5" width={14} height={14} />
-            </a>
-            <a
-              href={xUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-1 rounded-md hover:text-slate-900 hover:bg-slate-50 transition-colors"
-              title="X (Twitter)"
-              aria-label="X Profile"
-            >
-              <XIcon className="w-3.5 h-3.5" width={14} height={14} />
-            </a>
-            <a
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-1 rounded-md hover:text-slate-900 hover:bg-slate-50 transition-colors"
-              title="GitHub"
-              aria-label="GitHub Profile"
-            >
-              <GitHubIcon className="w-3.5 h-3.5" width={14} height={14} />
-            </a>
-          </div>
-
-          <div className="hidden xl:block h-3.5 w-px bg-slate-200" />
-
-          {/* Resume Link */}
-          <Link
-            href="/resume"
-            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 border border-slate-200 transition-colors"
-          >
-            <DocumentIcon className="w-3.5 h-3.5 text-slate-500" width={14} height={14} />
-            <span>Resume</span>
-          </Link>
-
-          {/* Primary Let's Talk CTA */}
-          <button
-            onClick={onOpenContact}
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-[#2563EB] text-white hover:bg-blue-700 transition-colors shadow-2xs cursor-pointer"
-          >
-            <span>Let&apos;s Talk</span>
-            <ArrowRight className="w-3 h-3" width={12} height={12} />
-          </button>
         </div>
       </header>
 
       {/* ==================================================== */}
-      {/* 3. MOBILE COMPACT TOP APP BAR                        */}
-      {/* ==================================================== */}
-      <header
-        className="lg:hidden fixed top-0 left-0 right-0 z-40 h-14 bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] flex items-center justify-between px-4"
-        aria-label="Mobile Application Top Bar"
-      >
-        <Link href="/#hero" className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] text-white font-extrabold text-xs flex items-center justify-center shadow-xs">
-            <span className="font-mono">VD</span>
-          </div>
-          <div>
-            <div className="text-xs font-bold text-[#111318] leading-tight">Vivek Dhoundiyal</div>
-            <div className="text-[10px] text-[#737984] leading-tight font-medium">Business · Growth · Partnerships</div>
-          </div>
-        </Link>
-
-        <div className="flex items-center gap-2">
-          <button
-            onClick={onOpenSearch}
-            className="w-8 h-8 rounded-lg bg-slate-50 border border-slate-200/80 flex items-center justify-center text-slate-600 hover:text-slate-900 transition-colors"
-            aria-label="Open search"
-          >
-            <SearchIcon className="w-3.5 h-3.5" />
-          </button>
-
-          <button
-            onClick={onOpenContact}
-            className="px-3 py-1 rounded-lg bg-[#2563EB] text-white text-xs font-semibold hover:bg-[#1D4ED8] transition-colors"
-          >
-            Let&apos;s Talk
-          </button>
-        </div>
-      </header>
-
-      {/* ==================================================== */}
-      {/* 4. MOBILE FIXED BOTTOM NAVIGATION (5 VISIBLE ITEMS)  */}
+      {/* 2. MOBILE FIXED BOTTOM NAVIGATION (5 ITEMS)          */}
       {/* Home, Capabilities, Experience, Work, More           */}
       {/* ==================================================== */}
       <nav
@@ -428,8 +308,7 @@ export default function Navigation({
       </nav>
 
       {/* ==================================================== */}
-      {/* 5. MOBILE "MORE" SLIDE-UP DRAWER SHEET               */}
-      {/* Lists Education, Blog, Contact in agreed relative order*/}
+      {/* 3. MOBILE "MORE" SLIDE-UP DRAWER SHEET               */}
       {/* ==================================================== */}
       {moreDrawerOpen && (
         <div
@@ -441,12 +320,12 @@ export default function Navigation({
             onClick={(e) => e.stopPropagation()}
             aria-label="Explore Portfolio Navigation"
           >
-            {/* Drawer Drag Pill & Header */}
+            {/* Drawer Drag Handle & Header */}
             <div className="flex flex-col items-center space-y-3">
               <div className="w-12 h-1.5 bg-slate-200 rounded-full" />
               <div className="w-full flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-xl bg-[#2563EB] text-white font-extrabold text-xs flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-xl bg-[#2563EB] text-white font-extrabold text-xs flex items-center justify-center font-mono">
                     VD
                   </div>
                   <div>
@@ -457,7 +336,7 @@ export default function Navigation({
 
                 <button
                   onClick={() => setMoreDrawerOpen(false)}
-                  className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500"
+                  className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 cursor-pointer"
                   aria-label="Close menu"
                 >
                   <CloseIcon className="w-4 h-4" />

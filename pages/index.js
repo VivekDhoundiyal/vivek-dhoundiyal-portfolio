@@ -10,7 +10,6 @@ import ExperienceSection from '../components/ExperienceSection'
 import EducationCertificationsSection from '../components/EducationCertificationsSection'
 import WhereIAmBuilding from '../components/WhereIAmBuilding'
 import ThinkingNotes from '../components/ThinkingNotes'
-import ToolsSystems from '../components/ToolsSystems'
 import AboutBackground from '../components/AboutBackground'
 import ContactSection from '../components/ContactSection'
 import SkillsSection from '../components/SkillsSection'
@@ -101,8 +100,6 @@ export default function Home({ siteData: initialData }) {
         return <MyJourneyTimeline key={sec.id} />
       case 'building':
         return <WhereIAmBuilding key={sec.id} data={whereIAmBuilding} />
-      case 'tools':
-        return <ToolsSystems key={sec.id} tools={tools} />
       case 'skills':
         return <SkillsSection key={sec.id} skills={skills} />
       default:

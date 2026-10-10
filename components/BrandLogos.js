@@ -307,6 +307,56 @@ export function MicrosoftPowerPointLogo({ className = "w-6 h-6", ...props }) {
   )
 }
 
+export function GrokLogo({ className = "w-6 h-6", ...props }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M4.5 3h4.6l5.2 6.5 5.2-6.5h4.5l-7.5 9.4 8 8.6h-4.6l-5.7-6.2-5.7 6.2H4.5l8-8.6L4.5 3z" />
+    </svg>
+  )
+}
+
+export function GoogleOpalLogo({ className = "w-6 h-6", ...props }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <rect width="24" height="24" rx="5" fill="#4285F4" fillOpacity="0.1" />
+      <path d="M12 3L4 8.5L6.5 19L12 21.5L17.5 19L20 8.5L12 3Z" stroke="#4285F4" strokeWidth="1.8" strokeLinejoin="round" />
+      <path d="M12 3V21.5M4 8.5L20 8.5M6.5 19L17.5 19" stroke="#34A853" strokeWidth="1.2" strokeLinecap="round" />
+      <circle cx="12" cy="12" r="2.5" fill="#EA4335" />
+    </svg>
+  )
+}
+
+export function DiscordLogo({ className = "w-6 h-6", ...props }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="#5865F2" aria-hidden="true" {...props}>
+      <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.893.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+    </svg>
+  )
+}
+
+export function MicrosoftTeamsLogo({ className = "w-6 h-6", ...props }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path d="M19.5 7.5A2.25 2.25 0 1 0 19.5 3a2.25 2.25 0 0 0 0 4.5zM14.25 6A3 3 0 1 0 14.25 0a3 3 0 0 0 0 6z" fill="#5059C9" />
+      <path d="M16.5 9h-4.5A2.25 2.25 0 0 0 9.75 11.25V18a2.25 2.25 0 0 0 2.25 2.25h4.5A2.25 2.25 0 0 0 18.75 18v-6.75A2.25 2.25 0 0 0 16.5 9z" fill="#7B83EB" />
+      <path d="M18.75 9.75h2.25A1.5 1.5 0 0 1 22.5 11.25V15a1.5 1.5 0 0 1-1.5 1.5h-2.25V9.75z" fill="#5059C9" />
+      <path d="M2.25 10.5h6A1.5 1.5 0 0 1 9.75 12v9a1.5 1.5 0 0 1-1.5 1.5h-6A1.5 1.5 0 0 1 .75 21v-9a1.5 1.5 0 0 1 1.5-1.5z" fill="#4B53BC" />
+      <path d="M6.75 14.25H3.75v1.5h3v-1.5zM6.75 17.25H3.75v1.5h3v-1.5z" fill="#FFFFFF" />
+    </svg>
+  )
+}
+
+export function Microsoft365Logo({ className = "w-6 h-6", ...props }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <rect x="2" y="2" width="9.5" height="9.5" fill="#F25022" rx="1" />
+      <rect x="12.5" y="2" width="9.5" height="9.5" fill="#7FBA00" rx="1" />
+      <rect x="2" y="12.5" width="9.5" height="9.5" fill="#00A4EF" rx="1" />
+      <rect x="12.5" y="12.5" width="9.5" height="9.5" fill="#FFB900" rx="1" />
+    </svg>
+  )
+}
+
 // Map helper to resolve tool ID to real SVG logo
 export function getToolBrandLogo(id, className = "w-6 h-6") {
   const normId = (id || '').toLowerCase().trim()
@@ -317,17 +367,26 @@ export function getToolBrandLogo(id, className = "w-6 h-6") {
     case 'perplexity':
       return <PerplexityLogo className={className} />
     case 'gemini':
+    case 'google-gemini':
       return <GeminiLogo className={className} />
     case 'claude':
       return <ClaudeLogo className={className} />
+    case 'grok':
+    case 'xai-grok':
+      return <GrokLogo className={className} />
     case 'openai-codex':
     case 'codex':
       return <OpenAICodexLogo className={className} />
     case 'claude-code':
       return <ClaudeCodeLogo className={className} />
     case 'antigravity':
+    case 'google-antigravity':
       return <AntigravityLogo className={className} />
+    case 'opal':
+    case 'google-opal':
+      return <GoogleOpalLogo className={className} />
     case 'stitch':
+    case 'google-stitch':
       return <StitchLogo className={className} />
     case 'cursor':
       return <CursorLogo className={className} />
@@ -344,6 +403,12 @@ export function getToolBrandLogo(id, className = "w-6 h-6") {
     case 'gsuite':
     case 'google-workspace':
       return <GoogleWorkspaceLogo className={className} />
+    case 'microsoft-365':
+    case 'ms-365':
+    case 'office':
+    case 'microsoft-office':
+    case 'microsoft-365-office':
+      return <Microsoft365Logo className={className} />
     case 'microsoft-word':
     case 'ms-word':
     case 'word':
@@ -357,6 +422,7 @@ export function getToolBrandLogo(id, className = "w-6 h-6") {
     case 'powerpoint':
       return <MicrosoftPowerPointLogo className={className} />
     case 'make':
+    case 'make-com':
       return <MakeLogo className={className} />
     case 'zapier':
       return <ZapierLogo className={className} />
@@ -368,6 +434,7 @@ export function getToolBrandLogo(id, className = "w-6 h-6") {
     case 'zoho-crm':
       return <ZohoLogo className={className} />
     case 'apollo':
+    case 'apollo-io':
       return <ApolloLogo className={className} />
     case 'lusha':
       return <LushaLogo className={className} />
@@ -382,6 +449,12 @@ export function getToolBrandLogo(id, className = "w-6 h-6") {
       return <MondayLogo className={className} />
     case 'slack':
       return <SlackLogo className={className} />
+    case 'discord':
+      return <DiscordLogo className={className} />
+    case 'teams':
+    case 'microsoft-teams':
+    case 'ms-teams':
+      return <MicrosoftTeamsLogo className={className} />
     case 'cloudflare':
       return (
         <svg className={className} viewBox="0 0 24 24" fill="#F38020" aria-hidden="true">
@@ -389,6 +462,7 @@ export function getToolBrandLogo(id, className = "w-6 h-6") {
         </svg>
       )
     case 'sales-navigator':
+    case 'linkedin-sales-navigator':
     case 'linkedin':
       return (
         <svg className={className} viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">

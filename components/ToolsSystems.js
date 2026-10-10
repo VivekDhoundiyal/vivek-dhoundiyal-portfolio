@@ -4,70 +4,91 @@ import { getToolBrandLogo } from './BrandLogos'
 
 const TOOL_CATEGORIES = [
   {
-    id: 'ai-reasoning',
-    title: 'AI & Reasoning',
-    subtitle: 'LLMs, Reasoning & Code',
+    id: 'ai-research',
+    title: 'AI & Research',
+    subtitle: 'LLMs, synthesis & deep research',
     iconSrc: '/images/illustrations/icon-ai-chip.png',
     tools: [
       { id: 'chatgpt', name: 'ChatGPT' },
       { id: 'claude', name: 'Claude' },
-      { id: 'gemini', name: 'Gemini' },
+      { id: 'google-gemini', name: 'Google Gemini' },
       { id: 'perplexity', name: 'Perplexity' },
-      { id: 'cursor', name: 'Cursor' }
+      { id: 'grok', name: 'Grok' }
     ]
   },
   {
-    id: 'sales-crm',
-    title: 'Sales & CRM',
-    subtitle: 'Outreach, Pipelines & ICP',
+    id: 'ai-product-design',
+    title: 'AI Product Building & Design',
+    subtitle: 'Agentic workflows, UI & rapid prototypes',
+    iconSrc: '/images/illustrations/icon-rocket-launch.png',
+    tools: [
+      { id: 'google-antigravity', name: 'Google Antigravity' },
+      { id: 'google-opal', name: 'Google Opal' },
+      { id: 'google-stitch', name: 'Google Stitch' }
+    ]
+  },
+  {
+    id: 'sales-prospecting-crm',
+    title: 'Sales, Prospecting & CRM',
+    subtitle: 'Outreach, ICP discovery & pipeline tracking',
     iconSrc: '/images/illustrations/icon-handshake.png',
     tools: [
+      { id: 'lusha', name: 'Lusha' },
+      { id: 'apollo-io', name: 'Apollo.io' },
+      { id: 'linkedin-sales-navigator', name: 'LinkedIn Sales Navigator' },
       { id: 'hubspot', name: 'HubSpot' },
-      { id: 'zoho-crm', name: 'Zoho CRM' },
-      { id: 'apollo', name: 'Apollo.io' },
-      { id: 'sales-navigator', name: 'Sales Navigator' }
+      { id: 'zoho-crm', name: 'Zoho CRM' }
     ]
   },
   {
-    id: 'automation-ops',
-    title: 'Automation & Ops',
-    subtitle: 'Triggers, APIs & Loops',
-    iconSrc: '/images/illustrations/icon-automation-gears.png',
+    id: 'project-work-management',
+    title: 'Project & Work Management',
+    subtitle: 'Sprint cadences, roadmaps & deliverables',
+    iconSrc: '/images/illustrations/icon-briefcase.png',
     tools: [
-      { id: 'make', name: 'Make.com' },
-      { id: 'zapier', name: 'Zapier' },
-      { id: 'n8n', name: 'n8n' },
-      { id: 'python', name: 'Python' }
+      { id: 'clickup', name: 'ClickUp' },
+      { id: 'notion', name: 'Notion' },
+      { id: 'monday', name: 'Monday.com' }
     ]
   },
   {
-    id: 'productivity-design',
-    title: 'Productivity & Design',
-    subtitle: 'Workspaces, Docs & UI',
+    id: 'communication-collaboration',
+    title: 'Communication & Collaboration',
+    subtitle: 'Async channels, team comms & alignment',
+    iconSrc: '/images/illustrations/icon-call-handset.png',
+    tools: [
+      { id: 'slack', name: 'Slack' },
+      { id: 'discord', name: 'Discord' },
+      { id: 'microsoft-teams', name: 'Microsoft Teams' }
+    ]
+  },
+  {
+    id: 'productivity-business',
+    title: 'Productivity & Business',
+    subtitle: 'Documents, cloud drives & spreadsheets',
     iconSrc: '/images/illustrations/icon-apps-grid.png',
     tools: [
-      { id: 'notion', name: 'Notion' },
-      { id: 'clickup', name: 'ClickUp' },
-      { id: 'figma', name: 'Figma' },
-      { id: 'slack', name: 'Slack' },
+      { id: 'microsoft-365', name: 'Microsoft 365 / Office' },
       { id: 'google-workspace', name: 'Google Workspace' }
     ]
   },
   {
-    id: 'systems-analytics',
-    title: 'Systems & Analytics',
-    subtitle: 'Data, Metrics & Infra',
-    iconSrc: '/images/illustrations/icon-database-cloud.png',
+    id: 'automation-technical',
+    title: 'Automation & Technical Tools',
+    subtitle: 'Triggers, APIs, scripts & data loops',
+    iconSrc: '/images/illustrations/icon-automation-gears.png',
     tools: [
-      { id: 'microsoft-excel', name: 'Excel' },
-      { id: 'cloudflare', name: 'Cloudflare' },
-      { id: 'stripe', name: 'Stripe' },
-      { id: 'linear', name: 'Linear' }
+      { id: 'n8n', name: 'n8n' },
+      { id: 'make', name: 'Make' },
+      { id: 'zapier', name: 'Zapier' },
+      { id: 'python', name: 'Python' }
     ]
   }
 ]
 
 export default function ToolsSystems() {
+  const totalTools = TOOL_CATEGORIES.reduce((acc, cat) => acc + cat.tools.length, 0)
+
   return (
     <div className="pt-8 sm:pt-10 border-t border-[#E5E7EB] space-y-6">
       {/* Section Sub-header */}
@@ -85,17 +106,17 @@ export default function ToolsSystems() {
           </p>
         </div>
 
-        <span className="text-[11px] font-mono text-slate-400 self-start sm:self-auto">
-          5 Core Categories · 22 Applied Platforms
+        <span className="text-[11px] font-mono text-slate-500 bg-slate-50 border border-slate-200/80 px-2.5 py-1 rounded-lg self-start sm:self-auto font-medium">
+          {TOOL_CATEGORIES.length} Categories · {totalTools} Applied Platforms
         </span>
       </div>
 
-      {/* 5-Category Responsive Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3.5">
+      {/* 7-Category Responsive Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {TOOL_CATEGORIES.map((cat) => (
           <div
             key={cat.id}
-            className="p-4 rounded-2xl bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 hover:shadow-xs transition-all duration-200 flex flex-col justify-between space-y-3.5"
+            className="p-4 sm:p-4.5 rounded-2xl bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 hover:shadow-xs transition-all duration-200 flex flex-col justify-between space-y-3.5"
           >
             {/* Category Header with Authentic 3D Illustration */}
             <div className="flex items-center gap-2.5 pb-2.5 border-b border-slate-100">
@@ -118,17 +139,17 @@ export default function ToolsSystems() {
               </div>
             </div>
 
-            {/* Individual Tools List */}
-            <ul className="space-y-1.5 flex-1">
+            {/* Individual Tools List with Official Brand Logos */}
+            <ul className="space-y-1.5 flex-1" aria-label={`${cat.title} tools`}>
               {cat.tools.map((tool) => (
                 <li
                   key={tool.id}
-                  className="flex items-center gap-2 py-1 px-1.5 rounded-lg hover:bg-slate-50 text-xs text-slate-700 transition-colors group"
+                  className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg hover:bg-slate-50 border border-transparent hover:border-slate-200/60 text-xs text-slate-700 transition-colors group"
                 >
-                  <span className="w-4 h-4 flex-shrink-0 flex items-center justify-center text-slate-700 group-hover:scale-105 transition-transform">
-                    {getToolBrandLogo(tool.id, 'w-3.5 h-3.5')}
+                  <span className="w-4 h-4 flex-shrink-0 flex items-center justify-center text-slate-700 group-hover:scale-105 transition-transform" aria-hidden="true">
+                    {getToolBrandLogo(tool.id, 'w-4 h-4')}
                   </span>
-                  <span className="truncate font-medium text-[11.5px] text-[#111318]">
+                  <span className="font-medium text-[12px] text-[#111318] truncate">
                     {tool.name}
                   </span>
                 </li>
@@ -138,7 +159,7 @@ export default function ToolsSystems() {
             {/* Category Card Footer Count */}
             <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] font-mono text-slate-400">
               <span>Verified stack</span>
-              <span>{cat.tools.length} tools</span>
+              <span className="font-semibold text-slate-600">{cat.tools.length} {cat.tools.length === 1 ? 'tool' : 'tools'}</span>
             </div>
           </div>
         ))}
