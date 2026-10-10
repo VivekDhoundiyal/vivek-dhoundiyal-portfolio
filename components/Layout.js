@@ -18,7 +18,7 @@ export default function Layout({ children, siteData, seoProps }) {
   const modalContact = siteData?.modalContact || {}
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#111318] selection:bg-blue-600/10 selection:text-[#111318] font-sans antialiased overflow-x-hidden w-full">
+    <div className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#111318] selection:bg-blue-600/10 selection:text-[#111318] font-sans antialiased overflow-x-clip w-full">
       <SeoHead {...seoProps} />
 
       <Navigation
@@ -27,7 +27,7 @@ export default function Layout({ children, siteData, seoProps }) {
         profile={profile}
       />
 
-      <main className="flex-1 w-full pb-20 sm:pb-24 lg:pb-0 overflow-x-hidden">
+      <main className="flex-1 w-full pb-20 sm:pb-24 lg:pb-0 overflow-x-clip">
         {children}
       </main>
 

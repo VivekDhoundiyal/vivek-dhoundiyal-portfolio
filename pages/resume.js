@@ -48,7 +48,7 @@ export default function ResumePage({ siteData }) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold border border-[#E5E7EB] bg-white hover:bg-slate-50 text-[#111318] shadow-xs transition-colors"
             >
-              <span>View Original PDF</span>
+              <span>View Resume</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-[#2563EB]" />
             </a>
 
@@ -58,7 +58,7 @@ export default function ResumePage({ siteData }) {
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-[#111318] text-white hover:bg-[#2563EB] transition-colors shadow-xs"
             >
               <DownloadIcon className="w-3.5 h-3.5" />
-              <span>Download PDF</span>
+              <span>Download Resume</span>
             </a>
           </div>
         </div>

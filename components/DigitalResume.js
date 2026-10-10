@@ -59,11 +59,11 @@ export default function DigitalResume({ siteData = {} }) {
               Professional Profile
             </h2>
             <p className="text-sm sm:text-base text-slate-300 font-normal">
-              Interactive digital curriculum vitae. Inspect full career history directly or download verified PDFs.
+              Interactive digital curriculum vitae. Inspect full career history directly or download verified resumes.
             </p>
           </div>
 
-          {/* Quick PDF Download Links */}
+          {/* Quick Resume Download Links */}
           <div className="flex flex-wrap items-center gap-3">
             <a
               href={b2bResume.url}
@@ -71,7 +71,7 @@ export default function DigitalResume({ siteData = {} }) {
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-white text-[#070B14] hover:bg-[#2563EB] hover:text-white transition-all shadow-md"
             >
               <DownloadIcon className="w-3.5 h-3.5" />
-              <span>B2B Sales (PDF)</span>
+              <span>Download Resume</span>
             </a>
 
             <a
@@ -80,7 +80,7 @@ export default function DigitalResume({ siteData = {} }) {
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono border border-white/15 bg-white/5 hover:bg-white/10 text-white transition-colors"
             >
               <DownloadIcon className="w-3.5 h-3.5" />
-              <span>Ops / PG (PDF)</span>
+              <span>Download Ops Resume</span>
             </a>
           </div>
         </div>
