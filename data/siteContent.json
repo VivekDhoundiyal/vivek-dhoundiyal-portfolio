@@ -1176,7 +1176,7 @@
       "status": "Verified Credential",
       "image": "/images/google-project-management-certificate.png",
       "pdfUrl": "/certificates/google-project-management-professional-certificate.pdf",
-      "description": "Comprehensive seven-course professional curriculum developed by Google and delivered via Coursera, preparing practitioners for introductory-level to senior execution in traditional and agile project environments.",
+      "description": "Comprehensive seven-course professional curriculum developed by Google and delivered via Coursera, preparing practitioners for traditional and agile project environments.",
       "coursesCount": 7,
       "courses": [
         "Foundations of Project Management",
@@ -1193,8 +1193,45 @@
         "Project Planning & Work Breakdown",
         "Risk Mitigation & Governance",
         "Stakeholder Communication",
-        "Resource & Budget Management",
-        "AI-Assisted Workflow Execution"
+        "Resource & Budget Management"
+      ]
+    },
+    {
+      "id": "innovation-management-leeds",
+      "name": "Innovation Management: Winning in the Age of Disruption",
+      "issuer": "University of Leeds · FutureLearn",
+      "date": "December 4, 2017",
+      "credentialId": "qrf9auc",
+      "credentialUrl": "https://www.futurelearn.com/certificates/qrf9auc",
+      "status": "Verified Credential",
+      "image": "/images/innovation-management-certificate.png",
+      "description": "CPD certified executive program on leading innovation initiatives, managing disruptive business models, and building structured value propositions in rapidly evolving industries.",
+      "coursesCount": 1,
+      "skills": [
+        "Disruptive Innovation Strategy",
+        "Business Model Innovation",
+        "Competitive Landscape Analysis",
+        "Value Proposition Design",
+        "Strategic Risk Evaluation"
+      ]
+    },
+    {
+      "id": "data-science-101-ibm",
+      "name": "Data Science 101",
+      "issuer": "Cognitive Class · IBM",
+      "date": "January 2, 2018",
+      "credentialId": "9f04e63a-1e2c-4c6e-997f-821d12350f1f",
+      "credentialUrl": "https://www.credly.com/badges/9f04e63a-1e2c-4c6e-997f-821d12350f1f/linked_in_profile",
+      "status": "Verified Credential",
+      "image": "/images/data-science-101-certificate.png",
+      "description": "Foundational curriculum covering data science methodologies, exploratory data analysis, machine learning taxonomies, predictive modeling, and data-backed business decisions.",
+      "coursesCount": 1,
+      "skills": [
+        "Data Science Methodologies",
+        "Exploratory Data Analysis",
+        "Machine Learning Concepts",
+        "Predictive Modeling",
+        "Statistical Reasoning"
       ]
     }
   ],
