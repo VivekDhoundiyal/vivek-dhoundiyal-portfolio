@@ -99,7 +99,7 @@ export default function DigitalResume({ siteData = {} }) {
           </div>
 
           <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal">
-            B2B Sales, Business Development, and Commercial Operations professional with over 8 years of cross-functional experience across venture building, high-ticket consultative selling, and revenue pipeline architecture. Demonstrated history of closing enterprise partnerships at CollegeDunia and KreedOn, co-founding SettleMyCar (50+ garage partners, 1,000+ customer transactions), and operating B2B food supply distribution. Currently consulting B2B ventures via SuperSurge while applying commercial leverage to technology, AI workflows, and software products like CareerOS.
+            B2B Sales, Business Development, and Commercial Operations professional with over 8 years of cross-functional experience across venture building, high-ticket consultative selling, and revenue pipeline architecture. Demonstrated history of closing enterprise partnerships at CollegeDunia and KreedOn, co-founding SettleMyCar (50+ garage partners, 1,000+ customer transactions), and operating B2B food supply distribution. Currently consulting B2B ventures via SuperSurge while applying commercial leverage to technology, AI workflows, and software products like Hiresway.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-white/10 text-xs font-mono">

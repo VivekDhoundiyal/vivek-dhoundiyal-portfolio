@@ -239,7 +239,7 @@ export default function CMSPanel({ initialContent, currentUser, csrfToken, onLog
     { id: 'experience', label: `Executive Timeline (${(experience.nodes || []).length})` },
     { id: 'certifications', label: 'Education & Certifications' },
     { id: 'where-i-am-building', label: 'Where I Am Building' },
-    { id: 'careeros', label: 'CareerOS Case Study (15 Slides)' },
+    { id: 'careeros', label: 'Hiresway Case Study (15 Slides)' },
     { id: 'thinking', label: `Thinking & Writing (${thinking.length})` },
     { id: 'tools', label: `Tools Stack (${tools.length})` },
     { id: 'skills', label: 'Skills & Capabilities' },
@@ -1305,7 +1305,7 @@ export default function CMSPanel({ initialContent, currentUser, csrfToken, onLog
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-lg font-black text-white">Professional Experience Summary Timeline ({(experience.nodes || []).length})</h2>
-                <p className="text-xs text-slate-400 font-mono">Executive career overview nodes. (CareerOS is excluded from employment).</p>
+                <p className="text-xs text-slate-400 font-mono">Executive career overview nodes. (Hiresway is excluded from employment).</p>
               </div>
               <button
                 type="button"
@@ -2170,8 +2170,8 @@ export default function CMSPanel({ initialContent, currentUser, csrfToken, onLog
         {/* ==================================================== */}
         {activeTab === 'careeros' && (
           <CareerOSTab
-            careeros={content.careeros || {}}
-            onChange={(updated) => setContent({ ...content, careeros: updated })}
+            careeros={content.careeros || content.hiresway || {}}
+            onChange={(updated) => setContent({ ...content, careeros: updated, hiresway: updated })}
           />
         )}
 

@@ -11,21 +11,21 @@ export default function EntrepreneurialExperience() {
   // Verified 5 project gallery matching exact master prompt specification
   const allProjects = [
     {
-      id: 'careeros',
-      slug: 'careeros',
-      title: 'CareerOS',
-      category: 'AI Product · Job Intelligence',
+      id: 'hiresway',
+      slug: 'hiresway',
+      title: 'Hiresway',
+      category: 'AI Product · Career Platform',
       type: 'Products',
       year: '2024–Present',
       status: 'Live / Active',
       statusBadgeClass: 'bg-emerald-50 text-emerald-700 border-emerald-300',
       statusDotClass: 'bg-emerald-500',
       iconSrc: '/images/illustrations/icon-workflow-nodes.png',
-      tagline: 'AI-powered career operating system.',
+      tagline: 'AI-powered career platform.',
       description: 'Transforms a candidate background into high-conviction opportunities, orchestrating discovery, role alignment, and submission tracking.',
-      tags: ['AI Workflow', 'Semantic Matching', 'Real-Time Pipeline'],
-      href: '/work/careeros',
-      role: 'Product Strategy & Architecture'
+      tags: ['AI Platform', 'Career Intelligence', 'Semantic Matching'],
+      href: '/work/hiresway',
+      role: 'Commercial Strategy & Architecture'
     },
     {
       id: 'nuvio',

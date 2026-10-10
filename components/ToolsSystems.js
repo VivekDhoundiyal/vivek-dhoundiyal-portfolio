@@ -6,82 +6,65 @@ const TOOL_CATEGORIES = [
   {
     id: 'ai-research',
     title: 'AI & Research',
-    subtitle: 'LLMs, synthesis & deep research',
+    subtitle: 'Reasoning, synthesis & deep research',
     iconSrc: '/images/illustrations/icon-ai-chip.png',
     tools: [
       { id: 'chatgpt', name: 'ChatGPT' },
       { id: 'claude', name: 'Claude' },
-      { id: 'google-gemini', name: 'Google Gemini' },
-      { id: 'perplexity', name: 'Perplexity' },
-      { id: 'grok', name: 'Grok' }
+      { id: 'gemini', name: 'Gemini' },
+      { id: 'grok', name: 'Grok' },
+      { id: 'perplexity', name: 'Perplexity' }
     ]
   },
   {
-    id: 'ai-product-design',
-    title: 'AI Product Building & Design',
-    subtitle: 'Agentic workflows, UI & rapid prototypes',
+    id: 'development-ai-building',
+    title: 'Development & AI Building',
+    subtitle: 'Agentic workflows, UI & code generation',
     iconSrc: '/images/illustrations/icon-rocket-launch.png',
     tools: [
       { id: 'google-antigravity', name: 'Google Antigravity' },
       { id: 'google-opal', name: 'Google Opal' },
-      { id: 'google-stitch', name: 'Google Stitch' }
+      { id: 'google-stitch', name: 'Google Stitch' },
+      { id: 'cursor', name: 'Cursor' }
     ]
   },
   {
-    id: 'sales-prospecting-crm',
-    title: 'Sales, Prospecting & CRM',
-    subtitle: 'Outreach, ICP discovery & pipeline tracking',
+    id: 'sales-crm',
+    title: 'Sales & CRM',
+    subtitle: 'Prospecting, pipeline & relationship intelligence',
     iconSrc: '/images/illustrations/icon-handshake.png',
     tools: [
-      { id: 'lusha', name: 'Lusha' },
       { id: 'apollo-io', name: 'Apollo.io' },
-      { id: 'linkedin-sales-navigator', name: 'LinkedIn Sales Navigator' },
-      { id: 'hubspot', name: 'HubSpot' },
-      { id: 'zoho-crm', name: 'Zoho CRM' }
+      { id: 'lusha', name: 'Lusha' },
+      { id: 'zoho-crm', name: 'Zoho CRM' },
+      { id: 'linkedin-sales-navigator', name: 'LinkedIn Sales Navigator' }
     ]
   },
   {
-    id: 'project-work-management',
-    title: 'Project & Work Management',
-    subtitle: 'Sprint cadences, roadmaps & deliverables',
+    id: 'productivity-collaboration',
+    title: 'Productivity & Collaboration',
+    subtitle: 'Work management, async docs & communications',
     iconSrc: '/images/illustrations/icon-briefcase.png',
     tools: [
       { id: 'clickup', name: 'ClickUp' },
       { id: 'notion', name: 'Notion' },
-      { id: 'monday', name: 'Monday.com' }
-    ]
-  },
-  {
-    id: 'communication-collaboration',
-    title: 'Communication & Collaboration',
-    subtitle: 'Async channels, team comms & alignment',
-    iconSrc: '/images/illustrations/icon-call-handset.png',
-    tools: [
+      { id: 'monday-com', name: 'Monday.com' },
+      { id: 'microsoft-365', name: 'Microsoft 365' },
+      { id: 'google-workspace', name: 'Google Workspace' },
       { id: 'slack', name: 'Slack' },
-      { id: 'discord', name: 'Discord' },
-      { id: 'microsoft-teams', name: 'Microsoft Teams' }
+      { id: 'discord', name: 'Discord' }
     ]
   },
   {
-    id: 'productivity-business',
-    title: 'Productivity & Business',
-    subtitle: 'Documents, cloud drives & spreadsheets',
+    id: 'design-analytics',
+    title: 'Design & Analytics',
+    subtitle: 'Interface design, web metrics & cloud infrastructure',
     iconSrc: '/images/illustrations/icon-apps-grid.png',
     tools: [
-      { id: 'microsoft-365', name: 'Microsoft 365 / Office' },
-      { id: 'google-workspace', name: 'Google Workspace' }
-    ]
-  },
-  {
-    id: 'automation-technical',
-    title: 'Automation & Technical Tools',
-    subtitle: 'Triggers, APIs, scripts & data loops',
-    iconSrc: '/images/illustrations/icon-automation-gears.png',
-    tools: [
-      { id: 'n8n', name: 'n8n' },
-      { id: 'make', name: 'Make' },
-      { id: 'zapier', name: 'Zapier' },
-      { id: 'python', name: 'Python' }
+      { id: 'figma', name: 'Figma' },
+      { id: 'google-analytics', name: 'Google Analytics' },
+      { id: 'excel', name: 'Excel' },
+      { id: 'cloudflare', name: 'Cloudflare' }
     ]
   }
 ]
@@ -90,7 +73,7 @@ export default function ToolsSystems() {
   const totalTools = TOOL_CATEGORIES.reduce((acc, cat) => acc + cat.tools.length, 0)
 
   return (
-    <div className="pt-8 sm:pt-10 border-t border-[#E5E7EB] space-y-6">
+    <div id="tools" className="pt-8 sm:pt-10 border-t border-[#E5E7EB] space-y-6 scroll-mt-20">
       {/* Section Sub-header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
         <div className="space-y-1.5">
@@ -102,7 +85,7 @@ export default function ToolsSystems() {
             Tools I Use
           </h3>
           <p className="text-xs sm:text-sm text-[#555B66] max-w-xl leading-relaxed">
-            Everyday software systems, AI reasoning models, CRM platforms, and automation engines operated with commercial discipline.
+            Everyday software systems, AI reasoning models, CRM platforms, and analytics engines operated with commercial discipline.
           </p>
         </div>
 
@@ -111,14 +94,14 @@ export default function ToolsSystems() {
         </span>
       </div>
 
-      {/* 7-Category Responsive Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      {/* 5-Category Balanced Responsive Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
         {TOOL_CATEGORIES.map((cat) => (
           <div
             key={cat.id}
             className="p-4 sm:p-4.5 rounded-2xl bg-white border border-[#E5E7EB] hover:border-[#2563EB]/40 hover:shadow-xs transition-all duration-200 flex flex-col justify-between space-y-3.5"
           >
-            {/* Category Header with Authentic 3D Illustration */}
+            {/* Category Header with Illustration */}
             <div className="flex items-center gap-2.5 pb-2.5 border-b border-slate-100">
               <div className="w-7 h-7 relative flex-shrink-0">
                 <Image

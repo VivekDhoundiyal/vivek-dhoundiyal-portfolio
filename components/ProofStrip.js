@@ -6,7 +6,7 @@ export default function ProofStrip({ proof = {} }) {
     { value: '3+ Ventures', label: 'Built & Operated', sub: 'Automotive marketplace, B2B food supply & distribution' },
     { value: 'Enterprise BD', label: 'Consultative Selling', sub: 'CollegeDunia & KreedOn institutional accounts' },
     { value: 'Operations', label: 'Supply Systems', sub: 'Farm-to-kitchen routes & workshop networks' },
-    { value: 'AI Workflows', label: 'Systems & Tools', sub: 'Agentic pipelines, n8n automations & CareerOS' }
+    { value: 'AI Workflows', label: 'Systems & Tools', sub: 'Agentic pipelines, intelligent workflows & Hiresway' }
   ]
 
   return (

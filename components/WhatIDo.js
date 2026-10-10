@@ -81,7 +81,7 @@ export default function WhatIDo() {
   ]
 
   return (
-    <section id="capabilities" className="py-12 sm:py-16 bg-[#FAFAF8] text-[#111318] border-t border-[#E5E7EB] relative scroll-mt-16">
+    <section id="capabilities" className="py-12 sm:py-16 bg-[#FAFAF8] text-[#111318] border-t border-[#E5E7EB] relative scroll-mt-16 sm:scroll-mt-20">
       <div id="what-i-do" className="sr-only" tabIndex={-1} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">

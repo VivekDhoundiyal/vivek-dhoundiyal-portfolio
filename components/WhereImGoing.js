@@ -15,13 +15,13 @@ export default function WhereImGoing({ whereImGoing = {} }) {
     {
       label: 'Evolving',
       role: 'Technology / AI Workflows / Products',
-      desc: 'Building software tools like CareerOS and automating operational workflows through modern systems.',
+      desc: 'Building software platforms like Hiresway and operating intelligent digital workflows.',
       badgeColor: 'bg-blue-50 text-signal-blue border-blue-200'
     },
     {
       label: 'Future Horizon',
       role: 'Commercial Software Products & Applied AI Systems',
-      desc: 'Applying commercial rigor, systems design, and AI automation to high-impact business products.',
+      desc: 'Applying commercial rigor, systems design, and AI workflows to high-impact business products.',
       badgeColor: 'bg-purple-50 text-purple-700 border-purple-200'
     }
   ]

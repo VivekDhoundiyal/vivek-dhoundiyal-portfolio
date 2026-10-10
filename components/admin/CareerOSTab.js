@@ -48,18 +48,18 @@ export default function CareerOSTab({ careeros = {}, onChange }) {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-white/10 gap-3">
         <div>
           <div className="flex items-center gap-2">
-            <h2 className="text-lg font-black text-white">CareerOS Product Case Study Editor</h2>
+            <h2 className="text-lg font-black text-white">Hiresway Product Case Study Editor</h2>
             <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-signal-blue/20 text-signal-cyan border border-signal-blue/30 font-bold">
               SYSTEM ARCHITECTURE + INFOGRAPHIC
             </span>
           </div>
           <p className="text-xs text-slate-400 mt-0.5">
-            Manage the complete content, architecture models, editorial breakdowns, and system principles for /work/careeros and /careeros.
+            Manage the complete content, architecture models, editorial breakdowns, and system principles for /work/hiresway and /hiresway.
           </p>
         </div>
 
         <a
-          href="/work/careeros"
+          href="/work/hiresway"
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-mono font-semibold text-white transition-colors"

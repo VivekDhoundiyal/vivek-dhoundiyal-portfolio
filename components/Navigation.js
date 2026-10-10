@@ -138,9 +138,15 @@ export default function Navigation({
       {/* 1. SLIM STICKY TOP HEADER (DESKTOP & MOBILE)        */}
       {/* ==================================================== */}
       <header
-        className={`sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] transition-shadow duration-200 ${
-          scrolled ? 'shadow-xs' : ''
+        className={`sticky top-0 z-50 w-full transition-all duration-300 ease-in-out ${
+          scrolled
+            ? 'bg-white/90 backdrop-blur-[16px] border-b border-[#E5E7EB] shadow-[0_4px_20px_-4px_rgba(17,19,24,0.06)]'
+            : 'bg-white/80 backdrop-blur-[16px] border-b border-[#E5E7EB]/80 shadow-none'
         }`}
+        style={{
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)'
+        }}
         aria-label="Portfolio Main Navigation"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-3 sm:gap-4">

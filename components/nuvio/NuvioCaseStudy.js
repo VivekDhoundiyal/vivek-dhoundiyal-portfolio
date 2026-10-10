@@ -1398,10 +1398,10 @@ export default function NuvioCaseStudy({ siteData }) {
               ← Back to Selected Work
             </Link>
             <Link
-              href="/work/careeros"
+              href="/work/hiresway"
               className="px-6 py-3 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-[#111318] text-white hover:bg-[#2563EB] transition-colors"
             >
-              Explore CareerOS Flagship →
+              Explore Hiresway Flagship →
             </Link>
           </div>
         </section>

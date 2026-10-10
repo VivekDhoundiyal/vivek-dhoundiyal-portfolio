@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import { ArrowUpRight } from './Icons'
 
 export default function CurrentlyBuilding({ items = [] }) {
-  // Use verified project from site data, defaulting to CareerOS
-  const primaryBuild = items.find(i => i.id === 'careeros') || {
-    id: 'careeros',
-    title: 'CareerOS',
+  // Use verified project from site data, defaulting to Hiresway
+  const primaryBuild = items.find(i => i.id === 'hiresway' || i.id === 'careeros') || {
+    id: 'hiresway',
+    title: 'Hiresway',
     status: 'ACTIVE',
     category: 'Independent Software Product',
-    tagline: 'Architecting a unified system for career progression — centralizing opportunity discovery, intelligent positioning artifacts, application pipeline tracking, and interview preparation workflows.',
-    description: 'An AI-powered career operating system I am building to streamline opportunity discovery, eliminate pipeline fragmentation, and accelerate professional growth.',
+    tagline: 'Architecting a unified platform for career progression — centralizing opportunity discovery, intelligent positioning artifacts, application pipeline tracking, and interview preparation workflows.',
+    description: 'An AI-powered career platform I am building to streamline opportunity discovery, eliminate pipeline fragmentation, and accelerate professional growth.',
     currentObjective: 'Engineering core opportunity indexing and state-machine pipeline tracking modules locally.',
     whatIsBeingBuilt: 'Full-stack interface with local state management, structured candidate profile generators, and opportunity ranking algorithms.',
     technology: ['Next.js', 'React', 'Tailwind CSS', 'Node.js', 'Local Storage APIs'],
@@ -19,7 +19,7 @@ export default function CurrentlyBuilding({ items = [] }) {
 
   const [activeModuleIndex, setActiveModuleIndex] = useState(0)
 
-  // Real architectural modules under active development for CareerOS
+  // Real architectural modules under active development for Hiresway
   const modules = [
     {
       id: 'opp-discovery',
@@ -95,7 +95,7 @@ export default function CurrentlyBuilding({ items = [] }) {
                   </div>
 
                   <span className="text-xs font-mono text-[#737984]">
-                    [ SYS-01 : CAREEROS ]
+                    [ SYS-01 : HIRESWAY ]
                   </span>
                 </div>
 

@@ -35,12 +35,12 @@ export default function WhereIAmBuilding() {
       title: 'Digital Products',
       subtitle: 'PRACTICAL SOFTWARE',
       description: 'Building tools that eliminate real operational friction.',
-      highlight: 'Developing CareerOS (career intelligence) and NUVIO (private PDF workspace).',
+      highlight: 'Developing Hiresway (career intelligence platform) and NUVIO (private PDF workspace).',
       icon: WindowTerminalIcon,
       tags: ['Product Strategy', 'User Experience', 'High Performance', 'Data Reliability'],
       metric: 'Active Product Building',
       links: [
-        { href: '/work/careeros', label: 'CareerOS →' },
+        { href: '/work/hiresway', label: 'Hiresway →' },
         { href: '/work/nuvio', label: 'NUVIO →' }
       ]
     },

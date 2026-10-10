@@ -80,7 +80,7 @@ export default function AboutBackground() {
       stage: '05',
       title: 'PRODUCT + AI',
       period: 'ACTIVE',
-      sentence: 'Building CareerOS and automated business workflows to eliminate professional friction.',
+      sentence: 'Building Hiresway and intelligent business workflows to eliminate professional friction.',
       icon: TerminalIcon,
       accent: '#2563EB'
     }

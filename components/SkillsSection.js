@@ -55,17 +55,17 @@ export default function SkillsSection() {
         { name: 'Business Systems', detail: 'Closed-loop operational workflows and dependable execution.' },
         { name: 'Problem Discovery', detail: 'Extracting genuine operator bottlenecks before code.' },
         { name: 'Specification Design', detail: 'Scoping functional PRDs and wireframe flows.' },
-        { name: 'CareerOS Platform', detail: 'AI career operating system developed from scratch.' }
+        { name: 'Hiresway Platform', detail: 'AI career platform developed from scratch.' }
       ]
     },
     {
       id: 'ai-automation',
-      title: 'AI & AUTOMATION',
-      desc: 'Operational leverage through automated workflows and intelligent tools.',
+      title: 'AI & WORKFLOW SYSTEMS',
+      desc: 'Operational leverage through intelligent workflows and modern tooling.',
       nodes: [
         { name: 'AI Workflows', detail: 'Targeted prompt structures and formatted business deliverables.' },
-        { name: 'Process Automation', detail: 'Cross-platform synchronization and event-driven updates.' },
-        { name: 'n8n Orchestration', detail: 'Automating administrative drag without software bloat.' },
+        { name: 'Workflow Systems', detail: 'Cross-platform synchronization and event-driven updates.' },
+        { name: 'Process Optimization', detail: 'Eliminating administrative drag through structured workflows.' },
         { name: 'Intelligent Matching', detail: 'Semantic similarity algorithms and automated candidate scoring.' }
       ]
     }

@@ -39,7 +39,7 @@ export default function CorporateExperience() {
       year: '2024–NOW',
       company: 'Consulting & Products',
       companyFull: 'SuperSurge & Independent Systems',
-      slug: 'careeros',
+      slug: 'hiresway',
       shortName: 'SS',
       role: 'Growth & Product Systems',
       domain: 'Revenue Operations & AI Products',
@@ -48,7 +48,7 @@ export default function CorporateExperience() {
         'Outbound Pipeline Systems',
         'AI Product Strategy'
       ],
-      skills: ['GTM Strategy', 'Workflow Automation', 'CareerOS']
+      skills: ['GTM Strategy', 'Commercial Architecture', 'Hiresway']
     }
   ]
 
@@ -130,7 +130,7 @@ export default function CorporateExperience() {
                     </div>
 
                     <Link
-                      href={step.slug === 'careeros' ? '/work/careeros' : `/experience/${step.slug}`}
+                      href={step.slug === 'hiresway' || step.slug === 'careeros' ? '/work/hiresway' : `/experience/${step.slug}`}
                       className="p-1 text-slate-400 group-hover:text-[#2563EB]"
                     >
                       <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -181,7 +181,7 @@ export default function CorporateExperience() {
                 {/* Footer Link */}
                 <div className="pt-4 border-t border-[#E5E7EB] flex items-center justify-between">
                   <Link
-                    href={step.slug === 'careeros' ? '/work/careeros' : `/experience/${step.slug}`}
+                    href={step.slug === 'hiresway' || step.slug === 'careeros' ? '/work/hiresway' : `/experience/${step.slug}`}
                     className="text-xs font-semibold text-[#2563EB] group-hover:underline flex items-center gap-1.5"
                   >
                     <span>Inspect Record</span>
