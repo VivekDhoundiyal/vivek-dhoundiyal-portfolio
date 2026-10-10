@@ -743,6 +743,24 @@
   ],
   "thinking": [
     {
+      "id": "validate-business-idea",
+      "slug": "validate-business-idea",
+      "title": "How to Validate a Business Idea Before Investing Time and Money",
+      "category": "Entrepreneurship & Startups",
+      "date": "2026-10-10",
+      "readingTime": "14 min read",
+      "excerpt": "A practitioner's blueprint for testing problem severity, customer willingness to pay, competitor dynamics, and break-even unit economics before building.",
+      "coverImage": "/images/blog/business-idea-validation-roadmap.png",
+      "featured": true,
+      "tags": [
+        "Entrepreneurship",
+        "Idea Validation",
+        "Unit Economics",
+        "Customer Research",
+        "Startups"
+      ]
+    },
+    {
       "id": "how-to-build-a-predictable-sales-pipeline",
       "slug": "how-to-build-a-predictable-sales-pipeline",
       "title": "How to Build a Predictable B2B Sales Pipeline from Scratch",
