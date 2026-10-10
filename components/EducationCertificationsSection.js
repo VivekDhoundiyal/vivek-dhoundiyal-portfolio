@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 
-function CheckCircleIcon({ className = "w-4 h-4", ...props }) {
-  return (
-    <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-  )
-}
-
 function ArrowUpRightIcon({ className = "w-4 h-4", ...props }) {
   return (
     <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -46,41 +38,20 @@ const DEFAULT_CERTIFICATIONS = [
   {
     id: 'google-pm',
     name: 'Google Project Management Professional Certificate',
-    issuer: 'Google · Coursera',
-    date: 'August 22, 2026',
-    credentialId: '3QGWMKPNG7ZR',
     credentialUrl: 'https://coursera.org/verify/professional-cert/3QGWMKPNG7ZR',
-    status: 'Verified Credential',
-    image: '/images/google-project-management-certificate.png',
-    badge: 'GOOGLE · COURSERA',
-    description: 'Comprehensive seven-course professional curriculum developed by Google, covering agile sprint planning, scrum ceremonies, project charters, risk mitigation matrices, and stakeholder communication cadences.',
-    skills: ['Agile & Scrum', 'Project Planning', 'Risk Mitigation', 'Stakeholder Cadences']
+    image: '/images/google-project-management-certificate.png'
   },
   {
     id: 'innovation-management-leeds',
     name: 'Innovation Management: Winning in the Age of Disruption',
-    issuer: 'University of Leeds · FutureLearn',
-    date: 'December 4, 2017',
-    credentialId: 'qrf9auc',
     credentialUrl: 'https://www.futurelearn.com/certificates/qrf9auc',
-    status: 'Verified Credential',
-    image: '/images/innovation-management-certificate.png',
-    badge: 'UNIVERSITY OF LEEDS · FUTURELEARN',
-    description: 'CPD certified executive program on leading innovation initiatives, managing disruptive business models, and building structured value propositions in competitive markets.',
-    skills: ['Disruptive Innovation', 'Business Models', 'Value Propositions', 'Strategy Execution']
+    image: '/images/innovation-management-certificate.png'
   },
   {
     id: 'data-science-101-ibm',
     name: 'Data Science 101',
-    issuer: 'Cognitive Class · IBM',
-    date: 'January 2, 2018',
-    credentialId: '9f04e63a-1e2c-4c6e-997f-821d12350f1f',
     credentialUrl: 'https://www.credly.com/badges/9f04e63a-1e2c-4c6e-997f-821d12350f1f/linked_in_profile',
-    status: 'Verified Credential',
-    image: '/images/data-science-101-certificate.png',
-    badge: 'COGNITIVE CLASS · IBM',
-    description: 'Foundational curriculum covering data science methodologies, exploratory data analysis, machine learning taxonomies, predictive modeling, and data-backed business decisions.',
-    skills: ['Data Science', 'Exploratory Analysis', 'Machine Learning', 'Predictive Modeling']
+    image: '/images/data-science-101-certificate.png'
   }
 ]
 
@@ -90,6 +61,20 @@ export default function EducationCertificationsSection({ education = {}, certifi
   const certList = (certifications && certifications.length >= 3)
     ? certifications
     : DEFAULT_CERTIFICATIONS
+
+  const getVerificationUrl = (cert) => {
+    if (cert.credentialUrl) return cert.credentialUrl
+    if (cert.id === 'google-pm' || cert.name?.toLowerCase().includes('google')) {
+      return 'https://coursera.org/verify/professional-cert/3QGWMKPNG7ZR'
+    }
+    if (cert.id === 'innovation-management-leeds' || cert.name?.toLowerCase().includes('innovation')) {
+      return 'https://www.futurelearn.com/certificates/qrf9auc'
+    }
+    if (cert.id === 'data-science-101-ibm' || cert.name?.toLowerCase().includes('data science')) {
+      return 'https://www.credly.com/badges/9f04e63a-1e2c-4c6e-997f-821d12350f1f/linked_in_profile'
+    }
+    return '#'
+  }
 
   // ESC key handler for certificate lightbox modal
   useEffect(() => {
@@ -112,16 +97,16 @@ export default function EducationCertificationsSection({ education = {}, certifi
     <section
       id="education"
       aria-label="Education & Credentials"
-      className="py-12 sm:py-16 border-t border-[#E5E7EB] bg-[#FAFAF8] text-[#111318] relative scroll-mt-16"
+      className="py-10 sm:py-14 border-t border-[#E5E7EB] bg-[#FAFAF8] text-[#111318] relative scroll-mt-16"
     >
       <div id="education-certifications" className="sr-only" tabIndex={-1} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
         
         {/* ==================================================== */}
         {/* SECTION HEADER: Title + Winking Thumbs-up Avatar     */}
         {/* ==================================================== */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 reveal-on-scroll">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 reveal-on-scroll">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-mono font-semibold text-[#2563EB]">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
@@ -165,10 +150,10 @@ export default function EducationCertificationsSection({ education = {}, certifi
         {/* ==================================================== */}
         {/* DEGREE CARD: B.TECH MECHANICAL ENGINEERING           */}
         {/* ==================================================== */}
-        <div className="rounded-3xl bg-white border border-[#E5E7EB] shadow-xs hover:border-[#2563EB]/40 transition-all duration-300 p-7 sm:p-9 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-          <div className="space-y-3 max-w-2xl">
-            <div className="flex flex-wrap items-center gap-2.5">
-              <span className="text-[10.5px] font-mono font-bold uppercase tracking-wider text-[#2563EB] bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+        <div className="rounded-2xl sm:rounded-3xl bg-white border border-[#E5E7EB] shadow-xs hover:border-[#2563EB]/40 transition-all duration-300 p-6 sm:p-7 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+          <div className="space-y-2.5 max-w-2xl">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#2563EB] bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200">
                 UNDERGRADUATE DEGREE · 2014–2018
               </span>
               <span className="text-xs font-mono text-[#737984]">
@@ -177,7 +162,7 @@ export default function EducationCertificationsSection({ education = {}, certifi
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold tracking-tight text-[#111318] group-hover:text-[#2563EB] transition-colors">
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#111318] group-hover:text-[#2563EB] transition-colors">
                 B.Tech in Mechanical Engineering
               </h3>
               <p className="text-sm font-semibold text-slate-700 pt-0.5">
@@ -191,10 +176,10 @@ export default function EducationCertificationsSection({ education = {}, certifi
           </div>
 
           <div className="flex items-center gap-4 flex-shrink-0">
-            <div className="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] shadow-xs">
-              <GraduationCapIcon className="w-8 h-8" />
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#2563EB] shadow-xs">
+              <GraduationCapIcon className="w-7 h-7 sm:w-8 sm:h-8" />
             </div>
-            <div className="space-y-1">
+            <div className="space-y-0.5">
               <span className="text-xs font-bold text-[#111318] block">4-Year Degree</span>
               <span className="text-[11px] font-mono text-[#737984] block">Systems &amp; Thermodynamics</span>
             </div>
@@ -202,120 +187,69 @@ export default function EducationCertificationsSection({ education = {}, certifi
         </div>
 
         {/* ==================================================== */}
-        {/* SUBSECTION: VERIFIED CERTIFICATES & ACCREDITATIONS   */}
+        {/* SUBSECTION: VERIFIED CERTIFICATES (MINIMAL & COMPACT) */}
         {/* ==================================================== */}
-        <div className="space-y-6 pt-2">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#E5E7EB] pb-3">
-            <div className="flex items-center gap-2.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <h3 className="text-lg sm:text-xl font-bold tracking-tight text-[#111318]">
-                Verified Certifications &amp; Accreditations
+        <div className="space-y-4 pt-1">
+          <div className="flex items-center justify-between gap-2 border-b border-[#E5E7EB] pb-3">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#2563EB]" />
+              <h3 className="text-base sm:text-lg font-bold tracking-tight text-[#111318]">
+                Verified Certifications
               </h3>
             </div>
             <span className="text-xs font-mono text-[#737984]">
-              3 Industry Certifications · Verifiable Online
+              3 Verified Credentials
             </span>
           </div>
 
-          {/* 3-CARD RESPONSIVE GRID */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* 3-CARD COMPACT RESPONSIVE GRID */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
             {certList.map((cert) => {
-              const badgeText = cert.badge || cert.issuer.toUpperCase()
+              const verifyUrl = getVerificationUrl(cert)
               return (
                 <div
                   key={cert.id}
-                  className="rounded-3xl bg-white border border-[#E5E7EB] shadow-xs hover:shadow-md hover:border-[#2563EB]/40 transition-all duration-300 flex flex-col justify-between p-6 group"
+                  className="rounded-2xl bg-white border border-[#E5E7EB] shadow-2xs hover:shadow-md hover:border-[#2563EB]/40 transition-all duration-300 p-4 sm:p-4.5 flex flex-col justify-between group"
                 >
-                  <div className="space-y-4">
-                    {/* Card Header: Category & Verified Pill */}
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#2563EB] bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200 truncate">
-                        {badgeText}
+                  {/* 1. Actual Certificate Image (Clickable Lightbox Trigger) */}
+                  <div
+                    onClick={() => setActiveModalCert(cert)}
+                    className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-slate-50/80 border border-slate-200/80 flex items-center justify-center cursor-pointer group/thumb hover:border-blue-300 transition-all shadow-2xs"
+                    title="Click to view full certificate"
+                  >
+                    <Image
+                      src={cert.image}
+                      alt={cert.name}
+                      fill
+                      className="object-contain p-2 sm:p-2.5 group-hover/thumb:scale-[1.02] transition-transform duration-300"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-slate-900/0 group-hover/thumb:bg-slate-900/25 transition-colors flex items-center justify-center opacity-0 group-hover/thumb:opacity-100">
+                      <span className="px-2.5 py-1 rounded-lg bg-white/95 text-[#111318] text-[11px] font-semibold shadow-xs flex items-center gap-1.5 transform translate-y-1 group-hover/thumb:translate-y-0 transition-transform">
+                        <EyeIcon className="w-3.5 h-3.5 text-[#2563EB]" />
+                        <span>View</span>
                       </span>
-                      <span className="inline-flex items-center gap-1 text-[10px] font-mono font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 flex-shrink-0">
-                        <CheckCircleIcon className="w-3 h-3 text-emerald-600" />
-                        <span>Verified</span>
-                      </span>
                     </div>
-
-                    {/* Interactive Certificate Thumbnail */}
-                    <div
-                      onClick={() => setActiveModalCert(cert)}
-                      className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-slate-50 border border-slate-200/90 flex items-center justify-center cursor-pointer group/thumb hover:border-blue-300 transition-all shadow-xs"
-                      title="Click to view full certificate"
-                    >
-                      <Image
-                        src={cert.image}
-                        alt={cert.name}
-                        fill
-                        className="object-contain p-2 group-hover/thumb:scale-[1.03] transition-transform duration-300"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                      {/* Hover Overlay */}
-                      <div className="absolute inset-0 bg-slate-900/0 group-hover/thumb:bg-slate-900/30 transition-colors flex items-center justify-center opacity-0 group-hover/thumb:opacity-100">
-                        <span className="px-3 py-1.5 rounded-xl bg-white/95 text-[#111318] text-xs font-semibold shadow-md flex items-center gap-1.5 transform translate-y-1 group-hover/thumb:translate-y-0 transition-transform">
-                          <EyeIcon className="w-3.5 h-3.5 text-[#2563EB]" />
-                          <span>View Certificate</span>
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Title & Organization */}
-                    <div>
-                      <h4 className="text-base sm:text-lg font-bold tracking-tight text-[#111318] group-hover:text-[#2563EB] transition-colors leading-snug">
-                        {cert.name}
-                      </h4>
-                      <p className="text-xs font-semibold text-slate-700 pt-1">
-                        {cert.issuer}
-                      </p>
-                      {cert.date && (
-                        <p className="text-[11px] font-mono text-[#737984] pt-0.5">
-                          {cert.date}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-xs text-[#555B66] leading-relaxed line-clamp-3">
-                      {cert.description}
-                    </p>
-
-                    {/* Skills / Key Tags */}
-                    {cert.skills && cert.skills.length > 0 && (
-                      <div className="flex flex-wrap gap-1.5 pt-1">
-                        {cert.skills.slice(0, 3).map((skill, idx) => (
-                          <span
-                            key={idx}
-                            className="text-[10px] font-medium text-slate-600 bg-slate-100 px-2 py-0.5 rounded-md"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    )}
                   </div>
 
-                  {/* Action Bar (Pinned to Card Foot) */}
-                  <div className="pt-4 mt-5 border-t border-slate-100 flex items-center justify-between gap-3">
-                    <button
-                      onClick={() => setActiveModalCert(cert)}
-                      className="px-3.5 py-2 rounded-xl bg-slate-50 hover:bg-blue-50 text-[#2563EB] border border-slate-200 hover:border-blue-200 font-semibold text-xs flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
-                    >
-                      <EyeIcon className="w-3.5 h-3.5" />
-                      <span>View Certificate</span>
-                    </button>
+                  {/* 2. Certificate Name directly below the image & 3. Verify Certificate Link */}
+                  <div className="pt-3 flex-1 flex flex-col justify-between gap-2.5">
+                    <h4 className="text-sm font-bold tracking-tight text-[#111318] group-hover:text-[#2563EB] transition-colors leading-snug">
+                      {cert.name}
+                    </h4>
 
-                    {cert.credentialUrl && (
+                    <div>
                       <a
-                        href={cert.credentialUrl}
+                        href={verifyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-xs font-semibold text-slate-600 hover:text-[#2563EB] hover:underline transition-colors group/link"
+                        className="inline-flex items-center gap-1 text-xs font-semibold text-[#2563EB] hover:text-blue-700 hover:underline transition-colors group/link"
                       >
-                        <span>Verify Credential</span>
+                        <span>Verify Certificate</span>
                         <ArrowUpRightIcon className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
                       </a>
-                    )}
+                    </div>
                   </div>
                 </div>
               )
@@ -342,34 +276,20 @@ export default function EducationCertificationsSection({ education = {}, certifi
           >
             {/* Modal Header */}
             <div className="flex items-start justify-between gap-4 pb-3 border-b border-slate-100">
-              <div className="space-y-1 pr-2">
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#2563EB] bg-blue-50 px-2 py-0.5 rounded-full border border-blue-200">
-                    {activeModalCert.issuer}
-                  </span>
-                  {activeModalCert.credentialId && (
-                    <span className="text-[11px] font-mono text-[#737984]">
-                      ID: {activeModalCert.credentialId}
-                    </span>
-                  )}
-                </div>
-                <h3 className="text-base sm:text-xl font-bold text-[#111318] leading-snug">
-                  {activeModalCert.name}
-                </h3>
-              </div>
+              <h3 className="text-base sm:text-lg font-bold text-[#111318] leading-snug">
+                {activeModalCert.name}
+              </h3>
 
               <div className="flex items-center gap-2 flex-shrink-0">
-                {activeModalCert.credentialUrl && (
-                  <a
-                    href={activeModalCert.credentialUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-3.5 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-[#2563EB] text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-xs"
-                  >
-                    <span>Verify Credential</span>
-                    <ArrowUpRightIcon className="w-3.5 h-3.5" />
-                  </a>
-                )}
+                <a
+                  href={getVerificationUrl(activeModalCert)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3.5 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-[#2563EB] text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-xs"
+                >
+                  <span>Verify Certificate</span>
+                  <ArrowUpRightIcon className="w-3.5 h-3.5" />
+                </a>
                 <button
                   onClick={() => setActiveModalCert(null)}
                   className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-900 transition-colors cursor-pointer"
@@ -381,7 +301,7 @@ export default function EducationCertificationsSection({ education = {}, certifi
             </div>
 
             {/* Modal Image Display */}
-            <div className="relative w-full h-[52vh] sm:h-[62vh] rounded-2xl overflow-hidden bg-slate-50 border border-slate-200 flex items-center justify-center p-3">
+            <div className="relative w-full h-[54vh] sm:h-[64vh] rounded-2xl overflow-hidden bg-slate-50 border border-slate-200 flex items-center justify-center p-3">
               <Image
                 src={activeModalCert.image}
                 alt={activeModalCert.name}
@@ -391,7 +311,7 @@ export default function EducationCertificationsSection({ education = {}, certifi
               />
             </div>
 
-            {/* Modal Footer: Quick Switcher Between All 3 Certificates */}
+            {/* Modal Footer: Quick Switcher */}
             <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-t border-slate-100">
               <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0">
                 <span className="text-[11px] font-mono text-slate-400 mr-1 flex-shrink-0">Switch:</span>
@@ -417,16 +337,14 @@ export default function EducationCertificationsSection({ education = {}, certifi
                 })}
               </div>
 
-              {activeModalCert.credentialUrl && (
-                <a
-                  href={activeModalCert.credentialUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs font-mono text-slate-500 hover:text-[#2563EB] underline truncate"
-                >
-                  {activeModalCert.credentialUrl}
-                </a>
-              )}
+              <a
+                href={getVerificationUrl(activeModalCert)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-mono text-slate-500 hover:text-[#2563EB] underline truncate max-w-[280px] sm:max-w-md"
+              >
+                {getVerificationUrl(activeModalCert)}
+              </a>
             </div>
           </div>
         </div>
